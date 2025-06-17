@@ -3,7 +3,7 @@ import "./App.css";
 function App() {
   return (
     <>
-      <div className="bg-red-500 rounded-lg w-96 flex justify-center m-auto">
+      <div className="m-auto flex w-96 justify-center rounded-lg bg-red-500">
         app
       </div>
     </>
