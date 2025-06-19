@@ -1,9 +1,13 @@
+import Header from "../widgets/layout/Header/Header";
+import PageHome from "../pages/PageHome/PageHome";
+
 import "./App.css";
 
 function App() {
   return (
-    <div className="m-auto flex w-96 justify-center rounded-lg bg-red-500">
-      app
+    <div className="container">
+      <Header />
+      <PageHome />
     </div>
   );
 }
