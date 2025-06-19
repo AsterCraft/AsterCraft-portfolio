@@ -14,6 +14,8 @@ const config = {
   quoteProps: "as-needed",
   jsxSingleQuote: false,
   bracketSameLine: false,
+  objectWrap: "preserve",
+  singleAttributePerLine: true,
 
   proseWrap: "preserve",
 
