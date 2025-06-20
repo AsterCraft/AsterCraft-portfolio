@@ -1,8 +1,10 @@
+import SectionHero from "./ui/SectionHero/SectionHero";
+
 const PageHome = () => {
   return (
-    <>
-      <div className="m-auto flex pt-15"></div>
-    </>
+    <main className="m-auto flex flex-col">
+      <SectionHero />
+    </main>
   );
 };
 

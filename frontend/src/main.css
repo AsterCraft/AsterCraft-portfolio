@@ -1,1 +1,10 @@
 @import "tailwindcss";
+
+@tailwindcss /preflight;
+@tailwindcss /utilities;
+
+@layer components {
+  .container {
+    @apply mx-auto max-w-[1450px] px-[10px];
+  }
+}
