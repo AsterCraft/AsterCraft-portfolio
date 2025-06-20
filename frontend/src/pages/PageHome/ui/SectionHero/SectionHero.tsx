@@ -1,5 +1,6 @@
 const SectionHero = () => {
   return (
+    // do you need w-screen here?
     <section className="h-[100vh] w-screen bg-[#1a1a1a] pt-15 text-white">
       <div className="container">
         <h1>Aster Craft</h1>
