@@ -1,8 +1,8 @@
 const PageHome = () => {
   return (
-    <div className="m-auto flex w-96 justify-center rounded-lg bg-red-500">
-      PageHome
-    </div>
+    <>
+      <div className="m-auto flex pt-15"></div>
+    </>
   );
 };
 
