@@ -1,8 +1,10 @@
+import SectionHero from "./ui/SectionHero/SectionHero";
+
 const PageHome = () => {
   return (
-    <div className="m-auto flex w-96 justify-center rounded-lg bg-red-500">
-      PageHome
-    </div>
+    <main className="m-auto flex flex-col">
+      <SectionHero />
+    </main>
   );
 };
 

@@ -5,7 +5,9 @@ import "./App.css";
 
 function App() {
   return (
-    <div className="container">
+    // container
+    // <div className="mx-auto max-w-[1450px] px-[10px]">
+    <div>
       <Header />
       <PageHome />
     </div>
