@@ -1,3 +1,5 @@
+import BurgerDropdownMenu from "./BurgerDropdownMenu/BurgerDropdownMenu";
+
 const Header = () => {
   return (
     <header className="fixed top-0 right-0 left-0 z-50">
@@ -11,7 +13,11 @@ const Header = () => {
             Buy site
           </button>
 
-          <nav>
+          <div className="sm:hidden">
+            <BurgerDropdownMenu />
+          </div>
+
+          <nav className="hidden sm:block">
             <ul className="flex gap-4">
               <li>About me</li>
               <li>Projects</li>

@@ -4,7 +4,7 @@
 @tailwindcss /utilities;
 
 @layer components {
-  .container {
+  .Container {
     @apply mx-auto max-w-[1450px] px-6;
   }
 }
