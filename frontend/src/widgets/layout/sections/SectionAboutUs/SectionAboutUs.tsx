@@ -4,7 +4,7 @@ import web_agency_author from "../../../../app/img/web_agency_author.avif";
 
 const SectionAboutUs = () => {
   return (
-    <section className={classNames("container flex flex-col pt-8 pb-16")}>
+    <section className={classNames("Container flex flex-col pt-8 pb-16")}>
       <div className="mb-16 flex items-start justify-between">
         <div className="flex items-center gap-1">
           {/* black square */}
