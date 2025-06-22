@@ -1,4 +1,8 @@
+import useWindowWidth from "../../../shared/lib/hooks/useWindowWidth";
+
 const Header = () => {
+  const windowWidth = useWindowWidth();
+
   return (
     <header className="fixed top-0 right-0 left-0 z-50">
       {/* Transparent area around black header */}
@@ -11,14 +15,22 @@ const Header = () => {
             Buy site
           </button>
 
-          <nav>
-            <ul className="flex gap-4">
-              <li>About me</li>
-              <li>Projects</li>
-              <li>Services</li>
-              <li>Contact</li>
-            </ul>
-          </nav>
+          {windowWidth < 640 && (
+            <div>
+              <div>burger</div>
+            </div>
+          )}
+
+          {windowWidth >= 640 && (
+            <nav>
+              <ul className="flex gap-4">
+                <li>About me</li>
+                <li>Projects</li>
+                <li>Services</li>
+                <li>Contact</li>
+              </ul>
+            </nav>
+          )}
         </div>
       </div>
     </header>
