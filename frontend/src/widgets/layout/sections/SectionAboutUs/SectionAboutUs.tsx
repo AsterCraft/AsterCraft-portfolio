@@ -24,7 +24,9 @@ const SectionAboutUs = () => {
       <p className="text-lg text-zinc-600">
         A small web studio from Łódź. <br />
         We design and build modern websites using React, TypeScript, and clean
-        code. <br />
+        code.
+      </p>
+      <p className="text-lg text-zinc-600">
         Every project is fast, focused, and fully tailored to the client — from
         personal sites to full business solutions.
       </p>
