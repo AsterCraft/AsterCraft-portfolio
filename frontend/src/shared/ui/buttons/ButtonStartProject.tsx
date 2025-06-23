@@ -1,6 +1,6 @@
 const ButtonStartProject = () => {
   return (
-    <button className="bg-btn-action-ac inline-block w-fit cursor-pointer rounded-md px-8 py-4 text-lg">
+    <button className="bg-ac-btn-action inline-block w-fit cursor-pointer rounded-md px-8 py-4 text-lg">
       Start a project
     </button>
   );
