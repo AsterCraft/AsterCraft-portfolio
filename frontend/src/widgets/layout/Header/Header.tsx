@@ -1,3 +1,4 @@
+import ButtonBuy from "../../../shared/ui/buttons/ButtonBuy/ButtonBuy";
 import BurgerDropdownMenu from "./BurgerDropdownMenu/BurgerDropdownMenu";
 
 const Header = () => {
@@ -9,9 +10,7 @@ const Header = () => {
         <div className="flex items-center justify-between rounded-md bg-black p-2 text-white">
           <button className="text-3xl">A.C.</button>
 
-          <button className="rounded bg-[#00bcd4] px-2 py-1 font-medium text-black">
-            Buy site
-          </button>
+          <ButtonBuy text={"Buy Site"} />
 
           <div className="sm:hidden">
             <BurgerDropdownMenu />
