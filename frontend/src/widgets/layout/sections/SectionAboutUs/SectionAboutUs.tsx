@@ -1,7 +1,6 @@
-import classNames from "classnames";
+import ButtonStartProject from "../../../../shared/ui/buttons/ButtonStartProject";
 
 import web_agency_author from "../../../../app/img/web_agency_author.avif";
-import ButtonStartProject from "../../../../shared/ui/buttons/ButtonStartProject";
 
 const SectionAboutUs = () => {
   return (

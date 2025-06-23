@@ -5,12 +5,15 @@
 
 @theme {
   /** custom css variable name convention:
-  * --ac - for custom css variables (aster craft)
+  *     -namespace-token-ac
+  *             OR
   *     -namespace-token
+  *   where:
   * namespace - eg: color
   * token - eg: btn-action
+  * --ac - for custom css variables (aster craft)
   */
-  --ac-color-btn-action: #f6f6f6;
+  --color-btn-action-ac: #f6f6f6;
 }
 
 @layer components {
