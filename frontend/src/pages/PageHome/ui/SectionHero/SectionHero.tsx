@@ -1,3 +1,5 @@
+import ButtonBuy from "../../../../shared/ui/buttons/ButtonBuy/ButtonBuy";
+
 const SectionHero = () => {
   return (
     <section className="h-[100vh] w-full bg-[#1a1a1a] pt-20 text-white">
@@ -10,7 +12,7 @@ const SectionHero = () => {
 
       <div className="Container flex flex-col justify-between sm:flex-row">
         <p>I help you make a lasting impression online.</p>
-        <button>Start project</button>
+        <ButtonBuy text={"Start Project"} />
       </div>
     </section>
   );
