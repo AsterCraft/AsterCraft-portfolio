@@ -4,7 +4,7 @@ type Props = {
 
 const ButtonBuy = ({ text }: Props) => {
   return (
-    <button className="rounded bg-[#00bcd4] px-2 py-1 font-medium text-black">
+    <button className="w-fit rounded bg-[#00bcd4] px-2 py-1 font-medium text-black">
       {text}
     </button>
   );
