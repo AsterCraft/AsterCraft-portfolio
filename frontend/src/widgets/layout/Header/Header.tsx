@@ -1,16 +1,24 @@
 import ButtonBuy from "../../../shared/ui/buttons/ButtonBuy/ButtonBuy";
 import BurgerDropdownMenu from "./BurgerDropdownMenu/BurgerDropdownMenu";
 
+import styles from "./Header.module.css";
+
 const Header = () => {
   return (
-    <header className="fixed top-0 right-0 left-0 z-50">
+    <header className="fixed top-0 right-0 left-0 z-50 text-xl">
       {/* Transparent area around black header */}
-      <div className="relative mx-auto max-w-[1450px] rounded-md bg-transparent px-[10px] pt-[10px] backdrop-blur-xs">
+      {/* <div className="relative mx-auto max-w-[1450px] rounded-md bg-transparent px-[10px] pt-[10px] backdrop-blur-xs"> */}
+      {/* After that the styles need to be rewritten for screen 1536px (2xl) and more: 
+      <div className="relative mx-auto max-w-[1450px] rounded-md bg-transparent px-[10px] pt-[10px] backdrop-blur-xs
+                2xl:static 2xl:max-w-none 2xl:rounded-none 2xl:bg-none 2xl:px-0 2xl:pt-0 2xl:backdrop-blur-0">
+      */}
+      {/* Yaroslav, what do you think is better? With or without module.css? ChatGPT recommended that I create module.css to unload jsx and improve readability. */}
+      <div className={styles.HeroBox}>
         {/* black header */}
-        <div className="flex items-center justify-between rounded-md bg-black p-2 text-white">
-          <button className="text-3xl">A.C.</button>
+        <div className="flex items-center justify-between rounded-md bg-[#0b0d0d] p-2 text-white">
+          <ButtonBuy text={"Get Your Website"} />
 
-          <ButtonBuy text={"Buy Site"} />
+          <button className="text-3xl">A.C.</button>
 
           <div className="sm:hidden">
             <BurgerDropdownMenu />

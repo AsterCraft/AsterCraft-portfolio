@@ -1,18 +1,42 @@
+import Lottie from "lottie-react";
+
 import ButtonBuy from "../../../../shared/ui/buttons/ButtonBuy/ButtonBuy";
+
+import lottieAnimation from "../../../../shared/assets/video/hero-section-animation.json";
 
 const SectionHero = () => {
   return (
-    <section className="h-[100vh] w-full bg-[#1a1a1a] pt-20 text-white">
-      <div className="pt-35 pl-10 text-6xl sm:text-8xl md:text-[10rem]">
-        <h1 className="">Aster</h1>
-        <h2 className="pl-17 sm:pl-40">Craft</h2>
+    <section className="flex h-[100vh] w-full flex-col bg-[#1a1a1a] pt-20 text-xl text-white">
+      {/* title and animation in row */}
+      <div className="flex flex-[5]">
+        <div className="mx-auto flex max-w-[1450px] flex-col items-center justify-around px-6 sm:flex-row sm:items-center sm:justify-between">
+          <div className="w-fit text-8xl sm:text-8xl lg:text-[10rem]">
+            {/* <h1 className="pl-10">Aster</h1> */}
+            <h1>Aster</h1>
+            {/* <h2 className="pl-17 sm:pl-40">Craft</h2> */}
+            <h2 className="pl-10 lg:pl-30">Craft</h2>
+          </div>
+
+          <div className="max-h-[600px] max-w-[600px]">
+            <Lottie
+              animationData={lottieAnimation}
+              loop
+              autoplay
+            />
+          </div>
+        </div>
       </div>
 
-      <hr className="mt-50 mb-10 text-gray-500" />
+      <div className="relative flex-[2]">
+        <hr className="mt-0 mb-10 text-gray-500" />
 
-      <div className="Container flex flex-col justify-between sm:flex-row">
-        <p>I help you make a lasting impression online.</p>
-        <ButtonBuy text={"Start Project"} />
+        <div className="Container flex flex-col justify-between sm:flex-row">
+          <p>We create websites that leave a strong and lasting impression.</p>
+          <ButtonBuy
+            className="absolute right-10 bottom-10 sm:static sm:right-auto sm:bottom-auto"
+            text={"Start Project"}
+          />
+        </div>
       </div>
     </section>
   );
