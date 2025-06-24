@@ -3,6 +3,20 @@
 @tailwindcss /preflight;
 @tailwindcss /utilities;
 
+@theme {
+  /** custom css variable name convention:
+  *     -namespace-token
+  *             OR
+  *     -namespace-ac-token
+  *   where:
+  * namespace - eg: color
+  * --ac - for custom css variables (aster craft)
+  * token - eg: btn-action
+  */
+  --color-ac-btn-action: #f6f6f6;
+  --color-ac-section-divider: #d0d0d0;
+}
+
 @layer components {
   .Container {
     @apply mx-auto max-w-[1450px] px-6;
