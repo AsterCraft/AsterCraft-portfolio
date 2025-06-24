@@ -17,13 +17,14 @@ const Header = () => {
         {/* black header */}
         <div
           className={classNames(
-            "flex items-center justify-between rounded-md bg-[#0b0d0d] p-2 text-white",
+            "flex items-center justify-between rounded-md bg-[#0b0d0d] px-2 py-2 text-white",
+            "lg:px-3 lg:py-0",
             "2xl:rounded-none"
           )}
         >
           <ButtonBuy text={"Get Your Website"} />
 
-          <button className="text-3xl">A.C.</button>
+          <button className="text-4xl lg:text-6xl">A.C.</button>
 
           <div className="sm:hidden">
             <BurgerDropdownMenu />
