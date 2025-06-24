@@ -2,7 +2,7 @@ import classNames from "classnames";
 
 import ButtonStartProject from "../../../../shared/ui/buttons/ButtonStartProject";
 
-import web_agency_author from "../../../../app/img/web_agency_author.avif";
+import imgWebAgencyAuthor from "../../../../app/img/web_agency_author.avif";
 
 const SectionAboutUs = () => {
   return (
@@ -25,7 +25,7 @@ const SectionAboutUs = () => {
         </div>
 
         <img
-          src={web_agency_author}
+          src={imgWebAgencyAuthor}
           alt="Aster Craft author"
           // make css clamp() for the image
           className="w-[clamp(100px,35vw,170px)] rounded-lg"
