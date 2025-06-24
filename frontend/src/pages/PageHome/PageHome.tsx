@@ -1,6 +1,7 @@
 import SectionAboutUs from "../../widgets/layout/sections/SectionAboutUs/SectionAboutUs";
 import SectionHero from "./ui/SectionHero/SectionHero";
 import DividerBetweenSections from "../../shared/ui/hrs/DividerBetweenSections";
+import SectionTestimonials from "../../widgets/sections/SectionTestimonials/SectionTestimonials";
 
 const PageHome = () => {
   return (
@@ -8,6 +9,7 @@ const PageHome = () => {
       <SectionHero />
       <SectionAboutUs />
       <DividerBetweenSections />
+      <SectionTestimonials />
     </main>
   );
 };
