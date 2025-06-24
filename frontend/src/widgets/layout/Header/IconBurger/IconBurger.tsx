@@ -20,17 +20,26 @@ const IconBurger = ({ isOpen }: Props) => {
       animate(bottom.current, { rotate: 0, y: 0 });
     } else {
       // animate to X
-      animate(top.current, { rotate: 45, y: 8 });
+      animate(top.current, { rotate: 45, y: 12 });
       animate(middle.current, { opacity: 0 });
-      animate(bottom.current, { rotate: -45, y: -8 });
+      animate(bottom.current, { rotate: -45, y: -7 });
     }
   }, [isOpen]);
 
   return (
     <button style={{ width: 30, height: 24, position: "relative", left: -30 }}>
-      <span ref={top} style={barStyle} />
-      <span ref={middle} style={{ ...barStyle, top: 10 }} />
-      <span ref={bottom} style={{ ...barStyle, top: 20 }} />
+      <span
+        ref={top}
+        style={barStyle}
+      />
+      <span
+        ref={middle}
+        style={{ ...barStyle, top: 10 }}
+      />
+      <span
+        ref={bottom}
+        style={{ ...barStyle, top: 20 }}
+      />
     </button>
   );
 };
