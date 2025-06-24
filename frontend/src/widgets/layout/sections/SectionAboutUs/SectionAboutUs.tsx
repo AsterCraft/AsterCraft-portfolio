@@ -1,6 +1,7 @@
 import classNames from "classnames";
 
 import ButtonStartProject from "../../../../shared/ui/buttons/ButtonStartProject";
+import BulletBlackSquare from "../../../../shared/ui/bullets/BulletBlackSquare/BulletBlackSquare";
 
 import imgWebAgencyAuthor from "../../../../app/img/web_agency_author.avif";
 
@@ -19,8 +20,7 @@ const SectionAboutUs = () => {
         )}
       >
         <div className="flex items-center gap-1">
-          {/* black square */}
-          <span className="size-2 bg-black"></span>
+          <BulletBlackSquare />
           <h3 className="font-normal uppercase">About Us</h3>
         </div>
 
