@@ -9,7 +9,7 @@ const SectionHero = () => {
   return (
     <section className="flex h-[100vh] w-full flex-col bg-[#1a1a1a] pt-20 text-xl text-white">
       {/* title and animation in row */}
-      <div className="flex flex-[5]">
+      <div className="flex flex-5">
         <div
           className={classNames(
             "mx-auto flex max-w-[1450px] flex-col items-center justify-around px-6",
