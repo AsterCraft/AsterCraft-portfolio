@@ -32,7 +32,7 @@ const SectionHero = () => {
         </div>
       </div>
 
-      <div className="relative flex-[2] md:flex-[1]">
+      <div className="relative flex-[2] md:flex-1">
         <hr className="mt-0 mb-10 text-gray-500" />
 
         <div className="Container flex flex-col justify-between md:flex-row">
