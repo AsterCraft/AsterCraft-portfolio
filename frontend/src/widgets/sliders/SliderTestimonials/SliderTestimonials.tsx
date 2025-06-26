@@ -25,6 +25,7 @@ const SliderTestimonials = () => {
           nextEl: ".swiper-next",
           prevEl: ".swiper-prev",
         }}
+        loop={true}
         onSwiper={(swiper) => {
           // fix refs after mount
 
