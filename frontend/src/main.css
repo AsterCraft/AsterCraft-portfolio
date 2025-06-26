@@ -19,6 +19,6 @@
 
 @layer components {
   .Container {
-    @apply mx-auto max-w-[1450px] px-6;
+    @apply mx-auto max-w-[1450px] px-[6px];
   }
 }
