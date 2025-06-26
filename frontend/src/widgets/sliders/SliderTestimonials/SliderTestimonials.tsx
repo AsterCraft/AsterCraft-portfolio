@@ -1,6 +1,8 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import { useRef } from "react";
+import { FaArrowRight } from "react-icons/fa6";
+import { FaArrowLeft } from "react-icons/fa6";
 
 import BulletBlackSquare from "../../../shared/ui/bullets/BulletBlackSquare/BulletBlackSquare";
 
@@ -14,9 +16,9 @@ const SliderTestimonials = () => {
 
   return (
     <div className="Container my-10">
-      <div className="flex items-center">
+      <div className="mb-7 flex items-center">
         <BulletBlackSquare />
-        <div className="leading-3 uppercase">customer testimonials</div>
+        <div className="leading-4 uppercase">customer testimonials</div>
       </div>
 
       <Swiper
@@ -41,16 +43,17 @@ const SliderTestimonials = () => {
       >
         {dataTestimonials.map((testimonial, index) => (
           <SwiperSlide key={index}>
-            <blockquote>{testimonial.feedback}</blockquote>
+            <blockquote className="mb-5 text-2xl">{`❝ ${testimonial.feedback} ❞`}</blockquote>
 
             {/* image wrapper */}
-            <div>
+            <div className="mt-auto flex items-center gap-4">
               <img
+                className="size-15 rounded-lg"
                 src={testimonial.img}
                 alt={`portrait of ${testimonial.author}`}
               />
               <div>
-                <h2>{testimonial.author}</h2>
+                <h2 className="text-2xl font-medium">{testimonial.author}</h2>
                 <p>{testimonial.role}</p>
               </div>
             </div>
@@ -59,18 +62,18 @@ const SliderTestimonials = () => {
       </Swiper>
 
       {/* navigation buttons */}
-      <div>
+      <div className="mt-5 flex gap-4">
         <button
           ref={prevRef}
-          className="swiper-prev bg-amber-400"
+          className="swiper-prev bg-ac-btn-slider-navigation flex size-13 items-center justify-center rounded-md"
         >
-          {"<--"}
+          <FaArrowLeft className="size-5" />
         </button>
         <button
           ref={nextRef}
-          className="swiper-next bg-amber-400"
+          className="swiper-next bg-ac-btn-slider-navigation flex size-13 items-center justify-center rounded-md"
         >
-          {"-->"}
+          <FaArrowRight className="size-5" />
         </button>
       </div>
     </div>
