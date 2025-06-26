@@ -6,7 +6,7 @@ const BurgerDropdownMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <button className="relative" onClick={() => setIsOpen((prev) => !prev)}>
+    <div className="relative" onClick={() => setIsOpen((prev) => !prev)}>
       <IconBurger isOpen={isOpen} />
 
       {isOpen && (
@@ -17,7 +17,7 @@ const BurgerDropdownMenu = () => {
           <li className="flex justify-start whitespace-nowrap">Contact</li>
         </ul>
       )}
-    </button>
+    </div>
   );
 };
 
