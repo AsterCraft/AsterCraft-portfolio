@@ -4,7 +4,7 @@ import { useRef } from "react";
 
 import BulletBlackSquare from "../../../shared/ui/bullets/BulletBlackSquare/BulletBlackSquare";
 
-import dataTestimonials from "../../../shared/data/dataTestimonials/dataTestimonials";
+import dataTestimonials from "../../../shared/data/dataTestimonials";
 
 import "swiper/css";
 
