@@ -65,13 +65,13 @@ const SliderTestimonials = () => {
       <div className="mt-5 flex gap-4">
         <button
           ref={prevRef}
-          className="swiper-prev bg-ac-btn-slider-navigation flex size-13 items-center justify-center rounded-md"
+          className="swiper-prev bg-ac-btn-slider-navigation flex size-13 cursor-pointer items-center justify-center rounded-md transition-transform duration-10 ease-out active:scale-90"
         >
           <FaArrowLeft className="size-5" />
         </button>
         <button
           ref={nextRef}
-          className="swiper-next bg-ac-btn-slider-navigation flex size-13 items-center justify-center rounded-md"
+          className="swiper-next bg-ac-btn-slider-navigation flex size-13 cursor-pointer items-center justify-center rounded-md transition-transform duration-10 ease-out active:scale-90"
         >
           <FaArrowRight className="size-5" />
         </button>
