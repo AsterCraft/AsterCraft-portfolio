@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import { useAnimate, useInView, stagger } from "motion/react";
 import classNames from "classnames";
 
 import ButtonStartProject from "../../../../shared/ui/buttons/ButtonStartProject";
@@ -6,8 +8,29 @@ import BulletBlackSquare from "../../../../shared/ui/bullets/BulletBlackSquare/B
 import imgWebAgencyAuthor from "../../../../app/img/web_agency_author.avif";
 
 const SectionAboutUs = () => {
+  const [sectionRef, animate] = useAnimate<HTMLElement>();
+  const inView = useInView(sectionRef);
+
+  useEffect(() => {
+    if (inView) {
+      animate(
+        ".section-about-us__text",
+        { opacity: 1, y: 0 },
+        { delay: stagger(0.3), duration: 0.6 }
+      );
+    } else {
+      // Optional: reset when out of view (not required unless reentry is needed)
+      animate(
+        ".section-about-us__text",
+        { opacity: 0, y: 24 },
+        { duration: 0 }
+      );
+    }
+  }, [inView]);
+
   return (
     <section
+      ref={sectionRef}
       className={classNames(
         "Container flex flex-col gap-18 pt-8 pb-16",
         "sm:flex-row"
@@ -42,20 +65,40 @@ const SectionAboutUs = () => {
       <div className="mx-auto flex max-w-160 flex-col">
         <h2
           className={classNames(
-            "mb-6 text-[clamp(1.5rem,5.5vw+0.25rem,1.75rem)] leading-snug",
+            "section-about-us__text",
+            "text-[clamp(1.5rem,5.5vw+0.25rem,1.75rem)] leading-snug",
             "sm:text-[clamp(1.75rem,3.5vw+0.25rem,2.25rem)]",
             "lg:text-[clamp(2.25rem,2.5vw+0.25rem,2.75rem)]"
           )}
         >
           Hi, we’re Aster Craft.
-          <br />A small web studio from Łódź.
+        </h2>
+        <h2
+          className={classNames(
+            "section-about-us__text",
+            "mb-6 text-[clamp(1.5rem,5.5vw+0.25rem,1.75rem)] leading-snug",
+            "sm:text-[clamp(1.75rem,3.5vw+0.25rem,2.25rem)]",
+            "lg:text-[clamp(2.25rem,2.5vw+0.25rem,2.75rem)]"
+          )}
+        >
+          A small web studio from Łódź.
         </h2>
 
-        <p className="text-lg text-zinc-600">
+        <p
+          className={classNames(
+            "section-about-us__text",
+            "text-lg text-zinc-600"
+          )}
+        >
           We design and build modern websites using React, TypeScript, and clean
           code.
         </p>
-        <p className="mb-9 text-lg text-zinc-600">
+        <p
+          className={classNames(
+            "section-about-us__text",
+            "mb-9 text-lg text-zinc-600"
+          )}
+        >
           Every project is fast, focused, and fully tailored to the client —
           from personal sites to full business solutions.
         </p>
