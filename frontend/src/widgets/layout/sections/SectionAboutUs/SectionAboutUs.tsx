@@ -10,7 +10,8 @@ const SectionAboutUs = () => {
     <section
       className={classNames(
         "Container flex flex-col gap-18 pt-8 pb-16",
-        "sm:flex-row sm:gap-[15%]"
+        "sm:flex-row sm:gap-[clamp(1rem,20vw,60rem)]",
+        // needs another lg: breakpoint for gap
       )}
     >
       <div
@@ -28,14 +29,24 @@ const SectionAboutUs = () => {
           src={imgWebAgencyAuthor}
           alt="Aster Craft author"
           // make css clamp() for the image
-          className="w-[clamp(100px,35vw,170px)] rounded-lg"
+          className={classNames(
+            "min-w-15 w-[30vw] max-w-39 rounded-lg", 
+            "sm:min-w-25 sm:w-[15vw]"
+          )}
         />
       </div>
 
-      <div className="flex flex-col">
-        <h2 className="mb-6 text-2xl">Hi, we’re Aster Craft.</h2>
+      {/* container with text */}
+      <div className="flex flex-col max-w-160">
+        <h2 className={classNames(
+          "mb-6 text-[clamp(1.5rem,5.5vw+0.25rem,1.75rem)] leading-snug",
+          "sm:text-[clamp(1.75rem,3.5vw+0.25rem,2.25rem)]",
+          "lg:text-[clamp(2.25rem,2.5vw+0.25rem,2.75rem)]"
+        )}>
+          Hi, we’re Aster Craft.<br/>
+          A small web studio from Łódź.</h2>
+        
         <p className="text-lg text-zinc-600">
-          A small web studio from Łódź. <br />
           We design and build modern websites using React, TypeScript, and clean
           code.
         </p>

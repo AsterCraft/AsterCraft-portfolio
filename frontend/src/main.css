@@ -20,6 +20,6 @@
 
 @layer components {
   .Container {
-    @apply mx-auto max-w-[1450px] px-[15px];
+    @apply mx-auto max-w-[1450px] px-[15px] w-full;
   }
 }
