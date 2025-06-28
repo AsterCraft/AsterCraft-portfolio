@@ -10,8 +10,7 @@ const SectionAboutUs = () => {
     <section
       className={classNames(
         "Container flex flex-col gap-18 pt-8 pb-16",
-        "sm:flex-row sm:gap-[clamp(1rem,20vw,60rem)]",
-        // needs another lg: breakpoint for gap
+        "sm:flex-row",
       )}
     >
       <div
@@ -22,13 +21,15 @@ const SectionAboutUs = () => {
       >
         <div className="flex items-center gap-1">
           <BulletBlackSquare />
-          <h3 className="font-normal uppercase">About Us</h3>
+          <span className="size-2 bg-black"></span>
+          <h3 className="font-normal uppercase text-[clamp(1rem,0.6vw+0.5rem,1.4rem)]">About Us</h3>
         </div>
 
         <img
           src={imgWebAgencyAuthor}
           alt="Aster Craft author"
-          // make css clamp() for the image
+          // simulate css clamp() for the image
+          // clamp() as an arbitrary value doesnt work properly for width with multiple breakpoints
           className={classNames(
             "min-w-15 w-[30vw] max-w-39 rounded-lg", 
             "sm:min-w-25 sm:w-[15vw]"
@@ -37,7 +38,7 @@ const SectionAboutUs = () => {
       </div>
 
       {/* container with text */}
-      <div className="flex flex-col max-w-160">
+      <div className="flex flex-col max-w-160 mx-auto">
         <h2 className={classNames(
           "mb-6 text-[clamp(1.5rem,5.5vw+0.25rem,1.75rem)] leading-snug",
           "sm:text-[clamp(1.75rem,3.5vw+0.25rem,2.25rem)]",
