@@ -9,7 +9,7 @@ import imgWebAgencyAuthor from "../../../../app/img/web_agency_author.avif";
 
 const SectionAboutUs = () => {
   const [sectionRef, animate] = useAnimate<HTMLElement>();
-  const inView = useInView(sectionRef);
+  const inView = useInView(sectionRef, { once: true, amount: 0.6 });
 
   useEffect(() => {
     if (inView) {
@@ -19,7 +19,8 @@ const SectionAboutUs = () => {
         { delay: stagger(0.3), duration: 0.6 }
       );
     } else {
-      // Optional: reset when out of view (not required unless reentry is needed)
+      // set initial element state
+      // from which animation will be played
       animate(
         ".section-about-us__text",
         { opacity: 0, y: 24 },
