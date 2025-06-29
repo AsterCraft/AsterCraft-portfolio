@@ -1,7 +1,7 @@
 import Lottie from "lottie-react";
 import classNames from "classnames";
 
-import ButtonBuy from "../../../../shared/ui/buttons/ButtonBuy/ButtonBuy";
+import ButtonStartProject from "../../../../shared/ui/buttons/ButtonStartProject/ButtonStartProject";
 
 import lottieAnimation from "../../../../shared/assets/video/hero-section-animation.json";
 
@@ -37,10 +37,7 @@ const SectionHero = () => {
 
         <div className="Container flex flex-col justify-between md:flex-row">
           <p>We create websites that leave a strong and lasting impression.</p>
-          <ButtonBuy
-            className="absolute right-10 bottom-10 md:static md:right-auto md:bottom-auto"
-            text={"Start Project"}
-          />
+          <ButtonStartProject className="absolute right-10 bottom-10 md:static md:right-auto md:bottom-auto" />
         </div>
       </div>
     </section>
