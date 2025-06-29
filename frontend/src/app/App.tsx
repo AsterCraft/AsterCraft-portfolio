@@ -7,7 +7,8 @@ function App() {
   return (
     // container
     // <div className="mx-auto max-w-[1450px] px-[10px]">
-    <div>
+    // add bottom padding to test inView animations
+    <div className="pb-200">
       <Header />
       <PageHome />
     </div>

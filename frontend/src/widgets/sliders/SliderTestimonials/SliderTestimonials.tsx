@@ -11,8 +11,8 @@ import dataTestimonials from "../../../shared/data/dataTestimonials";
 import "swiper/css";
 
 const SliderTestimonials = () => {
-  const prevRef = useRef(null);
-  const nextRef = useRef(null);
+  const prevRef = useRef<HTMLButtonElement>(null);
+  const nextRef = useRef<HTMLButtonElement>(null);
 
   return (
     <div className="Container my-10">
@@ -29,12 +29,13 @@ const SliderTestimonials = () => {
         }}
         loop={true}
         onSwiper={(swiper) => {
-          // fix refs after mount
+          const navigation = swiper.params.navigation;
 
-          // @ts-expect-error | because it is from swiper library
-          swiper.params.navigation.prevEl = prevRef.current;
-          // @ts-expect-error | because it is from swiper library
-          swiper.params.navigation.nextEl = nextRef.current;
+          if (navigation && typeof navigation !== "boolean") {
+            navigation.prevEl = prevRef.current;
+            navigation.nextEl = nextRef.current;
+          }
+
           swiper.navigation.init();
           swiper.navigation.update();
         }}
@@ -65,13 +66,13 @@ const SliderTestimonials = () => {
       <div className="mt-5 flex gap-4">
         <button
           ref={prevRef}
-          className="swiper-prev bg-ac-btn-slider-navigation flex size-13 cursor-pointer items-center justify-center rounded-md transition-transform duration-10 ease-out active:scale-90"
+          className="swiper-prev bg-ac-btn-action flex size-13 cursor-pointer items-center justify-center rounded-md transition-transform duration-10 ease-out active:scale-90"
         >
           <FaArrowLeft className="size-5" />
         </button>
         <button
           ref={nextRef}
-          className="swiper-next bg-ac-btn-slider-navigation flex size-13 cursor-pointer items-center justify-center rounded-md transition-transform duration-10 ease-out active:scale-90"
+          className="swiper-next bg-ac-btn-action flex size-13 cursor-pointer items-center justify-center rounded-md transition-transform duration-10 ease-out active:scale-90"
         >
           <FaArrowRight className="size-5" />
         </button>

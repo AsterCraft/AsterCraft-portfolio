@@ -13,13 +13,13 @@
   * --ac - for custom css variables (aster craft)
   * token - eg: btn-action
   */
-  --color-ac-btn-action: #f6f6f6;
+  --color-ac-btn-action: oklch(92% 0.004 286.32);
   --color-ac-section-divider: #d0d0d0;
   --color-ac-btn-slider-navigation: #cccfcf;
 }
 
 @layer components {
   .Container {
-    @apply mx-auto max-w-[1450px] px-[15px];
+    @apply mx-auto max-w-[1450px] px-[15px] w-full;
   }
 }
