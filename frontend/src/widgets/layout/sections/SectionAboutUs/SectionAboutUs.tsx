@@ -9,14 +9,18 @@ import imgWebAgencyAuthor from "../../../../app/img/web_agency_author.avif";
 
 const SectionAboutUs = () => {
   const [sectionRef, animate] = useAnimate<HTMLElement>();
-  const inView = useInView(sectionRef, { once: true, amount: 0.6 });
+  const inView: boolean = useInView(sectionRef, { once: true, amount: 0.6 });
 
   useEffect(() => {
+    setTextAnimation(inView);
+  }, [inView]);
+
+  const setTextAnimation = (inView: boolean) => {
     if (inView) {
       animate(
         ".section-about-us__text",
         { opacity: 1, y: 0 },
-        { delay: stagger(0.3), duration: 0.6 }
+        { delay: stagger(0.2), duration: 0.6 }
       );
     } else {
       // set initial element state
@@ -27,7 +31,7 @@ const SectionAboutUs = () => {
         { duration: 0 }
       );
     }
-  }, [inView]);
+  };
 
   return (
     <section
