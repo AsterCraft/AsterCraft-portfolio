@@ -1,4 +1,4 @@
-import SectionAboutUs from "../../widgets/layout/sections/SectionAboutUs/SectionAboutUs";
+import SectionAboutUs from "../../widgets/sections/SectionAboutUs/SectionAboutUs";
 import SectionHero from "./SectionHero/SectionHero";
 import DividerBetweenSections from "../../shared/ui/lines/DividerBetweenSections";
 import SectionProjects from "../../widgets/sections/SectionProjects/SectionProjects";
