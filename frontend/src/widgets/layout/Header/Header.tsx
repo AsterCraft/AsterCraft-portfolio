@@ -17,27 +17,30 @@ const Header = () => {
         {/* black header */}
         <div
           className={classNames(
-            "flex items-center justify-between rounded-md bg-[#0b0d0d] px-2 py-2 text-white",
+            "rounded-md bg-[#0b0d0d] px-2 py-2 text-white",
             "lg:px-3 lg:py-0",
             "2xl:rounded-none"
           )}
         >
-          <ButtonBuy text={"Get Your Website"} />
+          {/* container */}
+          <div className="Container flex items-center justify-between px-8">
+            <ButtonBuy text={"Get Your Website"} />
 
-          <button className="text-4xl lg:text-6xl">A.C.</button>
+            <button className="text-4xl lg:text-6xl">A.C.</button>
 
-          <div className="sm:hidden">
-            <BurgerDropdownMenu />
+            <div className="sm:hidden">
+              <BurgerDropdownMenu />
+            </div>
+
+            <nav className="hidden sm:block">
+              <ul className="flex gap-4">
+                <li>About me</li>
+                <li>Projects</li>
+                <li>Services</li>
+                <li>Contact</li>
+              </ul>
+            </nav>
           </div>
-
-          <nav className="hidden sm:block">
-            <ul className="flex gap-4">
-              <li>About me</li>
-              <li>Projects</li>
-              <li>Services</li>
-              <li>Contact</li>
-            </ul>
-          </nav>
         </div>
       </div>
     </header>

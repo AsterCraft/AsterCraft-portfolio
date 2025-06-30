@@ -3,6 +3,7 @@ import { Navigation } from "swiper/modules";
 import { useRef } from "react";
 import { FaArrowRight } from "react-icons/fa6";
 import { FaArrowLeft } from "react-icons/fa6";
+import classNames from "classnames";
 
 import BulletBlackSquare from "../../../shared/ui/bullets/BulletBlackSquare/BulletBlackSquare";
 
@@ -21,61 +22,70 @@ const SliderTestimonials = () => {
         <div className="leading-4 uppercase">customer testimonials</div>
       </div>
 
-      <Swiper
-        modules={[Navigation]}
-        navigation={{
-          nextEl: ".swiper-next",
-          prevEl: ".swiper-prev",
-        }}
-        loop={true}
-        onSwiper={(swiper) => {
-          const navigation = swiper.params.navigation;
-
-          if (navigation && typeof navigation !== "boolean") {
-            navigation.prevEl = prevRef.current;
-            navigation.nextEl = nextRef.current;
-          }
-
-          swiper.navigation.init();
-          swiper.navigation.update();
-        }}
-        spaceBetween={40}
-        slidesPerView={1}
+      {/* Swiper and navigation buttons */}
+      <div
+        className={classNames(
+          "flex flex-col",
+          "lg:flex-row lg:justify-between"
+        )}
       >
-        {dataTestimonials.map((testimonial, index) => (
-          <SwiperSlide key={index}>
-            <blockquote className="mb-5 text-2xl">{`❝ ${testimonial.feedback} ❞`}</blockquote>
+        <Swiper
+          className="!mr-0 !ml-0 w-full max-w-[1200px]"
+          modules={[Navigation]}
+          navigation={{
+            nextEl: ".swiper-next",
+            prevEl: ".swiper-prev",
+          }}
+          loop={true}
+          onSwiper={(swiper) => {
+            const navigation = swiper.params.navigation;
 
-            {/* image wrapper */}
-            <div className="mt-auto flex items-center gap-4">
-              <img
-                className="size-15 rounded-lg"
-                src={testimonial.img}
-                alt={`portrait of ${testimonial.author}`}
-              />
-              <div>
-                <h2 className="text-2xl font-medium">{testimonial.author}</h2>
-                <p>{testimonial.role}</p>
+            if (navigation && typeof navigation !== "boolean") {
+              navigation.prevEl = prevRef.current;
+              navigation.nextEl = nextRef.current;
+            }
+
+            swiper.navigation.init();
+            swiper.navigation.update();
+          }}
+          spaceBetween={40}
+          slidesPerView={1}
+        >
+          {dataTestimonials.map((testimonial, index) => (
+            <SwiperSlide key={index}>
+              <blockquote className="mb-5 text-2xl">{`❝ ${testimonial.feedback} ❞`}</blockquote>
+
+              {/* image wrapper */}
+              <div className="mt-auto flex items-center gap-4">
+                <img
+                  className="size-15 rounded-lg"
+                  src={testimonial.img}
+                  alt={`portrait of ${testimonial.author}`}
+                />
+                <div>
+                  <h2 className="text-2xl font-medium">{testimonial.author}</h2>
+                  <p>{testimonial.role}</p>
+                </div>
               </div>
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+            </SwiperSlide>
+          ))}
+        </Swiper>
 
-      {/* navigation buttons */}
-      <div className="mt-5 flex gap-4">
-        <button
-          ref={prevRef}
-          className="swiper-prev bg-ac-btn-action flex size-13 cursor-pointer items-center justify-center rounded-md transition-transform duration-10 ease-out active:scale-90"
-        >
-          <FaArrowLeft className="size-5" />
-        </button>
-        <button
-          ref={nextRef}
-          className="swiper-next bg-ac-btn-action flex size-13 cursor-pointer items-center justify-center rounded-md transition-transform duration-10 ease-out active:scale-90"
-        >
-          <FaArrowRight className="size-5" />
-        </button>
+        {/* navigation buttons */}
+        <div className="mt-5 flex gap-4">
+          <button
+            ref={prevRef}
+            className="swiper-prev bg-ac-btn-action flex size-13 cursor-pointer items-center justify-center rounded-md transition-transform duration-10 ease-out active:scale-90"
+          >
+            <FaArrowLeft className="size-5" />
+          </button>
+          <button
+            ref={nextRef}
+            className="swiper-next bg-ac-btn-action flex size-13 cursor-pointer items-center justify-center rounded-md transition-transform duration-10 ease-out active:scale-90"
+          >
+            <FaArrowRight className="size-5" />
+          </button>
+        </div>
       </div>
     </div>
   );

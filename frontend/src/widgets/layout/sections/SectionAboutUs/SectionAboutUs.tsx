@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useAnimate, useInView, stagger } from "motion/react";
 import classNames from "classnames";
 
-import ButtonStartProject from "../../../../shared/ui/buttons/ButtonStartProject";
+import ButtonStartProject from "../../../../shared/ui/buttons/ButtonStartProject/ButtonStartProject";
 import BulletBlackSquare from "../../../../shared/ui/bullets/BulletBlackSquare/BulletBlackSquare";
 
 import imgWebAgencyAuthor from "../../../../app/img/web_agency_author.avif";

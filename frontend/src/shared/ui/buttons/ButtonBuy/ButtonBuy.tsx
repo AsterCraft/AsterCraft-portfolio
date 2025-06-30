@@ -3,12 +3,10 @@ type Props = {
   className?: string;
 };
 
-// blue color: bg-[#00bcd4];
-
 const ButtonBuy = ({ text, className }: Props) => {
   return (
     <div className={className}>
-      <button className="w-fit rounded bg-[#cfd1d1] px-2 py-1 font-medium text-black">
+      <button className="bg-ac-btn-action inline-block w-fit cursor-pointer rounded-md px-2 py-1 text-lg whitespace-nowrap text-black">
         {text}
       </button>
     </div>
