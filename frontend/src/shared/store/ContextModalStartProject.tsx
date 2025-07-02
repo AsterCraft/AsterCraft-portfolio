@@ -1,11 +1,11 @@
 import { createContext, useState, type ReactNode } from "react";
 import type { ModalContext } from "../types";
 
-const ModalStartProjectContext = createContext<ModalContext | undefined>(
+const ContextModalStartProject = createContext<ModalContext | undefined>(
   undefined
 );
 
-export const ModalStartProjectProvider = ({
+export const ProviderModalStartProject = ({
   children,
 }: {
   children: ReactNode;
@@ -18,10 +18,10 @@ export const ModalStartProjectProvider = ({
   };
 
   return (
-    <ModalStartProjectContext.Provider value={ctxValue}>
+    <ContextModalStartProject.Provider value={ctxValue}>
       {children}
-    </ModalStartProjectContext.Provider>
+    </ContextModalStartProject.Provider>
   );
 };
 
-export default ModalStartProjectContext;
+export default ContextModalStartProject;
