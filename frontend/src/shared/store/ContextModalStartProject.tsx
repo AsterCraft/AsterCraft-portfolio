@@ -1,9 +1,10 @@
 import { createContext, useState, type ReactNode } from "react";
 import type { ModalContext } from "../types";
 
-const ContextModalStartProject = createContext<ModalContext | undefined>(
-  undefined
-);
+const ContextModalStartProject = createContext<ModalContext>({
+  isOpen: false,
+  setIsOpen: () => false,
+});
 
 export const ProviderModalStartProject = ({
   children,

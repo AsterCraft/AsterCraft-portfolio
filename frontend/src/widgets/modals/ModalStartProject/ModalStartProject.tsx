@@ -1,10 +1,10 @@
 import classNames from "classnames";
+import { useContext } from "react";
+import ContextModalStartProject from "../../../shared/store/ContextModalStartProject";
 
-type ModalStartProjectProps = {
-  isOpen: boolean;
-};
+const ModalStartProject = () => {
+  const { isOpen, setIsOpen } = useContext(ContextModalStartProject);
 
-const ModalStartProject = ({ isOpen }: ModalStartProjectProps) => {
   return (
     <>
       {isOpen && (
