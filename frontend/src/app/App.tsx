@@ -3,6 +3,7 @@ import Header from "../widgets/layout/Header/Header";
 import PageHome from "../pages/PageHome/PageHome";
 
 import "./App.css";
+import ModalStartProject from "../widgets/modals/ModalStartProject/ModalStartProject";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Header />
         <PageHome />
       </div>
+      <ModalStartProject />
     </ProviderModalStartProject>
   );
 }
