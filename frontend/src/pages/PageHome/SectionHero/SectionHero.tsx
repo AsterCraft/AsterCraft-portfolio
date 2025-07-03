@@ -1,9 +1,11 @@
 import Lottie from "lottie-react";
 import classNames from "classnames";
 
-import ButtonStartProject from "../../../../shared/ui/buttons/ButtonStartProject/ButtonStartProject";
+import ButtonStartProject from "../../../shared/ui/buttons/ButtonStartProject/ButtonStartProject";
+import LightDivider from "../../../shared/ui/lines/LightDivider/LightDivider";
+import HeroTitle from "./HeroTitle/HeroTitle";
 
-import lottieAnimation from "../../../../shared/assets/video/hero-section-animation.json";
+import lottieAnimation from "../../../shared/assets/video/hero-section-animation.json";
 
 const SectionHero = () => {
   return (
@@ -17,10 +19,7 @@ const SectionHero = () => {
             "xl:gap-50"
           )}
         >
-          <div className="w-fit text-8xl sm:text-8xl lg:text-[10rem]">
-            <h1>Aster</h1>
-            <h2 className="pl-10 lg:pl-30">Craft</h2>
-          </div>
+          <HeroTitle />
 
           <div className="max-h-[600px] max-w-[600px]">
             <Lottie
@@ -33,7 +32,7 @@ const SectionHero = () => {
       </div>
 
       <div className="relative flex-[2] md:flex-1">
-        <hr className="mt-0 mb-10 text-gray-500" />
+        <LightDivider />
 
         <div className="Container flex flex-col justify-between md:flex-row">
           <p>We create websites that leave a strong and lasting impression.</p>
