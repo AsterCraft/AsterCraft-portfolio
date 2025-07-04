@@ -2,7 +2,7 @@ import classNames from "classnames";
 import { motion } from "motion/react";
 
 type LightDividerProps = {
-  className: string;
+  className?: string;
 };
 
 const LightDivider = ({ className }: LightDividerProps) => {

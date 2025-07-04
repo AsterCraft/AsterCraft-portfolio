@@ -1,7 +1,7 @@
 import classNames from "classnames";
 
 type DividerBetweenSectionsProps = {
-  className: string;
+  className?: string;
 };
 
 const DividerBetweenSections = ({ className }: DividerBetweenSectionsProps) => {
