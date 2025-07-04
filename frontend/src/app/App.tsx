@@ -1,5 +1,6 @@
 import Header from "../widgets/layout/Header/Header";
 import PageHome from "../pages/PageHome/PageHome";
+import Footer from "../widgets/layout/Footer/Footer";
 
 import "./App.css";
 
@@ -11,6 +12,7 @@ function App() {
     <div className="pb-200">
       <Header />
       <PageHome />
+      <Footer />
     </div>
   );
 }
