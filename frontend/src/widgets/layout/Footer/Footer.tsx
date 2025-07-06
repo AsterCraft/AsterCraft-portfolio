@@ -2,6 +2,7 @@ import classNames from "classnames";
 
 import ButtonStartProject from "../../../shared/ui/buttons/ButtonStartProject/ButtonStartProject";
 import DividerBetweenSections from "../../../shared/ui/lines/DividerBetweenSections";
+import AnimatedBrandName from "./ui/AnimatedBrandName/AnimatedBrandName";
 
 const Footer = () => {
   return (
@@ -21,24 +22,40 @@ const Footer = () => {
 
       <DividerBetweenSections className="mt-10 mb-10" />
 
-      <section>
-        <div>
-          <p className="text-zinc-600">phone</p>
-          <a href="tel:+48790839872">+48 790 839 872</a>
+      <section
+        className={classNames(
+          "flex flex-col gap-10 text-xl",
+          "md:flex-row md:justify-between md:text-2xl"
+        )}
+      >
+        <div
+          className={classNames(
+            "flex flex-col gap-10 text-xl",
+            "md:flex-row md:justify-between md:gap-15 md:text-2xl"
+          )}
+        >
+          <div>
+            <p className="mb-1 text-zinc-600">phone</p>
+            <a href="tel:+48790839872 ">+48 790 839 872</a>
+          </div>
+
+          <div>
+            <p className="mb-1 text-zinc-600">e-mail</p>
+            <a href="mailto:astercraft.dev@gmail.com">
+              astercraft.dev@gmail.com
+            </a>
+          </div>
         </div>
+
         <div>
-          <p className="text-zinc-600">e-mail</p>
-          <a href="mailto:astercraft.dev@gmail.com">astercraft.dev@gmail.com</a>
-        </div>
-        <div>
-          <p className="text-zinc-600">© 2025</p>
+          <p className="mb-1 text-zinc-600">© 2025</p>
 
           {/* to do: <Link /> to page DataProtection */}
           <div>Data protection</div>
         </div>
       </section>
 
-      <h2>ASTERCRAFT</h2>
+      <AnimatedBrandName />
     </footer>
   );
 };
