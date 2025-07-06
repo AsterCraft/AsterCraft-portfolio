@@ -13,6 +13,7 @@ const PageHome = () => {
       <SectionProjects />
       <DividerBetweenSections />
       <SliderTestimonials />
+      <DividerBetweenSections />
     </main>
   );
 };
