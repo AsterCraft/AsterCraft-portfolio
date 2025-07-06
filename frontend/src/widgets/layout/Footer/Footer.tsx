@@ -2,6 +2,7 @@ import classNames from "classnames";
 
 import ButtonStartProject from "../../../shared/ui/buttons/ButtonStartProject/ButtonStartProject";
 import DividerBetweenSections from "../../../shared/ui/lines/DividerBetweenSections";
+import ContactItem from "./ui/ContactItem/ContactItem";
 import AnimatedBrandName from "./ui/AnimatedBrandName/AnimatedBrandName";
 
 const Footer = () => {
@@ -34,24 +35,24 @@ const Footer = () => {
             "md:flex-row md:justify-between md:gap-15 md:text-2xl"
           )}
         >
-          <div>
-            <p className="mb-1 text-zinc-600">phone</p>
-            <a href="tel:+48790839872 ">+48 790 839 872</a>
-          </div>
+          <ContactItem
+            label="phone"
+            value="+48 790 839 872"
+            link="tel:+48790839872"
+          />
 
-          <div>
-            <p className="mb-1 text-zinc-600">e-mail</p>
-            <a href="mailto:astercraft.dev@gmail.com">
-              astercraft.dev@gmail.com
-            </a>
-          </div>
+          <ContactItem
+            label="e-mail"
+            value="astercraft.dev@gmail.com"
+            link="mailto:astercraft.dev@gmail.com"
+          />
         </div>
 
         <div>
           <p className="mb-1 text-zinc-600">© 2025</p>
 
           {/* to do: <Link /> to page DataProtection */}
-          <div>Data protection</div>
+          <div className="cursor-pointer">Data protection</div>
         </div>
       </section>
 
