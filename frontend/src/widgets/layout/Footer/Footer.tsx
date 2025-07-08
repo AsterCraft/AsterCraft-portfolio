@@ -1,7 +1,7 @@
 import classNames from "classnames";
 
 import ButtonStartProject from "../../../shared/ui/buttons/ButtonStartProject/ButtonStartProject";
-import DividerBetweenSections from "../../../shared/ui/lines/DividerBetweenSections";
+import DividerBetweenSections from "../../../shared/ui/lines/DividerBetweenSections/DividerBetweenSections";
 import ContactItem from "./ui/ContactItem/ContactItem";
 import AnimatedBrandName from "./ui/AnimatedBrandName/AnimatedBrandName";
 

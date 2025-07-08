@@ -5,7 +5,8 @@ import classNames from "classnames";
 import ButtonStartProject from "../../../shared/ui/buttons/ButtonStartProject/ButtonStartProject";
 import BulletBlackSquare from "../../../shared/ui/bullets/BulletBlackSquare/BulletBlackSquare";
 
-import imgWebAgencyAuthor from "../../../shared/assets/img/web_agency_author.avif";
+// import imgWebAgencyAuthor from "../../../shared/assets/img/web_agency_author.avif";
+import imgLogo from "../../../../public/img/logo/image.png";
 
 const SectionAboutUs = () => {
   const [sectionRef, animate] = useAnimate<HTMLElement>();
@@ -55,7 +56,7 @@ const SectionAboutUs = () => {
         </div>
 
         <img
-          src={imgWebAgencyAuthor}
+          src={imgLogo}
           alt="Aster Craft author"
           // simulate css clamp() for the image
           // clamp() as an arbitrary value doesnt work properly for width with multiple breakpoints
