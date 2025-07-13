@@ -32,11 +32,18 @@ const ModalStartProject = () => {
               </button>
             </div>
 
-            <header>
-              <h2>Start a project</h2>
-              <p>
+            <header className="mb-16">
+              <h2 className={classNames("mb-4 text-2xl")}>Start a project</h2>
+              <p className="text-ac-paragraph-light text-xl">
                 Tell me a bit about your project! Just fill out the form or drop
-                me an [email] — I’ll get back to you as soon as possible.
+                me an{" "}
+                <a
+                  href="#"
+                  className="text-ac-link-email underline"
+                >
+                  E-Mail
+                </a>{" "}
+                — I’ll get back to you as soon as possible.
               </p>
             </header>
 
