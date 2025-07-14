@@ -45,8 +45,8 @@ const WriteUsPopup = () => {
     try {
       const API_URL =
         window.location.hostname === "localhost"
-          ? "http://localhost:3000/api/send-email"
-          : "https://back-gules-pi.vercel.app/api/send-email";
+          ? "http://localhost:9999/api/send-email"
+          : "https://backend-aster-craft.vercel.app/api/send-email";
 
       const response = await axios.post(API_URL, formData, {
         headers: {
