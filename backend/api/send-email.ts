@@ -1,11 +1,20 @@
-// import type { IncomingMessage, ServerResponse } from "http";
 import { VercelRequest, VercelResponse } from "@vercel/node";
-
 import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
+  // ✅ Додаємо CORS-заголовки
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+
+  // ✅ Обробка preflight (браузерний запит перед POST)
+  if (req.method === "OPTIONS") {
+    return res.status(200).end();
+  }
+
+  // 👉 Основна логіка
   if (req.method !== "POST") {
     return res.status(405).json({ message: "Method Not Allowed" });
   }
@@ -18,7 +27,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   try {
     const result = await resend.emails.send({
-      from: "Website <onboarding@resend.dev>", // Можеш змінити на свою верифіковану адресу
+      from: "Website Form <onboarding@resend.dev>",
       to: ["astercraft.dev@gmail.com"],
       subject: "New message from website",
       html: `
