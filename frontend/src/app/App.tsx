@@ -1,6 +1,7 @@
 import Header from "../widgets/layout/Header/Header";
 import PageHome from "../pages/PageHome/PageHome";
 import Footer from "../widgets/layout/Footer/Footer";
+import WriteUsPopup from "../widgets/modals/write-us-popup/write-us-popup";
 
 import "./App.css";
 
@@ -14,8 +15,10 @@ function App() {
       <Header />
       <PageHome />
       <Footer />
+      {/*  </div> */}
+      // modal windows
+      <WriteUsPopup />
     </>
-    // </div>
   );
 }
 
