@@ -5,10 +5,15 @@ import ContextModalStartProject from "../../../shared/store/ContextModalStartPro
 const ModalStartProject = () => {
   const { isOpen, setIsOpen } = useContext(ContextModalStartProject);
 
+  const textAreaStyles = classNames(
+    "flex h-[24vw] max-h-48 min-h-36 justify-start align-top outline-none",
+    "lg:h-[12vw]"
+  );
+
   return (
     <>
       {isOpen && (
-        <div className={classNames("fixed inset-0 z-[1111]")}>
+        <div className={classNames("fixed inset-0 z-[1111] overflow-scroll")}>
           <div
             className={classNames(
               "hidden",
@@ -23,7 +28,7 @@ const ModalStartProject = () => {
               "lg:w-1/2"
             )}
           >
-            <div className="mb-8 flex justify-end">
+            <div className="mt-6 mb-12 flex justify-end">
               <button
                 onClick={() => setIsOpen(false)}
                 className="text-xl"
@@ -33,8 +38,20 @@ const ModalStartProject = () => {
             </div>
 
             <header className="mb-16">
-              <h2 className={classNames("mb-4 text-2xl")}>Start a project</h2>
-              <p className="text-ac-paragraph-light text-xl">
+              <h2
+                className={classNames(
+                  "mb-4 text-[clamp(1.6rem,3.2vw+0.4rem,2rem)]",
+                  "lg:text-[clamp(1.6rem,2vw+0.4rem,2.3rem)]"
+                )}
+              >
+                Start a project
+              </h2>
+              <p
+                className={classNames(
+                  "text-ac-paragraph-light text-[clamp(1.2rem,1.9vw+0.4rem,1.4rem)]",
+                  "lg:text-[clamp(1.3rem,1vw+0.4rem,1.4rem)]"
+                )}
+              >
                 Tell me a bit about your project! Just fill out the form or drop
                 me an{" "}
                 <a
@@ -153,7 +170,7 @@ const ModalStartProject = () => {
                   <textarea
                     name="Project_Details"
                     id="Project-Details"
-                    className="flex h-40 justify-start align-top outline-none"
+                    className={textAreaStyles}
                     placeholder="Describe your project"
                   ></textarea>
                 </div>
@@ -173,7 +190,7 @@ const ModalStartProject = () => {
                   <textarea
                     name="Message"
                     id="Message"
-                    className="flex h-40 justify-start align-top outline-none"
+                    className={textAreaStyles}
                     placeholder="Any additional notes?"
                   ></textarea>
                 </div>
