@@ -4,5 +4,9 @@
   "type": "module",
   "dependencies": {
     "resend": "^4.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.13",
+    "@vercel/node": "^2.3.0"
   }
 }
