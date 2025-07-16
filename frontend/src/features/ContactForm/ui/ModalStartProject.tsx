@@ -1,5 +1,6 @@
 import classNames from "classnames";
 import { motion, AnimatePresence } from "motion/react";
+import { useContext } from "react";
 
 import FirstNameField from "./FirstNameField";
 import LastNameField from "./LastNameField";
@@ -50,12 +51,13 @@ const ModalStartProject = () => {
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
-              transition={{ duration: 1.2, type: "spring", bounce: 0.1 }}
+              transition={{ duration: 1.3, type: "spring", bounce: 0 }}
               className={classNames(
                 "fixed inset-y-0 right-0 w-full bg-white p-6",
                 "lg:w-1/2"
               )}
             >
+              {/* div for animating the fading* in/out of the modal window content */}
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{
