@@ -5,7 +5,7 @@ import type { ModalStartProjecStore } from "./types";
 export const useModalStartProjectStore = create<ModalStartProjecStore>(
   (set) => ({
     firstName: "",
-    // lastName: "",
+    lastName: "",
     // email: "",
     // phone: "",
     // message: "",
@@ -14,6 +14,11 @@ export const useModalStartProjectStore = create<ModalStartProjecStore>(
     setFirstName: (firstNameValue) =>
       set({
         firstName: firstNameValue,
+      }),
+
+    setLastName: (lastNameValue) =>
+      set({
+        lastName: lastNameValue,
       }),
   })
 );

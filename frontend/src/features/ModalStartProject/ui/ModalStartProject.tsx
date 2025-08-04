@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { useContext, useEffect, useRef } from "react";
 
 import FirstNameField from "./FirstNameField";
+import LastNameField from "./LastNameField";
 
 import ContextModalStartProject from "../../../shared/store/ContextModalStartProject";
 import { useModalStartProjectStore } from "../model/store";
@@ -15,7 +16,8 @@ const ModalStartProject = () => {
     "lg:h-[12vw]"
   );
 
-  const { firstName, setFirstName } = useModalStartProjectStore();
+  const { firstName, setFirstName, lastName, setLastName } =
+    useModalStartProjectStore();
 
   console.log(firstName);
 
@@ -151,12 +153,8 @@ const ModalStartProject = () => {
                       >
                         Last Name
                       </label>
-                      <input
-                        type="text"
-                        id="last-name"
-                        placeholder="Mokriakov"
-                        className="h-9 outline-none"
-                      />
+
+                      <LastNameField />
                     </div>
 
                     <div
