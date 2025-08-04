@@ -5,6 +5,7 @@ import { useContext, useEffect, useRef } from "react";
 import FirstNameField from "./FirstNameField";
 import LastNameField from "./LastNameField";
 import EmailField from "./EmailField";
+import PhoneField from "./PhoneField";
 
 import ContextModalStartProject from "../../../shared/store/ContextModalStartProject";
 import { useModalStartProjectStore } from "../model/store";
@@ -185,12 +186,7 @@ const ModalStartProject = () => {
                       >
                         Phone
                       </label>
-                      <input
-                        type="text"
-                        id="phone"
-                        placeholder="+48790833877"
-                        className="h-9 outline-none"
-                      />
+                      <PhoneField />
                     </div>
                   </div>
 
