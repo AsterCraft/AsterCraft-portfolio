@@ -7,6 +7,7 @@ type ButtonStartProjectProps = {
 };
 
 const ButtonStartProject = ({ className, text }: ButtonStartProjectProps) => {
+
   const { setIsOpen } = useContext(ContextModalStartProject);
 
   return (
