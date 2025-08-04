@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { useContext, useEffect, useRef } from "react";
 
 import ContextModalStartProject from "../../../shared/store/ContextModalStartProject";
+import { useModalStartProjectStore } from "../model/store";
 
 const ModalStartProject = () => {
   const { isOpen, setIsOpen } = useContext(ContextModalStartProject);
@@ -11,6 +12,8 @@ const ModalStartProject = () => {
     "flex h-[24vw] max-h-48 min-h-36 justify-start align-top outline-none",
     "lg:h-[12vw]"
   );
+
+  const { firstName, setFirstName } = useModalStartProjectStore();
 
   return (
     <>
@@ -119,7 +122,7 @@ const ModalStartProject = () => {
                     {/* each div inside <form> row is a wrapper for <label> + <input> */}
                     <div
                       className={classNames(
-                        "modal-start-project__field-wrapper",
+                        "modal-start-project__field-wrapper", // for animation
                         "bg-ac-input-start-projec flex flex-col rounded-md px-5 pt-4 pb-3"
                       )}
                     >
