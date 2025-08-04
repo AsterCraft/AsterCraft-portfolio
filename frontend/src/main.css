@@ -14,8 +14,11 @@
   * token - eg: btn-action
   */
   --color-ac-btn-action: oklch(92% 0.004 286.32);
+  --color-ac-input-start-projec: #f6f6f6;
   --color-ac-section-divider: #d0d0d0;
   --color-ac-btn-slider-navigation: #cccfcf;
+  --color-ac-paragraph-light: #8a8a8a;
+  --color-ac-link-email: #1a1a1a;
 }
 
 @layer components {

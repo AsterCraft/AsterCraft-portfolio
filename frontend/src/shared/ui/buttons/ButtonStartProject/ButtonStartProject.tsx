@@ -1,5 +1,5 @@
-import classNames from "classnames";
-import { useWriteUsModal } from "../../../../widgets/modals/write-us-popup/store/useWriteUsModal";
+import { useContext } from "react";
+import ContextModalStartProject from "../../../store/ContextModalStartProject";
 
 type ButtonStartProjectProps = {
   className?: string;
@@ -7,18 +7,18 @@ type ButtonStartProjectProps = {
 };
 
 const ButtonStartProject = ({ className, text }: ButtonStartProjectProps) => {
-  const { open } = useWriteUsModal();
+
+  const { setIsOpen } = useContext(ContextModalStartProject);
 
   return (
-    <button
-      className={classNames(
-        "bg-ac-btn-action inline-block w-fit cursor-pointer rounded-md px-8 py-4 text-lg whitespace-nowrap text-black",
-        className
-      )}
-      onClick={open}
-    >
-      {text || "Start a project"}
-    </button>
+    <div className={className}>
+      <button
+        onClick={() => setIsOpen(true)}
+        className="bg-ac-btn-action inline-block w-fit cursor-pointer rounded-md px-8 py-4 text-lg whitespace-nowrap text-black"
+      >
+        {text || "Start a project"}
+      </button>
+    </div>
   );
 };
 
