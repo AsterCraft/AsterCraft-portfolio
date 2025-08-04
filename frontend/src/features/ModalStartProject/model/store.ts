@@ -8,7 +8,7 @@ export const useModalStartProjectStore = create<ModalStartProjecStore>(
     lastName: "",
     email: "",
     phone: "",
-    // message: "",
+    message: "",
     // additionalMessage: "",
 
     setFirstName: (firstNameValue) =>
@@ -29,6 +29,11 @@ export const useModalStartProjectStore = create<ModalStartProjecStore>(
     setPhone: (phoneValue) =>
       set({
         phone: phoneValue,
+      }),
+
+    setMessage: (messageValue) =>
+      set({
+        message: messageValue,
       }),
   })
 );
