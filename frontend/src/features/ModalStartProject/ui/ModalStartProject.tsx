@@ -2,6 +2,8 @@ import classNames from "classnames";
 import { motion, AnimatePresence } from "motion/react";
 import { useContext, useEffect, useRef } from "react";
 
+import FirstNameField from "./FirstNameField";
+
 import ContextModalStartProject from "../../../shared/store/ContextModalStartProject";
 import { useModalStartProjectStore } from "../model/store";
 
@@ -14,6 +16,8 @@ const ModalStartProject = () => {
   );
 
   const { firstName, setFirstName } = useModalStartProjectStore();
+
+  console.log(firstName);
 
   return (
     <>
@@ -132,12 +136,7 @@ const ModalStartProject = () => {
                       >
                         First Name
                       </label>
-                      <input
-                        type="text"
-                        id="first-name"
-                        placeholder="Maksym"
-                        className="h-9 outline-none"
-                      />
+                      <FirstNameField />
                     </div>
 
                     <div
