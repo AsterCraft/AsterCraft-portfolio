@@ -13,11 +13,11 @@ function App() {
     // <div className="mx-auto max-w-[1450px] px-[10px]">
     // add bottom padding to test inView animations
     <ProviderModalStartProject>
-       <div className="pb-200">
-        <Header />
-        <PageHome />
-        <Footer />
-      </div>
+      {/* <div className="pb-200"> */}
+      <Header />
+      <PageHome />
+      <Footer />
+      {/* </div> */}
       <ModalStartProject />
     </ProviderModalStartProject>
   );
