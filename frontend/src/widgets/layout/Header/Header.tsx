@@ -36,7 +36,7 @@ const Header = () => {
 
             <div className="sm:hidden">
               <IconBurger />
-              <BurgerDropdownMenu />
+              {/* <BurgerDropdownMenu /> */}
             </div>
 
             <nav className="hidden sm:block">
