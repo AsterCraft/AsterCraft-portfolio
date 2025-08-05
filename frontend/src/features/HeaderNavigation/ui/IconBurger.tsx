@@ -6,7 +6,7 @@ import { useHeaderModalStore } from "../model/store";
 import { burgerLineStyle } from "../lib/styles";
 
 const IconBurger = () => {
-  const { isOpen } = useHeaderModalStore();
+  const { isOpen, toggle } = useHeaderModalStore();
 
   const top = useRef<HTMLSpanElement>(null);
   const middle = useRef<HTMLSpanElement>(null);
@@ -18,18 +18,21 @@ const IconBurger = () => {
     if (isOpen) {
       // animate to X
       animate(top.current, { rotate: 45, y: 12 });
-      animate(middle.current, { opacity: 0 });
+      animate(middle.current, { opacity: 0, width: 0 });
       animate(bottom.current, { rotate: -45, y: -8 });
     } else {
       // Animate back to burger
       animate(top.current, { rotate: 0, y: 0 });
-      animate(middle.current, { opacity: 1 });
+      animate(middle.current, { opacity: 1, width: "100%" });
       animate(bottom.current, { rotate: 0, y: 0 });
     }
   }, [isOpen]);
 
   return (
-    <button className="relative left-[-10px] flex h-6 w-8 justify-center">
+    <button
+      onClick={toggle}
+      className="relative left-[-10px] flex h-6 w-8 justify-center sm:hidden"
+    >
       <span
         ref={top}
         className={burgerLineStyle}

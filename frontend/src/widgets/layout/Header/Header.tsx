@@ -2,6 +2,7 @@ import cn from "classnames";
 
 import ButtonBuy from "../../../shared/ui/buttons/ButtonBuy/ButtonBuy";
 import BurgerDropdownMenu from "../../../features/HeaderNavigation/ui/BurgerDropdownMenu";
+import IconBurger from "../../../features/HeaderNavigation/ui/IconBurger";
 
 const Header = () => {
   return (
@@ -34,6 +35,7 @@ const Header = () => {
             <button className="text-4xl lg:text-6xl">A.C.</button>
 
             <div className="sm:hidden">
+              <IconBurger />
               <BurgerDropdownMenu />
             </div>
 
