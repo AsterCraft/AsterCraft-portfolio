@@ -1,17 +1,18 @@
-import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 
 import IconBurger from "./IconBurger";
 
+import { useHeaderModalStore } from "../model/store";
+
 const BurgerDropdownMenu = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const { toggle, isOpen } = useHeaderModalStore();
 
   return (
     <div
+      onClick={toggle}
       className="relative"
-      onClick={() => setIsOpen((prev) => !prev)}
     >
-      <IconBurger isOpen={isOpen} />
+      <IconBurger />
 
       <AnimatePresence>
         {isOpen && (
@@ -21,7 +22,7 @@ const BurgerDropdownMenu = () => {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0, y: -70, x: 35 }}
           >
-            <li className="flex justify-start whitespace-nowrap">About me</li>
+            <li className="flex justify-start whitespace-nowrap">About us</li>
             <li className="flex justify-start whitespace-nowrap">Projects</li>
             <li className="flex justify-start whitespace-nowrap">Services</li>
             <li className="flex justify-start whitespace-nowrap">Contact</li>

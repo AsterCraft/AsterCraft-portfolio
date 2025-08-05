@@ -1,20 +1,13 @@
 import { useEffect, useRef } from "react";
 import { animate } from "motion";
+import cn from "classnames";
 
-const barStyle: React.CSSProperties = {
-  position: "absolute",
-  width: "100%",
-  height: 3,
-  background: "white",
-  borderRadius: 2,
-  top: 0,
-};
+import { useHeaderModalStore } from "../model/store";
+import { burgerLineStyle } from "../lib/styles";
 
-type Props = {
-  isOpen: boolean;
-};
+const IconBurger = () => {
+  const { isOpen } = useHeaderModalStore();
 
-const IconBurger = ({ isOpen }: Props) => {
   const top = useRef<HTMLSpanElement>(null);
   const middle = useRef<HTMLSpanElement>(null);
   const bottom = useRef<HTMLSpanElement>(null);
@@ -39,15 +32,15 @@ const IconBurger = ({ isOpen }: Props) => {
     <button className="relative left-[-10px] flex h-6 w-8 justify-center">
       <span
         ref={top}
-        style={barStyle}
+        className={burgerLineStyle}
       />
       <span
         ref={middle}
-        style={{ ...barStyle, top: 10 }}
+        className={cn(burgerLineStyle, "top-2.5")}
       />
       <span
         ref={bottom}
-        style={{ ...barStyle, top: 20 }}
+        className={cn(burgerLineStyle, "top-5")}
       />
     </button>
   );
