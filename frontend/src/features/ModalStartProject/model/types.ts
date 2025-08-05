@@ -12,3 +12,7 @@ export type ModalStartProjecStore = {
   setPhone: (phoneValue: string) => void;
   setMessage: (messageValue: string) => void;
 };
+
+export type ButtonSubmitProps = {
+  onClick?: () => void;
+};
