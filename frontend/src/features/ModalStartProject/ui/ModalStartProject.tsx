@@ -15,7 +15,7 @@ import { useSubmitModalStartProject } from "../model/useSubmitModalStartProject"
 const ModalStartProject = () => {
   const { isOpen, setIsOpen } = useContext(ContextModalStartProject);
 
-  const { handleSubmit } = useSubmitModalStartProject();
+  const { handleSubmit, isSubmitting } = useSubmitModalStartProject();
 
   return (
     <>
@@ -220,7 +220,10 @@ const ModalStartProject = () => {
                       ></textarea>
                     </div> */}
 
-                    <ButtonSubmit onClick={handleSubmit} />
+                    <ButtonSubmit
+                      onClick={handleSubmit}
+                      disabled={isSubmitting}
+                    />
                   </div>
                 </form>
               </motion.div>

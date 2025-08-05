@@ -1,12 +1,16 @@
 import axios from "axios";
+import { useState } from "react";
 
 import { useModalStartProjectStore } from "./store";
 
 export const useSubmitModalStartProject = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const { firstName, lastName, email, phone, message, resetModalStartProject } =
     useModalStartProjectStore();
 
   const handleSubmit = async () => {
+    setIsSubmitting(true);
     try {
       let API_URL = "";
 
@@ -37,11 +41,14 @@ export const useSubmitModalStartProject = () => {
         throw new Error("Failed to send data");
       }
 
+      setIsSubmitting(false);
       resetModalStartProject();
     } catch (error) {
       console.log("Error sending data: ", error);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
-  return { handleSubmit };
+  return { handleSubmit, isSubmitting };
 };

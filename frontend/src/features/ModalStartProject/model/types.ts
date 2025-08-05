@@ -17,4 +17,5 @@ export type ModalStartProjecStore = {
 
 export type ButtonSubmitProps = {
   onClick?: () => void;
+  disabled?: boolean;
 };
