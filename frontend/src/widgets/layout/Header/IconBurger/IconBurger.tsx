@@ -36,7 +36,7 @@ const IconBurger = ({ isOpen }: Props) => {
   }, [isOpen]);
 
   return (
-    <button style={{ width: 30, height: 24, position: "relative", left: -30 }}>
+    <button className="relative left-[-10px] flex h-6 w-8 justify-center">
       <span
         ref={top}
         style={barStyle}
