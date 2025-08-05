@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 
-import IconBurger from "../IconBurger/IconBurger";
+import IconBurger from "./IconBurger";
 
 const BurgerDropdownMenu = () => {
   const [isOpen, setIsOpen] = useState(false);

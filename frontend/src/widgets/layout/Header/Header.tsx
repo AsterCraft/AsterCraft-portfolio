@@ -1,7 +1,7 @@
 import cn from "classnames";
 
 import ButtonBuy from "../../../shared/ui/buttons/ButtonBuy/ButtonBuy";
-import BurgerDropdownMenu from "./BurgerDropdownMenu/BurgerDropdownMenu";
+import BurgerDropdownMenu from "../../../features/HeaderNavigation/ui/BurgerDropdownMenu";
 
 const Header = () => {
   return (
