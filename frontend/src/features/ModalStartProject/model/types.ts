@@ -11,6 +11,8 @@ export type ModalStartProjecStore = {
   setEmail: (emailValue: string) => void;
   setPhone: (phoneValue: string) => void;
   setMessage: (messageValue: string) => void;
+
+  resetModalStartProject: () => void;
 };
 
 export type ButtonSubmitProps = {

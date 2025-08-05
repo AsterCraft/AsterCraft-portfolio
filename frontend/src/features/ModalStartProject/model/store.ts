@@ -35,5 +35,14 @@ export const useModalStartProjectStore = create<ModalStartProjecStore>(
       set({
         message: messageValue,
       }),
+
+    resetModalStartProject: () =>
+      set({
+        firstName: "",
+        lastName: "",
+        email: "",
+        phone: "",
+        message: "",
+      }),
   })
 );

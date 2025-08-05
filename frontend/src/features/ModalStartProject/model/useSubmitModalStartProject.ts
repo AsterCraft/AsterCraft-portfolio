@@ -3,7 +3,7 @@ import axios from "axios";
 import { useModalStartProjectStore } from "./store";
 
 export const useSubmitModalStartProject = () => {
-  const { firstName, lastName, email, phone, message } =
+  const { firstName, lastName, email, phone, message, resetModalStartProject } =
     useModalStartProjectStore();
 
   const handleSubmit = async () => {
@@ -36,6 +36,8 @@ export const useSubmitModalStartProject = () => {
       if (response.status !== 200) {
         throw new Error("Failed to send data");
       }
+
+      resetModalStartProject();
     } catch (error) {
       console.log("Error sending data: ", error);
     }
