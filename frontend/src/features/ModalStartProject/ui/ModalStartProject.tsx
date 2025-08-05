@@ -1,16 +1,17 @@
 import classNames from "classnames";
 import { motion, AnimatePresence } from "motion/react";
-import { useContext, useEffect, useRef } from "react";
+import { useContext } from "react";
+
+import FirstNameField from "./FirstNameField";
+import LastNameField from "./LastNameField";
+import EmailField from "./EmailField";
+import PhoneField from "./PhoneField";
+import MessageField from "./MessageField";
 
 import ContextModalStartProject from "../../../shared/store/ContextModalStartProject";
 
 const ModalStartProject = () => {
   const { isOpen, setIsOpen } = useContext(ContextModalStartProject);
-
-  const textAreaStyles = classNames(
-    "flex h-[24vw] max-h-48 min-h-36 justify-start align-top outline-none",
-    "lg:h-[12vw]"
-  );
 
   return (
     <>
@@ -119,7 +120,7 @@ const ModalStartProject = () => {
                     {/* each div inside <form> row is a wrapper for <label> + <input> */}
                     <div
                       className={classNames(
-                        "modal-start-project__field-wrapper",
+                        "modal-start-project__field-wrapper", // for animation
                         "bg-ac-input-start-projec flex flex-col rounded-md px-5 pt-4 pb-3"
                       )}
                     >
@@ -129,12 +130,7 @@ const ModalStartProject = () => {
                       >
                         First Name
                       </label>
-                      <input
-                        type="text"
-                        id="first-name"
-                        placeholder="Maksym"
-                        className="h-9 outline-none"
-                      />
+                      <FirstNameField />
                     </div>
 
                     <div
@@ -149,12 +145,8 @@ const ModalStartProject = () => {
                       >
                         Last Name
                       </label>
-                      <input
-                        type="text"
-                        id="last-name"
-                        placeholder="Mokriakov"
-                        className="h-9 outline-none"
-                      />
+
+                      <LastNameField />
                     </div>
 
                     <div
@@ -169,12 +161,7 @@ const ModalStartProject = () => {
                       >
                         E-Mail
                       </label>
-                      <input
-                        type="email"
-                        id="e-mail"
-                        placeholder="me@gmail.com"
-                        className="h-9 outline-none"
-                      />
+                      <EmailField />
                     </div>
 
                     <div
@@ -189,12 +176,7 @@ const ModalStartProject = () => {
                       >
                         Phone
                       </label>
-                      <input
-                        type="text"
-                        id="phone"
-                        placeholder="+48790833877"
-                        className="h-9 outline-none"
-                      />
+                      <PhoneField />
                     </div>
                   </div>
 
@@ -211,15 +193,10 @@ const ModalStartProject = () => {
                       >
                         Project Details
                       </label>
-                      <textarea
-                        name="Project_Details"
-                        id="Project-Details"
-                        className={textAreaStyles}
-                        placeholder="Describe your project"
-                      ></textarea>
+                      <MessageField />
                     </div>
 
-                    <div
+                    {/* <div
                       className={classNames(
                         "modal-start-project__field-wrapper",
                         "bg-ac-input-start-projec flex flex-col rounded-md px-5 pt-4 pb-3"
@@ -237,7 +214,7 @@ const ModalStartProject = () => {
                         className={textAreaStyles}
                         placeholder="Any additional notes?"
                       ></textarea>
-                    </div>
+                    </div> */}
                   </div>
                 </form>
               </motion.div>

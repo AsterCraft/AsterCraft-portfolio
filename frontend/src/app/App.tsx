@@ -5,7 +5,7 @@ import Footer from "../widgets/layout/Footer/Footer";
 import WriteUsPopup from "../widgets/modals/write-us-popup/write-us-popup";
 
 import "./App.css";
-import ModalStartProject from "../widgets/modals/ModalStartProject/ModalStartProject";
+import ModalStartProject from "../features/ModalStartProject/ui/ModalStartProject";
 
 function App() {
   return (
