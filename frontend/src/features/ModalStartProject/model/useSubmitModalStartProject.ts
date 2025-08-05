@@ -19,7 +19,7 @@ export const useSubmitModalStartProject = () => {
       } else if (
         window.location.hostname === "web-agency-portfolio.vercel.app"
       ) {
-        API_URL = "https://backend-aster-craft.vercel.app/";
+        API_URL = "https://backend-aster-craft.vercel.app/api/send-email";
       }
 
       const response = await axios.post(
