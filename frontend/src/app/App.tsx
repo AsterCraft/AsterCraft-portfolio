@@ -3,9 +3,10 @@ import Header from "../widgets/layout/Header/Header";
 import PageHome from "../pages/PageHome/PageHome";
 import Footer from "../widgets/layout/Footer/Footer";
 import WriteUsPopup from "../widgets/modals/write-us-popup/write-us-popup";
+import ModalStartProject from "../features/ModalStartProject/ui/ModalStartProject";
+import BurgerDropdownMenu from "../features/HeaderNavigation/ui/BurgerDropdownMenu";
 
 import "./App.css";
-import ModalStartProject from "../features/ModalStartProject/ui/ModalStartProject";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <Footer />
       {/* </div> */}
       <ModalStartProject />
+      <BurgerDropdownMenu />
     </ProviderModalStartProject>
   );
 }

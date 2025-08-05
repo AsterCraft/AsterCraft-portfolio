@@ -36,6 +36,7 @@ const SectionAboutUs = () => {
 
   return (
     <section
+      id="about"
       ref={sectionRef}
       className={classNames(
         "Container flex flex-col gap-18 pt-8 pb-16",
