@@ -27,4 +27,8 @@
   .Container {
     @apply mx-auto w-full max-w-[1450px] px-[15px];
   }
+
+  .app-container {
+    @apply mx-auto w-full max-w-[1450px] px-[15px];
+  }
 }

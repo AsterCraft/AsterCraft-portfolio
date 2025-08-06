@@ -1,4 +1,5 @@
 import SectionAboutUs from "../../widgets/sections/SectionAboutUs/SectionAboutUs";
+import SectionBenefits from "../../widgets/sections/SectionBenefits/SectionBenefits";
 import SectionHero from "./SectionHero/SectionHero";
 import DividerBetweenSections from "../../shared/ui/lines/DividerBetweenSections/DividerBetweenSections";
 import SectionProjects from "../../widgets/sections/SectionProjects/SectionProjects";
@@ -8,6 +9,11 @@ const PageHome = () => {
   return (
     <main>
       <SectionHero />
+
+      <div className="app-container mt-10 mb-10">
+        <SectionBenefits />
+      </div>
+
       <SectionAboutUs />
       <DividerBetweenSections />
       <SectionProjects />
