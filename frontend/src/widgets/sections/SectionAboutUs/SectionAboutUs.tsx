@@ -13,26 +13,26 @@ const SectionAboutUs = () => {
   const inView: boolean = useInView(sectionRef, { once: true, amount: 0.6 });
 
   useEffect(() => {
-    setTextAnimation(inView);
-  }, [inView]);
+    const setTextAnimation = (inView: boolean) => {
+      if (inView) {
+        animate(
+          ".section-about-us__text",
+          { opacity: 1, y: 0 },
+          { delay: stagger(0.2), duration: 0.6 }
+        );
+      } else {
+        // set initial element state
+        // from which animation will be played
+        animate(
+          ".section-about-us__text",
+          { opacity: 0, y: 24 },
+          { duration: 0 }
+        );
+      }
+    };
 
-  const setTextAnimation = (inView: boolean) => {
-    if (inView) {
-      animate(
-        ".section-about-us__text",
-        { opacity: 1, y: 0 },
-        { delay: stagger(0.2), duration: 0.6 }
-      );
-    } else {
-      // set initial element state
-      // from which animation will be played
-      animate(
-        ".section-about-us__text",
-        { opacity: 0, y: 24 },
-        { duration: 0 }
-      );
-    }
-  };
+    setTextAnimation(inView);
+  }, [inView, animate]);
 
   return (
     <section

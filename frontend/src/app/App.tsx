@@ -2,7 +2,6 @@ import { ProviderModalStartProject } from "../shared/store/ContextModalStartProj
 import Header from "../widgets/layout/Header/Header";
 import PageHome from "../pages/PageHome/PageHome";
 import Footer from "../widgets/layout/Footer/Footer";
-import WriteUsPopup from "../widgets/modals/write-us-popup/write-us-popup";
 import ModalStartProject from "../features/ModalStartProject/ui/ModalStartProject";
 import BurgerDropdownMenu from "../features/HeaderNavigation/ui/BurgerDropdownMenu";
 

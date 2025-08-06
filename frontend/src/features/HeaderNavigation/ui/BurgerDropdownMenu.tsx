@@ -1,7 +1,6 @@
 import { motion, AnimatePresence } from "motion/react";
 
 import { useHeaderModalStore } from "../model/store";
-import type { exit } from "process";
 
 const BurgerDropdownMenu = () => {
   const { toggle, isOpen } = useHeaderModalStore();
