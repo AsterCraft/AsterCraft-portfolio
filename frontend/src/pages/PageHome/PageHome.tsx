@@ -1,5 +1,5 @@
 import SectionAboutUs from "../../widgets/sections/SectionAboutUs/SectionAboutUs";
-import SectionBenefits from "../../widgets/sections/SectionBenefits/SectionBenefits";
+import SectionBenefits from "../../widgets/sections/SectionPromise/ui/SectionPromise";
 import SectionHero from "./SectionHero/SectionHero";
 import DividerBetweenSections from "../../shared/ui/lines/DividerBetweenSections/DividerBetweenSections";
 import SectionProjects from "../../widgets/sections/SectionProjects/SectionProjects";
