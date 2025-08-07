@@ -17,7 +17,7 @@ const benefits = [
   },
 ];
 
-const SectionBenefits = () => {
+const SectionPromise = () => {
   return (
     <section
       className={cn(
@@ -53,4 +53,4 @@ const SectionBenefits = () => {
   );
 };
 
-export default SectionBenefits;
+export default SectionPromise;
