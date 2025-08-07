@@ -1,21 +1,9 @@
 import cn from "classnames";
 import { FaRegCheckSquare } from "react-icons/fa";
 
-import SvgDevices from "../../../shared/ui/svg/SvgDevices";
+import SvgDevices from "../../../../shared/ui/svg/SvgDevices";
 
-const benefits = [
-  {
-    benefit:
-      "Унікальний сайт, який неможливо повторити. Без шаблонів та обмежень конструкторів",
-  },
-  {
-    benefit:
-      "SEO-оптимізація. Чистий код = вищі позиції в Google. Ваші клієнти знайдуть вас без реклами",
-  },
-  {
-    benefit: "Отримайте швидкий Landing, сайт-візитку чи сайт компанії",
-  },
-];
+import { dataBenefits } from "../data/dataBanefits";
 
 const SectionPromise = () => {
   return (
@@ -30,7 +18,7 @@ const SectionPromise = () => {
       <div className="max-w-[580px] lg:max-w-[690px]">
         <h2 className="mb-3 text-4xl">Замовте сайт, який приводить клієнтів</h2>
         <ul className="flex flex-col gap-3">
-          {benefits.map((item, index) => (
+          {dataBenefits.map((item, index) => (
             <li
               key={index}
               className="flex items-center gap-3 text-lg text-zinc-900"
