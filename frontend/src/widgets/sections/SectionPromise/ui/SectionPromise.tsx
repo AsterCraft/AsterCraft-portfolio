@@ -3,7 +3,7 @@ import { FaRegCheckSquare } from "react-icons/fa";
 
 import SvgDevices from "../../../../shared/ui/svg/SvgDevices";
 
-import { dataBenefits } from "../data/dataBanefits";
+import { dataPromise } from "../data/dataPromise";
 
 const SectionPromise = () => {
   return (
@@ -18,7 +18,7 @@ const SectionPromise = () => {
       <div className="max-w-[580px] lg:max-w-[690px]">
         <h2 className="mb-3 text-4xl">Замовте сайт, який приводить клієнтів</h2>
         <ul className="flex flex-col gap-3">
-          {dataBenefits.map((item, index) => (
+          {dataPromise.map((item, index) => (
             <li
               key={index}
               className="flex items-center gap-3 text-lg text-zinc-900"

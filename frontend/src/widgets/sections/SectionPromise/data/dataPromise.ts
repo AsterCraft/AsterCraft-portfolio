@@ -1,4 +1,4 @@
-export const dataBenefits = [
+export const dataPromise = [
   {
     benefit:
       "Унікальний сайт, який неможливо повторити. Без шаблонів та обмежень конструкторів",
