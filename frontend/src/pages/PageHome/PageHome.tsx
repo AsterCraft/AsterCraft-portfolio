@@ -15,9 +15,7 @@ const PageHome = () => {
         <SectionPromise />
       </div>
 
-      <div className="mt-10 mb-10">
-        <SectionDevelopmentProcess />
-      </div>
+      <SectionDevelopmentProcess />
 
       <SectionAboutUs />
       <DividerBetweenSections />

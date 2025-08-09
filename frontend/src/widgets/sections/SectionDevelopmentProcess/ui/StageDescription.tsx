@@ -1,19 +1,20 @@
+import { dataStageDescription } from "../data/dataStageDescription";
+
 type StageDescritptionProps = {
   className?: string;
+  stage: number;
 };
 
-const StageDescription = ({ className }: StageDescritptionProps) => {
+const StageDescription = ({ className, stage }: StageDescritptionProps) => {
   return (
     <div className={className}>
-      <h2>Етап 1: Консультація та брифування</h2>
+      <h3>{dataStageDescription[stage - 1].title}</h3>
+
       <hr />
-      <p>
-        ● Проведена онлайн-зустріч з фіксацією ваших вимог до структури, дизайну
-        та функціоналу сайту
-      </p>
-      <p>
-        ● Визначена попередня вартість та обсяг робіт індивідуальної пропозиції
-      </p>
+
+      {dataStageDescription[stage - 1].paragraph.map((item, index) => (
+        <p key={index}>{item}</p>
+      ))}
     </div>
   );
 };

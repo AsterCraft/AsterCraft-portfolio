@@ -2,6 +2,7 @@ import cn from "classnames";
 import { FaRegCheckSquare } from "react-icons/fa";
 
 import SvgDevices from "../../../../shared/ui/svg/SvgDevices";
+import TitleSection from "../../../../shared/ui/typography/TitleSection";
 
 import { dataPromise } from "../data/dataPromise";
 
@@ -16,7 +17,7 @@ const SectionPromise = () => {
     >
       {/* wrapper for title and list */}
       <div className="max-w-[580px] lg:max-w-[690px]">
-        <h2 className="mb-3 text-4xl">Замовте сайт, який приводить клієнтів</h2>
+        <TitleSection title="Замовте сайт, який приводить клієнтів" />
         <ul className="flex flex-col gap-3">
           {dataPromise.map((item, index) => (
             <li
