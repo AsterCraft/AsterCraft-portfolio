@@ -13,7 +13,10 @@ const SectionDevelopmentProcess = () => {
               className="order-1"
               dots={1}
             />
-            <StageDescription className="order-2" />
+            <StageDescription
+              stage={1}
+              className="order-2"
+            />
             <div className="hidden"></div>
           </li>
 
@@ -22,7 +25,10 @@ const SectionDevelopmentProcess = () => {
               className="order-1"
               dots={2}
             />
-            <StageDescription className="order-2" />
+            <StageDescription
+              stage={2}
+              className="order-2"
+            />
             <div className="hidden"></div>
           </li>
 
@@ -31,7 +37,10 @@ const SectionDevelopmentProcess = () => {
               className="order-1"
               dots={3}
             />
-            <StageDescription className="order-2" />
+            <StageDescription
+              stage={3}
+              className="order-2"
+            />
             <div className="hidden"></div>
           </li>
 
@@ -40,7 +49,10 @@ const SectionDevelopmentProcess = () => {
               className="order-1"
               dots={4}
             />
-            <StageDescription className="order-2" />
+            <StageDescription
+              stage={4}
+              className="order-2"
+            />
             <div className="hidden"></div>
           </li>
         </ul>
