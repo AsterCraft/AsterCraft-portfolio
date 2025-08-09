@@ -4,6 +4,8 @@ import StageDescription from "./StageDescription";
 import IconStage from "./IconStage";
 import TitleSection from "../../../../shared/ui/typography/TitleSection";
 
+import { DEVELOPMENT_STAGES } from "../model/developmentData";
+
 const SectionDevelopmentProcess = () => {
   return (
     <section className={"bg-ac-eerie-black py-15 text-white"}>
@@ -12,80 +14,34 @@ const SectionDevelopmentProcess = () => {
 
         <ul className="grid gap-15">
           {/* ================ stage={1} ======================================== */}
-
-          <li
-            className={cn(
-              "grid grid-cols-[auto_1fr] gap-7",
-              "md:grid-cols-[1fr_auto_1fr]"
-            )}
-          >
-            <IconStage
-              className="order-1 md:order-2"
-              dots={1}
-            />
-            <StageDescription
-              stage={1}
-              className="order-2 md:order-3"
-            />
-            <div className={cn("hidden", "md:order-1 md:block")}></div>
-          </li>
-
-          {/* ===================== stage={2} =================================== */}
-
-          <li
-            className={cn(
-              "grid grid-cols-[auto_1fr] gap-7",
-              "md:grid-cols-[1fr_auto_1fr]"
-            )}
-          >
-            <IconStage
-              className="order-1 md:order-2"
-              dots={2}
-            />
-            <StageDescription
-              stage={2}
-              className="order-2 md:order-1"
-            />
-            <div className={cn("hidden", "md:order-3 md:block")}></div>
-          </li>
-
-          {/* ===================== stage={3} =================================== */}
-
-          <li
-            className={cn(
-              "grid grid-cols-[auto_1fr] gap-7",
-              "md:grid-cols-[1fr_auto_1fr]"
-            )}
-          >
-            <IconStage
-              className="order-1 md:order-2"
-              dots={3}
-            />
-            <StageDescription
-              stage={3}
-              className="order-2 md:order-3"
-            />
-            <div className={cn("hidden", "md:order-1 md:block")}></div>
-          </li>
-
-          {/* =================== stage={4} ===================================== */}
-
-          <li
-            className={cn(
-              "grid grid-cols-[auto_1fr] gap-7",
-              "md:grid-cols-[1fr_auto_1fr]"
-            )}
-          >
-            <IconStage
-              className="order-1 md:order-2"
-              dots={4}
-            />
-            <StageDescription
-              stage={4}
-              className="order-2 md:order-1"
-            />
-            <div className={cn("hidden", "md:order-3 md:block")}></div>
-          </li>
+          {DEVELOPMENT_STAGES.map(({ stage, aligment }) => (
+            <li
+              key={stage}
+              className={cn(
+                "grid grid-cols-[auto_1fr] gap-7",
+                "md:grid-cols-[1fr_auto_1fr]"
+              )}
+            >
+              <IconStage
+                className="order-1 md:order-2" // this is not changing. It is only for easy reading and understanding
+                dots={stage}
+              />
+              <StageDescription
+                stage={stage}
+                className={cn(
+                  "order-2",
+                  aligment === "right" ? "md:order-3" : "md:order-1"
+                )}
+              />
+              <div
+                className={cn(
+                  "hidden",
+                  "md:block",
+                  aligment === "right" ? "md:order-1" : "md:order-3"
+                )}
+              ></div>
+            </li>
+          ))}
         </ul>
       </div>
     </section>
