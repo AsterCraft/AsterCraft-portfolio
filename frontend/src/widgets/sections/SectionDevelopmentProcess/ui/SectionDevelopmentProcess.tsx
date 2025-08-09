@@ -1,25 +1,86 @@
 import cn from "classnames";
-
 import StageDescription from "./StageDescription";
 import IconStage from "./IconStage";
 
 const SectionDevelopmentProcess = () => {
   return (
-    <section
-      className={cn("app-container", "bg-ac-eerie-black pt-10 text-white")}
-    >
-      <h2>Процес створення сайту</h2>
+    <section className={cn("", "bg-ac-eerie-black pt-10 text-white")}>
+      <div className="app-container">
+        <h2>Процес створення сайту</h2>
+        <ul className="grid gap-15">
+          <li className="grid grid-cols-[auto_1fr] gap-7">
+            <IconStage
+              className="order-1"
+              dots={1}
+            />
+            <StageDescription className="order-2" />
+            <div className="hidden"></div>
+          </li>
 
-      <div className="grid grid-cols-[1fr_100px_1fr]">
-        <IconStage
-          className="col-start-2"
-          dots={1}
-        />
-        <StageDescription className="col-span-1 col-start-3" />
-        <div></div>
+          <li className="grid grid-cols-[auto_1fr] gap-7">
+            <IconStage
+              className="order-1"
+              dots={2}
+            />
+            <StageDescription className="order-2" />
+            <div className="hidden"></div>
+          </li>
+
+          <li className="grid grid-cols-[auto_1fr] gap-7">
+            <IconStage
+              className="order-1"
+              dots={3}
+            />
+            <StageDescription className="order-2" />
+            <div className="hidden"></div>
+          </li>
+
+          <li className="grid grid-cols-[auto_1fr] gap-7">
+            <IconStage
+              className="order-1"
+              dots={4}
+            />
+            <StageDescription className="order-2" />
+            <div className="hidden"></div>
+          </li>
+        </ul>
       </div>
     </section>
   );
 };
 
 export default SectionDevelopmentProcess;
+
+// import cn from "classnames";
+// import StageDescription from "./StageDescription";
+// import IconStage from "./IconStage";
+
+// const SectionDevelopmentProcess = () => {
+//   return (
+//     <section className={cn("", "bg-ac-eerie-black pt-10 text-white")}>
+//       <div className="app-container">
+//         <h2>Процес створення сайту</h2>
+//         <ul>
+//           <li className="grid grid-cols-[auto_1fr] items-center gap-4 md:grid-cols-[2fr_100px_2fr] md:gap-10">
+//             <div className="hidden md:block"></div>
+//             <IconStage
+//               className="order-1"
+//               dots={1}
+//             />
+//             <StageDescription className="order-2 bg-red-500" />
+//           </li>
+//           <li className="grid grid-cols-[auto_1fr] items-center gap-4 md:grid-cols-[2fr_100px_2fr] md:gap-10">
+//             <StageDescription className="order-2 bg-red-500 md:order-1" />
+//             <IconStage
+//               className="order-1 md:order-2"
+//               dots={1}
+//             />
+//             <div className="hidden md:order-3 md:block"></div>
+//           </li>
+//         </ul>
+//       </div>
+//     </section>
+//   );
+// };
+
+// export default SectionDevelopmentProcess;

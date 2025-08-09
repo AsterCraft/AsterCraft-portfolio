@@ -12,7 +12,7 @@ const IconStage = ({ className, dots }: IconStageProps) => {
     <div
       className={cn(
         className,
-        "bg-ac-paragraph-light relative col-span-1 h-24 w-24 rounded-[50%]"
+        "bg-ac-paragraph-light relative h-24 w-24 rounded-[50%]"
       )}
     >
       <div
