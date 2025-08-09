@@ -4,7 +4,7 @@ import IconStage from "./IconStage";
 
 const SectionDevelopmentProcess = () => {
   return (
-    <section className={cn("", "bg-ac-eerie-black pt-10 text-white")}>
+    <section className={"bg-ac-eerie-black py-15 text-white"}>
       <div className="app-container">
         <h2>Процес створення сайту</h2>
         <ul className="grid gap-15">
