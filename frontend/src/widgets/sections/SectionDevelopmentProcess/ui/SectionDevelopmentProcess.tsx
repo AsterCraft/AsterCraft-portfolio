@@ -1,12 +1,15 @@
 import cn from "classnames";
+
 import StageDescription from "./StageDescription";
 import IconStage from "./IconStage";
+import TitleSection from "../../../../shared/ui/typography/TitleSection";
 
 const SectionDevelopmentProcess = () => {
   return (
     <section className={"bg-ac-eerie-black py-15 text-white"}>
       <div className="app-container">
-        <h2>Процес створення сайту</h2>
+        <TitleSection title="Процес створення сайту" />
+
         <ul className="grid gap-15">
           <li className="grid grid-cols-[auto_1fr] gap-7">
             <IconStage
