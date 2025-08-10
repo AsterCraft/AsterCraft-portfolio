@@ -1,16 +1,21 @@
 import cn from "classnames";
 
 import IconDot from "./IconDot";
+import LineConnecting from "./LineConnecting";
 
 type IconStageProps = {
   className: string;
   dots: number;
+  showLine?: boolean;
+  lineVisible?: boolean;
+  stageIndex?: number;
 };
 
-const IconStage = ({ className, dots }: IconStageProps) => {
+const IconStage = ({ className, dots, showLine = false, lineVisible = false, stageIndex = 0 }: IconStageProps) => {
   return (
     // circle
     <div
+      data-circle="true"
       className={cn(
         className,
         "bg-ac-paragraph-light relative h-16 w-16 rounded-[50%]",
@@ -35,6 +40,8 @@ const IconStage = ({ className, dots }: IconStageProps) => {
           <IconDot key={index} />
         ))}
       </div>
+
+      {showLine && <LineConnecting isVisible={lineVisible} stageIndex={stageIndex} />}
     </div>
   );
 };
