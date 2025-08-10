@@ -21,6 +21,23 @@
   --color-ac-link-email: #1a1a1a;
   --color-ac-eerie-black: #1a1a1a;
   --color-ac-black-wash: #0b0d0d;
+
+  --color-ac-text: #ffffff;
+  --color-ac-text-muted: oklch(0.7 0 340);
+
+  --color-ac-bg-dark: #1a1a1a;
+  --color-ac-bg: oklch(0.96 0 340);
+  --color-ac-bg-light: oklch(1 0 340);
+
+  /* --color-ac-highlight: oklch(1 0 340);
+  --color-ac-border: oklch(0.6 0 340);
+  --color-ac-border-muted: oklch(0.7 0 340);
+  --color-ac-primary: oklch(0.4 0.1 340);
+  --color-ac-secondary: oklch(0.4 0.1 160);
+  --color-ac-danger: oklch(0.5 0.05 30);
+  --color-ac-warning: oklch(0.5 0.05 100);
+  --color-ac-success: oklch(0.5 0.05 160);
+  --color-ac-info: oklch(0.5 0.05 260); */
 }
 
 @layer components {
