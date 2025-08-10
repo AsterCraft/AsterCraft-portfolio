@@ -13,7 +13,6 @@ const SectionDevelopmentProcess = () => {
         <TitleSection title="Процес створення сайту" />
 
         <ul className="grid gap-15">
-          {/* ================ stage={1} ======================================== */}
           {DEVELOPMENT_STAGES.map(({ stage, aligment }) => (
             <li
               key={stage}

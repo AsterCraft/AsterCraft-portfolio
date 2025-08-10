@@ -9,19 +9,26 @@ type IconStageProps = {
 
 const IconStage = ({ className, dots }: IconStageProps) => {
   return (
+    // circle
     <div
       className={cn(
         className,
-        "bg-ac-paragraph-light relative h-24 w-24 rounded-[50%]"
+        "bg-ac-paragraph-light relative h-16 w-16 rounded-[50%]",
+        "md:h-24 md:w-24"
       )}
     >
+      {/* dot(s) inside circle*/}
       <div
         className={cn(
-          "transfort absolute top-[50%] left-[50%] h-5 w-5 -translate-x-1/2 -translate-y-1/2",
+          "transfort absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2",
+
           {
             "flex h-full w-full items-center justify-center gap-1": dots !== 4,
           },
-          { "grid h-11 w-11 grid-cols-2 gap-1": dots === 4 }
+          {
+            "flex h-7 w-7 flex-wrap gap-1 md:grid md:h-11 md:w-11 md:grid-cols-2 md:gap-1":
+              dots === 4,
+          }
         )}
       >
         {Array.from({ length: dots }, (_, index) => (
