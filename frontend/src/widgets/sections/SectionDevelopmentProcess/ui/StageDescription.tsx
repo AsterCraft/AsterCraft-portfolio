@@ -8,12 +8,19 @@ type StageDescritptionProps = {
 const StageDescription = ({ className, stage }: StageDescritptionProps) => {
   return (
     <div className={className}>
-      <h3>{dataStageDescription[stage - 1].title}</h3>
+      <h3 className="mb-1 text-2xl font-medium">
+        {dataStageDescription[stage - 1].title}
+      </h3>
 
-      <hr />
+      <hr className="border-ac-text-muted mb-5 rounded-sm border-2" />
 
       {dataStageDescription[stage - 1].paragraph.map((item, index) => (
-        <p key={index}>{item}</p>
+        <p
+          key={index}
+          className="text-ac-text-muted"
+        >
+          {item}
+        </p>
       ))}
     </div>
   );

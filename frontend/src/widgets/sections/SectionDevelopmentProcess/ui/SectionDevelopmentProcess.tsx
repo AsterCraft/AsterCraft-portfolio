@@ -9,16 +9,16 @@ import { DEVELOPMENT_STAGES } from "../model/developmentData";
 const SectionDevelopmentProcess = () => {
   return (
     <section className={"bg-ac-eerie-black py-15 text-white"}>
-      <div className="app-container">
+      <div className="app-container max-w-[1000px]">
         <TitleSection title="Процес створення сайту" />
 
-        <ul className="grid gap-15">
+        <ul className="grid gap-15 text-lg">
           {DEVELOPMENT_STAGES.map(({ stage, aligment }) => (
             <li
               key={stage}
               className={cn(
                 "grid grid-cols-[auto_1fr] gap-7",
-                "md:grid-cols-[1fr_auto_1fr]"
+                "md:grid-cols-[1fr_auto_1fr] md:gap-14"
               )}
             >
               <IconStage
