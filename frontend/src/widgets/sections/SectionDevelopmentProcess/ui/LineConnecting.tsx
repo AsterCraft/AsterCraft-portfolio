@@ -13,9 +13,13 @@ const LineConnecting = ({ isVisible, stageIndex }: LineConnectingProps) => {
     const calculateHeight = () => {
       if (svgRef.current) {
         const currentCircle = svgRef.current.parentElement; // поточний кружечок
-        const nextStageContainer = document.querySelector(`[data-stage="${stageIndex + 2}"]`);
-        const nextCircle = nextStageContainer?.querySelector('[data-circle="true"]');
-        
+        const nextStageContainer = document.querySelector(
+          `[data-stage="${stageIndex + 2}"]`
+        );
+        const nextCircle = nextStageContainer?.querySelector(
+          '[data-circle="true"]'
+        );
+
         if (currentCircle && nextCircle) {
           const currentRect = currentCircle.getBoundingClientRect();
           const nextRect = nextCircle.getBoundingClientRect();
@@ -26,21 +30,21 @@ const LineConnecting = ({ isVisible, stageIndex }: LineConnectingProps) => {
     };
 
     calculateHeight();
-    
+
     const timer = setTimeout(calculateHeight, 100); // затримка для завантаження
-    
-    window.addEventListener('resize', calculateHeight);
-    
+
+    window.addEventListener("resize", calculateHeight);
+
     return () => {
       clearTimeout(timer);
-      window.removeEventListener('resize', calculateHeight);
+      window.removeEventListener("resize", calculateHeight);
     };
   }, [stageIndex]);
 
   return (
     <svg
       ref={svgRef}
-      className="absolute top-full left-1/2 -translate-x-1/2 z-10"
+      className="absolute top-full left-1/2 z-10 -translate-x-1/2"
       width="2"
       height={lineHeight}
       viewBox={`0 0 2 ${lineHeight}`}
@@ -51,13 +55,13 @@ const LineConnecting = ({ isVisible, stageIndex }: LineConnectingProps) => {
         y1="0"
         x2="1"
         y2={lineHeight}
-        stroke="white"
+        stroke="#8a8a8a"
         strokeWidth="2"
         strokeDasharray={lineHeight}
         strokeDashoffset={isVisible ? "0" : lineHeight}
         className="transition-all duration-1000 ease-out"
         style={{
-          strokeLinecap: "round"
+          strokeLinecap: "round",
         }}
       />
     </svg>
