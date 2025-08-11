@@ -10,8 +10,8 @@ import { DEVELOPMENT_STAGES } from "../model/developmentData";
 const SectionDevelopmentProcess = () => {
   const [visibleLines, setVisibleLines] = useState<number[]>([]);
   const sectionRef = useRef<HTMLElement>(null);
-  const stageRefs = useRef<React.RefObject<HTMLDivElement>[]>(
-    DEVELOPMENT_STAGES.map(() => ({ current: null }))
+  const stageRefs = useRef<(HTMLDivElement | null)[]>(
+    new Array(DEVELOPMENT_STAGES.length).fill(null)
   );
 
   useEffect(() => {
