@@ -45,18 +45,18 @@ const LineConnecting = ({ isVisible, stageIndex }: LineConnectingProps) => {
     <svg
       ref={svgRef}
       className="absolute top-full left-1/2 z-10 -translate-x-1/2"
-      width="2"
+      width="6"
       height={lineHeight}
-      viewBox={`0 0 2 ${lineHeight}`}
+      viewBox={`0 0 6 ${lineHeight}`}
       xmlns="http://www.w3.org/2000/svg"
     >
       <line
-        x1="1"
+        x1="3"
         y1="0"
-        x2="1"
+        x2="3"
         y2={lineHeight}
         stroke="#8a8a8a"
-        strokeWidth="2"
+        strokeWidth="4"
         strokeDasharray={lineHeight}
         strokeDashoffset={isVisible ? "0" : lineHeight}
         className="transition-all duration-1000 ease-out"
