@@ -5,6 +5,7 @@ import SectionHero from "./SectionHero/SectionHero";
 import DividerBetweenSections from "../../shared/ui/lines/DividerBetweenSections/DividerBetweenSections";
 import SectionProjects from "../../widgets/sections/SectionProjects/SectionProjects";
 import SliderTestimonials from "../../widgets/sliders/SliderTestimonials/SliderTestimonials";
+import SectionTelegramContact from "../../widgets/sections/SectionTelegramContact/ui/SectionTelegramContact";
 
 const PageHome = () => {
   return (
@@ -22,6 +23,10 @@ const PageHome = () => {
       </div>
 
       <SectionDevelopmentProcess />
+
+      <DividerBetweenSections />
+
+      <SectionTelegramContact />
 
       <DividerBetweenSections />
       <SectionProjects />

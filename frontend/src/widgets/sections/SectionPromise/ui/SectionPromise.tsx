@@ -1,7 +1,7 @@
 import cn from "classnames";
 import { FaRegCheckSquare } from "react-icons/fa";
 
-import SvgDevices from "../../../../shared/ui/svg/SvgDevices";
+import SvgDevices from "../../../../shared/ui/SvgImages/SvgDevices";
 import TitleSection from "../../../../shared/ui/typography/TitleSection";
 
 import { dataPromise } from "../data/dataPromise";
