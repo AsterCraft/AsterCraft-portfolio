@@ -11,13 +11,18 @@ const PageHome = () => {
     <main>
       <SectionHero />
 
-      <div className="app-container mt-10 mb-10">
+      <div className="app-container mt-20 mb-20">
         <SectionPromise />
+      </div>
+
+      <DividerBetweenSections />
+
+      <div className="pt-20 pb-20">
+        <SectionAboutUs />
       </div>
 
       <SectionDevelopmentProcess />
 
-      <SectionAboutUs />
       <DividerBetweenSections />
       <SectionProjects />
       <DividerBetweenSections />
