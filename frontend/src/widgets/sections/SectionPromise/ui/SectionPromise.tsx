@@ -1,10 +1,10 @@
 import cn from "classnames";
-import { FaRegCheckSquare } from "react-icons/fa";
 
 import SvgDevices from "../../../../shared/ui/SvgImages/SvgDevices";
 import TitleSection from "../../../../shared/ui/typography/TitleSection";
+import CheckListItems from "../../../../shared/ui/lists/CheckListItems";
 
-import { dataPromise } from "../data/dataPromise";
+import { dataPromiseList } from "../model/dataPromiseList";
 
 const SectionPromise = () => {
   return (
@@ -18,17 +18,8 @@ const SectionPromise = () => {
       {/* wrapper for title and list */}
       <div className="max-w-[580px] lg:max-w-[690px]">
         <TitleSection title="Замовте сайт, який приводить клієнтів" />
-        <ul className="flex flex-col gap-3">
-          {dataPromise.map((item, index) => (
-            <li
-              key={index}
-              className="flex items-center gap-3 text-lg text-zinc-900"
-            >
-              <FaRegCheckSquare className="min-h-6 min-w-6" />
-              <span>{item.benefit}</span>
-            </li>
-          ))}
-        </ul>
+
+        <CheckListItems items={dataPromiseList} />
       </div>
 
       <SvgDevices
