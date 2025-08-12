@@ -1,11 +1,11 @@
 import Lottie from "lottie-react";
 import classNames from "classnames";
 
-import ButtonStartProject from "../../../shared/ui/buttons/ButtonStartProject/ButtonStartProject";
-import LightDivider from "../../../shared/ui/lines/LightDivider/LightDivider";
-import HeroTitle from "./HeroTitle/HeroTitle";
+import ButtonStartProject from "../../../../shared/ui/buttons/ButtonStartProject/ButtonStartProject";
+import LightDivider from "../../../../shared/ui/lines/LightDivider/LightDivider";
+import HeroTitle from "./HeroTitle";
 
-import lottieAnimation from "../../../shared/assets/video/hero-section-animation.json";
+import lottieAnimation from "../../../../shared/assets/video/hero-section-animation.json";
 
 const SectionHero = () => {
   return (
