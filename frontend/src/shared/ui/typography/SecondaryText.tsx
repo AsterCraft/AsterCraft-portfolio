@@ -6,7 +6,11 @@ type SecondaryTextProps = {
 };
 
 const SecondaryText = ({ text, className }: SecondaryTextProps) => {
-  return <p className={cn(className, "text-lg text-zinc-600")}>{text}</p>;
+  return (
+    <div className="text-lg text-zinc-600">
+      <p className={className}>{text}</p>
+    </div>
+  );
 };
 
 export default SecondaryText;
