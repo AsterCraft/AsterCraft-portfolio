@@ -19,7 +19,7 @@ const SectionPromise = () => {
       <div className="max-w-[580px] lg:max-w-[690px]">
         <TitleSection title="Замовте сайт, який приводить клієнтів" />
 
-        <CheckListItems items={dataPromiseList} />
+        <CheckListItems data={dataPromiseList} />
       </div>
 
       <SvgDevices

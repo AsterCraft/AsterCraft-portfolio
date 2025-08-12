@@ -5,13 +5,13 @@ interface TextItem {
 }
 
 interface CheckListItemsProps {
-  items: TextItem[];
+  data: TextItem[];
 }
 
-const CheckListItems = ({ items }: CheckListItemsProps) => {
+const CheckListItems = ({ data }: CheckListItemsProps) => {
   return (
     <ul className="flex flex-col gap-3">
-      {items.map((item, index) => (
+      {data.map((item, index) => (
         <li
           key={index}
           className="flex items-center gap-3 text-lg text-zinc-900"
