@@ -17,7 +17,7 @@ const contactFormSlice = createSlice({
     },
 
     setLastName: (state, action: PayloadAction<string>) => {
-      state.firstName = action.payload;
+      state.lastName = action.payload;
     },
 
     setEmail: (state, action: PayloadAction<string>) => {
