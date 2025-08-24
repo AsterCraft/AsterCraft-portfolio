@@ -1,6 +1,5 @@
 import classNames from "classnames";
 import { motion, AnimatePresence } from "motion/react";
-import { useContext } from "react";
 
 import FirstNameField from "./FirstNameField";
 import LastNameField from "./LastNameField";
@@ -9,11 +8,11 @@ import PhoneField from "./PhoneField";
 import MessageField from "./MessageField";
 import ButtonSubmit from "./ButtonSubmit";
 
-import ContextModalStartProject from "../../../shared/store/ContextModalStartProject";
+import { useIsContactFormModalOpenStore } from "../../../shared/lib/store/isContactFormModalOpen";
 import { useSubmitModalStartProject } from "../model/useSubmitModalStartProject";
 
 const ModalStartProject = () => {
-  const { isOpen, setIsOpen } = useContext(ContextModalStartProject);
+  const { isOpen, toggleIsOpen } = useIsContactFormModalOpenStore();
 
   const { handleSubmit, isSubmitting } = useSubmitModalStartProject();
 
@@ -30,7 +29,7 @@ const ModalStartProject = () => {
                 "hidden",
                 "z-[-1000] lg:fixed lg:inset-y-0 lg:left-0 lg:block lg:w-full lg:bg-black/50 lg:text-white"
               )}
-              onClick={() => setIsOpen(false)}
+              onClick={toggleIsOpen}
             ></motion.div>
 
             <motion.div
@@ -79,7 +78,7 @@ const ModalStartProject = () => {
               >
                 <div className="mt-6 mb-12 flex justify-end">
                   <button
-                    onClick={() => setIsOpen(false)}
+                    onClick={toggleIsOpen}
                     className="text-xl"
                   >
                     Close

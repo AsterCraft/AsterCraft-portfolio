@@ -1,5 +1,4 @@
-import { useContext } from "react";
-import ContextModalStartProject from "../../../store/ContextModalStartProject";
+import { useIsContactFormModalOpenStore } from "../../../lib/store/isContactFormModalOpen";
 
 type ButtonStartProjectProps = {
   className?: string;
@@ -7,13 +6,12 @@ type ButtonStartProjectProps = {
 };
 
 const ButtonStartProject = ({ className, text }: ButtonStartProjectProps) => {
-
-  const { setIsOpen } = useContext(ContextModalStartProject);
+  const { toggleIsOpen } = useIsContactFormModalOpenStore();
 
   return (
     <div className={className}>
       <button
-        onClick={() => setIsOpen(true)}
+        onClick={toggleIsOpen}
         className="bg-ac-btn-action inline-block w-fit cursor-pointer rounded-md px-8 py-4 text-lg whitespace-nowrap text-black"
       >
         {text || "Start a project"}
