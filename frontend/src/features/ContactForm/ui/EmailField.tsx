@@ -1,12 +1,18 @@
-import { useModalStartProjectStore } from "../model/store";
+import { useSelector, useDispatch } from "react-redux";
+import { setEmail, type StoreType } from "../../../app/store";
 
 const EmailField = () => {
-  const { email, setEmail } = useModalStartProjectStore();
+  const dispatch = useDispatch();
 
+  const valueEmail = useSelector((state: StoreType) => state.contactForm.email);
+
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    dispatch(setEmail(e.target.value));
+  };
   return (
     <input
-      value={email}
-      onChange={(e) => setEmail(e.target.value)}
+      value={valueEmail}
+      onChange={handleEmailChange}
       type="email"
       id="e-mail"
       placeholder="me@gmail.com"
