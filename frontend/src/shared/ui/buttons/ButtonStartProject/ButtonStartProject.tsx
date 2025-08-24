@@ -1,4 +1,7 @@
-import { useIsContactFormModalOpenStore } from "../../../lib/store/isContactFormModalOpen";
+import { useDispatch, useSelector } from "react-redux";
+import { setIsOpen, type StoreType } from "../../../../app/store";
+
+// import { useIsContactFormModalOpenStore } from "../../../lib/store/isContactFormModalOpen";
 
 type ButtonStartProjectProps = {
   className?: string;
@@ -6,7 +9,17 @@ type ButtonStartProjectProps = {
 };
 
 const ButtonStartProject = ({ className, text }: ButtonStartProjectProps) => {
-  const { toggleIsOpen } = useIsContactFormModalOpenStore();
+  const dispatch = useDispatch();
+
+  const isOpen = useSelector(
+    (state: StoreType) => state.isContactFormModalOpen.isOpen
+  );
+
+  const toggleIsOpen = () => {
+    dispatch(setIsOpen(!isOpen));
+  };
+
+  // const { toggleIsOpen } = useIsContactFormModalOpenStore();
 
   return (
     <div className={className}>
