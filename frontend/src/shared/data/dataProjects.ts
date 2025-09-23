@@ -22,6 +22,20 @@ const dataProjects: Projects[] = [
     subtitle: "Website for Createx Online Courses",
   },
   {
+    url: "https://www.odtahvozidel-24.cz/",
+    imgBg: "/img/projects/bg/5.webp",
+    imgWebsite: "/img/projects/website/5.png",
+    title: "Odtahvozidel-24",
+    subtitle: "Сайт для послуг евакуатора в Чехії",
+  },
+  {
+    url: "https://www.roxy.com/",
+    imgBg: "/img/projects/bg/4.png",
+    imgWebsite: "/img/projects/website/6.png",
+    title: "Roxy",
+    subtitle: "Онлайн магазин для спортивних товарів",
+  },
+  {
     url: "https://medoyed.github.io/bank-js/",
     imgBg: "/img/projects/bg/3.png",
     imgWebsite: "/img/projects/website/3.png",
