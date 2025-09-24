@@ -1,6 +1,5 @@
 import classNames from "classnames";
 import { motion, AnimatePresence } from "motion/react";
-import { useContext } from "react";
 
 import FirstNameField from "./FirstNameField";
 import LastNameField from "./LastNameField";
@@ -9,25 +8,11 @@ import PhoneField from "./PhoneField";
 import MessageField from "./MessageField";
 import ButtonSubmit from "./ButtonSubmit";
 
-// import { useIsContactFormModalOpenStore } from "../../../shared/lib/store/isContactFormModalOpen";
+import { useIsContactFormModalOpenStore } from "../../../shared/lib/store/isContactFormModalOpen";
 import { useSubmitModalStartProject } from "../model/useSubmitModalStartProject";
 
-import { useSelector, useDispatch } from "react-redux";
-import type { StoreType } from "../../../app/store";
-import { setIsOpen } from "../../../app/store";
-
 const ModalStartProject = () => {
-  // const { isOpen, toggleIsOpen } = useIsContactFormModalOpenStore();
-
-  const dispatch = useDispatch();
-
-  const isOpen = useSelector(
-    (state: StoreType) => state.isContactFormModalOpen.isOpen
-  );
-
-  const toggleIsOpen = () => {
-    dispatch(setIsOpen(!isOpen));
-  };
+  const { isOpen, toggleIsOpen } = useIsContactFormModalOpenStore();
 
   const { handleSubmit, isSubmitting } = useSubmitModalStartProject();
 

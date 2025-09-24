@@ -1,24 +1,12 @@
-// import { useModalStartProjectStore } from "../model/store";
-
-import { useSelector, useDispatch } from "react-redux";
-import { type StoreType, setPhone } from "../../../app/store";
+import { useModalStartProjectStore } from "../model/store";
 
 const PhoneField = () => {
-  // const { phone, setPhone } = useModalStartProjectStore();
-  const dispatch = useDispatch();
-
-  const valuePhone = useSelector((state: StoreType) => state.contactForm.phone);
-
-  const handleMessageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    dispatch(setPhone(e.target.value));
-  };
+  const { phone, setPhone } = useModalStartProjectStore();
 
   return (
     <input
-      // value={phone}
-      // onChange={(e) => setPhone(e.target.value)}
-      value={valuePhone}
-      onChange={handleMessageChange}
+      value={phone}
+      onChange={(e) => setPhone(e.target.value)}
       type="text"
       id="phone"
       placeholder="+48790833877"
