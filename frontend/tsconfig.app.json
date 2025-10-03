@@ -22,9 +22,35 @@
     "noUnusedLocals": false,
     "noUnusedParameters": false,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    "noUncheckedSideEffectImports": true,
+    "baseUrl": "./src",
+    "paths": {
+      "@shared": [
+        "shared/index.ts"
+      ],
+      "@shared/*": [
+        "shared/*"
+      ],
+      "@widgets": [
+        "widgets/index.ts"
+      ],
+      "@widgets/*": [
+        "widgets/*"
+      ],
+      "@pages": [
+        "pages/index.ts"
+      ],
+      "@pages/*": [
+        "pages/*"
+      ]
+    },
+    "types": [
+      "vite/client",
+      "@react-router/dev"
+    ]
   },
   "include": [
-    "src"
+    "src",
+    "*.ts"
   ]
 }

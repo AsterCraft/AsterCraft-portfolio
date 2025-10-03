@@ -1,14 +1,14 @@
-// import { create } from "zustand";
+import { create } from "zustand";
 
-// type useIsContactFormOpen = {
-//   isOpen: boolean;
-//   toggleIsOpen: () => void;
-// };
+type useIsContactFormOpen = {
+  isOpen: boolean;
+  toggleIsOpen: () => void;
+};
 
-// export const useIsContactFormModalOpenStore = create<useIsContactFormOpen>(
-//   (set) => ({
-//     isOpen: false,
+export const useIsContactFormModalOpenStore = create<useIsContactFormOpen>(
+  (set) => ({
+    isOpen: false,
 
-//     toggleIsOpen: () => set((state) => ({ isOpen: !state.isOpen })),
-//   })
-// );
+    toggleIsOpen: () => set((state) => ({ isOpen: !state.isOpen })),
+  })
+);

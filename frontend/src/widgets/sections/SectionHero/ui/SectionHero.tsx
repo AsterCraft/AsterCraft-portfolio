@@ -5,8 +5,6 @@ import ButtonStartProject from "../../../../shared/ui/buttons/ButtonStartProject
 import LightDivider from "../../../../shared/ui/lines/LightDivider/LightDivider";
 import HeroTitle from "./HeroTitle";
 
-import lottieAnimation from "../../../../shared/assets/video/hero-section-animation.json";
-
 const SectionHero = () => {
   return (
     <section className="flex h-[100vh] w-full flex-col bg-[#1a1a1a] pt-20 text-xl text-white">
@@ -20,14 +18,6 @@ const SectionHero = () => {
           )}
         >
           <HeroTitle />
-
-          <div className="max-h-[600px] max-w-[600px]">
-            <Lottie
-              animationData={lottieAnimation}
-              loop
-              autoplay
-            />
-          </div>
         </div>
       </div>
 

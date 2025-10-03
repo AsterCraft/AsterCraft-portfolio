@@ -1,18 +1,13 @@
 import axios from "axios";
 import { useState } from "react";
-import { useSelector } from "react-redux";
 
-// import { useModalStartProjectStore } from "./store";
-import type { StoreType } from "../../../app/store";
+import { useModalStartProjectStore } from "./store";
 
 export const useSubmitModalStartProject = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const formData = useSelector((state: StoreType) => state.contactForm);
-  const { email, firstName, lastName, message, phone } = formData;
-
-  // const { firstName, lastName, email, phone, message, resetModalStartProject } =
-  // useModalStartProjectStore();
+  const { firstName, lastName, email, phone, message, resetModalStartProject } =
+    useModalStartProjectStore();
 
   const handleSubmit = async () => {
     setIsSubmitting(true);
@@ -47,7 +42,7 @@ export const useSubmitModalStartProject = () => {
       }
 
       setIsSubmitting(false);
-      // resetModalStartProject();
+      resetModalStartProject();
     } catch (error) {
       console.log("Error sending data: ", error);
     } finally {

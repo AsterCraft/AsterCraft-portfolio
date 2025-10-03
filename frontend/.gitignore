@@ -1,3 +1,6 @@
+# Auto-generated files
+.react-router/
+
 # Logs
 logs
 *.log

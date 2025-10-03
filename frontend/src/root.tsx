@@ -1,0 +1,61 @@
+import { Meta, Links, Outlet, Scripts, ScrollRestoration } from "react-router";
+import { useTranslation } from "react-i18next";
+
+import { Header } from "@widgets";
+import { Footer } from "@widgets";
+import { ModalStartProject } from "features";
+import { BurgerDropdownMenu } from "features";
+
+import "@shared/lib/i18n";
+
+import "./main.css";
+
+export function Layout({ children }: { children: React.ReactNode }) {
+  const { i18n } = useTranslation();
+
+  return (
+    <html
+      lang={i18n.language}
+      className="overflow-x-hidden"
+    >
+      <head>
+        <meta charSet="UTF-8" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0"
+        />
+
+        <link
+          rel="icon"
+          type="image/png"
+          href="/img/logo/image.png"
+        />
+        {/* define title only in routes to get rid of duplicate title? */}
+        {/* <title>Aster Craft</title> */}
+
+        <Meta />
+        <Links />
+      </head>
+      <body className="overflow-x-hidden">
+        {children}
+
+        {/* doesnt restore scroll? */}
+        <ScrollRestoration />
+        <Scripts />
+      </body>
+    </html>
+  );
+}
+
+export default function Root() {
+  return (
+    <>
+      <Header />
+      <Outlet />
+      <Footer />
+
+      <ModalStartProject />
+      <BurgerDropdownMenu />
+    </>
+  );
+}

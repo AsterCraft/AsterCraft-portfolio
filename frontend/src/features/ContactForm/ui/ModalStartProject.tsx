@@ -8,25 +8,11 @@ import PhoneField from "./PhoneField";
 import MessageField from "./MessageField";
 import ButtonSubmit from "./ButtonSubmit";
 
-// import { useIsContactFormModalOpenStore } from "../../../shared/lib/store/isContactFormModalOpen";
+import { useIsContactFormModalOpenStore } from "../../../shared/lib/store/isContactFormModalOpen";
 import { useSubmitModalStartProject } from "../model/useSubmitModalStartProject";
 
-import { useSelector, useDispatch } from "react-redux";
-import type { StoreType } from "../../../app/store";
-import { setIsOpen } from "../../../app/store";
-
 const ModalStartProject = () => {
-  // const { isOpen, toggleIsOpen } = useIsContactFormModalOpenStore();
-
-  const dispatch = useDispatch();
-
-  const isOpen = useSelector(
-    (state: StoreType) => state.isContactFormModalOpen.isOpen
-  );
-
-  const toggleIsOpen = () => {
-    dispatch(setIsOpen(!isOpen));
-  };
+  const { isOpen, toggleIsOpen } = useIsContactFormModalOpenStore();
 
   const { handleSubmit, isSubmitting } = useSubmitModalStartProject();
 
@@ -50,12 +36,13 @@ const ModalStartProject = () => {
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
-              transition={{ duration: 1.2, type: "spring", bounce: 0.1 }}
+              transition={{ duration: 1.3, type: "spring", bounce: 0 }}
               className={classNames(
                 "fixed inset-y-0 right-0 w-full bg-white p-6",
                 "lg:w-1/2"
               )}
             >
+              {/* div for animating the fading* in/out of the modal window content */}
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{
