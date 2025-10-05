@@ -1,0 +1,1 @@
+export { TextSlideUp } from "./TextSlideUp";
