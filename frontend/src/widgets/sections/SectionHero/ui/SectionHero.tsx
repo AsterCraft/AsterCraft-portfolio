@@ -1,4 +1,3 @@
-import Lottie from "lottie-react";
 import classNames from "classnames";
 
 import ButtonStartProject from "../../../../shared/ui/buttons/ButtonStartProject/ButtonStartProject";
@@ -25,8 +24,11 @@ const SectionHero = () => {
         <LightDivider />
 
         <div className="Container flex flex-col justify-between md:flex-row">
-          <p>We create websites that leave a strong and lasting impression.</p>
-          <ButtonStartProject className="absolute right-10 bottom-10 md:static md:right-auto md:bottom-auto" />
+          <p>Ми створимо Вам сайт, який для будь-яких ваших цілей!</p>
+          <ButtonStartProject
+            text="Обговорити проект"
+            className="absolute right-10 bottom-10 md:static md:right-auto md:bottom-auto"
+          />
         </div>
       </div>
     </section>
