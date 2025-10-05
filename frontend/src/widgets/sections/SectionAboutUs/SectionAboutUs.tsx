@@ -1,43 +1,44 @@
-import { useEffect } from "react";
-import { useAnimate, useInView, stagger } from "motion/react";
+// import { useEffect } from "react";
+// import { useAnimate, useInView, stagger } from "motion/react";
 import classNames from "classnames";
 
 import ButtonStartProject from "../../../shared/ui/buttons/ButtonStartProject/ButtonStartProject";
 import BulletBlackSquare from "../../../shared/ui/bullets/BulletBlackSquare/BulletBlackSquare";
 
-// import imgWebAgencyAuthor from "../../../shared/assets/img/web_agency_author.avif";
-import imgLogo from "../../../../public/img/logo/image.png";
+import imgLogo from "/img/logo/logo.png";
+
+import { TextSlideUp } from "@shared/ui/typography";
 
 const SectionAboutUs = () => {
-  const [sectionRef, animate] = useAnimate<HTMLElement>();
-  const inView: boolean = useInView(sectionRef, { once: true, amount: 0.6 });
+  // const [sectionRef, animate] = useAnimate<HTMLElement>();
+  // const inView: boolean = useInView(sectionRef, { once: true, amount: 0.6 });
 
-  useEffect(() => {
-    const setTextAnimation = (inView: boolean) => {
-      if (inView) {
-        animate(
-          ".section-about-us__text",
-          { opacity: 1, y: 0 },
-          { delay: stagger(0.2), duration: 0.6 }
-        );
-      } else {
-        // set initial element state
-        // from which animation will be played
-        animate(
-          ".section-about-us__text",
-          { opacity: 0, y: 24 },
-          { duration: 0 }
-        );
-      }
-    };
+  // useEffect(() => {
+  //   const setTextAnimation = (inView: boolean) => {
+  //     if (inView) {
+  //       animate(
+  //         ".section-about-us__text",
+  //         { opacity: 1, y: 0 },
+  //         { delay: stagger(0.2), duration: 0.6 }
+  //       );
+  //     } else {
+  //       // set initial element state
+  //       // from which animation will be played
+  //       animate(
+  //         ".section-about-us__text",
+  //         { opacity: 0, y: 24 },
+  //         { duration: 0 }
+  //       );
+  //     }
+  //   };
 
-    setTextAnimation(inView);
-  }, [inView, animate]);
+  //   setTextAnimation(inView);
+  // }, [inView, animate]);
 
   return (
     <section
       id="about"
-      ref={sectionRef}
+      // ref={sectionRef}
       className={classNames("Container flex flex-col gap-18", "sm:flex-row")}
     >
       <div
@@ -67,7 +68,7 @@ const SectionAboutUs = () => {
 
       {/* container with text */}
       <div className="mx-auto flex max-w-160 flex-col">
-        <h2
+        {/* <h2
           className={classNames(
             "section-about-us__text",
             "text-[clamp(1.5rem,5.5vw+0.25rem,1.75rem)] leading-snug",
@@ -75,20 +76,30 @@ const SectionAboutUs = () => {
             "lg:text-[clamp(2.25rem,2.5vw+0.25rem,2.75rem)]"
           )}
         >
-          Hi, we’re Aster Craft.
-        </h2>
-        <h2
+          Привіт, ми Aster Craft.
+        </h2> */}
+        <TextSlideUp
+          text="Привіт, ми Aster Craft."
+          as="h2"
+        />
+
+        {/* <h2
           className={classNames(
             "section-about-us__text",
-            "mb-6 text-[clamp(1.5rem,5.5vw+0.25rem,1.75rem)] leading-snug",
+            "mb-6 text-[clamp(1.5rem,5.5vw+0.25rem,1.75rem)] leading-[1.1]",
             "sm:text-[clamp(1.75rem,3.5vw+0.25rem,2.25rem)]",
             "lg:text-[clamp(2.25rem,2.5vw+0.25rem,2.75rem)]"
           )}
         >
-          A small web studio from Łódź.
-        </h2>
+          Ми пропонуємо професійне створення сайтів
+        </h2> */}
+        <TextSlideUp
+          text="Ми пропонуємо професійне створення сайтів"
+          as="h2"
+          lineHeight="leading-[1.1]"
+        />
 
-        <p
+        {/* <p
           className={classNames(
             "section-about-us__text",
             "text-lg text-zinc-600"
@@ -96,8 +107,14 @@ const SectionAboutUs = () => {
         >
           We design and build modern websites using React, TypeScript, and clean
           code.
-        </p>
-        <p
+        </p> */}
+        <TextSlideUp
+          text="We design and build modern websites using React, TypeScript, and clean
+          code."
+          as="p"
+        />
+
+        {/* <p
           className={classNames(
             "section-about-us__text",
             "mb-9 text-lg text-zinc-600"
@@ -105,7 +122,12 @@ const SectionAboutUs = () => {
         >
           Every project is fast, focused, and fully tailored to the client —
           from personal sites to full business solutions.
-        </p>
+        </p> */}
+        <TextSlideUp
+          text="Every project is fast, focused, and fully tailored to the client —
+          from personal sites to full business solutions."
+          as="p"
+        />
 
         <ButtonStartProject />
       </div>

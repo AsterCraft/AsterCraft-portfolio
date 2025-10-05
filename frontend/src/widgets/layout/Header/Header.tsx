@@ -40,10 +40,11 @@ const Header = () => {
 
             <nav className="hidden sm:block">
               <ul className="flex gap-4">
-                <li>About me</li>
-                <li>Projects</li>
-                <li>Services</li>
-                <li>Contact</li>
+                <li>Розробка сайтів</li>
+                <li>Просування сайту</li>
+                <li>Ціни</li>
+                <li>Портфоліо</li>
+                <li>Контакти</li>
               </ul>
             </nav>
           </div>
