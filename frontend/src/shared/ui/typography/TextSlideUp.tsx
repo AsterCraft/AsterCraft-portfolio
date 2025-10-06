@@ -1,4 +1,4 @@
-import { stagger, useAnimate, useInView } from "motion/react";
+import { useAnimate, useInView } from "motion/react";
 import { useEffect } from "react";
 import cn from "classnames";
 
@@ -8,12 +8,14 @@ interface TextSlideUpProps {
 
   // css
   lineHeight?: string;
+  className?: string;
 }
 
 export const TextSlideUp = ({
   text,
   as: Component, // rename for Component for React jsx syntax
-  lineHeight = "leading-snug",
+  lineHeight,
+  className,
 }: TextSlideUpProps) => {
   const [textRef, animate] = useAnimate();
   const inView: boolean = useInView(textRef, { once: true, amount: 0.6 });
@@ -33,7 +35,7 @@ export const TextSlideUp = ({
   let styles;
   if (Component === "h2") {
     styles = cn(
-      lineHeight,
+      lineHeight || "leading-snug",
       "text-[clamp(1.5rem,5.5vw+0.25rem,1.75rem)]",
       "sm:text-[clamp(1.75rem,3.5vw+0.25rem,2.25rem)]",
       "lg:text-[clamp(2.25rem,2.5vw+0.25rem,2.75rem)]"
@@ -45,7 +47,7 @@ export const TextSlideUp = ({
   return (
     <Component
       ref={textRef}
-      className={styles}
+      className={cn(styles, className)}
     >
       {text}
     </Component>

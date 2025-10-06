@@ -5,7 +5,7 @@ import { FaArrowRight } from "react-icons/fa6";
 import { FaArrowLeft } from "react-icons/fa6";
 import classNames from "classnames";
 
-import BulletBlackSquare from "../../../shared/ui/bullets/BulletBlackSquare/BulletBlackSquare";
+import { LabelToSection } from "@shared/ui/typography";
 
 import dataTestimonials from "../../../shared/data/dataTestimonials";
 
@@ -17,10 +17,7 @@ const SliderTestimonials = () => {
 
   return (
     <div className="Container my-10">
-      <div className="mb-7 flex items-center">
-        <BulletBlackSquare />
-        <div className="leading-4 uppercase">customer testimonials</div>
-      </div>
+      <LabelToSection text="відгуки" />
 
       {/* Swiper and navigation buttons */}
       <div

@@ -3,11 +3,11 @@
 import classNames from "classnames";
 
 import ButtonStartProject from "../../../shared/ui/buttons/ButtonStartProject/ButtonStartProject";
-import BulletBlackSquare from "../../../shared/ui/bullets/BulletBlackSquare/BulletBlackSquare";
+import { LabelToSection, TextSlideUp } from "@shared/ui/typography";
 
 import imgLogo from "/img/logo/logo.png";
 
-import { TextSlideUp } from "@shared/ui/typography";
+import s from "./section-about-us.module.scss";
 
 const SectionAboutUs = () => {
   // const [sectionRef, animate] = useAnimate<HTMLElement>();
@@ -47,12 +47,7 @@ const SectionAboutUs = () => {
           "sm:flex-col"
         )}
       >
-        <div className="flex items-center gap-1">
-          <BulletBlackSquare />
-          <h3 className="text-[clamp(1rem,0.6vw+0.5rem,1.4rem)] font-normal uppercase">
-            About Us
-          </h3>
-        </div>
+        <LabelToSection text="про нас" />
 
         <img
           src={imgLogo}
@@ -94,7 +89,8 @@ const SectionAboutUs = () => {
           Ми пропонуємо професійне створення сайтів
         </h2> */}
         <TextSlideUp
-          text="Ми пропонуємо професійне створення сайтів"
+          className={s.subtitle}
+          text="Ми пропонуємо професійне створення та просування сайтів"
           as="h2"
           lineHeight="leading-[1.1]"
         />
@@ -109,8 +105,8 @@ const SectionAboutUs = () => {
           code.
         </p> */}
         <TextSlideUp
-          text="We design and build modern websites using React, TypeScript, and clean
-          code."
+          className={s.paragraph}
+          text="Наші спеціалісти зі створення веб-сайтів можуть розробити практичне онлайн-рішення для вашої організації відповідно до конкретних вимог та викликів вашої ніші ринку."
           as="p"
         />
 
@@ -123,13 +119,11 @@ const SectionAboutUs = () => {
           Every project is fast, focused, and fully tailored to the client —
           from personal sites to full business solutions.
         </p> */}
-        <TextSlideUp
-          text="Every project is fast, focused, and fully tailored to the client —
-          from personal sites to full business solutions."
-          as="p"
-        />
 
-        <ButtonStartProject />
+        <ButtonStartProject
+          className={s.buttonStartProject}
+          text="Обговорити проект"
+        />
       </div>
     </section>
   );
