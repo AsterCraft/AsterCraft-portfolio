@@ -51,7 +51,7 @@ const SectionAboutUs = () => {
         <div className="flex items-center gap-1">
           <BulletBlackSquare />
           <h3 className="text-[clamp(1rem,0.6vw+0.5rem,1.4rem)] font-normal uppercase">
-            About Us
+            Про нас
           </h3>
         </div>
 
@@ -95,7 +95,8 @@ const SectionAboutUs = () => {
           Ми пропонуємо професійне створення сайтів
         </h2> */}
         <TextSlideUp
-          text="Ми пропонуємо професійне створення сайтів"
+          className={s.subtitle}
+          text="Ми пропонуємо професійне створення та просування сайтів"
           as="h2"
           lineHeight="leading-[1.1]"
         />
@@ -124,13 +125,11 @@ const SectionAboutUs = () => {
           Every project is fast, focused, and fully tailored to the client —
           from personal sites to full business solutions.
         </p> */}
-        <TextSlideUp
-          text="Every project is fast, focused, and fully tailored to the client —
-          from personal sites to full business solutions."
-          as="p"
-        />
 
-        <ButtonStartProject />
+        <ButtonStartProject
+          className={s.buttonStartProject}
+          text="Обговорити проект"
+        />
       </div>
     </section>
   );

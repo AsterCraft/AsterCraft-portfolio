@@ -17,7 +17,7 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: `@import "@/widgets/modals/write-us-popup/styles/variables";`,
+        // additionalData: `@import "@/widgets/modals/write-us-popup/styles/variables";`,
       },
     },
   },

@@ -38,17 +38,16 @@ export const TextSlideUp = ({
       lineHeight || "leading-snug",
       "text-[clamp(1.5rem,5.5vw+0.25rem,1.75rem)]",
       "sm:text-[clamp(1.75rem,3.5vw+0.25rem,2.25rem)]",
-      "lg:text-[clamp(2.25rem,2.5vw+0.25rem,2.75rem)]",
-      className
+      "lg:text-[clamp(2.25rem,2.5vw+0.25rem,2.75rem)]"
     );
   } else if (Component === "p") {
-    styles = cn("text-lg text-zinc-600", className);
+    styles = cn("text-lg text-zinc-600");
   }
 
   return (
     <Component
       ref={textRef}
-      className={styles}
+      className={cn(styles, className)}
     >
       {text}
     </Component>
