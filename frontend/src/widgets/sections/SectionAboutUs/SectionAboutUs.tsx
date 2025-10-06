@@ -4,10 +4,11 @@ import classNames from "classnames";
 
 import ButtonStartProject from "../../../shared/ui/buttons/ButtonStartProject/ButtonStartProject";
 import BulletBlackSquare from "../../../shared/ui/bullets/BulletBlackSquare/BulletBlackSquare";
+import { TextSlideUp } from "@shared/ui/typography";
 
 import imgLogo from "/img/logo/logo.png";
 
-import { TextSlideUp } from "@shared/ui/typography";
+import s from "./section-about-us.module.scss";
 
 const SectionAboutUs = () => {
   // const [sectionRef, animate] = useAnimate<HTMLElement>();
@@ -109,8 +110,8 @@ const SectionAboutUs = () => {
           code.
         </p> */}
         <TextSlideUp
-          text="We design and build modern websites using React, TypeScript, and clean
-          code."
+          className={s.paragraph}
+          text="Наші спеціалісти зі створення веб-сайтів можуть розробити практичне онлайн-рішення для вашої організації відповідно до конкретних вимог та викликів вашої ніші ринку."
           as="p"
         />
 
