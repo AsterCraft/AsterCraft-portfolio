@@ -1,4 +1,4 @@
-import { stagger, useAnimate, useInView } from "motion/react";
+import { useAnimate, useInView } from "motion/react";
 import { useEffect } from "react";
 import cn from "classnames";
 
