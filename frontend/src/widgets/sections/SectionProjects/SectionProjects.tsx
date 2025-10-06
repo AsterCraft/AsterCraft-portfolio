@@ -1,16 +1,13 @@
 import classNames from "classnames";
 
-import { BulletBlackSquare } from "@shared/ui/bullets";
+import { LabelToSection } from "@shared/ui/typography";
 
 import dataProjects from "../../../shared/data/dataProjects";
 
 const SectionProjects = () => {
   return (
     <section className="Container my-15">
-      <h2 className="mb-8">
-        <BulletBlackSquare />
-        <span className="uppercase">projects</span>
-      </h2>
+      <LabelToSection text="проекти" />
 
       <section
         className={classNames(

@@ -3,8 +3,7 @@
 import classNames from "classnames";
 
 import ButtonStartProject from "../../../shared/ui/buttons/ButtonStartProject/ButtonStartProject";
-import { BulletBlackSquare } from "@shared/ui/bullets";
-import { TextSlideUp } from "@shared/ui/typography";
+import { LabelToSection, TextSlideUp } from "@shared/ui/typography";
 
 import imgLogo from "/img/logo/logo.png";
 
@@ -48,12 +47,7 @@ const SectionAboutUs = () => {
           "sm:flex-col"
         )}
       >
-        <div className="flex items-center gap-1">
-          <BulletBlackSquare />
-          <h3 className="text-[clamp(1rem,0.6vw+0.5rem,1.4rem)] font-normal uppercase">
-            Про нас
-          </h3>
-        </div>
+        <LabelToSection text="про нас" />
 
         <img
           src={imgLogo}
