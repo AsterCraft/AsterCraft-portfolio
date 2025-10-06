@@ -26,7 +26,7 @@ const SectionHero = () => {
         <div className="Container flex flex-col justify-between md:flex-row">
           <p>Ми створимо Вам сайт, який для будь-яких ваших цілей!</p>
           <ButtonStartProject
-            text="Обговорити проект"
+            text="Замовити безкоштовну консультацію"
             className="absolute right-10 bottom-10 md:static md:right-auto md:bottom-auto"
           />
         </div>
