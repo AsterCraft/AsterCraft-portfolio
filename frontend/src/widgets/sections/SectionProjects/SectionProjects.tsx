@@ -1,6 +1,6 @@
 import classNames from "classnames";
 
-import BulletBlackSquare from "../../../shared/ui/bullets/BulletBlackSquare/BulletBlackSquare";
+import { BulletBlackSquare } from "@shared/ui/bullets";
 
 import dataProjects from "../../../shared/data/dataProjects";
 

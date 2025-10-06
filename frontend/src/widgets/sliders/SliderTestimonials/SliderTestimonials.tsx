@@ -5,7 +5,7 @@ import { FaArrowRight } from "react-icons/fa6";
 import { FaArrowLeft } from "react-icons/fa6";
 import classNames from "classnames";
 
-import BulletBlackSquare from "../../../shared/ui/bullets/BulletBlackSquare/BulletBlackSquare";
+import { BulletBlackSquare } from "@shared/ui/bullets";
 
 import dataTestimonials from "../../../shared/data/dataTestimonials";
 

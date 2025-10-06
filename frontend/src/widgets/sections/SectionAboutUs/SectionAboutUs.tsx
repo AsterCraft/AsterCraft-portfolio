@@ -3,7 +3,7 @@
 import classNames from "classnames";
 
 import ButtonStartProject from "../../../shared/ui/buttons/ButtonStartProject/ButtonStartProject";
-import BulletBlackSquare from "../../../shared/ui/bullets/BulletBlackSquare/BulletBlackSquare";
+import { BulletBlackSquare } from "@shared/ui/bullets";
 import { TextSlideUp } from "@shared/ui/typography";
 
 import imgLogo from "/img/logo/logo.png";
