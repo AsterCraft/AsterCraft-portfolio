@@ -1,0 +1,27 @@
+.sectionContact {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  font-size: 20px;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  @media (min-width: 970px) {
+    font-size: 24px;
+  }
+}
+
+.contactList {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 60px;
+  }
+}
