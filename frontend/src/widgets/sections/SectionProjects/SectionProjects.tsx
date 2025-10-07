@@ -1,8 +1,8 @@
-import classNames from "classnames";
+import cn from "classnames";
 
 import { LabelToSection } from "@shared/ui/typography";
 
-import dataProjects from "../../../shared/data/dataProjects";
+import { dataProjects } from "@shared/lib/constants";
 
 const SectionProjects = () => {
   return (
@@ -10,11 +10,7 @@ const SectionProjects = () => {
       <LabelToSection text="проекти" />
 
       <section
-        className={classNames(
-          "grid grid-cols-1 gap-5",
-          "md:grid-cols-2",
-          "xl:gap-10"
-        )}
+        className={cn("grid grid-cols-1 gap-5", "md:grid-cols-2", "xl:gap-10")}
       >
         {dataProjects.map((project, index) => (
           <a
