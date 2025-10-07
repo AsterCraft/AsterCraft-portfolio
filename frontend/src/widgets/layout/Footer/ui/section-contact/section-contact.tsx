@@ -29,7 +29,7 @@ export const SectionContact = () => {
         <p className="mb-1 text-zinc-600">© 2025</p>
 
         {/* to do: <Link /> to page DataProtection */}
-        <div className="cursor-pointer">Data protection</div>
+        <div className="cursor-pointer">Данні захищені</div>
       </div>
     </section>
   );

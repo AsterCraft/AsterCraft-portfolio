@@ -7,11 +7,11 @@ import classNames from "classnames";
 
 import { LabelToSection } from "@shared/ui/typography";
 
-import dataTestimonials from "../../../shared/data/dataTestimonials";
+import { dataTestimonials } from "@shared/lib/constants";
 
 import "swiper/css";
 
-const SliderTestimonials = () => {
+export const TestimonialsSlider = () => {
   const prevRef = useRef<HTMLButtonElement>(null);
   const nextRef = useRef<HTMLButtonElement>(null);
 
@@ -87,5 +87,3 @@ const SliderTestimonials = () => {
     </div>
   );
 };
-
-export default SliderTestimonials;
