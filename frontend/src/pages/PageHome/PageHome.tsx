@@ -4,7 +4,7 @@ import SectionDevelopmentProcess from "../../widgets/sections/SectionDevelopment
 import SectionHero from "../../widgets/sections/SectionHero/ui/SectionHero";
 import DividerBetweenSections from "../../shared/ui/lines/DividerBetweenSections/DividerBetweenSections";
 import SectionProjects from "../../widgets/sections/SectionProjects/SectionProjects";
-import SliderTestimonials from "../../widgets/sliders/SliderTestimonials/SliderTestimonials";
+import { TestimonialsSlider } from "@widgets/testimonials-slider";
 import SectionTelegramContact from "../../widgets/sections/SectionTelegramContact/ui/SectionTelegramContact";
 import SectionConsultation from "../../widgets/sections/SectionConsultation/ui/SectionConsultation";
 import AccordionFAQ from "../../widgets/accordions/AccordionFAQ/AccordionFAQ";
@@ -36,7 +36,7 @@ const PageHome = () => {
       <SectionConsultation />
 
       <DividerBetweenSections />
-      <SliderTestimonials />
+      <TestimonialsSlider />
       <DividerBetweenSections />
 
       <AccordionFAQ />

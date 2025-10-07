@@ -5,7 +5,7 @@ type Testimonials = {
   role: string;
 };
 
-const dataTestimonials: Testimonials[] = [
+export const dataTestimonials: Testimonials[] = [
   {
     feedback:
       "Daniel implemented our website with impressive speed, taking all of our wishes and suggestions into account. He stands out not only for his comprehensive understanding of design, but also for his pleasant manner, which makes working with us particularly pleasant.",
@@ -38,5 +38,3 @@ const dataTestimonials: Testimonials[] = [
     role: "Managing Director, Your Coach",
   },
 ];
-
-export default dataTestimonials;
