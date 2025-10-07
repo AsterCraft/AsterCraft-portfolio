@@ -14,7 +14,7 @@ const MessageField = () => {
       onChange={(e) => setMessage(e.target.value)}
       name="Project_Details"
       id="Project-Details"
-      placeholder={t("contactForm.fields.projectDetails.label")}
+      placeholder={t("contactForm.fields.projectDetails.placeholder")}
       className={textAreaStyles}
     ></textarea>
   );

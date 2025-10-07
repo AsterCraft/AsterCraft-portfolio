@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import { motion, AnimatePresence } from "motion/react";
-import { useTranslation } from "react-i18next";
+import { useTranslation, Trans } from "react-i18next";
 
 import FirstNameField from "./FirstNameField";
 import TelegramField from "./TelegramField";
@@ -104,14 +104,26 @@ const ModalStartProject = () => {
                       "lg:text-[clamp(1.3rem,1vw+0.4rem,1.4rem)]"
                     )}
                   >
-                    {t("contactForm.subtitle")}{" "}
-                    <a
-                      href="#"
-                      className="text-ac-link-email underline"
-                    >
-                      E-Mail
-                    </a>{" "}
-                    {t("contactForm.subtitleEnd")}
+                    <Trans
+                      i18nKey="contactForm.subtitleFull"
+                      ns="features"
+                      components={{
+                        email: (
+                          <a
+                            href="mailto:astercraft.dev@gmail.com"
+                            className="text-ac-link-email underline"
+                            target="_blank"
+                          />
+                        ),
+                        telegram: (
+                          <a
+                            href="https://t.me/AsterCraft"
+                            className="text-ac-link-email underline"
+                            target="_blank"
+                          />
+                        ),
+                      }}
+                    />
                   </p>
                 </header>
 
