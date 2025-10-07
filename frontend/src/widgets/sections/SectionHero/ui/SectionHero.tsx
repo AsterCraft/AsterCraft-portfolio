@@ -24,7 +24,7 @@ const SectionHero = () => {
         <LightDivider />
 
         <div className="Container flex flex-col justify-between md:flex-row">
-          <p>Ми створимо Вам сайт, який для будь-яких ваших цілей!</p>
+          <p>Ми створимо Вам сайт для будь-яких ваших цілей!</p>
           <ButtonStartProject
             text="Замовити безкоштовну консультацію"
             className="absolute right-10 bottom-10 md:static md:right-auto md:bottom-auto"
