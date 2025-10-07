@@ -8,33 +8,30 @@ type Testimonials = {
 export const dataTestimonials: Testimonials[] = [
   {
     feedback:
-      "Daniel implemented our website with impressive speed, taking all of our wishes and suggestions into account. He stands out not only for his comprehensive understanding of design, but also for his pleasant manner, which makes working with us particularly pleasant.",
+      "Максим створив сайт для нашої служби евакуації автомобілів з вражаючою швидкістю, врахувавши всі наші побажання. Він не лише глибоко розуміється на дизайні, але й приємний у спілкуванні, що робить співпрацю комфортною. Після запуску сайту кількість замовлень значно зросла!",
     img: "/img/testimonials-portraits/1.png",
-    author: "Azhy Muhammad",
-    role: "Studio management, recording studio B12",
+    author: "Олександр Коваленко",
+    role: "Власник служби евакуації '24/7 Допомога'",
   },
   {
     feedback:
-      "Dani was truly one of the most pleasant experiences I've ever had on a project. Totally uncomplicated, super reliable, and just in the flow. He created the mockup of my landing page entirely on his own – quickly, thoughtfully, and with a really good eye for detail. I hardly had to explain anything – he immediately understood what was going on. And by the way: just a really nice guy. I would work with him again anytime.",
-
+      "Співпраця з Максимом – це один з найкращих досвідів у моїх проєктах. Надійний, швидкий і креативний. Він створив дизайн лендінгу повністю самостійно – продумано, стильно, з увагою до деталей. Розумів з півслова. Рекомендую без вагань!",
     img: "/img/testimonials-portraits/2.png",
-    author: "Simo Azzaoui",
-    role: "Creator, Meet your Mentor",
+    author: "Андрій Мельник",
+    role: "Засновник Createx",
   },
   {
     feedback:
-      "Daniel provided us with outstanding support in both the design and conception of our website. He contributes his own ideas and suggestions and precisely integrates them with the client's vision. We highly recommend working with him.",
-
+      "Максим надав професійну підтримку на всіх етапах створення нашого корпоративного сайту. Він пропонує цікаві рішення та вміло поєднує їх з нашим баченням. Сайт отримався сучасним і функціональним. Дуже раді співпраці!",
     img: "/img/testimonials-portraits/3.png",
-    author: "Dominic von Proeck",
-    role: "Managing Director, Brainscent",
+    author: "Дмитро Шевченко",
+    role: "Директор, IT-консалтинг 'Смарт Бізнес'",
   },
   {
     feedback:
-      "Working with Daniel is characterized by high professionalism and an excellent grasp of complex requirements. The combination of technical know-how and customer-oriented design makes every collaboration with him a great experience.",
-
+      "Робота з Максимом – це високий професіоналізм та глибоке розуміння потреб клієнта. Він поєднує технічну експертизу з чудовим дизайнерським смаком. Кожна деталь опрацьована ідеально. Буду звертатись ще!",
     img: "/img/testimonials-portraits/4.png",
-    author: "Manono Liebermann",
-    role: "Managing Director, Your Coach",
+    author: "Ігор Бондаренко",
+    role: "Засновник, психологічний центр 'Внутрішня сила'",
   },
 ];
