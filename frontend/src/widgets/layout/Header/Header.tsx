@@ -1,7 +1,9 @@
 import cn from "classnames";
 
-import ButtonBuy from "../../../shared/ui/buttons/ButtonBuy/ButtonBuy";
 import IconBurger from "../../../features/HeaderNavigation/ui/IconBurger";
+import ButtonStartProject from "@shared/ui/buttons/ButtonStartProject/ButtonStartProject";
+
+import s from "./header.module.scss";
 
 const Header = () => {
   return (
@@ -24,12 +26,13 @@ const Header = () => {
         >
           {/* container */}
           <div
-            className={cn(
-              "Container flex items-center justify-between px-0",
-              "md:px-8"
-            )}
+            className={cn("Container flex items-center justify-between px-0")}
           >
-            <ButtonBuy text={"Get Your Website"} />
+            {/* <ButtonBuy text={"Get Your Website"} /> */}
+            <ButtonStartProject
+              className={s.buttonStartProject}
+              text="Замовити сайт"
+            />
 
             <button className="text-4xl lg:text-6xl">A.C.</button>
 
@@ -41,8 +44,8 @@ const Header = () => {
             <nav className="hidden sm:block">
               <ul className="flex gap-4">
                 <li>Розробка сайтів</li>
-                <li>Просування сайту</li>
-                <li>Ціни</li>
+                {/* <li>Просування сайту</li>
+                <li>Ціни</li> */}
                 <li>Портфоліо</li>
                 <li>Контакти</li>
               </ul>
