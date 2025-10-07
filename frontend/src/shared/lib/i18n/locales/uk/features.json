@@ -1,0 +1,29 @@
+{
+  "contactForm": {
+    "close": "Закрити",
+    "title": "Почати проект",
+    "subtitle": "Розкажіть нам трохи про ваш проект! Просто заповніть форму або напишіть нам на",
+    "subtitleEnd": "— ми зв'яжемося з вами якомога швидше.",
+    "fields": {
+      "firstName": {
+        "label": "Ім'я",
+        "placeholder": "Антон Зубрієв"
+      },
+      "telegram": {
+        "label": "Telegram",
+        "placeholder": "@AsterCraft"
+      },
+      "email": "Електронна пошта",
+      "phone": {
+        "label": "Телефон",
+        "placeholder": "+380521234897"
+      },
+
+      "projectDetails": {
+        "label": "Деталі проекту",
+        "placeholder": "Опишіть свій проект"
+      }
+    },
+    "submit": "Надіслати"
+  }
+}
