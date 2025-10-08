@@ -1,8 +1,9 @@
 import classNames from "classnames";
 import { motion, AnimatePresence } from "motion/react";
+import { useTranslation, Trans } from "react-i18next";
 
 import FirstNameField from "./FirstNameField";
-import LastNameField from "./LastNameField";
+import TelegramField from "./TelegramField";
 import EmailField from "./EmailField";
 import PhoneField from "./PhoneField";
 import MessageField from "./MessageField";
@@ -15,6 +16,8 @@ const ModalStartProject = () => {
   const { isOpen, toggleIsOpen } = useIsContactFormModalOpenStore();
 
   const { handleSubmit, isSubmitting } = useSubmitModalStartProject();
+
+  const { t } = useTranslation("features");
 
   return (
     <>
@@ -82,7 +85,7 @@ const ModalStartProject = () => {
                     onClick={toggleIsOpen}
                     className="text-xl"
                   >
-                    Close
+                    {t("contactForm.close")}
                   </button>
                 </div>
 
@@ -93,7 +96,7 @@ const ModalStartProject = () => {
                       "lg:text-[clamp(1.6rem,2vw+0.4rem,2.3rem)]"
                     )}
                   >
-                    Start a project
+                    {t("contactForm.title")}
                   </h2>
                   <p
                     className={classNames(
@@ -101,15 +104,26 @@ const ModalStartProject = () => {
                       "lg:text-[clamp(1.3rem,1vw+0.4rem,1.4rem)]"
                     )}
                   >
-                    Tell me a bit about your project! Just fill out the form or
-                    drop me an{" "}
-                    <a
-                      href="#"
-                      className="text-ac-link-email underline"
-                    >
-                      E-Mail
-                    </a>{" "}
-                    — I’ll get back to you as soon as possible.
+                    <Trans
+                      i18nKey="contactForm.subtitleFull"
+                      ns="features"
+                      components={{
+                        email: (
+                          <a
+                            href="mailto:astercraft.dev@gmail.com"
+                            className="text-ac-link-email underline"
+                            target="_blank"
+                          />
+                        ),
+                        telegram: (
+                          <a
+                            href="https://t.me/AsterCraft"
+                            className="text-ac-link-email underline"
+                            target="_blank"
+                          />
+                        ),
+                      }}
+                    />
                   </p>
                 </header>
 
@@ -132,7 +146,7 @@ const ModalStartProject = () => {
                         htmlFor="first-name"
                         className="text-sm"
                       >
-                        First Name
+                        {t("contactForm.fields.firstName.label")}
                       </label>
                       <FirstNameField />
                     </div>
@@ -144,13 +158,13 @@ const ModalStartProject = () => {
                       )}
                     >
                       <label
-                        htmlFor="last-name"
+                        htmlFor="telegram"
                         className="text-sm"
                       >
-                        Last Name
+                        {t("contactForm.fields.telegram.label")}
                       </label>
 
-                      <LastNameField />
+                      <TelegramField />
                     </div>
 
                     <div
@@ -178,7 +192,7 @@ const ModalStartProject = () => {
                         htmlFor="Phone"
                         className="text-sm"
                       >
-                        Phone
+                        {t("contactForm.fields.phone.label")}
                       </label>
                       <PhoneField />
                     </div>
@@ -195,7 +209,7 @@ const ModalStartProject = () => {
                         htmlFor="Project-Details"
                         className="text-sm"
                       >
-                        Project Details
+                        {t("contactForm.fields.projectDetails.label")}
                       </label>
                       <MessageField />
                     </div>

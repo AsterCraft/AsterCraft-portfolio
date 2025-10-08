@@ -1,7 +1,11 @@
+import { useTranslation } from "react-i18next";
+
 import { useModalStartProjectStore } from "../model/store";
 
 const PhoneField = () => {
   const { phone, setPhone } = useModalStartProjectStore();
+
+  const { t } = useTranslation("features");
 
   return (
     <input
@@ -9,7 +13,7 @@ const PhoneField = () => {
       onChange={(e) => setPhone(e.target.value)}
       type="text"
       id="phone"
-      placeholder="+48790833877"
+      placeholder={t("contactForm.fields.phone.placeholder")}
       className="h-9 outline-none"
     />
   );
