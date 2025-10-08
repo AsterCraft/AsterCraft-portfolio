@@ -4,7 +4,10 @@ import s from "./section-contact.module.scss";
 
 export const SectionContact = () => {
   return (
-    <section className={s.sectionContact}>
+    <section
+      className={s.sectionContact}
+      id="SectionContact"
+    >
       <ul className={s.contactList}>
         <ContactItem
           label="phone"

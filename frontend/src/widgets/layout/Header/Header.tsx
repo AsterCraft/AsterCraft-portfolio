@@ -43,11 +43,19 @@ const Header = () => {
 
             <nav className="hidden sm:block">
               <ul className="flex gap-4">
-                <li>Розробка сайтів</li>
+                <li>
+                  <a href="#SectionDevelopmentProcess">Розробка сайтів</a>
+                </li>
+
                 {/* <li>Просування сайту</li>
                 <li>Ціни</li> */}
-                <li>Портфоліо</li>
-                <li>Контакти</li>
+                <li>
+                  <a href="#SectionProjects">Портфоліо</a>{" "}
+                </li>
+
+                <li>
+                  <a href="#SectionContact">Контакти</a>
+                </li>
               </ul>
             </nav>
           </div>

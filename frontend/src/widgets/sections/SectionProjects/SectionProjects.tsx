@@ -6,7 +6,10 @@ import { dataProjects } from "@shared/lib/constants";
 
 const SectionProjects = () => {
   return (
-    <section className="Container my-15">
+    <section
+      className="Container my-15"
+      id="SectionProjects"
+    >
       <LabelToSection text="проекти" />
 
       <section

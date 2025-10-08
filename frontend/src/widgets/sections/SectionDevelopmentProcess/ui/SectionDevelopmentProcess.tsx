@@ -64,6 +64,7 @@ const SectionDevelopmentProcess = () => {
     <section
       ref={sectionRef}
       className={"bg-ac-eerie-black py-15 text-white"}
+      id="SectionDevelopmentProcess"
     >
       <div className="app-container max-w-[1000px]">
         <TitleSection title="Процес створення сайту" />
