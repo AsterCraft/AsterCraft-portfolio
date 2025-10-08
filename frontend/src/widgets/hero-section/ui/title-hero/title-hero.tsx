@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 
-const HeroTitle = () => {
+export const TitleHero = () => {
   return (
     <h1 className="w-fit text-8xl sm:text-8xl lg:text-[8rem]">
       <motion.span
@@ -22,5 +22,3 @@ const HeroTitle = () => {
     </h1>
   );
 };
-
-export default HeroTitle;

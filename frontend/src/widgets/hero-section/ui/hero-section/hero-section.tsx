@@ -1,10 +1,11 @@
 import classNames from "classnames";
 
-import ButtonStartProject from "../../../../shared/ui/buttons/ButtonStartProject/ButtonStartProject";
-import LightDivider from "../../../../shared/ui/lines/LightDivider/LightDivider";
-import HeroTitle from "./HeroTitle";
+import ButtonStartProject from "@shared/ui/buttons/ButtonStartProject/ButtonStartProject";
+import LightDivider from "@shared/ui/lines/LightDivider/LightDivider";
 
-const SectionHero = () => {
+import { TitleHero } from "../title-hero/title-hero";
+
+export const HeroSection = () => {
   return (
     <section className="flex h-[100vh] w-full flex-col bg-[#1a1a1a] pt-20 text-xl text-white">
       {/* title and animation in row */}
@@ -16,7 +17,7 @@ const SectionHero = () => {
             "xl:gap-50"
           )}
         >
-          <HeroTitle />
+          <TitleHero />
         </div>
       </div>
 
@@ -34,5 +35,3 @@ const SectionHero = () => {
     </section>
   );
 };
-
-export default SectionHero;
