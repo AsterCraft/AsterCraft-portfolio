@@ -5,8 +5,20 @@ import { useHeaderModalStore } from "../model/store";
 const BurgerDropdownMenu = () => {
   const { toggle, isOpen } = useHeaderModalStore();
 
-  const listItemClass =
-    "flex cursor-pointer justify-start whitespace-nowrap text-white";
+  const dataNavigations = [
+    {
+      href: "#SectionDevelopmentProcess",
+      text: "Розробка сайтів",
+    },
+    {
+      href: "#SectionProjects",
+      text: "Портфоліо",
+    },
+    {
+      href: "#SectionContact",
+      text: "Контакти",
+    },
+  ];
 
   return (
     <div className="relative">
@@ -25,30 +37,15 @@ const BurgerDropdownMenu = () => {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0, y: -70, x: 35 }}
             >
-              <li
-                onClick={toggle}
-                className={listItemClass}
-              >
-                <a href="#about">About us</a>
-              </li>
-              <li
-                onClick={toggle}
-                className={listItemClass}
-              >
-                Projects
-              </li>
-              <li
-                onClick={toggle}
-                className={listItemClass}
-              >
-                Services
-              </li>
-              <li
-                onClick={toggle}
-                className={listItemClass}
-              >
-                Contact
-              </li>
+              {dataNavigations.map((item, index) => (
+                <li
+                  className="flex cursor-pointer justify-start whitespace-nowrap text-white"
+                  key={index}
+                  onClick={toggle}
+                >
+                  <a href={item.href}>{item.text}</a>
+                </li>
+              ))}
             </motion.ul>
           </motion.div>
         )}
