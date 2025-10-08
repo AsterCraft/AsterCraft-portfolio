@@ -1,9 +1,9 @@
 import classNames from "classnames";
 
-import ButtonStartProject from "@shared/ui/buttons/ButtonStartProject/ButtonStartProject";
 import LightDivider from "@shared/ui/lines/LightDivider/LightDivider";
 
 import { TitleHero } from "../title-hero/title-hero";
+import { DescriptionBlock } from "../description-block/description-block";
 
 export const HeroSection = () => {
   return (
@@ -21,16 +21,10 @@ export const HeroSection = () => {
         </div>
       </div>
 
-      <div className="relative flex-[2] md:flex-1">
+      <div className="relative flex-1">
         <LightDivider />
 
-        <div className="Container flex flex-col justify-between md:flex-row">
-          <p>Ми створимо Вам сайт для будь-яких ваших цілей!</p>
-          <ButtonStartProject
-            text="Замовити безкоштовну консультацію"
-            className="absolute right-10 bottom-10 md:static md:right-auto md:bottom-auto"
-          />
-        </div>
+        <DescriptionBlock />
       </div>
     </section>
   );
