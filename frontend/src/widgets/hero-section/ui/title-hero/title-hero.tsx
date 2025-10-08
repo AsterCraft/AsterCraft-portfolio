@@ -1,8 +1,10 @@
 import { motion } from "motion/react";
 
-const HeroTitle = () => {
+import s from "./title-hero.module.scss";
+
+export const TitleHero = () => {
   return (
-    <h1 className="w-fit text-8xl sm:text-8xl lg:text-[8rem]">
+    <h1 className={s.title}>
       <motion.span
         initial={{ x: "-400px" }}
         animate={{ x: 0 }}
@@ -22,5 +24,3 @@ const HeroTitle = () => {
     </h1>
   );
 };
-
-export default HeroTitle;

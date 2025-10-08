@@ -1,7 +1,7 @@
 import SectionAboutUs from "../../widgets/sections/SectionAboutUs/SectionAboutUs";
 import SectionPromise from "../../widgets/sections/SectionPromise/ui/SectionPromise";
 import SectionDevelopmentProcess from "../../widgets/sections/SectionDevelopmentProcess/ui/SectionDevelopmentProcess";
-import SectionHero from "../../widgets/sections/SectionHero/ui/SectionHero";
+import { HeroSection } from "@widgets/hero-section";
 import DividerBetweenSections from "../../shared/ui/lines/DividerBetweenSections/DividerBetweenSections";
 import SectionProjects from "../../widgets/sections/SectionProjects/SectionProjects";
 import { TestimonialsSlider } from "@widgets/testimonials-slider";
@@ -12,7 +12,7 @@ import AccordionFAQ from "../../widgets/accordions/AccordionFAQ/AccordionFAQ";
 const PageHome = () => {
   return (
     <main>
-      <SectionHero />
+      <HeroSection />
 
       <div className="app-container mt-20 mb-20">
         <SectionPromise />
