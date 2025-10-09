@@ -4,11 +4,13 @@ import LanguageDetector from "i18next-browser-languagedetector";
 
 // import ukShared from "./locales/uk/shared.json";
 import ukWidgets from "./locales/uk/widgets.json";
+import ukFeatures from "./locales/uk/features.json";
 
 const resources = {
   uk: {
     // shared: ukShared,
     widgets: ukWidgets,
+    features: ukFeatures,
   },
 } as const;
 
