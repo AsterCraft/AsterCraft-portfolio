@@ -1,3 +1,5 @@
+import classNames from "classnames";
+
 import { Meta, Links, Outlet, Scripts, ScrollRestoration } from "react-router";
 import { useTranslation } from "react-i18next";
 
@@ -9,15 +11,13 @@ import { BurgerDropdownMenu } from "features";
 import "@shared/lib/i18n";
 
 import "./main.css";
+import "@/shared/styles/index.scss";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   const { i18n } = useTranslation();
 
   return (
-    <html
-      lang={i18n.language}
-      className="overflow-x-hidden"
-    >
+    <html lang={i18n.language}>
       <head>
         <meta charSet="UTF-8" />
         <meta
@@ -36,7 +36,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body className="overflow-x-hidden">
+      <body>
         {children}
 
         {/* doesnt restore scroll? */}
