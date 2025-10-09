@@ -1,5 +1,6 @@
 import classNames from "classnames";
 import { motion, AnimatePresence } from "motion/react";
+import { useEffect } from "react";
 
 import FirstNameField from "./FirstNameField";
 import LastNameField from "./LastNameField";
@@ -16,11 +17,19 @@ const ModalStartProject = () => {
 
   const { handleSubmit, isSubmitting } = useSubmitModalStartProject();
 
+  useEffect(() => {
+    if (isOpen) {
+      document.body.classList.add("modalOpen");
+    } else {
+      document.body.classList.remove("modalOpen");
+    }
+  }, [isOpen]);
+
   return (
     <>
       <AnimatePresence>
         {isOpen && (
-          <div className={classNames("fixed inset-0 z-[1111] overflow-scroll")}>
+          <div className={classNames("fixed inset-0 z-[1111]")}>
             <motion.div
               initial={{ backdropFilter: "blur(0px)", opacity: 0 }}
               animate={{ backdropFilter: "blur(8px)", opacity: 1 }}
@@ -39,7 +48,7 @@ const ModalStartProject = () => {
               transition={{ duration: 1.3, type: "spring", bounce: 0 }}
               className={classNames(
                 "fixed inset-y-0 right-0 w-full bg-white p-6",
-                "lg:w-1/2"
+                "overflow-y-auto lg:w-1/2"
               )}
             >
               {/* div for animating the fading* in/out of the modal window content */}
