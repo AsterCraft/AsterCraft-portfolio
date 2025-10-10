@@ -5,21 +5,21 @@ import type { ModalStartProjecStore } from "./types";
 export const useModalStartProjectStore = create<ModalStartProjecStore>(
   (set) => ({
     firstName: "",
-    lastName: "",
     email: "",
     phone: "",
     message: "",
-    // additionalMessage: "",
+    telegram: "",
 
     setFirstName: (firstNameValue) =>
       set({
         firstName: firstNameValue,
       }),
 
-    setLastName: (lastNameValue) =>
+    setTelegram: (telegramValue) => {
       set({
-        lastName: lastNameValue,
-      }),
+        telegram: telegramValue,
+      });
+    },
 
     setEmail: (emailValue) =>
       set({
@@ -39,10 +39,10 @@ export const useModalStartProjectStore = create<ModalStartProjecStore>(
     resetModalStartProject: () =>
       set({
         firstName: "",
-        lastName: "",
         email: "",
         phone: "",
         message: "",
+        telegram: "",
       }),
   })
 );

@@ -6,7 +6,7 @@ import { useModalStartProjectStore } from "./store";
 export const useSubmitModalStartProject = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const { firstName, lastName, email, phone, message, resetModalStartProject } =
+  const { firstName, email, phone, message, telegram, resetModalStartProject } =
     useModalStartProjectStore();
 
   const handleSubmit = async () => {
@@ -16,16 +16,15 @@ export const useSubmitModalStartProject = () => {
 
       if (window.location.hostname === "localhost") {
         API_URL = "http://localhost:3000/api/send-email";
-      } else if (
-        window.location.hostname === "web-agency-portfolio.vercel.app"
-      ) {
-        API_URL = "https://backend-aster-craft.vercel.app/api/send-email";
+      } else if (window.location.hostname === "aster-craft.vercel.app") {
+        API_URL = "https://backend-aster-craft.vercel.app/api/send-email"; // to do: change api_url
       }
 
       const response = await axios.post(
         API_URL,
         {
-          name: `${firstName} ${lastName}`,
+          name: firstName,
+          telegram,
           email,
           phone,
           message,

@@ -17,7 +17,7 @@ export default async function handler(req, res) {
 
   if (req.method === "POST") {
     console.log("Body received:", req.body);
-    const { name, phone, message, telegram, currentAddress, deliveryAddress } = req.body;
+    const { name, phone, message, telegram, email } = req.body;
     console.log("Extracted data:", { name, phone, message, telegram });
 
     const emailContent = `
@@ -25,8 +25,7 @@ export default async function handler(req, res) {
 Повідомлення: ${message}
 Номер телефону: ${phone}
 Телеграм:  ${telegram ? telegram : "не вказано"}
-Звідки доставити:  ${currentAddress ? currentAddress : "не вказано"}
-Куди доставити: ${deliveryAddress ? deliveryAddress : "не вказано"}
+Емейл: ${email ? email : "не вказано"}
     `;
 
     try {
@@ -47,7 +46,7 @@ export default async function handler(req, res) {
       // Опції листа
       let mailOptions = {
         from: process.env.EMAIL_USER,
-        to: "odtachovkaivan@gmail.com",
+        to: "astercraft.dev@gmail.com",
         subject: "Нове повідомлення з сайту",
         text: emailContent,
       };
