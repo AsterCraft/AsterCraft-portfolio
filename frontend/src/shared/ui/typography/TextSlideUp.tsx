@@ -9,6 +9,9 @@ interface TextSlideUpProps {
   // css
   lineHeight?: string;
   className?: string;
+
+  // motion
+  delay?: number;
 }
 
 export const TextSlideUp = ({
@@ -16,6 +19,7 @@ export const TextSlideUp = ({
   as: Component, // rename for Component for React jsx syntax
   lineHeight,
   className,
+  delay,
 }: TextSlideUpProps) => {
   const [textRef, animate] = useAnimate();
   const inView: boolean = useInView(textRef, { once: true, amount: 0.6 });
@@ -24,7 +28,11 @@ export const TextSlideUp = ({
     if (!textRef.current) return;
 
     if (inView) {
-      animate(textRef.current, { opacity: 1, y: 0 }, { duration: 0.6 });
+      animate(
+        textRef.current,
+        { opacity: 1, y: 0 },
+        { duration: 0.6, delay: delay }
+      );
     } else {
       // set initial element state
       // from which animation will be played
