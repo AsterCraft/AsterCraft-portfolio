@@ -3,22 +3,17 @@ import { motion, AnimatePresence } from "motion/react";
 import { useEffect } from "react";
 import { useTranslation, Trans } from "react-i18next";
 
-
 import FirstNameField from "./FirstNameField";
 import TelegramField from "./TelegramField";
 import EmailField from "./EmailField";
 import PhoneField from "./PhoneField";
 import MessageField from "./MessageField";
-import ButtonSubmit from "./ButtonSubmit";
+import { ButtonSubmit } from "./button-submit/button-submit";
 
 import { useIsContactFormModalOpenStore } from "../../../shared/lib/store/isContactFormModalOpen";
-import { useSubmitModalStartProject } from "../model/useSubmitModalStartProject";
 
 const ModalStartProject = () => {
   const { isOpen, toggleIsOpen } = useIsContactFormModalOpenStore();
-
-  const { handleSubmit, isSubmitting } = useSubmitModalStartProject();
-
 
   useEffect(() => {
     if (isOpen) {
@@ -245,10 +240,7 @@ const ModalStartProject = () => {
                       ></textarea>
                     </div> */}
 
-                    <ButtonSubmit
-                      onClick={handleSubmit}
-                      disabled={isSubmitting}
-                    />
+                    <ButtonSubmit />
                   </div>
                 </form>
               </motion.div>
