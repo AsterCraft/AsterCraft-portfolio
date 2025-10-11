@@ -2,14 +2,14 @@
 // import { useAnimate, useInView, stagger } from "motion/react";
 import classNames from "classnames";
 
-import ButtonStartProject from "../../../shared/ui/buttons/ButtonStartProject/ButtonStartProject";
+import ButtonStartProject from "../../shared/ui/buttons/ButtonStartProject/ButtonStartProject";
 import { LabelToSection, TextSlideUp } from "@shared/ui/typography";
 
 import imgLogo from "/img/logo/logo.png";
 
 import s from "./section-about-us.module.scss";
 
-const SectionAboutUs = () => {
+export const SectionAboutUs = () => {
   // const [sectionRef, animate] = useAnimate<HTMLElement>();
   // const inView: boolean = useInView(sectionRef, { once: true, amount: 0.6 });
 

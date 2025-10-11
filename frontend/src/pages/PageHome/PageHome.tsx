@@ -1,4 +1,4 @@
-import SectionAboutUs from "../../widgets/sections/SectionAboutUs/SectionAboutUs";
+import { SectionAboutUs } from "@widgets/section-about-us";
 import SectionPromise from "../../widgets/sections/SectionPromise/ui/SectionPromise";
 import SectionDevelopmentProcess from "../../widgets/sections/SectionDevelopmentProcess/ui/SectionDevelopmentProcess";
 import { HeroSection } from "@widgets/hero-section";
