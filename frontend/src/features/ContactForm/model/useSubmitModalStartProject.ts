@@ -5,6 +5,7 @@ import { useModalStartProjectStore } from "./store";
 
 export const useSubmitModalStartProject = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSentSuccessfully, setIsSentSuccessfully] = useState(false);
 
   const { firstName, email, phone, message, telegram, resetModalStartProject } =
     useModalStartProjectStore();
@@ -40,7 +41,13 @@ export const useSubmitModalStartProject = () => {
         throw new Error("Failed to send data");
       }
 
-      setIsSubmitting(false);
+      setIsSentSuccessfully(true);
+
+      setTimeout(() => {
+        setIsSentSuccessfully(false);
+        console.log(isSentSuccessfully);
+      }, 3000);
+
       resetModalStartProject();
     } catch (error) {
       console.log("Error sending data: ", error);
@@ -49,5 +56,5 @@ export const useSubmitModalStartProject = () => {
     }
   };
 
-  return { handleSubmit, isSubmitting };
+  return { handleSubmit, isSubmitting, isSentSuccessfully };
 };

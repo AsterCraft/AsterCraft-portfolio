@@ -10,6 +10,7 @@ import { LabelToSection } from "@shared/ui/typography";
 import { dataTestimonials } from "@shared/lib/constants";
 
 import "swiper/css";
+import s from "./testimonials-slider.module.scss";
 
 export const TestimonialsSlider = () => {
   const prevRef = useRef<HTMLButtonElement>(null);
@@ -47,9 +48,14 @@ export const TestimonialsSlider = () => {
           }}
           spaceBetween={40}
           slidesPerView={1}
+          autoHeight={false}
         >
           {dataTestimonials.map((testimonial, index) => (
-            <SwiperSlide key={index}>
+            <SwiperSlide
+              // className="flex h-full justify-between"
+              className={s.swiperSlide}
+              key={index}
+            >
               <blockquote className="mb-5 text-2xl">{`❝ ${testimonial.feedback} ❞`}</blockquote>
 
               {/* image wrapper */}
