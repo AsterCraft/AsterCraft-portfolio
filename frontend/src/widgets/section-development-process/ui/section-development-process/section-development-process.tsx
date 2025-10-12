@@ -5,7 +5,7 @@ import StageDescription from "../StageDescription";
 import IconStage from "../IconStage";
 import TitleSection from "../../../../shared/ui/typography/TitleSection";
 
-import { DEVELOPMENT_STAGES } from "../../model/developmentData";
+import { DEVELOPMENT_STAGES } from "../../model/constants";
 
 export const SectionDevelopmentProcess = () => {
   const [visibleLines, setVisibleLines] = useState<number[]>([]);

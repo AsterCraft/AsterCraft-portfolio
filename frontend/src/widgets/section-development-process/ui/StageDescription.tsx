@@ -1,4 +1,4 @@
-import { dataStageDescription } from "../data/dataStageDescription";
+import { dataStageDescription } from "../model/constants";
 
 type StageDescritptionProps = {
   className?: string;
