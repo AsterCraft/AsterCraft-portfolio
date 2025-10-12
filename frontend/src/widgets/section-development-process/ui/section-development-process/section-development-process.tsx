@@ -1,7 +1,7 @@
 import cn from "classnames";
 import { useEffect, useRef, useState } from "react";
 
-import StageDescription from "../StageDescription";
+import { StageDescription } from "../stage-description/stage-description";
 import IconStage from "../IconStage";
 import TitleSection from "../../../../shared/ui/typography/TitleSection";
 

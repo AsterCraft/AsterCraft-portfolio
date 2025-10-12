@@ -2,6 +2,8 @@ import { useAnimate, useInView } from "motion/react";
 import { useEffect } from "react";
 import cn from "classnames";
 
+import s from "./text-slide-up.module.scss";
+
 interface TextSlideUpProps {
   text: string;
   as: "h2" | "p";
@@ -49,7 +51,7 @@ export const TextSlideUp = ({
       "lg:text-[clamp(2.25rem,2.5vw+0.25rem,2.75rem)]"
     );
   } else if (Component === "p") {
-    styles = cn("text-lg text-zinc-600");
+    styles = s.paragraph;
   }
 
   return (
