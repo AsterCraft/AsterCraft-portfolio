@@ -1,6 +1,6 @@
 import { SectionAboutUs } from "@widgets/section-about-us";
 import SectionPromise from "../../widgets/sections/SectionPromise/ui/SectionPromise";
-import SectionDevelopmentProcess from "../../widgets/sections/SectionDevelopmentProcess/ui/SectionDevelopmentProcess";
+import { SectionDevelopmentProcess } from "@widgets/section-development-process";
 import { HeroSection } from "@widgets/hero-section";
 import DividerBetweenSections from "../../shared/ui/lines/DividerBetweenSections/DividerBetweenSections";
 import SectionProjects from "../../widgets/sections/SectionProjects/SectionProjects";

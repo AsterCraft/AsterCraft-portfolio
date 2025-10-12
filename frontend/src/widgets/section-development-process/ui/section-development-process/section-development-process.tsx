@@ -1,13 +1,13 @@
 import cn from "classnames";
 import { useEffect, useRef, useState } from "react";
 
-import StageDescription from "./StageDescription";
-import IconStage from "./IconStage";
+import StageDescription from "../StageDescription";
+import IconStage from "../IconStage";
 import TitleSection from "../../../../shared/ui/typography/TitleSection";
 
-import { DEVELOPMENT_STAGES } from "../model/developmentData";
+import { DEVELOPMENT_STAGES } from "../../model/developmentData";
 
-const SectionDevelopmentProcess = () => {
+export const SectionDevelopmentProcess = () => {
   const [visibleLines, setVisibleLines] = useState<number[]>([]);
   const sectionRef = useRef<HTMLElement>(null);
   const stageRefs = useRef<(HTMLDivElement | null)[]>(
@@ -107,5 +107,3 @@ const SectionDevelopmentProcess = () => {
     </section>
   );
 };
-
-export default SectionDevelopmentProcess;
