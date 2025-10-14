@@ -10,6 +10,9 @@ export const useModalStartProjectStore = create<ModalStartProjecStore>(
     message: "",
     telegram: "",
 
+    errors: {},
+    touchedFields: new Set(),
+
     setFirstName: (firstNameValue) =>
       set({
         firstName: firstNameValue,
@@ -35,6 +38,21 @@ export const useModalStartProjectStore = create<ModalStartProjecStore>(
       set({
         message: messageValue,
       }),
+
+    setFieldError: (field, error) =>
+      set((state) => ({
+        errors: {
+          ...state.errors,
+          [field]: error,
+        },
+      })),
+
+    setFieldTouched: (field) =>
+      set((state) => ({
+        touchedFields: new Set([...state.touchedFields]).add(field),
+      })),
+
+    clearErrors: () => set({ errors: {} }),
 
     resetModalStartProject: () =>
       set({
