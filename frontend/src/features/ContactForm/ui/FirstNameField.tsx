@@ -1,21 +1,43 @@
 import { useTranslation } from "react-i18next";
 
 import { useModalStartProjectStore } from "../model/store";
+import { validateFieldOnBlur } from "../lib/validateFields";
+
+import s from "./styles.module.scss";
 
 const FirstNameField = () => {
-  const { firstName, setFirstName } = useModalStartProjectStore();
+  const { firstName, setFirstName, errors, touchedFields } =
+    useModalStartProjectStore();
 
   const { t } = useTranslation("features");
 
+  const handleBlur = () => {
+    validateFieldOnBlur("firstName", firstName);
+  };
+
   return (
-    <input
-      value={firstName}
-      onChange={(e) => setFirstName(e.target.value)}
-      type="text"
-      id="first-name"
-      placeholder={t("contactForm.fields.firstName.placeholder")}
-      className="h-9 outline-none"
-    />
+    <>
+      <input
+        value={firstName}
+        onChange={(e) => setFirstName(e.target.value)}
+        onBlur={handleBlur}
+        aria-invalid={!!errors.firstName}
+        aria-describedby={errors.firstName ? "firstName-error" : undefined}
+        type="text"
+        id="first-name"
+        placeholder={t("contactForm.fields.firstName.placeholder")}
+        className="h-9 outline-none"
+      />
+
+      {touchedFields.has("firstName") && errors.firstName && (
+        <span
+          className={s.error}
+          id="firstName-error"
+        >
+          {errors.firstName}
+        </span>
+      )}
+    </>
   );
 };
 
