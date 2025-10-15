@@ -24,11 +24,6 @@ export type ModalStartProjecStore = {
   resetModalStartProject: () => void;
 };
 
-export type ButtonSubmitProps = {
-  onClick?: () => void;
-  disabled?: boolean;
-};
-
 export type FieldErrors = {
   firstName?: string;
   email?: string;
