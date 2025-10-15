@@ -23,6 +23,9 @@
         "placeholder": "Опишіть свій проєкт"
       }
     },
-    "submit": "Надіслати"
+    "submitButton": {
+      "default": "Надіслати",
+      "validationFailed": "Будь ласка, заповніть форму правильно"
+    }
   }
 }
