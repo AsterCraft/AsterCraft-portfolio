@@ -2,7 +2,7 @@ import { motion, AnimatePresence } from "motion/react";
 
 import { useHeaderModalStore } from "../model/store";
 
-const BurgerDropdownMenu = () => {
+export const BurgerDropdownMenu = () => {
   const { toggle, isOpen } = useHeaderModalStore();
 
   const dataNavigations = [
@@ -53,5 +53,3 @@ const BurgerDropdownMenu = () => {
     </div>
   );
 };
-
-export default BurgerDropdownMenu;

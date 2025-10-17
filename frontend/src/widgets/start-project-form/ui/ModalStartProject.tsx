@@ -12,7 +12,7 @@ import { ButtonSubmit } from "./button-submit/button-submit";
 
 import { useIsContactFormModalOpenStore } from "../../../shared/lib/store/isContactFormModalOpen";
 
-const ModalStartProject = () => {
+export const ModalStartProject = () => {
   const { isOpen, toggleIsOpen } = useIsContactFormModalOpenStore();
 
   useEffect(() => {
@@ -257,5 +257,3 @@ const ModalStartProject = () => {
     </>
   );
 };
-
-export default ModalStartProject;

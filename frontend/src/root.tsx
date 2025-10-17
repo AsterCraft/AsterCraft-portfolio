@@ -1,17 +1,15 @@
-import classNames from "classnames";
-
 import { Meta, Links, Outlet, Scripts, ScrollRestoration } from "react-router";
 import { useTranslation } from "react-i18next";
 
 import { Header } from "@widgets";
 import { Footer } from "@widgets";
-import { ModalStartProject } from "features";
-import { BurgerDropdownMenu } from "features";
+import { ModalStartProject } from "@widgets/start-project-form";
+import { BurgerDropdownMenu } from "features/HeaderNavigation";
 
 import "@shared/lib/i18n";
 
 import "./main.css";
-import "@/shared/styles/index.scss";
+import "@/shared/styles/index.scss"; // @/shared ???
 
 export function Layout({ children }: { children: React.ReactNode }) {
   const { i18n } = useTranslation();
