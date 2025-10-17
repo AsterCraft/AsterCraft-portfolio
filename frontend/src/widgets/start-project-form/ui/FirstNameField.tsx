@@ -9,7 +9,7 @@ const FirstNameField = () => {
   const { firstName, setFirstName, errors, touchedFields } =
     useModalStartProjectStore();
 
-  const { t } = useTranslation("features");
+  const { t } = useTranslation("startProjectForm");
 
   const handleBlur = () => {
     validateFieldOnBlur("firstName", firstName);
@@ -34,7 +34,7 @@ const FirstNameField = () => {
           className={s.error}
           id="firstName-error"
         >
-          {errors.firstName}
+          {t(errors.firstName)}
         </span>
       )}
     </>

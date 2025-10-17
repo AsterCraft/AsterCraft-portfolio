@@ -23,7 +23,7 @@ export const ModalStartProject = () => {
     }
   }, [isOpen]);
 
-  const { t } = useTranslation("features");
+  const { t } = useTranslation("startProjectForm");
 
   return (
     <>
@@ -118,7 +118,7 @@ export const ModalStartProject = () => {
                   >
                     <Trans
                       i18nKey="contactForm.subtitleFull"
-                      ns="features"
+                      ns="startProjectForm"
                       components={{
                         email: (
                           <a

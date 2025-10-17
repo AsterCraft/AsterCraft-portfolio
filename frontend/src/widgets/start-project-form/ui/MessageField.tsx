@@ -10,7 +10,7 @@ const MessageField = () => {
   const { message, setMessage, errors, touchedFields } =
     useModalStartProjectStore();
 
-  const { t } = useTranslation("features");
+  const { t } = useTranslation("startProjectForm");
 
   const handleBlur = () => {
     validateFieldOnBlur("message", message);
@@ -35,7 +35,7 @@ const MessageField = () => {
           className={s.error}
           id="message-error"
         >
-          {errors.message}
+          {t(errors.message)}
         </span>
       )}
     </>

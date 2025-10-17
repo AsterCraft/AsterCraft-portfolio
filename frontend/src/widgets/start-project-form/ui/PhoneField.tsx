@@ -9,7 +9,7 @@ const PhoneField = () => {
   const { phone, setPhone, errors, touchedFields } =
     useModalStartProjectStore();
 
-  const { t } = useTranslation("features");
+  const { t } = useTranslation("startProjectForm");
 
   const handleBlur = () => {
     validateFieldOnBlur("phone", phone);
@@ -34,7 +34,7 @@ const PhoneField = () => {
           className={s.error}
           id="phone-error"
         >
-          {errors.phone}
+          {t(errors.phone)}
         </span>
       )}
     </>

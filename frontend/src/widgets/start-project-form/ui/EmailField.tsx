@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next";
+
 import { validateFieldOnBlur } from "../lib/validateFields";
 import { useModalStartProjectStore } from "../model/store";
 
@@ -6,6 +8,8 @@ import s from "./styles.module.scss";
 const EmailField = () => {
   const { email, setEmail, errors, touchedFields } =
     useModalStartProjectStore();
+
+  const { t } = useTranslation("startProjectForm");
 
   const handleBlur = () => {
     validateFieldOnBlur("email", email);
@@ -30,7 +34,7 @@ const EmailField = () => {
           className={s.error}
           id="email-error"
         >
-          {errors.email}
+          {t(errors.email)}
         </span>
       )}
     </>

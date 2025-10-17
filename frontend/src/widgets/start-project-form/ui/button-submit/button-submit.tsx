@@ -6,7 +6,7 @@ import { useSubmitModalStartProject } from "../../model/useSubmitModalStartProje
 import s from "./button-submit.module.scss";
 
 export const ButtonSubmit = () => {
-  const { t } = useTranslation("features");
+  const { t } = useTranslation("startProjectForm");
 
   const { isSubmitting, isSentSuccessfully, validated, handleSubmit } =
     useSubmitModalStartProject();

@@ -9,7 +9,7 @@ const TelegramField = () => {
   const { telegram, setTelegram, errors, touchedFields } =
     useModalStartProjectStore();
 
-  const { t } = useTranslation("features");
+  const { t } = useTranslation("startProjectForm");
 
   const handleBlur = () => {
     validateFieldOnBlur("telegram", telegram);
@@ -34,7 +34,7 @@ const TelegramField = () => {
           className={s.error}
           id="telegram-error"
         >
-          {errors.telegram}
+          {t(errors.telegram)}
         </span>
       )}
     </>
