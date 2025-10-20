@@ -13,6 +13,7 @@ export const emailSchema = z
   .email(t("validation.email.invalid"))
   .min(1, t("validation.email.required"));
 
+// doesnt allow whitespaces - change it?
 export const phoneSchema = z
   .string()
   .regex(/^\+?[1-9]\d{1,14}$/, t("validation.phone.invalid"))
