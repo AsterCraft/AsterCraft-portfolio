@@ -3,6 +3,7 @@ import { useRef, useState } from "react";
 
 import { useModalStartProjectStore } from "./store";
 import { contactFormSchema, type FieldName } from "./validation";
+import { API_ENDPOINTS } from "@shared/config/api";
 
 export const useSubmitModalStartProject = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -64,16 +65,8 @@ export const useSubmitModalStartProject = () => {
     clearErrors();
     setIsSubmitting(true);
     try {
-      let API_URL = "";
-
-      if (window.location.hostname === "localhost") {
-        API_URL = "http://localhost:3000/api/send-email";
-      } else if (window.location.hostname === "aster-craft.vercel.app") {
-        API_URL = "https://backend-aster-craft.vercel.app/api/send-email"; // TODO: change api_url
-      }
-
       const response = await axios.post(
-        API_URL,
+        API_ENDPOINTS.sendEmail,
         {
           name: firstName,
           telegram,
