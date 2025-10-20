@@ -12,7 +12,7 @@ import { ButtonSubmit } from "./button-submit/button-submit";
 
 import { useIsContactFormModalOpenStore } from "../../../shared/lib/store/isContactFormModalOpen";
 
-const ModalStartProject = () => {
+export const ModalStartProject = () => {
   const { isOpen, toggleIsOpen } = useIsContactFormModalOpenStore();
 
   useEffect(() => {
@@ -23,13 +23,18 @@ const ModalStartProject = () => {
     }
   }, [isOpen]);
 
-  const { t } = useTranslation("features");
+  const { t } = useTranslation("startProjectForm");
 
   return (
     <>
       <AnimatePresence>
         {isOpen && (
-          <div className={classNames("fixed inset-0 z-[1111]")}>
+          <div
+            role="dialog"
+            aria-labelledby="modal-start-project__title"
+            aria-modal={true}
+            className={classNames("fixed inset-0 z-[1111]")}
+          >
             <motion.div
               initial={{ backdropFilter: "blur(0px)", opacity: 0 }}
               animate={{ backdropFilter: "blur(8px)", opacity: 1 }}
@@ -97,6 +102,7 @@ const ModalStartProject = () => {
 
                 <header className="mb-16">
                   <h2
+                    id="modal-start-project__title"
                     className={classNames(
                       "mb-4 text-[clamp(1.6rem,3.2vw+0.4rem,2rem)]",
                       "lg:text-[clamp(1.6rem,2vw+0.4rem,2.3rem)]"
@@ -112,7 +118,7 @@ const ModalStartProject = () => {
                   >
                     <Trans
                       i18nKey="contactForm.subtitleFull"
-                      ns="features"
+                      ns="startProjectForm"
                       components={{
                         email: (
                           <a
@@ -251,5 +257,3 @@ const ModalStartProject = () => {
     </>
   );
 };
-
-export default ModalStartProject;

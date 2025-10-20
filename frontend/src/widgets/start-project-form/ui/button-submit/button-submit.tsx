@@ -3,33 +3,33 @@ import { useTranslation } from "react-i18next";
 
 import { useSubmitModalStartProject } from "../../model/useSubmitModalStartProject";
 
-import type { ButtonSubmitProps } from "../../model/types";
-
 import s from "./button-submit.module.scss";
 
-export const ButtonSubmit = ({ onClick, disabled }: ButtonSubmitProps) => {
-  const { t } = useTranslation("features");
+export const ButtonSubmit = () => {
+  const { t } = useTranslation("startProjectForm");
 
-  const { isSubmitting, isSentSuccessfully, handleSubmit } =
+  const { isSubmitting, isSentSuccessfully, validated, handleSubmit } =
     useSubmitModalStartProject();
-  console.log(isSubmitting);
-  console.log(isSentSuccessfully);
 
   return (
     <button
       type="button"
-      disabled={isSubmitting}
+      disabled={isSubmitting || !validated}
       onClick={handleSubmit}
-      // onClick={onClick}
       className={cn(
         { [s.success]: isSentSuccessfully },
+        { [s.validationFailed]: !validated },
         "bg-ac-eerie-black rounded-md p-5 text-white",
         "disabled:bg-ac-btn-slider-navigation disabled:text-ac-eerie-black disabled:cursor-not-allowed"
       )}
     >
+      {!validated && t("contactForm.submitButton.validationFailed")}
       {isSubmitting && "Відправляється..."}
       {isSentSuccessfully && "Відправлено успішно ✓"}
-      {!isSentSuccessfully && !isSubmitting && t("contactForm.submit")}
+      {!isSentSuccessfully &&
+        !isSubmitting &&
+        validated &&
+        t("contactForm.submitButton.default")}
     </button>
   );
 };

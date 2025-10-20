@@ -6,6 +6,11 @@
     "nodemailer": "^7.0.9"
   },
   "devDependencies": {
-    "@vercel/node": "^2.3.0"
+    "@vercel/node": "^4.0.0"
+  },
+  "overrides": {
+    "esbuild": "^0.25.0",
+    "path-to-regexp": "^8.0.0",
+    "undici": "^6.0.0"
   }
 }

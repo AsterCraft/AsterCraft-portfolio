@@ -1,1 +1,1 @@
-export { default } from "./ui/BurgerDropdownMenu";
+export { BurgerDropdownMenu } from "./ui/BurgerDropdownMenu";
