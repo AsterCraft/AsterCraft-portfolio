@@ -31,6 +31,14 @@
             echo "Go dev environment loaded"
           '';
         };
+
+        devShells.devops = pkgs.mkShell {
+          buildInputs = with pkgs; [google-cloud-sdk];
+
+          shellHook = ''
+            echo "DevOps environment loaded"
+          '';
+        };
       }
     );
 }
