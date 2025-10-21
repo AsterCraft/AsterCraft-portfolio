@@ -1,5 +1,7 @@
-const API_BASE_URL = import.meta.env.API_URL || "http://localhost:7979";
+let apiBaseUrl = import.meta.env.VITE_API_URL;
+
+if (!apiBaseUrl) apiBaseUrl = "http://localhost:7979";
 
 export const API_ENDPOINTS = {
-  sendEmail: `${API_BASE_URL}/api/send-email`,
+  sendEmail: `${apiBaseUrl}/api/send-email`,
 } as const;
