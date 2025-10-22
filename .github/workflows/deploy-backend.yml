@@ -27,6 +27,7 @@ jobs:
           service: ${{ github.ref == 'refs/heads/main' && 'backend-prod' || 'backend-dev' }}
           region: europe-central2
           source: ./backend
+          project_id: ${{ secrets.GCP_PROJECT_ID }}
           env_vars: |
             EMAIL_USER=${{ secrets.EMAIL_USER }}
             EMAIL_PASS=${{ secrets.EMAIL_PASS }}
