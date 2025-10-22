@@ -24,7 +24,7 @@ jobs:
       - name: Deploy to Cloud Run
         uses: google-github-actions/deploy-cloudrun@v2
         with:
-          service: ${{ github.ref == "refs/heads/main" && "backend-prod" || "backend-dev" }}
+          service: ${{ github.ref == 'refs/heads/main' && 'backend-prod' || 'backend-dev' }}
           region: europe-central2
           source: ./backend
           env_vars: |
