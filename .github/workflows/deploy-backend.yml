@@ -1,0 +1,34 @@
+name: Deploy Backend to Cloud Run
+
+on:
+  push:
+    branches: [main, dev]
+    paths:
+      - "backend/**"
+      - ".github/workflows/deploy-backend.yml"
+
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ secrets.GCP_SA_KEY }}
+
+      - name: Deploy to Cloud Run
+        uses: google-github-actions/deploy-cloudrun@v2
+        with:
+          service: ${{ github.ref == 'refs/heads/main' && 'backend-prod' || 'backend-dev' }}
+          region: europe-central2
+          source: ./backend
+          project_id: ${{ secrets.GCP_PROJECT_ID }}
+          flags: "--allow-unauthenticated"
+          env_vars: |
+            EMAIL_USER=${{ secrets.EMAIL_USER }}
+            EMAIL_PASS=${{ secrets.EMAIL_PASS }}

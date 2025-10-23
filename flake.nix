@@ -15,11 +15,28 @@
       system: let
         pkgs = nixpkgs.legacyPackages.${system};
       in {
-        devShells.default = pkgs.mkShell {
+        devShells.frontend = pkgs.mkShell {
           buildInputs = with pkgs; [nodejs];
 
           shellHook = ''
             echo "Node.js dev environment loaded"
+          '';
+        };
+
+        devShells.backend = pkgs.mkShell {
+          buildInputs = with pkgs; [go];
+
+          shellHook = ''
+            cd backend/
+            echo "Go dev environment loaded"
+          '';
+        };
+
+        devShells.devops = pkgs.mkShell {
+          buildInputs = with pkgs; [google-cloud-sdk];
+
+          shellHook = ''
+            echo "DevOps environment loaded"
           '';
         };
       }
