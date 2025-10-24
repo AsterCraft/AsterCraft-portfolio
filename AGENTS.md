@@ -1,38 +1,29 @@
 # Agent Guidelines for web-agency-portfolio
 
-## Commands (Frontend: /frontend)
+## Commands
 
-- **Build**: `npm run build`
-- **Lint**: `npm run lint`
-- **Dev**: `npm run dev`
-- **No test framework configured** - do not assume testing commands
+**Frontend** (`/frontend`): `npm run dev` | `npm run build` | `npm run lint` (run after changes)  
+**Backend** (`/backend`): `go run main.go` | `go build -o server main.go`  
+**No test framework** - do not assume testing commands
 
-## Code Style
+## Frontend Style (TypeScript/React)
 
-- **TypeScript**: Strict mode enabled, uses React 19 + React Router v7
-- **Formatting**: Prettier (2 spaces, semicolons, double quotes, trailing commas ES5)
-- **Imports**: Use path aliases: `@shared`, `@widgets`, `@pages` (defined in tsconfig)
-- **Architecture**: Transitioning to Feature-Sliced Design (entities/features/widgets/pages/shared)
-- **Naming**: **Migrating from PascalCase to kebab-case** for files/directories; use kebab-case for new code
-- **Components**: named exports; types defined inline or in separate files
-- **State**: Zustand for global state (see `isContactFormModalOpen.ts` example)
-- **Validation**: Zod schemas with i18n error messages
-- **Styling**: **Migrating from Tailwind to .module.scss**; use SCSS modules for new components
-- **i18n**: react-i18next with `useTranslation` hook
+- **Stack**: React 19, React Router v7, TypeScript strict mode, Prettier (2sp, semicolons, double quotes)
+- **Imports**: Path aliases `@shared`, `@widgets`, `@pages` from `./src`
+- **Architecture**: Feature-Sliced Design (entities/features/widgets/pages/shared)
+- **Naming**: **kebab-case** for files/dirs (migrating from PascalCase)
+- **Components**: Named exports, `type Props` (not interfaces)
+- **State**: Zustand `create<Type>()` pattern
+- **Validation**: Zod `.safeParse()` with i18n errors via `i18n.t(key, {ns})`
+- **Styling**: **SCSS modules** (`.module.scss`, migrating from Tailwind)
+- **i18n**: react-i18next `useTranslation` hook
 
-## Commit Convention
+## Backend Style (Go)
 
-Use Conventional Commits: `feat:`, `fix:`, `docs:`, `refactor:`, `test:`, `chore:`
+- **Architecture**: DDD layers (domain/application/presentation/infrastructure)
+- **Error handling**: `if err != nil`, `log.Printf/Fatalf`
+- **Imports**: Group stdlib, external, internal packages
 
-## Migration in Progress
+## Commits
 
-- **Old conventions**: PascalCase file naming, inconsistent architecture, Tailwind CSS
-- **New conventions**: kebab-case naming, strict FSD architecture, SCSS modules
-- When adding new code, use kebab-case and follow FSD structure
-- Use .module.scss for styling instead of Tailwind CSS
-- Gradually refactor old code to match new conventions
-
-## Important Notes
-
-- Always run `npm run lint` after changes
-- Component props use `type Props` pattern, not interfaces
+Conventional: `feat:`, `fix:`, `docs:`, `refactor:`, `test:`, `chore:`
