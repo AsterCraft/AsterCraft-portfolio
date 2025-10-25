@@ -25,20 +25,11 @@
     "noUncheckedSideEffectImports": true,
     "baseUrl": "./src",
     "paths": {
-      "@shared": [
-        "shared/index.ts"
-      ],
       "@shared/*": [
         "shared/*"
       ],
-      "@widgets": [
-        "widgets/index.ts"
-      ],
       "@widgets/*": [
         "widgets/*"
-      ],
-      "@pages": [
-        "pages/index.ts"
       ],
       "@pages/*": [
         "pages/*"
@@ -51,6 +42,6 @@
   },
   "include": [
     "src",
-    "*.ts"
+    "./react-router/types/**/*"
   ]
 }
