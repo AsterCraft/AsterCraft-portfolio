@@ -2,7 +2,7 @@ import cn from "classnames";
 
 import ButtonStartProject from "@shared/ui/buttons/ButtonStartProject/ButtonStartProject";
 
-import useWindowWidth from "@shared/lib/hooks/useWindowWidth";
+import { useWindowWidth } from "@shared/lib";
 
 import s from "./description-block.module.scss";
 

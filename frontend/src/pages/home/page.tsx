@@ -9,7 +9,7 @@ import SectionTelegramContact from "../../widgets/sections/SectionTelegramContac
 import SectionConsultation from "../../widgets/sections/SectionConsultation/ui/SectionConsultation";
 import AccordionFAQ from "../../widgets/accordions/AccordionFAQ/AccordionFAQ";
 
-const PageHome = () => {
+export const PageHome = () => {
   return (
     <main>
       <HeroSection />
@@ -44,5 +44,3 @@ const PageHome = () => {
     </main>
   );
 };
-
-export default PageHome;

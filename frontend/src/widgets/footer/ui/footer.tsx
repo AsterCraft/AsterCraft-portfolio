@@ -2,10 +2,10 @@ import classNames from "classnames";
 
 import ButtonStartProject from "../../../shared/ui/buttons/ButtonStartProject/ButtonStartProject";
 import DividerBetweenSections from "../../../shared/ui/lines/DividerBetweenSections/DividerBetweenSections";
-import AnimatedBrandName from "./ui/AnimatedBrandName/AnimatedBrandName";
-import { SectionContact } from "./ui/section-contact/section-contact";
+import AnimatedBrandName from "./AnimatedBrandName/AnimatedBrandName";
+import { SectionContact } from "./section-contact/section-contact";
 
-const Footer = () => {
+export const Footer = () => {
   return (
     <footer className="Container mt-30">
       <section className="sm: flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
@@ -29,5 +29,3 @@ const Footer = () => {
     </footer>
   );
 };
-
-export default Footer;
