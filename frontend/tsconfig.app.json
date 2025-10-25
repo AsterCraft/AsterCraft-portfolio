@@ -3,11 +3,7 @@
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
     "target": "ES2020",
     "useDefineForClassFields": true,
-    "lib": [
-      "ES2020",
-      "DOM",
-      "DOM.Iterable"
-    ],
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
     /* Bundler mode */
@@ -25,32 +21,12 @@
     "noUncheckedSideEffectImports": true,
     "baseUrl": "./src",
     "paths": {
-      "@shared": [
-        "shared/index.ts"
-      ],
-      "@shared/*": [
-        "shared/*"
-      ],
-      "@widgets": [
-        "widgets/index.ts"
-      ],
-      "@widgets/*": [
-        "widgets/*"
-      ],
-      "@pages": [
-        "pages/index.ts"
-      ],
-      "@pages/*": [
-        "pages/*"
-      ]
+      "@shared/*": ["shared/*"],
+      "@widgets/*": ["widgets/*"],
+      "@pages/*": ["pages/*"]
     },
-    "types": [
-      "vite/client",
-      "@react-router/dev"
-    ]
+    "types": ["node", "vite/client"],
+    "rootDirs": ["./src", "./.react-router/types/src"]
   },
-  "include": [
-    "src",
-    "*.ts"
-  ]
+  "include": ["src", ".react-router/types/**/*"]
 }

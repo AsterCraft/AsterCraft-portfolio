@@ -1,6 +1,6 @@
 import type { MetaFunction } from "react-router";
 
-import { PageHome } from "@pages";
+import { PageHome } from "@pages/home";
 
 export const meta: MetaFunction = () => {
   return [
