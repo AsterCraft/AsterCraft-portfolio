@@ -18,6 +18,8 @@ const resources = {
 const customPathDetector = {
   name: "customPath",
   lookup() {
+    if (typeof window === "undefined") return "uk";
+
     const path = window.location.pathname;
 
     if (path.startsWith("/uk/")) return "uk";
