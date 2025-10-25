@@ -26,7 +26,7 @@
       "@pages/*": ["pages/*"]
     },
     "types": ["node", "vite/client"],
-    "rootDirs": [".", "./../.react-router/types"]
+    "rootDirs": ["./src", "./.react-router/types/src"]
   },
   "include": ["src", ".react-router/types/**/*"]
 }
