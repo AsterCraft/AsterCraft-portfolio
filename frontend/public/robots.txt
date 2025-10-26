@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# not really required
+Disallow: /api/
+Disallow: /test/
+Disallow: /_/
+
+Sitemap: https://astercraft.com.ua/sitemap.xml
