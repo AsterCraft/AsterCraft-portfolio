@@ -10,8 +10,9 @@ export const firstNameSchema = z
   .max(50, t("validation.firstName.tooLong"));
 
 export const emailSchema = z
-  .email(t("validation.email.invalid"))
-  .min(1, t("validation.email.required"));
+  .string()
+  .min(1, t("validation.email.required"))
+  .email(t("validation.email.invalid"));
 
 // doesnt allow whitespaces - change it?
 export const phoneSchema = z
