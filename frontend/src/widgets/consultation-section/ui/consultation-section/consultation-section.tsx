@@ -4,9 +4,9 @@ import TitleSection from "../../../../shared/ui/typography/TitleSection";
 import CheckListItems from "../../../../shared/ui/lists/CheckListItems";
 import SecondaryText from "../../../../shared/ui/typography/SecondaryText";
 
-import { dataConsultationList } from "../model/dataConsultationList";
+import { dataConsultationList } from "../../model/dataConsultationList";
 
-const SectionConsultation = () => {
+export const ConsultationSection = () => {
   return (
     <section className="bg-ac-bg-dark py-20">
       <div className={cn("app-container")}>
@@ -38,5 +38,3 @@ const SectionConsultation = () => {
     </section>
   );
 };
-
-export default SectionConsultation;
