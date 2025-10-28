@@ -1,7 +1,9 @@
 import cn from "classnames";
 
+import { TitleToSection } from "@shared/ui/typography";
+
 import SvgDevices from "../../../../shared/ui/SvgImages/SvgDevices";
-import TitleSection from "../../../../shared/ui/typography/TitleSection";
+// import TitleSection from "../../../../shared/ui/typography/title-to-section/title-to-section";
 import CheckListItems from "../../../../shared/ui/lists/CheckListItems";
 
 import { dataPromiseList } from "../model/dataPromiseList";
@@ -17,7 +19,7 @@ const SectionPromise = () => {
     >
       {/* wrapper for title and list */}
       <div className="max-w-[580px] lg:max-w-[690px]">
-        <TitleSection title="Замовте сайт, який приводить клієнтів" />
+        <TitleToSection title="Замовте сайт, який приводить клієнтів" />
 
         <CheckListItems data={dataPromiseList} />
       </div>

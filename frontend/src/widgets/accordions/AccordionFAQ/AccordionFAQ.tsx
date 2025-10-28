@@ -1,7 +1,7 @@
 import { useState } from "react";
 import cn from "classnames";
 
-import TitleSection from "../../../shared/ui/typography/TitleSection";
+import { TitleToSection } from "@shared/ui/typography";
 
 import { dataFAQ } from "./model/dataFAQ";
 
@@ -24,7 +24,7 @@ const AccordionFAQ = () => {
 
   return (
     <div className={cn("my-8", "app-container")}>
-      <TitleSection
+      <TitleToSection
         title="Поширені запитання (FAQ)"
         className="text-center"
       />

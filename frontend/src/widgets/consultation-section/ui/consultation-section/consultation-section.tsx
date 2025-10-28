@@ -1,26 +1,35 @@
 import cn from "classnames";
 
-import TitleSection from "../../../../shared/ui/typography/TitleSection";
+import { TitleToSection } from "@shared/ui/typography";
+
 import CheckListItems from "../../../../shared/ui/lists/CheckListItems";
 import SecondaryText from "../../../../shared/ui/typography/SecondaryText";
 
 import { dataConsultationList } from "../../model/dataConsultationList";
+import ButtonStartProject from "@shared/ui/buttons/ButtonStartProject/ButtonStartProject";
+
+import s from "./consultation-section.module.scss";
 
 export const ConsultationSection = () => {
   return (
     <section className="bg-ac-bg-dark py-20">
       <div className={cn("app-container")}>
-        <TitleSection
-          title="Почніть з консультації — заповніть форму"
-          className={cn(
-            "text-center text-white",
-            "mb:text-3xl md:mb-10",
-            "lg:text-5xl"
-          )}
-        />
+        <div className={s.title}>
+          <TitleToSection
+            title="Почніть з консультації — "
+            className={cn(
+              "text-center text-white",
+              "mb:text-3xl",
+              // "md:mb-10",
+              "lg:text-5xl",
+              s.titleText
+            )}
+          />
+          <ButtonStartProject text="заповніть форму" />
+        </div>
 
         <h3 className={cn("mb-5 text-2xl text-white")}>
-          Замовте безкоштовну консультацію, на якій ви одразу отримаєте:
+          Запишіться на безкоштовну консультацію, на якій ви одразу отримаєте:
         </h3>
 
         <CheckListItems
@@ -29,9 +38,7 @@ export const ConsultationSection = () => {
         />
 
         <SecondaryText
-          text="І коли ви на 100% відчуєте, що вас зрозуміли, а умови та завдання будуть
-        виконані — ми разом перетворимо ваші бізнес-задачі в реалізовані
-        рішення."
+          text="Ми  перетворимо ваші бізнес-задачі в реалізовані рішення."
           className="text-ac-text-muted"
         />
       </div>

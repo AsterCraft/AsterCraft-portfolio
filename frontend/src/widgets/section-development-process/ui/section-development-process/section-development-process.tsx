@@ -3,8 +3,7 @@ import { useEffect, useRef, useState } from "react";
 
 import { StageDescription } from "../stage-description/stage-description";
 import IconStage from "../IconStage";
-import TitleSection from "../../../../shared/ui/typography/TitleSection";
-
+import { TitleToSection } from "@shared/ui/typography";
 import { DEVELOPMENT_STAGES } from "../../model/constants";
 
 export const SectionDevelopmentProcess = () => {
@@ -67,7 +66,7 @@ export const SectionDevelopmentProcess = () => {
       id="SectionDevelopmentProcess"
     >
       <div className="app-container max-w-[1000px]">
-        <TitleSection title="Процес створення сайту" />
+        <TitleToSection title="Процес створення сайту" />
 
         <ul className="grid text-lg">
           {DEVELOPMENT_STAGES.map(({ stage, aligment }, index) => (
