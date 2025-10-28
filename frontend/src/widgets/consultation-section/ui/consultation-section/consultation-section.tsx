@@ -25,7 +25,10 @@ export const ConsultationSection = () => {
               s.titleText
             )}
           />
-          <ButtonStartProject text="заповніть форму" />
+          <ButtonStartProject
+            className={s.buttonStartProject}
+            text="заповніть форму ↖"
+          />
         </div>
 
         <h3 className={cn("mb-5 text-2xl text-white")}>
