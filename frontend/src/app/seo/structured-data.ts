@@ -171,3 +171,17 @@ export const webPageSchema = {
     url: `${SITE_URL}/img/logo/logo.png`,
   },
 } as const;
+
+export const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Головна",
+      item: `${SITE_URL}/`,
+    },
+  ],
+} as const;
