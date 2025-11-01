@@ -1,3 +1,5 @@
+import { FAQData } from "@widgets/faq-section";
+
 const SITE_URL = "https://astercraft.com.ua";
 
 export const organizationSchema = {
@@ -184,4 +186,18 @@ export const breadcrumbSchema = {
       item: `${SITE_URL}/`,
     },
   ],
+} as const;
+
+export const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+
+  mainEntity: FAQData.map((entry) => ({
+    "@type": "Question",
+    name: entry.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: entry.answer.map((p) => `<p>${p}</p>`).join(""),
+    },
+  })),
 } as const;
