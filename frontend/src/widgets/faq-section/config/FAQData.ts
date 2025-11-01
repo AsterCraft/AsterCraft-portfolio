@@ -1,6 +1,6 @@
 import type { typeDataFAQ } from "./types";
 
-export const dataFAQ: typeDataFAQ = [
+export const FAQData: typeDataFAQ = [
   {
     question: "❔Які сайти ви створюєте",
     answer: [
