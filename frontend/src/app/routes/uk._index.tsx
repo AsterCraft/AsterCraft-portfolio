@@ -12,7 +12,7 @@ export const meta: MetaFunction = () => {
   return [
     {
       title:
-        "Aster Craft - Розробка сайтів в Україні | Від 4 днів, від 16 000 грн",
+        "AsterCraft - Розробка сайтів в Україні | Від 4 днів, від 15 000 грн",
     },
     {
       name: "description",
