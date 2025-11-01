@@ -145,3 +145,29 @@ export const webSiteSchema = {
     "@id": `${SITE_URL}/#organization`,
   },
 } as const;
+
+// probably need to move into page specific (lang specific?) file
+export const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": `${SITE_URL}/uk/#webpage`,
+
+  url: `${SITE_URL}/uk/`,
+  name: "AsterCraft - Розробка сайтів в Україні",
+  description:
+    "Створюємо веб-сайти для бізнесу на чистому коді без конструкторів",
+  inLanguage: "uk",
+
+  isPartOf: {
+    "@id": `${SITE_URL}/#website`,
+  },
+
+  about: {
+    "@id": `${SITE_URL}/#organization`,
+  },
+
+  primaryImageOfPage: {
+    "@type": "ImageObject",
+    url: `${SITE_URL}/img/logo/logo.png`,
+  },
+} as const;
