@@ -3,9 +3,9 @@ import cn from "classnames";
 
 import TitleSection from "../../../shared/ui/typography/TitleSection";
 
-import { dataFAQ } from "./model/dataFAQ";
+import { dataFAQ } from "../config/dataFAQ";
 
-const AccordionFAQ = () => {
+export const FAQSection = () => {
   const [openItems, setOpenItems] = useState(new Set());
 
   const toggleItem = (index: number) => {
@@ -23,7 +23,10 @@ const AccordionFAQ = () => {
   };
 
   return (
-    <div className={cn("my-8", "app-container")}>
+    <div
+      id="FAQSection"
+      className={cn("my-8", "app-container")}
+    >
       <TitleSection
         title="Поширені запитання (FAQ)"
         className="text-center"
@@ -87,5 +90,3 @@ const AccordionFAQ = () => {
     </div>
   );
 };
-
-export default AccordionFAQ;
