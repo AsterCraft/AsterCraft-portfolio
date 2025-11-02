@@ -6,4 +6,4 @@ Disallow: /api/
 Disallow: /test/
 Disallow: /_/
 
-Sitemap: https://astercraft.com.ua/sitemap.xml
+Sitemap: https://www.astercraft.com.ua/sitemap.xml

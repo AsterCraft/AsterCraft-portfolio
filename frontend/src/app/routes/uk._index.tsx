@@ -10,7 +10,7 @@ import {
 } from "app/seo/structured-data";
 
 export const meta: MetaFunction = () => {
-  const siteUrl = "https://astercraft.com.ua";
+  const siteUrl = "https://www.astercraft.com.ua";
   const pageUrl = `${siteUrl}/uk/`;
   const imageUrl = `${siteUrl}/img/logo/logo.png`;
   const description =

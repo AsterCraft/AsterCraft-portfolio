@@ -1,6 +1,6 @@
 import { faqData } from "@widgets/faq-section";
 
-const SITE_URL = "https://astercraft.com.ua";
+const SITE_URL = "https://www.astercraft.com.ua";
 
 export const organizationSchema = {
   "@context": "https://schema.org",
