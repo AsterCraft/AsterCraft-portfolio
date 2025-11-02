@@ -1,6 +1,13 @@
 import type { MetaFunction } from "react-router";
 
 import { PageHome } from "@pages/home";
+import {
+  breadcrumbSchema,
+  faqSchema,
+  organizationSchema,
+  webPageSchema,
+  webSiteSchema,
+} from "app/seo/structured-data";
 
 export const meta: MetaFunction = () => {
   const siteUrl = "https://astercraft.com.ua";
@@ -64,8 +71,15 @@ export const meta: MetaFunction = () => {
     { name: "geo.region", content: "UA" },
 
     { tagName: "link", rel: "canonical", href: pageUrl },
-    { tagName: "link", rel: "alternate", hreflang: "uk", href: pageUrl },
-    { tagName: "link", rel: "alternate", hreflang: "x-default", href: pageUrl },
+    { tagName: "link", rel: "alternate", hrefLang: "uk", href: pageUrl },
+    { tagName: "link", rel: "alternate", hrefLang: "x-default", href: pageUrl },
+
+    // Structured Data
+    { "script:ld+json": organizationSchema },
+    { "script:ld+json": webSiteSchema },
+    { "script:ld+json": webPageSchema },
+    { "script:ld+json": breadcrumbSchema },
+    { "script:ld+json": faqSchema },
   ];
 };
 
