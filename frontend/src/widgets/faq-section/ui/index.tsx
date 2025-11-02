@@ -3,9 +3,9 @@ import cn from "classnames";
 
 import TitleSection from "../../../shared/ui/typography/TitleSection";
 
-import { dataFAQ } from "./model/dataFAQ";
+import { faqData } from "../config/FAQData";
 
-const AccordionFAQ = () => {
+export const FAQSection = () => {
   const [openItems, setOpenItems] = useState(new Set());
 
   const toggleItem = (index: number) => {
@@ -23,14 +23,17 @@ const AccordionFAQ = () => {
   };
 
   return (
-    <div className={cn("my-8", "app-container")}>
+    <div
+      id="FAQSection"
+      className={cn("my-8", "app-container")}
+    >
       <TitleSection
         title="Поширені запитання (FAQ)"
         className="text-center"
       />
 
       <div className="space-y-4">
-        {dataFAQ.map((faq, index) => (
+        {faqData.map((faq, index) => (
           <div
             key={index}
             className="overflow-hidden rounded-lg border border-gray-200 shadow-sm"
@@ -87,5 +90,3 @@ const AccordionFAQ = () => {
     </div>
   );
 };
-
-export default AccordionFAQ;

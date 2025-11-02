@@ -7,7 +7,7 @@ import SectionProjects from "../../widgets/sections/SectionProjects/SectionProje
 import { TestimonialsSlider } from "@widgets/testimonials-slider";
 import SectionTelegramContact from "../../widgets/sections/SectionTelegramContact/ui/SectionTelegramContact";
 import SectionConsultation from "../../widgets/sections/SectionConsultation/ui/SectionConsultation";
-import AccordionFAQ from "../../widgets/accordions/AccordionFAQ/AccordionFAQ";
+import { FAQSection } from "@widgets/faq-section";
 
 export const PageHome = () => {
   return (
@@ -39,7 +39,7 @@ export const PageHome = () => {
       <TestimonialsSlider />
       <DividerBetweenSections />
 
-      <AccordionFAQ />
+      <FAQSection />
       <DividerBetweenSections />
     </main>
   );
