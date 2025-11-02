@@ -3,7 +3,7 @@ import cn from "classnames";
 
 import TitleSection from "../../../shared/ui/typography/TitleSection";
 
-import { dataFAQ } from "../config/dataFAQ";
+import { faqData } from "../config/FAQData";
 
 export const FAQSection = () => {
   const [openItems, setOpenItems] = useState(new Set());
@@ -33,7 +33,7 @@ export const FAQSection = () => {
       />
 
       <div className="space-y-4">
-        {dataFAQ.map((faq, index) => (
+        {faqData.map((faq, index) => (
           <div
             key={index}
             className="overflow-hidden rounded-lg border border-gray-200 shadow-sm"

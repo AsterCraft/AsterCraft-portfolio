@@ -1,4 +1,4 @@
-import { FAQData } from "@widgets/faq-section";
+import { faqData } from "@widgets/faq-section";
 
 const SITE_URL = "https://astercraft.com.ua";
 
@@ -192,7 +192,7 @@ export const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
 
-  mainEntity: FAQData.map((entry) => ({
+  mainEntity: faqData.map((entry) => ({
     "@type": "Question",
     name: entry.question,
     acceptedAnswer: {
