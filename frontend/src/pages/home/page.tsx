@@ -40,7 +40,7 @@ export const PageHome = () => {
       <TestimonialsSlider />
       <DividerBetweenSections />
 
-      <AccordionFAQ />
+      <FAQSection />
       <DividerBetweenSections />
     </main>
   );

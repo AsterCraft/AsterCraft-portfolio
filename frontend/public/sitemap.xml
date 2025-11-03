@@ -3,18 +3,18 @@
      xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
 <url>
-    <loc>https://astercraft.com.ua/uk/</loc>
-    <lastmod>2025-10-26</lastmod>
+    <loc>https://www.astercraft.com.ua/uk/</loc>
+    <lastmod>2025-11-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link
         rel="alternate"
         hreflang="uk"
-        href="https://astercraft.com.ua/uk/" />
+        href="https://www.astercraft.com.ua/uk/" />
 
     <xhtml:link
         rel="alternate"
         hreflang="x-default"
-        href="https://astercraft.com.ua/uk/" />
+        href="https://www.astercraft.com.ua/uk/" />
 </url>
 </urlset>
