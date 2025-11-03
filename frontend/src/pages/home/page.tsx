@@ -6,7 +6,7 @@ import DividerBetweenSections from "../../shared/ui/lines/DividerBetweenSections
 import SectionProjects from "../../widgets/sections/SectionProjects/SectionProjects";
 import { TestimonialsSlider } from "@widgets/testimonials-slider";
 import SectionTelegramContact from "../../widgets/sections/SectionTelegramContact/ui/SectionTelegramContact";
-import SectionConsultation from "../../widgets/sections/SectionConsultation/ui/SectionConsultation";
+import { ConsultationSection } from "@widgets/consultation-section";
 import { FAQSection } from "@widgets/faq-section";
 
 export const PageHome = () => {
@@ -33,7 +33,7 @@ export const PageHome = () => {
       <DividerBetweenSections />
       <SectionProjects />
 
-      <SectionConsultation />
+      <ConsultationSection />
 
       <DividerBetweenSections />
       <TestimonialsSlider />
