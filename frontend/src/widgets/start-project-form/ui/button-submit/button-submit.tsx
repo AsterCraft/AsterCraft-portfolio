@@ -25,7 +25,7 @@ export const ButtonSubmit = () => {
     >
       {!validated && t("contactForm.submitButton.validationFailed")}
       {isSubmitting && "Відправляється..."}
-      {isSentSuccessfully && "Відправлено успішно ✓"}
+      {isSentSuccessfully && "Відправлено успішно"}
       {!isSentSuccessfully &&
         !isSubmitting &&
         validated &&
