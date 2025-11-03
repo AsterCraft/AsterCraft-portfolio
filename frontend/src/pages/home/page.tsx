@@ -1,5 +1,6 @@
 import { SectionAboutUs } from "@widgets/section-about-us";
 import { AccordionFAQ } from "@widgets/accordion-faq";
+import { SectionConsultation } from "@widgets/section-consultation";
 
 import SectionPromise from "../../widgets/sections/SectionPromise/ui/SectionPromise";
 import { SectionDevelopmentProcess } from "@widgets/section-development-process";
@@ -8,7 +9,6 @@ import DividerBetweenSections from "../../shared/ui/lines/DividerBetweenSections
 import SectionProjects from "../../widgets/sections/SectionProjects/SectionProjects";
 import { TestimonialsSlider } from "@widgets/testimonials-slider";
 import SectionTelegramContact from "../../widgets/sections/SectionTelegramContact/ui/SectionTelegramContact";
-import SectionConsultation from "../../widgets/sections/SectionConsultation/ui/SectionConsultation";
 
 export const PageHome = () => {
   return (
