@@ -85,11 +85,14 @@ export const useSubmitModalStartProject = () => {
         throw new Error("Failed to send data");
       }
 
-      setIsSentSuccessfully(true);
+      hasAttemptedSubmitRef.current = false;
+      setIsSentSuccessfully(() => {
+        console.log(`isSentSuccessfully: true`);
+        return true;
+      });
 
       setTimeout(() => {
         setIsSentSuccessfully(false);
-        console.log(isSentSuccessfully);
       }, 3000);
 
       resetModalStartProject();

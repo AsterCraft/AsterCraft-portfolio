@@ -1,6 +1,6 @@
 ## Frontend
 
-- [ ] after sending form, reset ref
+- [x] after sending form, reset ref
 
 ## Backend
 
