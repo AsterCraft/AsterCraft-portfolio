@@ -3,9 +3,9 @@ import cn from "classnames";
 
 import TitleSection from "../../../shared/ui/typography/TitleSection";
 
-import { dataFAQ } from "./model/dataFAQ";
+import { dataFAQ } from "../model/dataFAQ";
 
-const AccordionFAQ = () => {
+export const AccordionFAQ = () => {
   const [openItems, setOpenItems] = useState(new Set());
 
   const toggleItem = (index: number) => {
@@ -49,7 +49,7 @@ const AccordionFAQ = () => {
                 {faq.question}
               </span>
               <svg
-                className={`h-5 w-5 flex-shrink-0 transform text-gray-500 transition-transform duration-200 ${
+                className={`h-5 w-5 shrink-0 transform text-gray-500 transition-transform duration-200 ${
                   openItems.has(index) ? "rotate-180" : ""
                 }`}
                 fill="none"
@@ -87,5 +87,3 @@ const AccordionFAQ = () => {
     </div>
   );
 };
-
-export default AccordionFAQ;
