@@ -1,12 +1,12 @@
 import cn from "classnames";
 
-import TitleSection from "../../../../shared/ui/typography/TitleSection";
-import CheckListItems from "../../../../shared/ui/lists/CheckListItems";
-import SecondaryText from "../../../../shared/ui/typography/SecondaryText";
+import TitleSection from "@shared/ui/typography/TitleSection";
+import CheckListItems from "@shared/ui/lists/CheckListItems";
+import SecondaryText from "@shared/ui/typography/SecondaryText";
 
 import { dataConsultationList } from "../model/dataConsultationList";
 
-const SectionConsultation = () => {
+export const ConsultationSection = () => {
   return (
     <section className="bg-ac-bg-dark py-20">
       <div className={cn("app-container")}>
@@ -20,7 +20,7 @@ const SectionConsultation = () => {
         />
 
         <h3 className={cn("mb-5 text-2xl text-white")}>
-          Замовте безкоштовну консультацію, на якій ви одразу отримаєте:
+          Запишіться на безкоштовну консультацію, на якій ви одразу отримаєте:
         </h3>
 
         <CheckListItems
@@ -29,8 +29,7 @@ const SectionConsultation = () => {
         />
 
         <SecondaryText
-          text="І коли ви на 100% відчуєте, що вас зрозуміли, а умови та завдання будуть
-        виконані — ми разом перетворимо ваші бізнес-задачі в реалізовані
+          text="Після того як ви на 100% відчуєте, що вас зрозуміли, — ми перетворимо ваші бізнес-задачі в реалізовані
         рішення."
           className="text-ac-text-muted"
         />
@@ -38,5 +37,3 @@ const SectionConsultation = () => {
     </section>
   );
 };
-
-export default SectionConsultation;
