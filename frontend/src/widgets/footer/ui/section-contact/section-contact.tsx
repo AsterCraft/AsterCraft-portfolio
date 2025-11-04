@@ -1,4 +1,4 @@
-import { ContactItem } from "../ContactItem/ContactItem";
+import { ContactItem } from "../contact-item/contact-item";
 
 import s from "./section-contact.module.scss";
 
