@@ -1,3 +1,90 @@
+.header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+
+  font-size: 20px;
+  z-index: 50;
+}
+
+// .wrapper {
+//   position: relative;
+//
+//   margin: 0 auto;
+//   max-width: 1450px;
+//   padding: 10px 10px 0;
+//   border-radius: 6px;
+//
+//   background-color: transparent;
+//   backdrop-filter: blur(2px);
+//
+//   @media (min-width: 1536px) {
+//     position: static;
+//
+//     max-width: none;
+//     padding: 0;
+//     border-radius: 0;
+//
+//     background: none;
+//     backdrop-filter: none;
+//   }
+// }
+
+.blackHeader {
+  padding: 8px;
+
+  color: white;
+  background-color: #0b0d0d;
+
+  @media (min-width: 1024px) {
+    padding: 0 12px;
+  }
+
+  @media (min-width: 1536px) {
+    border-radius: 0;
+  }
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1450px;
+  // padding: 0 15px;
+}
+
 .buttonStartProject {
   padding: 5px 10px;
+}
+
+.brandName {
+  font-size: 36px;
+  line-height: 1;
+
+  @media (min-width: 1024px) {
+    font-size: 60px;
+  }
+}
+
+.burgerWrapper {
+  @media (min-width: 640px) {
+    display: none;
+  }
+}
+
+.nav {
+  display: none;
+
+  @media (min-width: 640px) {
+    display: block;
+  }
+}
+
+.navList {
+  display: flex;
+  gap: 16px;
 }

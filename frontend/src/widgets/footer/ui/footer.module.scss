@@ -1,0 +1,43 @@
+.footer {
+  margin: 0 auto;
+  margin-top: 120px;
+  width: 100%;
+  max-width: 1450px;
+  padding: 0 15px;
+}
+
+.topSection {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  @media (min-width: 640px) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.heading {
+  max-width: 100%;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+
+  @media (min-width: 640px) {
+    max-width: 900px;
+  }
+}
+
+.buttonStartProject {
+  margin-left: auto;
+  transition: transform 300ms;
+
+  @media (min-width: 1280px) {
+    transform-origin: right;
+    transform: scale(1.5);
+  }
+}
+
+.divider {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
