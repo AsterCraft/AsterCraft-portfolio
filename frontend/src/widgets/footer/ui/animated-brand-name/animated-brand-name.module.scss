@@ -1,0 +1,14 @@
+.brandName {
+  text-align: center;
+  font-size: 17vw;
+  letter-spacing: -0.025em;
+  color: #d4d4d8;
+
+  @media (min-width: 640px) {
+    font-size: 18vw;
+  }
+
+  @media (min-width: 1536px) {
+    font-size: 14vw;
+  }
+}

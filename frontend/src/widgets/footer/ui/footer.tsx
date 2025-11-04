@@ -1,27 +1,24 @@
-import classNames from "classnames";
-
 import ButtonStartProject from "../../../shared/ui/buttons/ButtonStartProject/ButtonStartProject";
 import DividerBetweenSections from "../../../shared/ui/lines/DividerBetweenSections/DividerBetweenSections";
-import AnimatedBrandName from "./AnimatedBrandName/AnimatedBrandName";
+import AnimatedBrandName from "./animated-brand-name/animated-brand-name";
 import { SectionContact } from "./section-contact/section-contact";
+
+import s from "./footer.module.scss";
 
 export const Footer = () => {
   return (
-    <footer className="Container mt-30">
-      <section className="sm: flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
-        <h2 className={"max-w-[900px] text-[clamp(1.5rem,4vw,2.5rem)]"}>
+    <footer className={s.footer}>
+      <section className={s.topSection}>
+        <h2 className={s.heading}>
           Давайте обговоримо і створимо крутий сайт для Вас
         </h2>
         <ButtonStartProject
-          className={classNames(
-            "ml-auto transition-transform duration-300",
-            "xl:origin-right xl:scale-150"
-          )}
+          className={s.buttonStartProject}
           text="Обговорити проект"
         />
       </section>
 
-      <DividerBetweenSections className="mt-10 mb-10" />
+      <DividerBetweenSections className={s.divider} />
 
       <SectionContact />
 
