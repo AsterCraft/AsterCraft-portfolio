@@ -8,32 +8,31 @@
   z-index: 50;
 }
 
-.wrapper {
-  position: relative;
-
-  margin: 0 auto;
-  max-width: 1450px;
-  padding: 10px 10px 0;
-  border-radius: 6px;
-
-  background-color: transparent;
-  backdrop-filter: blur(2px);
-
-  @media (min-width: 1536px) {
-    position: static;
-
-    max-width: none;
-    padding: 0;
-    border-radius: 0;
-
-    background: none;
-    backdrop-filter: none;
-  }
-}
+// .wrapper {
+//   position: relative;
+//
+//   margin: 0 auto;
+//   max-width: 1450px;
+//   padding: 10px 10px 0;
+//   border-radius: 6px;
+//
+//   background-color: transparent;
+//   backdrop-filter: blur(2px);
+//
+//   @media (min-width: 1536px) {
+//     position: static;
+//
+//     max-width: none;
+//     padding: 0;
+//     border-radius: 0;
+//
+//     background: none;
+//     backdrop-filter: none;
+//   }
+// }
 
 .blackHeader {
   padding: 8px;
-  border-radius: 6px;
 
   color: white;
   background-color: #0b0d0d;
@@ -55,7 +54,7 @@
   margin: 0 auto;
   width: 100%;
   max-width: 1450px;
-  padding: 0 15px;
+  // padding: 0 15px;
 }
 
 .buttonStartProject {
