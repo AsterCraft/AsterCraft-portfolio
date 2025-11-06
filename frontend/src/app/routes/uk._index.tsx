@@ -1,4 +1,4 @@
-import type { MetaFunction } from "react-router";
+import { useSearchParams, type MetaFunction } from "react-router";
 
 import { PageHome } from "@pages/home";
 import {
@@ -8,6 +8,8 @@ import {
   webPageSchema,
   webSiteSchema,
 } from "app/seo/structured-data";
+import { useIsContactFormModalOpenStore } from "@shared/lib/store/isContactFormModalOpen";
+import { useEffect } from "react";
 
 export const meta: MetaFunction = () => {
   const siteUrl = "https://www.astercraft.com.ua";
@@ -84,6 +86,17 @@ export const meta: MetaFunction = () => {
 };
 
 const UkIndex = () => {
+  const [searchParams] = useSearchParams();
+  const { isOpen, open } = useIsContactFormModalOpenStore();
+
+  useEffect(() => {
+    const shouldOpenModal = searchParams.get("contact") === "true";
+
+    if (shouldOpenModal && !isOpen) {
+      open();
+    }
+  }, []);
+
   return <PageHome />;
 };
 

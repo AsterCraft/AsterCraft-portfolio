@@ -14,7 +14,7 @@ import { ButtonSubmit } from "./button-submit/button-submit";
 import { useIsContactFormModalOpenStore } from "../../../shared/lib/store/isContactFormModalOpen";
 
 export const ModalStartProject = () => {
-  const { isOpen, toggleIsOpen } = useIsContactFormModalOpenStore();
+  const { isOpen, close } = useIsContactFormModalOpenStore();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -28,8 +28,8 @@ export const ModalStartProject = () => {
   const { t } = useTranslation("startProjectForm");
 
   const onHandleCloseModal = () => {
-    toggleIsOpen();
-    navigate("/uk/");
+    close();
+    navigate("/uk/", { preventScrollReset: true });
   };
 
   return (

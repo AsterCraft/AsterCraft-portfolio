@@ -9,12 +9,12 @@ type ButtonStartProjectProps = {
 };
 
 const ButtonStartProject = ({ className, text }: ButtonStartProjectProps) => {
-  const { toggleIsOpen, isOpen } = useIsContactFormModalOpenStore();
+  const { open } = useIsContactFormModalOpenStore();
   const navigate = useNavigate();
 
   const onHandleClick = () => {
-    toggleIsOpen();
-    navigate("/uk/contact", { replace: false });
+    open();
+    navigate("?contact=true", { preventScrollReset: true });
   };
 
   return (
