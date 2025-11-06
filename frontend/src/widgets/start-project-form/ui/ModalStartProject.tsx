@@ -2,6 +2,7 @@ import classNames from "classnames";
 import { motion, AnimatePresence } from "motion/react";
 import { useEffect } from "react";
 import { useTranslation, Trans } from "react-i18next";
+import { useNavigate } from "react-router";
 
 import FirstNameField from "./FirstNameField";
 import TelegramField from "./TelegramField";
@@ -14,6 +15,7 @@ import { useIsContactFormModalOpenStore } from "../../../shared/lib/store/isCont
 
 export const ModalStartProject = () => {
   const { isOpen, toggleIsOpen } = useIsContactFormModalOpenStore();
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (isOpen) {
@@ -24,6 +26,11 @@ export const ModalStartProject = () => {
   }, [isOpen]);
 
   const { t } = useTranslation("startProjectForm");
+
+  const onHandleCloseModal = () => {
+    toggleIsOpen();
+    navigate("/uk/");
+  };
 
   return (
     <>
@@ -43,7 +50,7 @@ export const ModalStartProject = () => {
                 "hidden",
                 "z-[-1000] lg:fixed lg:inset-y-0 lg:left-0 lg:block lg:w-full lg:bg-black/50 lg:text-white"
               )}
-              onClick={toggleIsOpen}
+              onClick={onHandleCloseModal}
             ></motion.div>
 
             <motion.div
@@ -93,8 +100,8 @@ export const ModalStartProject = () => {
               >
                 <div className="mt-6 mb-12 flex justify-end">
                   <button
-                    onClick={toggleIsOpen}
-                    className="text-xl"
+                    onClick={onHandleCloseModal}
+                    className="cursor-pointer text-xl"
                   >
                     {t("contactForm.close")}
                   </button>
