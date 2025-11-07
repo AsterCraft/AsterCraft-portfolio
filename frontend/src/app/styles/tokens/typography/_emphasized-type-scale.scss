@@ -1,0 +1,111 @@
+@use "typefaces" as *;
+
+$md-sys-typescale-emphasized: (
+  "display-large": (
+    "font": $md-ref-typeface-brand,
+    "size": 57px,
+    "weight": 500,
+    "line-height": 64px,
+    "tracking": -0.25px,
+  ),
+  "display-medium": (
+    "font": $md-ref-typeface-brand,
+    "size": 45px,
+    "weight": 500,
+    "line-height": 52px,
+    "tracking": 0,
+  ),
+  "display-small": (
+    "font": $md-ref-typeface-brand,
+    "size": 36px,
+    "weight": 500,
+    "line-height": 44px,
+    "tracking": 0,
+  ),
+  "headline-large": (
+    "font": $md-ref-typeface-brand,
+    "size": 32px,
+    "weight": 500,
+    "line-height": 40px,
+    "tracking": 0,
+  ),
+  "headline-medium": (
+    "font": $md-ref-typeface-brand,
+    "size": 28px,
+    "weight": 500,
+    "line-height": 36px,
+    "tracking": 0,
+  ),
+  "headline-small": (
+    "font": $md-ref-typeface-brand,
+    "size": 24px,
+    "weight": 500,
+    "line-height": 32px,
+    "tracking": 0,
+  ),
+  "title-large": (
+    "font": $md-ref-typeface-brand,
+    "size": 22px,
+    "weight": 500,
+    "line-height": 28px,
+    "tracking": 0,
+  ),
+  "title-medium": (
+    "font": $md-ref-typeface-brand,
+    "size": 16px,
+    "weight": 700,
+    "line-height": 24px,
+    "tracking": 0,
+  ),
+  "title-small": (
+    "font": $md-ref-typeface-brand,
+    "size": 14px,
+    "weight": 700,
+    "line-height": 20px,
+    "tracking": 0.1px,
+  ),
+
+  "body-large": (
+    "font": $md-ref-typeface-plain,
+    "size": 16px,
+    "weight": 500,
+    "line-height": 24px,
+    "tracking": 0.5px,
+  ),
+  "body-medium": (
+    "font": $md-ref-typeface-plain,
+    "size": 16px,
+    "weight": 500,
+    "line-height": 20px,
+    "tracking": 0.25px,
+  ),
+  "body-small": (
+    "font": $md-ref-typeface-plain,
+    "size": 12px,
+    "weight": 500,
+    "line-height": 16px,
+    "tracking": 0.4px,
+  ),
+
+  "label-large": (
+    "font": $md-ref-typeface-plain,
+    "size": 14px,
+    "weight": 700,
+    "line-height": 20px,
+    "tracking": 0.1px,
+  ),
+  "label-medium": (
+    "font": $md-ref-typeface-plain,
+    "size": 12px,
+    "weight": 700,
+    "line-height": 16px,
+    "tracking": 0.5px,
+  ),
+  "label-small": (
+    "font": $md-ref-typeface-plain,
+    "size": 11px,
+    "weight": 700,
+    "line-height": 16px,
+    "tracking": 0.5px,
+  ),
+);
