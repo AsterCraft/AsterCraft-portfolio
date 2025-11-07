@@ -9,13 +9,17 @@ import { BurgerDropdownMenu } from "features/HeaderNavigation";
 import "@shared/lib/i18n";
 
 import "./main.css";
+import "./styles/index.scss";
 import "@shared/styles/index.scss";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   const { i18n } = useTranslation();
 
   return (
-    <html lang={i18n.language}>
+    <html
+      lang={i18n.language}
+      data-theme="light"
+    >
       <head>
         <meta charSet="UTF-8" />
         <meta
