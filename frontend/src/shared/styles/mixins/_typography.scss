@@ -2,6 +2,7 @@
 
 @use "../../../app/styles/tokens/typography/" as typo;
 
+/// @param {String} $style - The type scale name ("display-large", "body-medium")
 @mixin typescale($style) {
   $scale: map-get(typo.$md-sys-typescale, $style);
 
@@ -16,6 +17,7 @@
   }
 }
 
+/// @param {String} $style - The type scale name ("display-large", "body-medium")
 @mixin typescale-emphasized($style) {
   $scale: map-get(typo.$md-sys-typescale-emphasized, $style);
 
