@@ -17,7 +17,7 @@
   }
 }
 
-/// @param {String} $style - The type scale name ("display-large", "body-medium")
+/// @param {String} $style - The emphasized type scale name ("display-large", "body-medium")
 @mixin typescale-emphasized($style) {
   $scale: map-get(typo.$md-sys-typescale-emphasized, $style);
 
