@@ -1,0 +1,45 @@
+@use "./tokens" as *;
+
+/// Apply spatial motion (for movement: transform, position, size, rotation)
+/// @param {String} $speed - 'fast' | 'default' | 'slow'
+/// @example
+///   .button {
+///     transition-property: transform;
+///     @include spatial('fast');
+///   }
+@mixin spatial($speed: "default") {
+  @if $speed == "fast" {
+    transition-duration: $md-sys-motion-spring-fast-spatial-duration;
+    transition-timing-function: $md-sys-motion-spring-fast-spatial-easing;
+  } @else if $speed == "default" {
+    transition-duration: $md-sys-motion-spring-default-spatial-duration;
+    transition-timing-function: $md-sys-motion-spring-default-spatial-easing;
+  } @else if $speed == "slow" {
+    transition-duration: $md-sys-motion-spring-slow-spatial-duration;
+    transition-timing-function: $md-sys-motion-spring-slow-spatial-easing;
+  } @else {
+    @error "Unknown motion speed: #{$speed}. Valid speeds: 'fast', 'default', 'slow'";
+  }
+}
+
+/// Apply effects motion (for properties: color, opacity, filters)
+/// @param {String} $speed - 'fast' | 'default' | 'slow'
+/// @example
+///   .menu {
+///     transition-property: opacity;
+///     @include effects('default');
+///   }
+@mixin effects($speed: "default") {
+  @if $speed == "fast" {
+    transition-duration: $md-sys-motion-spring-fast-effects-duration;
+    transition-timing-function: $md-sys-motion-spring-fast-effects-easing;
+  } @else if $speed == "default" {
+    transition-duration: $md-sys-motion-spring-default-effects-duration;
+    transition-timing-function: $md-sys-motion-spring-default-effects-easing;
+  } @else if $speed == "slow" {
+    transition-duration: $md-sys-motion-spring-slow-effects-duration;
+    transition-timing-function: $md-sys-motion-spring-slow-effects-easing;
+  } @else {
+    @error "Unknown motion speed: #{$speed}. Valid speeds: 'fast', 'default', 'slow'";
+  }
+}
