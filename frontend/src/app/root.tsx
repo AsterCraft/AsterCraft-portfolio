@@ -9,7 +9,6 @@ import { BurgerDropdownMenu } from "features/HeaderNavigation";
 import "@shared/lib/i18n";
 
 import "./main.css";
-import "./styles/index.scss";
 import "@shared/styles/index.scss";
 
 export function Layout({ children }: { children: React.ReactNode }) {

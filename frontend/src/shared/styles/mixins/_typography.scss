@@ -1,6 +1,6 @@
 @use "sass:map";
 
-@use "../../../app/styles/tokens/typography/" as typo;
+@use "../tokens/typography/" as typo;
 
 /// @param {String} $style - The type scale name ("display-large", "body-medium")
 @mixin typescale($style) {
