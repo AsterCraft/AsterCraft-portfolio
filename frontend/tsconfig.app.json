@@ -26,7 +26,9 @@
       "@pages/*": ["pages/*"]
     },
     "types": ["node", "vite/client"],
-    "rootDirs": ["./src", "./.react-router/types/src"]
+    "rootDirs": ["./src", "./.react-router/types/src"],
+
+    "plugins": [{ "name": "typescript-plugin-css-modules" }]
   },
   "include": ["src", ".react-router/types/**/*"]
 }
