@@ -28,7 +28,12 @@
     "types": ["node", "vite/client"],
     "rootDirs": ["./src", "./.react-router/types/src"],
 
-    "plugins": [{ "name": "typescript-plugin-css-modules" }]
+    "plugins": [
+      {
+        "name": "typescript-plugin-css-modules",
+        "options": { "allowUnknownClassnames": true }
+      }
+    ]
   },
   "include": ["src", ".react-router/types/**/*"]
 }
