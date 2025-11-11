@@ -1,5 +1,5 @@
 import { z } from "zod";
-import i18n from "@shared/lib/i18n";
+import i18n from "@shared/i18n";
 
 const t = (key: string) => i18n.t(key, { ns: "startProjcetForm" });
 

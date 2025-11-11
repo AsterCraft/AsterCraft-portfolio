@@ -6,7 +6,7 @@ import { Footer } from "@widgets/footer";
 import { ModalStartProject } from "@widgets/start-project-form";
 import { BurgerDropdownMenu } from "features/HeaderNavigation";
 
-import "@shared/lib/i18n";
+import "@shared/i18n";
 
 import "./main.css";
 import "@shared/styles/index.scss";
