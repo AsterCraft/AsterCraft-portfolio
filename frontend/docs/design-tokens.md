@@ -1,0 +1,143 @@
+# Design Tokens
+
+Material Design 3 token implementation. All tokens in `shared/styles/tokens/`.
+
+```
+shared/styles/tokens/
+├── colors/       - CSS custom properties (runtime themes)
+├── typography/   - SCSS mixins (type scales)
+├── spacing/      - SCSS variables (layout spacing)
+├── shape/        - SCSS variables (border radius)
+├── elevation/    - SCSS mixin (box shadows)
+└── motion/       - SCSS mixins (animation timing)
+```
+
+---
+
+## Colors
+
+CSS custom properties. Use directly.
+
+```scss
+.card {
+  background: var(--md-sys-color-surface-container);
+  color: var(--md-sys-color-on-surface);
+}
+```
+
+**Surface colors** (backgrounds):
+- `--md-sys-color-surface`
+- `--md-sys-color-surface-container-lowest/low/normal/high/highest`
+- `--md-sys-color-on-surface` (text)
+- `--md-sys-color-on-surface-variant` (secondary text)
+
+**Accent colors** (actions):
+- `--md-sys-color-primary` / `--md-sys-color-on-primary`
+- `--md-sys-color-secondary` / `--md-sys-color-on-secondary`
+- `--md-sys-color-tertiary` / `--md-sys-color-on-tertiary`
+
+**States**:
+- `--md-sys-color-error` / `--md-sys-color-on-error`
+- `--md-sys-color-outline` (borders)
+- `--md-sys-color-outline-variant` (subtle borders)
+
+**Theme switching**: Set `data-theme="light"` or `data-theme="dark"` on `<html>`.
+
+---
+
+## Typography
+
+Import: `@use '@shared/styles/tokens/typography' as typo;`
+
+Two mixins available:
+
+```scss
+.title {
+  @include typo.typescale('display-large');
+}
+
+.active-item {
+  @include typo.typescale-emphasized('label-large');
+}
+```
+
+**Scales**: `display-large/medium/small`, `headline-large/medium/small`, `title-large/medium/small`, `body-large/medium/small`, `label-large/medium/small`
+
+Use emphasized for active states or extra emphasis.
+
+---
+
+## Spacing
+
+Import: `@use '@shared/styles/tokens/spacing' as spacing;`
+
+SCSS variables, 4px base unit:
+
+```scss
+.card {
+  padding: spacing.$md-sys-spacing-4;        // 16px
+  margin-bottom: spacing.$md-sys-spacing-6;  // 24px
+}
+```
+
+**Available**: `$md-sys-spacing-1/2/3/4/5/6/8/10/12/16/20/24/32/40`
+
+---
+
+## Shape
+
+Import: `@use '@shared/styles/tokens/shape' as shape;`
+
+SCSS variables for corner radius:
+
+```scss
+.card {
+  border-radius: shape.$md-sys-shape-corner-value-medium;  // 12px
+}
+```
+
+**Available**: `$md-sys-shape-corner-value-none/extra-small/small/medium/large/large-increased/extra-large/extra-large-increased/extra-extra-large`
+
+---
+
+## Elevation
+
+Import: `@use '@shared/styles/tokens/elevation' as elev;`
+
+Mixin for box shadows:
+
+```scss
+.card {
+  @include elev.elevation(1);
+  
+  &:hover {
+    @include elev.elevation(2);
+  }
+}
+```
+
+**Levels**: `0-5` (0 = no shadow, 5 = highest)
+
+---
+
+## Motion
+
+Import: `@use '@shared/styles/tokens/motion' as motion;`
+
+Two mixins: `spatial()` for movement (has bounce), `effects()` for properties (no bounce).
+
+```scss
+.button {
+  transition-property: transform;
+  @include motion.spatial('fast');
+}
+
+.menu {
+  transition-property: opacity;
+  @include motion.effects('default');
+}
+```
+
+**Speeds**: `'fast'`, `'default'`, `'slow'`
+
+Use spatial for transform/position/size. Use effects for color/opacity.
