@@ -17,6 +17,8 @@ export const ModalStartProject = () => {
   const { isOpen, close } = useIsContactFormModalOpenStore();
   const navigate = useNavigate();
 
+  const { t } = useTranslation("startProjectForm");
+
   useEffect(() => {
     if (isOpen) {
       document.body.classList.add("modalOpen");
@@ -24,8 +26,6 @@ export const ModalStartProject = () => {
       document.body.classList.remove("modalOpen");
     }
   }, [isOpen]);
-
-  const { t } = useTranslation("startProjectForm");
 
   const onHandleCloseModal = () => {
     close();
