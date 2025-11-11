@@ -9,7 +9,9 @@ Every slice that needs translations follows this pattern:
 1. Translation content lives in `config/translation/uk.ts`
 2. Registration happens in `model/i18n.ts`
 3. Side-effect import in `index.ts` triggers auto-registration
-4. Components use `useTranslation("namespace")` to access translations
+4. Export translation type from slice's `index.ts`
+5. Import and register in central `app/types/i18next.d.ts`
+6. Components use `useTranslation("namespace")` to access translations
 
 TypeScript provides autocomplete and type checking for all translation keys.
 
@@ -51,7 +53,6 @@ export const yourSliceTranslationUk = {
 Create `model/i18n.ts`:
 
 ```typescript
-import "i18next";
 import i18n from "@shared/i18n";
 import { yourSliceTranslationUk } from "../config/translation/uk";
 
@@ -60,34 +61,49 @@ i18n.addResourceBundle(
   "yourSlice", // namespace name
   yourSliceTranslationUk
 );
-
-declare module "i18next" {
-  interface CustomTypeOptions {
-    resources: {
-      yourSlice: typeof yourSliceTranslationUk;
-    };
-  }
-}
 ```
 
-This does two things:
+This registers translations at runtime with `addResourceBundle`.
 
-- Registers translations at runtime with `addResourceBundle`
-- Extends TypeScript types with module augmentation
-
-### Step 3: Import in Barrel Export
+### Step 3: Export Translation and Import Side-Effect
 
 Update `index.ts`:
 
 ```typescript
 export { YourComponent } from "./ui/your-component";
 
+export { yourSliceTranslationUk } from "./config/translation/uk";
+
 import "./model/i18n"; // Side-effect triggers registration
 ```
 
-The import runs when your slice is first used, registering translations before any component needs them.
+The side-effect import runs when your slice is first used. The export allows the central type file to import the translation type.
 
-### Step 4: Use in Components
+### Step 4: Register in Central Type File
+
+Add to `app/types/i18next.d.ts`:
+
+```typescript
+import "i18next";
+
+import { yourSliceTranslationUk } from "@widgets/your-slice";
+import { headerTranslationUk } from "@widgets/header";
+// ... other imports
+
+declare module "i18next" {
+  interface CustomTypeOptions {
+    resources: {
+      yourSlice: typeof yourSliceTranslationUk;
+      header: typeof headerTranslationUk;
+      // ... other slices
+    };
+  }
+}
+```
+
+This central file aggregates all translation types for TypeScript autocomplete.
+
+### Step 5: Use in Components
 
 ```typescript
 import { useTranslation } from "react-i18next";
@@ -107,7 +123,7 @@ export const YourComponent = () => {
 
 TypeScript will autocomplete keys and catch typos.
 
-## Interpolation - (not sure works like this)
+## Interpolation (not yet sure it works)
 
 For dynamic values in translations:
 
@@ -119,6 +135,9 @@ export const translationsUk = {
 } as const;
 
 // In component
+const { t } = useTranslation("yourSlice");
 t("greeting", { name: "Антон" }); // "Привіт, Антон!"
 t("itemCount", { count: 5 }); // "У вас 5 товарів"
 ```
+
+TypeScript will infer required interpolation variables from the translation string.
