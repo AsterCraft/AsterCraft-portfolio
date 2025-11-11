@@ -5,13 +5,10 @@ import LanguageDetector from "i18next-browser-languagedetector";
 // import ukShared from "./locales/uk/shared.json";
 import ukWidgets from "./locales/uk/widgets.json";
 
-import { startProjectFormTranslations } from "@widgets/start-project-form/config/translations";
-
 const resources = {
   uk: {
     // shared: ukShared,
     widgets: ukWidgets,
-    startProjectForm: startProjectFormTranslations.uk,
   },
 } as const;
 
