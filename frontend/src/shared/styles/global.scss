@@ -1,7 +1,17 @@
+@use "config.scss" as conf;
+
 body.modalOpen {
   overflow: hidden;
 }
 
 body {
   overflow-x: hidden;
+
+  padding-top: conf.$app-bar-height;
+}
+
+.Container {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 1450px;
 }
