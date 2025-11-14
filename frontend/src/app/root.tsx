@@ -17,7 +17,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html
       lang={i18n.language}
-      data-theme="light"
+      data-theme="dark"
     >
       <head>
         <meta charSet="UTF-8" />
