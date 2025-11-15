@@ -8,7 +8,10 @@ type ButtonStartProjectProps = {
   text?: string;
 };
 
-const ButtonStartProject = ({ className, text }: ButtonStartProjectProps) => {
+export const StartProjectBtn = ({
+  className,
+  text,
+}: ButtonStartProjectProps) => {
   const { open } = useIsContactFormModalOpenStore();
   const navigate = useNavigate();
 
@@ -29,5 +32,3 @@ const ButtonStartProject = ({ className, text }: ButtonStartProjectProps) => {
     </button>
   );
 };
-
-export default ButtonStartProject;
