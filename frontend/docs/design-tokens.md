@@ -160,3 +160,43 @@ Two mixins: `spatial()` for movement (has bounce), `effects()` for properties (n
 **Speeds**: `'fast'`, `'default'`, `'slow'`
 
 Use spatial for transform/position/size. Use effects for color/opacity.
+
+---
+
+## State Layer
+
+Import: `@use '@shared/styles/tokens/state-layer' as sl;`
+
+SCSS variables for state layer:
+
+```scss
+@use "../../../styles/tokens/" as t;
+
+.startProjectBtn {
+  position: relative;
+
+  background-color: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
+
+  &::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    opacity: 0;
+    background: var(--md-sys-color-on-primary);
+
+    @include t.effects("fast");
+    transition-property: opacity;
+  }
+
+  &:hover {
+    &::before {
+      opacity: t.$md-sys-state-hover-state-layer-opacity;
+    }
+  }
+}
+```
+
+read more state layers (here)[https://m3.material.io/foundations/interaction/states/applying-states]
