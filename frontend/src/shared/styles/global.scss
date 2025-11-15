@@ -15,3 +15,11 @@ body {
   width: 100%;
   max-width: 1450px;
 }
+
+button,
+a {
+  cursor: pointer;
+
+  min-width: 48px;
+  min-height: 48px;
+}
