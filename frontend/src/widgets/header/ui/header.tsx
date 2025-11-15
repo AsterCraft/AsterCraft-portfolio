@@ -50,7 +50,7 @@ export const Header = () => {
           <span className={s.brandName}>{t("brandName")}</span>
         </div>
 
-        <StartProjectBtn />
+        <StartProjectBtn text={t("startProjectBtn")} />
       </div>
 
       <aside

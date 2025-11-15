@@ -1,6 +1,6 @@
 export const headerTranslationUk = {
   brandName: "AsterCraft",
-  buttonStartProject: "Замовити сайт",
+  startProjectBtn: "Замовити сайт",
   nav: {
     development: "Розробка сайтів",
     portfolio: "Портфоліо",
