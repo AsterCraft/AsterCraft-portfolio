@@ -3,15 +3,14 @@ import { useNavigate } from "react-router";
 
 import { useIsContactFormModalOpenStore } from "../../../lib/store/isContactFormModalOpen";
 
-type ButtonStartProjectProps = {
+import s from "./start-project-btn.module.scss";
+
+type StartProjectBtnProps = {
   className?: string;
   text?: string;
 };
 
-export const StartProjectBtn = ({
-  className,
-  text,
-}: ButtonStartProjectProps) => {
+export const StartProjectBtn = ({ className, text }: StartProjectBtnProps) => {
   const { open } = useIsContactFormModalOpenStore();
   const navigate = useNavigate();
 
@@ -22,13 +21,10 @@ export const StartProjectBtn = ({
 
   return (
     <button
-      onClick={() => onHandleClick()}
-      className={cn(
-        "bg-ac-btn-action inline-block w-fit cursor-pointer rounded-md px-8 py-4 text-lg whitespace-nowrap text-black",
-        className
-      )}
+      onClick={onHandleClick}
+      className={cn(s.startProjectBtn, className)}
     >
-      {text || "Start a project"}
+      {text || "Почати проект"}
     </button>
   );
 };
