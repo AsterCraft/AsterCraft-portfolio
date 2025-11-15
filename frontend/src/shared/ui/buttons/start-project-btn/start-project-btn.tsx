@@ -7,7 +7,7 @@ import s from "./start-project-btn.module.scss";
 
 type StartProjectBtnProps = {
   className?: string;
-  text?: string;
+  text: string;
 };
 
 export const StartProjectBtn = ({ className, text }: StartProjectBtnProps) => {
@@ -24,7 +24,7 @@ export const StartProjectBtn = ({ className, text }: StartProjectBtnProps) => {
       onClick={onHandleClick}
       className={cn(s.startProjectBtn, className)}
     >
-      {text || "Почати проект"}
+      {text}
     </button>
   );
 };
