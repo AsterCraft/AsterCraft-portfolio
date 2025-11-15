@@ -14,6 +14,22 @@ shared/styles/tokens/
 
 ---
 
+## Importing
+
+To import all tokens at once:
+
+```scss
+@use "../../../styles/tokens/" as t;
+
+.startProjectBtn {
+  @include t.typescale("title-medium");
+  font-weight: 500;
+
+  padding-inline: t.$md-sys-spacing-4;
+```
+
+You can also import only specific tokens as described bellow. But importing all tokens will be a better solution in most cases.
+
 ## Colors
 
 CSS custom properties. Use directly.
@@ -26,17 +42,20 @@ CSS custom properties. Use directly.
 ```
 
 **Surface colors** (backgrounds):
+
 - `--md-sys-color-surface`
 - `--md-sys-color-surface-container-lowest/low/normal/high/highest`
 - `--md-sys-color-on-surface` (text)
 - `--md-sys-color-on-surface-variant` (secondary text)
 
 **Accent colors** (actions):
+
 - `--md-sys-color-primary` / `--md-sys-color-on-primary`
 - `--md-sys-color-secondary` / `--md-sys-color-on-secondary`
 - `--md-sys-color-tertiary` / `--md-sys-color-on-tertiary`
 
 **States**:
+
 - `--md-sys-color-error` / `--md-sys-color-on-error`
 - `--md-sys-color-outline` (borders)
 - `--md-sys-color-outline-variant` (subtle borders)
@@ -53,11 +72,11 @@ Two mixins available:
 
 ```scss
 .title {
-  @include typo.typescale('display-large');
+  @include typo.typescale("display-large");
 }
 
 .active-item {
-  @include typo.typescale-emphasized('label-large');
+  @include typo.typescale-emphasized("label-large");
 }
 ```
 
@@ -75,8 +94,8 @@ SCSS variables, 4px base unit:
 
 ```scss
 .card {
-  padding: spacing.$md-sys-spacing-4;        // 16px
-  margin-bottom: spacing.$md-sys-spacing-6;  // 24px
+  padding: spacing.$md-sys-spacing-4; // 16px
+  margin-bottom: spacing.$md-sys-spacing-6; // 24px
 }
 ```
 
@@ -92,7 +111,7 @@ SCSS variables for corner radius:
 
 ```scss
 .card {
-  border-radius: shape.$md-sys-shape-corner-value-medium;  // 12px
+  border-radius: shape.$md-sys-shape-corner-value-medium; // 12px
 }
 ```
 
@@ -109,7 +128,7 @@ Mixin for box shadows:
 ```scss
 .card {
   @include elev.elevation(1);
-  
+
   &:hover {
     @include elev.elevation(2);
   }
@@ -129,12 +148,12 @@ Two mixins: `spatial()` for movement (has bounce), `effects()` for properties (n
 ```scss
 .button {
   transition-property: transform;
-  @include motion.spatial('fast');
+  @include motion.spatial("fast");
 }
 
 .menu {
   transition-property: opacity;
-  @include motion.effects('default');
+  @include motion.effects("default");
 }
 ```
 
