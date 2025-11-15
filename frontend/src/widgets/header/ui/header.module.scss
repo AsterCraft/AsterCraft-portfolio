@@ -100,6 +100,8 @@ $z-index: 1000;
 
     .navItem {
       display: flex;
+      justify-content: center;
+      align-items: center;
       flex-direction: column;
       gap: spacing.$md-sys-spacing-1;
 
