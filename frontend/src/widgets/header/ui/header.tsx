@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router";
 import { useTranslation } from "react-i18next";
 import cn from "classnames";
 
-import ButtonStartProject from "@shared/ui/buttons/ButtonStartProject/ButtonStartProject";
+import { StartProjectBtn } from "@shared/ui";
 import { MenuIcon } from "@shared/ui/icons/menu";
 
 import s from "./header.module.scss";
@@ -14,7 +14,6 @@ export const Header = () => {
 
   const [isExpanded, setIsExpanded] = useState(false);
   const [isPinned, setIsPinned] = useState(false);
-  const [isClosing, setIsClosing] = useState(false);
 
   const handleMenuClick = () => {
     setIsPinned((prev) => {
@@ -51,7 +50,7 @@ export const Header = () => {
           <span className={s.brandName}>{t("brandName")}</span>
         </div>
 
-        <ButtonStartProject />
+        <StartProjectBtn />
       </div>
 
       <aside

@@ -2,7 +2,7 @@
 // import { useAnimate, useInView, stagger } from "motion/react";
 import classNames from "classnames";
 
-import ButtonStartProject from "../../shared/ui/buttons/ButtonStartProject/ButtonStartProject";
+import { StartProjectBtn } from "../../shared/ui/";
 import { LabelToSection, TextSlideUp } from "@shared/ui/typography";
 
 import imgLogo from "/img/logo/logo.png";
@@ -122,7 +122,7 @@ export const SectionAboutUs = () => {
           from personal sites to full business solutions.
         </p> */}
 
-        <ButtonStartProject
+        <StartProjectBtn
           className={s.buttonStartProject}
           text="Обговорити проект"
         />
