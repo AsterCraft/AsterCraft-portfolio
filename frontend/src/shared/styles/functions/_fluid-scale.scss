@@ -1,0 +1,38 @@
+@use "sass:math";
+
+@use "../tokens/breakpoints/" as brp;
+
+/// Calculate fluid font size using clamp()
+/// @param {Number} $min-size - minimum font size in px
+/// @param {Number} $max-size - maximum font size in px
+/// @param {Numbur} $min-viewport - Minimum viewport width in px (default: 599 - compact)
+/// @param {Numbur} $max-viewport - Maximum viewport width in px (default 1599 - large)
+/// @return {String} - CSS clamp() function
+/// @example
+/// font-size: fluid-scale(36px, 120px);
+/// // Output: clamp(36px, calc(6.4px + 7.89vw), 120px)
+@function fluid-scale(
+  $min-size,
+  $max-size,
+  $min-viewport: 300px,
+  $max-viewport: brp.$md-ref-breakpoint-large-max
+) {
+  $min-size-val: math.div($min-size, 1px);
+  $max-size-val: math.div($max-size, 1px);
+  $min-vp-val: math.div($min-viewport, 1px);
+  $max-vp-val: math.div($max-viewport, 1px);
+
+  $slope: math.div(
+    ($max-size-val - $min-size-val),
+    ($max-vp-val - $min-vp-val)
+  );
+
+  $slope-vw: $slope * 100;
+  $intercept: $min-size-val - ($slope * $min-vp-val);
+
+  @return clamp(
+    #{$min-size},
+    calc(#{$intercept}px + #{$slope-vw}vw),
+    #{$max-size}
+  );
+}
