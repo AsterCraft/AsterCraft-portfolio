@@ -1,0 +1,38 @@
+@use "../../../shared/styles/tokens" as t;
+@use "../../../shared/styles/config" as conf;
+
+.heroSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: t.$md-sys-spacing-16;
+
+  height: calc(100vh - conf.$app-bar-height);
+
+  background-color: var(--md-sys-color-surface-container-low);
+  color: var(--md-sys-color-on-surface);
+
+  .heroTitle {
+    @include t.typescale("display-large");
+    font-size: 120px;
+    line-height: 140px;
+
+    .firstRow {
+      padding-left: t.$md-sys-spacing-16;
+    }
+
+    .secondRow {
+      padding-left: t.$md-sys-spacing-70;
+    }
+
+    .thirdRow {
+      color: var(--md-sys-color-tertiary);
+    }
+  }
+
+  .cta {
+    scale: 1.5;
+    border-radius: t.$md-sys-shape-corner-value-extra-large;
+  }
+}
