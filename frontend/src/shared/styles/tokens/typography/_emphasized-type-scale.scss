@@ -1,5 +1,13 @@
 @use "typefaces" as *;
 
+/// Material Design 3 emphasized type scale map.
+///
+/// Same as baseline type scale but with heavier font weights.
+/// Used for active states or elements requiring extra emphasis.
+///
+/// @type Map
+/// @link https://m3.material.io/styles/typography/type-scale-tokens Type scale tokens
+/// @group Typography
 $md-sys-typescale-emphasized: (
   "display-large": (
     "font": $md-ref-typeface-brand,

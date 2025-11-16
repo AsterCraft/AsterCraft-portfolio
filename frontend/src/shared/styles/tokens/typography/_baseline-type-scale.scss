@@ -1,5 +1,13 @@
 @use "typefaces" as *;
 
+/// Material Design 3 baseline type scale map.
+///
+/// Contains font-family, size, weight, line-height, and tracking
+/// for all type scale levels.
+///
+/// @type Map
+/// @link https://m3.material.io/styles/typography/type-scale-tokens Type scale tokens
+/// @group Typography
 $md-sys-typescale: (
   "display-large": (
     "font": $md-ref-typeface-brand,
