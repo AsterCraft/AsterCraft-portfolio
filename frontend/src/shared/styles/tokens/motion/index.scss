@@ -1,12 +1,31 @@
+////
+/// Material Design 3 motion system.
+///
+/// Provides duration and easing tokens for animations and transitions.
+/// Spatial motion uses spring easing, effects motion uses standard easing.
+///
+/// @group Motion
+/// @link https://m3.material.io/styles/motion/easing-and-duration/tokens-specs Motion tokens
+////
+
 @use "./tokens" as *;
 
-/// Apply spatial motion (for movement: transform, position, size, rotation)
-/// @param {String} $speed - 'fast' | 'default' | 'slow'
-/// @example
+/// Apply spatial motion timing for transform, position, size, or rotation.
+///
+/// Uses spring-based easing.
+///
+/// @param {String} $speed ['default'] - 'fast', 'default', or 'slow'
+///
+/// @example scss
 ///   .button {
 ///     transition-property: transform;
 ///     @include spatial('fast');
 ///   }
+///
+/// @throw Error if speed is not 'fast', 'default', or 'slow'
+///
+/// @group Motion
+/// @output transition-duration, transition-timing-function
 @mixin spatial($speed: "default") {
   @if $speed == "fast" {
     transition-duration: $md-sys-motion-spring-fast-spatial-duration;
@@ -22,13 +41,22 @@
   }
 }
 
-/// Apply effects motion (for properties: color, opacity, filters)
-/// @param {String} $speed - 'fast' | 'default' | 'slow'
-/// @example
+/// Apply effects motion timing for color, opacity, and filters.
+///
+/// Uses standard easing without bounce.
+///
+/// @param {String} $speed ['default'] - 'fast', 'default', or 'slow'
+///
+/// @example scss
 ///   .menu {
 ///     transition-property: opacity;
 ///     @include effects('default');
 ///   }
+///
+/// @throw Error if speed is not 'fast', 'default', or 'slow'
+///
+/// @group Motion
+/// @output transition-duration, transition-timing-function
 @mixin effects($speed: "default") {
   @if $speed == "fast" {
     transition-duration: $md-sys-motion-spring-fast-effects-duration;

@@ -1,10 +1,35 @@
+////
+/// Material Design 3 typography scale.
+///
+/// Provides baseline and emphasized type scales with predefined font sizes,
+/// weights, line heights, and letter spacing.
+///
+/// @group Typography
+/// @link https://m3.material.io/styles/typography/type-scale-tokens Type scale tokens
+////
+
 @use "typefaces" as *;
 @use "baseline-type-scale" as *;
 @use "emphasized-type-scale" as *;
 
 @use "sass:map";
 
-/// @param {String} $style - The type scale name (display-large, headline, title, body, label - small to large)
+/// Apply Material Design 3 typography scale.
+///
+/// Sets font-family, font-size, font-weight, line-height, and letter-spacing.
+///
+/// @param {String} $style - Type scale name (display-large, headline-medium, body-small, etc.)
+///
+/// @example scss
+///   .hero-title {
+///     @include typescale('display-large');
+///   }
+///
+/// @throw Error if type scale name is unknown
+///
+/// @group Typography
+/// @output font-family, font-size, font-weight, line-height, letter-spacing
+/// @require {Variable} $md-sys-typescale
 @mixin typescale($style) {
   $scale: map.get($md-sys-typescale, $style);
 
@@ -19,7 +44,22 @@
   }
 }
 
-/// @param {String} $style - The emphasized type scale name (display-large, headline, title, body, label - small to large)
+/// Apply emphasized typography scale.
+///
+/// Same as typescale() but with heavier font weights.
+///
+/// @param {String} $style - Type scale name
+///
+/// @example scss
+///   .active-tab {
+///     @include typescale-emphasized('label-large');
+///   }
+///
+/// @throw Error if type scale name is unknown
+///
+/// @group Typography
+/// @output font-family, font-size, font-weight, line-height, letter-spacing
+/// @require {Variable} $md-sys-typescale-emphasized
 @mixin typescale-emphasized($style) {
   $scale: map.get($md-sys-typescale-emphasized, $style);
 

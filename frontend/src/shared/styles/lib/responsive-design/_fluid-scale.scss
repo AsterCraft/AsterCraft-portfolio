@@ -1,16 +1,41 @@
+////
+/// Responsive design utilities.
+///
+/// Provides functions for creating fluid, viewport-responsive values.
+///
+/// @group Responsive
+////
+
 @use "sass:math";
 
 @use "../../tokens/breakpoints/" as brp;
 
-/// Calculate fluid font size using clamp()
-/// @param {Number} $min-size - minimum font size in px
-/// @param {Number} $max-size - maximum font size in px
-/// @param {Numbur} $min-viewport - Minimum viewport width in px (default: 280 - compact)
-/// @param {Numbur} $max-viewport - Maximum viewport width in px (default 1920 - extra-large)
-/// @return {String} - CSS clamp() function
-/// @example
-/// font-size: fluid-scale(36px, 120px);
-/// // Output: clamp(36px, calc(6.4px + 7.89vw), 120px)
+/// Calculate fluid scaling using CSS clamp().
+///
+/// Creates a value that scales linearly between min and max sizes
+/// across a viewport range.
+///
+/// @param {Number} $min-size - Minimum value (e.g., 48px)
+/// @param {Number} $max-size - Maximum value (e.g., 120px)
+/// @param {Number} $min-viewport [280px] - Viewport width at minimum size
+/// @param {Number} $max-viewport [1920px] - Viewport width at maximum size
+///
+/// @return {String} CSS clamp() function
+///
+/// @example scss
+///   .hero-title {
+///     font-size: fluid-scale(48px, 120px);
+///   }
+///
+/// @example scss - Custom viewport range
+///   .hero-title {
+///     font-size: fluid-scale(48px, 120px, 375px, 1440px);
+///   }
+///
+/// @group Responsive
+/// @require {function} math.div
+/// @require {Variable} brp.$md-sys-viewport-compact
+/// @require {Variable} brp.$md-sys-viewport-extra-large
 @function fluid-scale(
   $min-size,
   $max-size,
