@@ -9,7 +9,9 @@ shared/styles/tokens/
 ├── spacing/      - SCSS variables (layout spacing)
 ├── shape/        - SCSS variables (border radius)
 ├── elevation/    - SCSS mixin (box shadows)
-└── motion/       - SCSS mixins (animation timing)
+├── motion/       - SCSS mixins (animation timing)
+├── state-layer/  - SCSS variables (interaction states)
+└── breakpoints/  - SCSS variables (responsive layout)
 ```
 
 ---
@@ -199,4 +201,42 @@ SCSS variables for state layer:
 }
 ```
 
-read more state layers (here)[https://m3.material.io/foundations/interaction/states/applying-states]
+Read more about [state layers](https://m3.material.io/foundations/interaction/states/applying-states).
+
+---
+
+## Breakpoints
+
+Import: `@use '@shared/styles/tokens/breakpoints' as brp;`
+
+MD3 window size classes. Use these for media queries:
+
+```scss
+.hero {
+  font-size: 36px;
+  
+  @media (min-width: brp.$md-ref-breakpoint-medium-min) {
+    font-size: 48px;
+  }
+  
+  @media (min-width: brp.$md-ref-breakpoint-large-min) {
+    font-size: 64px;
+  }
+}
+```
+
+**Breakpoint ranges** (for media queries):
+- `$md-ref-breakpoint-compact-max`: `599px` (phones)
+- `$md-ref-breakpoint-medium-min/max`: `600px - 839px` (tablets portrait)
+- `$md-ref-breakpoint-expanded-min/max`: `840px - 1199px` (tablets landscape)
+- `$md-ref-breakpoint-large-min/max`: `1200px - 1599px` (desktop)
+- `$md-ref-breakpoint-extra-large-min`: `1600px+` (wide screens)
+
+**Viewport widths** (for fluid scaling):
+- `$md-sys-viewport-compact`: `280px`
+- `$md-sys-viewport-medium`: `720px`
+- `$md-sys-viewport-expanded`: `1024px`
+- `$md-sys-viewport-large`: `1440px`
+- `$md-sys-viewport-extra-large`: `1920px`
+
+Use viewport tokens with `fluid-scale()` function. See [fluid-scale.md](./fluid-scale.md) for details.
