@@ -5,8 +5,8 @@
 /// Calculate fluid font size using clamp()
 /// @param {Number} $min-size - minimum font size in px
 /// @param {Number} $max-size - maximum font size in px
-/// @param {Numbur} $min-viewport - Minimum viewport width in px (default: 599 - compact)
-/// @param {Numbur} $max-viewport - Maximum viewport width in px (default 1599 - large)
+/// @param {Numbur} $min-viewport - Minimum viewport width in px (default: 280 - compact)
+/// @param {Numbur} $max-viewport - Maximum viewport width in px (default 1920 - extra-large)
 /// @return {String} - CSS clamp() function
 /// @example
 /// font-size: fluid-scale(36px, 120px);
@@ -14,8 +14,8 @@
 @function fluid-scale(
   $min-size,
   $max-size,
-  $min-viewport: 300px,
-  $max-viewport: brp.$md-ref-breakpoint-large-max
+  $min-viewport: brp.$md-sys-viewport-compact,
+  $max-viewport: brp.$md-sys-viewport-extra-large
 ) {
   $min-size-val: math.div($min-size, 1px);
   $max-size-val: math.div($max-size, 1px);
