@@ -1,5 +1,6 @@
 @use "../../../shared/styles/tokens" as t;
 @use "../../../shared/styles/config" as conf;
+@use "../../../shared/styles/functions/_fluid-scale.scss" as fs;
 
 .heroSection {
   display: flex;
@@ -15,15 +16,30 @@
 
   .heroTitle {
     @include t.typescale("display-large");
-    font-size: 120px;
-    line-height: 140px;
+    font-size: fs.fluid-scale(
+      22px,
+      120px,
+      t.$md-ref-breakpoint-compact-min,
+      t.$md-ref-breakpoint-large-max
+    );
+    line-height: fs.fluid-scale(
+      36px,
+      140px,
+      t.$md-ref-breakpoint-compact-min,
+      t.$md-ref-breakpoint-large-max
+    );
 
     .firstRow {
-      padding-left: t.$md-sys-spacing-16;
+      padding-left: fs.fluid-scale(t.$md-sys-spacing-12, t.$md-sys-spacing-16);
     }
 
     .secondRow {
-      padding-left: t.$md-sys-spacing-70;
+      padding-left: fs.fluid-scale(
+        t.$md-sys-spacing-12,
+        t.$md-sys-spacing-70,
+        t.$md-ref-breakpoint-compact-min,
+        t.$md-ref-breakpoint-large-max
+      );
     }
 
     .thirdRow {
@@ -34,5 +50,9 @@
   .cta {
     scale: 1.5;
     border-radius: t.$md-sys-shape-corner-value-extra-large;
+
+    @media (max-width: t.$md-ref-breakpoint-compact-max) {
+      scale: 1.3;
+    }
   }
 }
