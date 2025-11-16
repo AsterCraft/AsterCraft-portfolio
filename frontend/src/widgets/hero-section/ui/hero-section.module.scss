@@ -1,6 +1,6 @@
 @use "../../../shared/styles/tokens" as t;
 @use "../../../shared/styles/config" as conf;
-@use "../../../shared/styles/functions/_fluid-scale.scss" as fs;
+@use "../../../shared/styles/lib/responsive-design/_fluid-scale.scss" as fs;
 
 .heroSection {
   display: flex;

@@ -1,6 +1,6 @@
 @use "sass:math";
 
-@use "../tokens/breakpoints/" as brp;
+@use "../../tokens/breakpoints/" as brp;
 
 /// Calculate fluid font size using clamp()
 /// @param {Number} $min-size - minimum font size in px
