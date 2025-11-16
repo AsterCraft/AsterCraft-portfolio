@@ -19,13 +19,13 @@
     font-size: fs.fluid-scale(
       22px,
       120px,
-      t.$md-ref-breakpoint-compact-min,
-      t.$md-ref-breakpoint-large-max
+      t.$md-sys-viewport-compact,
+      t.$md-ref-breakpoint-large-max //change to viewport tokens?
     );
     line-height: fs.fluid-scale(
       36px,
       140px,
-      t.$md-ref-breakpoint-compact-min,
+      t.$md-sys-viewport-compact,
       t.$md-ref-breakpoint-large-max
     );
 
@@ -35,9 +35,9 @@
 
     .secondRow {
       padding-left: fs.fluid-scale(
-        t.$md-sys-spacing-12,
+        t.$md-sys-spacing-16,
         t.$md-sys-spacing-70,
-        t.$md-ref-breakpoint-compact-min,
+        t.$md-sys-viewport-compact,
         t.$md-ref-breakpoint-large-max
       );
     }

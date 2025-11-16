@@ -1,4 +1,4 @@
-$md-ref-breakpoint-compact-min: 280px;
+$md-ref-breakpoint-compact-min: 0px;
 $md-ref-breakpoint-compact-max: 599px;
 
 $md-ref-breakpoint-medium-min: 600px;
@@ -11,3 +11,9 @@ $md-ref-breakpoint-large-min: 1200px;
 $md-ref-breakpoint-large-max: 1599px;
 
 $md-ref-breakpoint-extra-large-min: 1600px;
+
+$md-sys-viewport-compact: 280px;
+$md-sys-viewport-medium: 720px;
+$md-sys-viewport-expanded: 1024px;
+$md-sys-viewport-large: 1440px;
+$md-sys-viewport-extra-large: 1920px;
