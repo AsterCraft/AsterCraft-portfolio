@@ -1,11 +1,11 @@
 import { SectionAboutUs } from "@widgets/section-about-us";
-import SectionPromise from "../../widgets/sections/SectionPromise/ui/SectionPromise";
+import SectionPromise from "@widgets/sections/SectionPromise/ui/SectionPromise";
 import { SectionDevelopmentProcess } from "@widgets/section-development-process";
 import { HeroSection } from "@widgets/hero-section";
-import DividerBetweenSections from "../../shared/ui/lines/DividerBetweenSections/DividerBetweenSections";
-import SectionProjects from "../../widgets/sections/SectionProjects/SectionProjects";
+import DividerBetweenSections from "@shared/ui/lines/DividerBetweenSections/DividerBetweenSections";
+import SectionProjects from "@widgets/sections/SectionProjects/SectionProjects";
 import { TestimonialsSlider } from "@widgets/testimonials-slider";
-import SectionTelegramContact from "../../widgets/sections/SectionTelegramContact/ui/SectionTelegramContact";
+import SectionTelegramContact from "@widgets/sections/SectionTelegramContact/ui/SectionTelegramContact";
 import { ConsultationSection } from "@widgets/consultation-section";
 import { FAQSection } from "@widgets/faq-section";
 
