@@ -4,7 +4,7 @@
 /// Provides baseline and emphasized type scales with predefined font sizes,
 /// weights, line heights, and letter spacing.
 ///
-/// @group Typography
+/// @group typography
 /// @link https://m3.material.io/styles/typography/type-scale-tokens Type scale tokens
 ////
 
@@ -27,7 +27,7 @@
 ///
 /// @throw Error if type scale name is unknown
 ///
-/// @group Typography
+/// @group typography
 /// @output font-family, font-size, font-weight, line-height, letter-spacing
 /// @require {Variable} $md-sys-typescale
 @mixin typescale($style) {
@@ -57,7 +57,7 @@
 ///
 /// @throw Error if type scale name is unknown
 ///
-/// @group Typography
+/// @group typography
 /// @output font-family, font-size, font-weight, line-height, letter-spacing
 /// @require {Variable} $md-sys-typescale-emphasized
 @mixin typescale-emphasized($style) {
