@@ -2,6 +2,10 @@
 .react-router/
 docs/scss/
 
+# Builds
+build/
+.vercel/
+
 # Logs
 logs
 *.log
