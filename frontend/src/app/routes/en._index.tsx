@@ -6,7 +6,6 @@ import {
   breadcrumbSchema,
   faqSchema,
   organizationSchema,
-  webPageSchema,
   webSiteSchema,
 } from "app/seo/structured-data";
 import { useIsContactFormModalOpenStore } from "@shared/lib/store/isContactFormModalOpen";
@@ -16,12 +15,11 @@ export const meta: MetaFunction = () => {
   const pageUrl = `${siteUrl}/en/`;
   const imageUrl = `${siteUrl}/img/logo/logo.png`;
   const description =
-    "Створюємо веб-сайти для бізнесу на чистому коді без конструкторів. Швидкі, надійні, SEO-оптимізовані, продаючі. 50+ успішних проектів. Landing Page, корпоративні сайти, інтернет-магазини.";
+    "We create business websites with clean code, no page builders. Fast, reliable, SEO-optimized, conversion-focused. 50+ successful projects. Landing pages, corporate websites, e-commerce.";
 
   return [
     {
-      title:
-        "AsterCraft - Розробка сайтів в Україні | Від 4 днів, від 15 000 грн",
+      title: "AsterCraft - Web Development in Ukraine | From 4 days, from $350",
     },
     {
       name: "description",
@@ -30,7 +28,7 @@ export const meta: MetaFunction = () => {
     {
       name: "keywords",
       content:
-        "розробка сайтів україна, створення сайтів, веб розробка, react розробка, сайт під ключ, landing page україна, інтернет магазин, seo оптимізація, веб-сайти для бізнесу, продаючі веб-сайти",
+        "web development ukraine, website creation, web design, react development, turnkey website, landing page ukraine, e-commerce, seo optimization, business websites, conversion websites",
     },
 
     // Open Graph
@@ -38,13 +36,14 @@ export const meta: MetaFunction = () => {
     { property: "og:url", content: pageUrl },
     {
       property: "og:title",
-      content: "Отримайте сайт, який продає 24/7 | Aster Craft",
+      content: "Get a website that sells 24/7 | Aster Craft",
     },
     { property: "og:description", content: description },
     { property: "og:image", content: imageUrl },
     { property: "og:image:width", content: "1000" },
     { property: "og:image:height", content: "1000" },
-    { property: "og:locale", content: "uk_UA" },
+    { property: "og:locale", content: "en_US" },
+    { property: "og:locale:alternate", content: "uk_UA" },
     { property: "og:site_name", content: "AsterCraft" },
 
     // Twitter
@@ -52,7 +51,7 @@ export const meta: MetaFunction = () => {
     { name: "twitter:url", content: pageUrl },
     {
       name: "twitter:title",
-      content: "Отримайте сайт, який продає 24/7 | Aster Craft",
+      content: "Get a website that sells 24/7 | Aster Craft",
     },
     { name: "twitter:description", content: description },
     { name: "twitter:image", content: imageUrl },
@@ -69,19 +68,55 @@ export const meta: MetaFunction = () => {
     },
 
     { name: "author", content: "AsterCraft" },
-    { name: "language", content: "uk" },
+    { name: "language", content: "en" },
     { name: "geo.region", content: "UA" },
 
     { tagName: "link", rel: "canonical", href: pageUrl },
-    { tagName: "link", rel: "alternate", hrefLang: "uk", href: pageUrl },
-    { tagName: "link", rel: "alternate", hrefLang: "x-default", href: pageUrl },
+    { tagName: "link", rel: "alternate", hrefLang: "en", href: pageUrl },
+    {
+      tagName: "link",
+      rel: "alternate",
+      hrefLang: "uk",
+      href: `${siteUrl}/uk/`,
+    },
+    {
+      tagName: "link",
+      rel: "alternate",
+      hrefLang: "x-default",
+      href: `${siteUrl}/uk/`,
+    },
 
     // Structured Data
-    { "script:ld+json": organizationSchema },
-    { "script:ld+json": webSiteSchema },
-    // { "script:ld+json": webPageSchema },
-    { "script:ld+json": breadcrumbSchema },
-    { "script:ld+json": faqSchema },
+    // { "script:ld+json": organizationSchema },
+    // { "script:ld+json": webSiteSchema },
+    {
+      "script:ld+json": {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "@id": `${siteUrl}/en/#webpage`,
+
+        url: `${siteUrl}/en/`,
+        name: "AsterCraft - Web Development in Ukraine",
+        description:
+          "We create business websites with clean code, no page builders",
+        inLanguage: "en",
+
+        isPartOf: {
+          "@id": `${siteUrl}/#website`,
+        },
+
+        about: {
+          "@id": `${siteUrl}/#organization`,
+        },
+
+        primaryImageOfPage: {
+          "@type": "ImageObject",
+          url: `${siteUrl}/img/logo/logo.png`,
+        },
+      },
+    },
+    // { "script:ld+json": breadcrumbSchema },
+    // { "script:ld+json": faqSchema },
   ];
 };
 
