@@ -2,7 +2,7 @@ import axios from "axios";
 import { useRef, useState } from "react";
 
 import { useModalStartProjectStore } from "./store";
-import { contactFormSchema, type FieldName } from "./validation";
+import { createContactFormSchema, type FieldName } from "./validation";
 import { API_ENDPOINTS } from "@shared/config/api";
 
 export const useSubmitModalStartProject = () => {
@@ -45,7 +45,7 @@ export const useSubmitModalStartProject = () => {
 
     fields.forEach((field) => setFieldTouched(field));
 
-    const validateResult = contactFormSchema.safeParse({
+    const validateResult = createContactFormSchema().safeParse({
       firstName,
       email,
       phone,
