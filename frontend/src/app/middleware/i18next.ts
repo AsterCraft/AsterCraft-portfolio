@@ -17,8 +17,12 @@ export const [i18nextMiddleware, getLocale, getInstance] =
       fallbackLanguage: "uk",
       cookie: localeCookie,
       async findLocale(request) {
+        const supportedLanguages = Object.keys(resources);
+
         let locale = new URL(request.url).pathname.split("/").at(1);
-        return locale || null;
+
+        if (locale === undefined) return null;
+        else return supportedLanguages.includes(locale) ? locale : null;
       },
     },
     i18next: {

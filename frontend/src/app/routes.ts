@@ -4,5 +4,5 @@ export default [
   index("./routes/_index.tsx"),
   route("uk", "./routes/uk._index.tsx"),
   route("en", "./routes/en._index.tsx"),
-  route("api/locales/:lng/:ns", "./routes/api.locales.$lng.$ns.ts"),
+  route("api/locales/:lng/:ns", "./routes/locales.ts"),
 ] satisfies RouteConfig;
