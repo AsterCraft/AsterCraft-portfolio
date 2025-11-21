@@ -1,0 +1,7 @@
+@use "../../../shared/styles/tokens" as t;
+
+.servicesSection {
+  padding-top: t.$md-sys-spacing-16;
+
+  background-color: var(--md-sys-color-inverse-surface);
+}
