@@ -1,5 +1,6 @@
 import { PassThrough } from "node:stream";
-import type { EntryContext, RouterContextProvider } from "react-router";
+import type { EntryContext } from "react-router";
+import { RouterContextProvider } from "react-router";
 import { createReadableStreamFromReadable } from "@react-router/node";
 import { ServerRouter } from "react-router";
 import { isbot } from "isbot";
@@ -15,8 +16,12 @@ export default function handleRequest(
   responseStatusCode: number,
   responseHeaders: Headers,
   entryContext: EntryContext,
-  routerContext: RouterContextProvider
+  loadContext?: RouterContextProvider
 ) {
+  // Ensure we have a RouterContextProvider instance
+  const context = loadContext instanceof RouterContextProvider
+    ? loadContext
+    : new RouterContextProvider();
   return new Promise((resolve, reject) => {
     let shellRendered = false;
     let userAgent = request.headers.get("user-agent");
@@ -27,7 +32,7 @@ export default function handleRequest(
         : "onShellReady";
 
     let { pipe, abort } = renderToPipeableStream(
-      <I18nextProvider i18n={getInstance(routerContext)}>
+      <I18nextProvider i18n={getInstance(context)}>
         <ServerRouter
           context={entryContext}
           url={request.url}
