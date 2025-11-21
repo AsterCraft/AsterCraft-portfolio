@@ -1,13 +1,15 @@
 import { redirect } from "react-router";
 import type { Route } from "./+types/_index";
+import { getLocale } from "app/middleware/i18next";
 
-export async function loader({ request }: Route.LoaderArgs) {
-  const acceptLanguage = request.headers.get("Accept-Language");
+export async function loader({ request, context }: Route.LoaderArgs) {
+  const locale = getLocale(context);
 
-  // use better logic when we will support multiple langs
-  const lang = acceptLanguage?.includes("uk") ? "uk" : "uk";
+  const url = new URL(request.url);
+  const searchParams = url.searchParams.toString();
+  const destination = `/${locale}/${searchParams ? "?" + searchParams : ""}`;
 
-  return redirect(`/${lang}/`);
+  throw redirect(destination);
 }
 
 export default function Index() {
