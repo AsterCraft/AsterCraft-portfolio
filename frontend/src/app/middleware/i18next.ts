@@ -1,0 +1,35 @@
+import { initReactI18next } from "react-i18next";
+import { createCookie } from "react-router";
+import { createI18nextMiddleware } from "remix-i18next/middleware";
+import resources from "../locales/";
+
+export const localeCookie = createCookie("lng", {
+  path: "/",
+  sameSite: "lax",
+  secure: process.env.NODE_ENV === "production",
+  httpOnly: true,
+});
+
+export const [i18nextMiddleware, getLocale, getInstance] =
+  createI18nextMiddleware({
+    detection: {
+      supportedLanguages: ["en", "uk"],
+      fallbackLanguage: "uk",
+      cookie: localeCookie,
+      async findLocale(request) {
+        let locale = new URL(request.url).pathname.split("/").at(1);
+        return locale || null;
+      },
+    },
+    i18next: {
+      resources,
+    },
+    plugins: [initReactI18next],
+  });
+
+declare module "i18next" {
+  interface CustomTypeOptions {
+    defaultNS: "shared";
+    resources: typeof resources.en;
+  }
+}
