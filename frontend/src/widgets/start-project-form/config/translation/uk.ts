@@ -1,4 +1,4 @@
-export const startProjectFormTranslationsUk = {
+export const uk = {
   validation: {
     firstName: {
       required: "Ім'я обов'язкове",
