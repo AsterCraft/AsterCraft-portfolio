@@ -1,4 +1,4 @@
-export const headerTranslationUk = {
+export const uk = {
   brandName: "AsterCraft",
   startProjectBtn: "Замовити сайт",
   nav: {
