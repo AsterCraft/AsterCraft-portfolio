@@ -4,16 +4,16 @@ import { useEffect } from "react";
 import { useTranslation, Trans } from "react-i18next";
 import { useNavigate } from "react-router";
 
-import FirstNameField from "./FirstNameField";
-import TelegramField from "./TelegramField";
-import EmailField from "./EmailField";
-import PhoneField from "./PhoneField";
-import MessageField from "./MessageField";
+import NameField from "./inputs/name-field";
+import TelegramField from "./inputs/telegram-field";
+import EmailField from "./inputs/email-field";
+import PhoneField from "./inputs/phone-field";
+import MessageField from "./inputs/message-field";
 import { ButtonSubmit } from "./button-submit/button-submit";
 
 import { useIsContactFormModalOpenStore } from "../../../shared/lib/store/isContactFormModalOpen";
 
-export const ModalStartProject = () => {
+const StartProjectForm = () => {
   const { isOpen, close } = useIsContactFormModalOpenStore();
   const navigate = useNavigate();
 
@@ -167,7 +167,7 @@ export const ModalStartProject = () => {
                       >
                         {t("contactForm.fields.firstName.label")}
                       </label>
-                      <FirstNameField />
+                      <NameField />
                     </div>
 
                     <div
@@ -264,3 +264,5 @@ export const ModalStartProject = () => {
     </>
   );
 };
+
+export default StartProjectForm;

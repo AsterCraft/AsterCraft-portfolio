@@ -11,7 +11,7 @@ import type { Route } from "./+types/root";
 
 import { Header } from "@widgets/header";
 import { Footer } from "@widgets/footer";
-import { ModalStartProject } from "@widgets/start-project-form";
+import { StartProjectForm } from "@widgets/start-project-form";
 import { BurgerDropdownMenu } from "features/HeaderNavigation";
 
 import {
@@ -99,7 +99,7 @@ export default function Root({ loaderData: { locale } }: Route.ComponentProps) {
       <Outlet />
       <Footer />
 
-      <ModalStartProject />
+      <StartProjectForm />
       <BurgerDropdownMenu />
     </>
   );
