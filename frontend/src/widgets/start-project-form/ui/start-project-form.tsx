@@ -29,7 +29,9 @@ const StartProjectForm = () => {
 
   const onHandleCloseModal = () => {
     close();
-    navigate("/uk/", { preventScrollReset: true });
+    // TODO: write better logic
+    // this most likely cause bugs in the future
+    navigate("/", { preventScrollReset: true });
   };
 
   return (
