@@ -1,9 +1,9 @@
 import { useTranslation } from "react-i18next";
 
-import { validateFieldOnBlur } from "../lib/validateFields";
-import { useModalStartProjectStore } from "../model/store";
+import { validateFieldOnBlur } from "../../lib/validateFields";
+import { useModalStartProjectStore } from "../../model/store";
 
-import s from "./styles.module.scss";
+import s from "../styles.module.scss";
 
 const EmailField = () => {
   const { email, setEmail, errors, touchedFields } =

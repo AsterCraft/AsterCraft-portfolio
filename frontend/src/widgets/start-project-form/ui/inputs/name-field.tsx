@@ -1,11 +1,11 @@
 import { useTranslation } from "react-i18next";
 
-import { useModalStartProjectStore } from "../model/store";
-import { validateFieldOnBlur } from "../lib/validateFields";
+import { useModalStartProjectStore } from "../../model/store";
+import { validateFieldOnBlur } from "../../lib/validateFields";
 
-import s from "./styles.module.scss";
+import s from "../styles.module.scss";
 
-const FirstNameField = () => {
+const NameField = () => {
   const { firstName, setFirstName, errors, touchedFields } =
     useModalStartProjectStore();
 
@@ -41,4 +41,4 @@ const FirstNameField = () => {
   );
 };
 
-export default FirstNameField;
+export default NameField;

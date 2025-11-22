@@ -1,10 +1,10 @@
 import { useTranslation } from "react-i18next";
 
-import { textAreaStyles } from "../lib/styles";
-import { useModalStartProjectStore } from "../model/store";
-import { validateFieldOnBlur } from "../lib/validateFields";
+import { textAreaStyles } from "../../lib/styles";
+import { useModalStartProjectStore } from "../../model/store";
+import { validateFieldOnBlur } from "../../lib/validateFields";
 
-import s from "./styles.module.scss";
+import s from "../styles.module.scss";
 
 const MessageField = () => {
   const { message, setMessage, errors, touchedFields } =
