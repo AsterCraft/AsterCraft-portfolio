@@ -1,4 +1,5 @@
 @use "../../../shared/styles/tokens" as t;
+@use "../../../shared/styles/lib/responsive-design/_fluid-scale.scss" as fs;
 
 .servicesSection {
   background-color: var(--md-sys-color-surface);
@@ -8,12 +9,29 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: t.$md-sys-spacing-10;
+    gap: fs.fluid-scale(
+      t.$md-sys-spacing-6,
+      t.$md-sys-spacing-10,
+      t.$md-sys-viewport-compact,
+      t.$md-sys-viewport-medium
+    );
 
-    padding-block: t.$md-sys-spacing-20;
+    padding-block: fs.fluid-scale(
+      t.$md-sys-spacing-16,
+      t.$md-sys-spacing-20,
+      t.$md-sys-viewport-compact,
+      t.$md-sys-viewport-medium
+    );
 
     h2 {
       @include t.typescale("display-medium");
+
+      font-size: fs.fluid-scale(
+        24px,
+        t.get-typescale-value("display-medium"),
+        t.$md-sys-viewport-compact,
+        t.$md-sys-viewport-medium
+      );
     }
 
     .services {
@@ -21,6 +39,8 @@
       flex-direction: column;
       align-items: center;
       gap: t.$md-sys-spacing-12;
+
+      width: 100%;
 
       .tabSelectors {
         display: flex;
@@ -37,8 +57,19 @@
           position: relative;
 
           @include t.typescale-emphasized("title-medium");
+          font-size: fs.fluid-scale(
+            12px,
+            t.get-typescale-emphasized-value("title-medium"),
+            t.$md-sys-viewport-compact,
+            t.$md-sys-viewport-medium
+          );
           font-weight: 500;
-          padding-inline: t.$md-sys-spacing-4;
+          padding-inline: fs.fluid-scale(
+            t.$md-sys-spacing-2,
+            t.$md-sys-spacing-4,
+            t.$md-sys-viewport-compact,
+            t.$md-sys-viewport-medium
+          );
           border-radius: t.$md-sys-shape-corner-value-extra-extra-large;
 
           background-color: var(--md-sys-color-surface-container-highest);
@@ -93,17 +124,22 @@
       }
 
       .serviceTab {
-        display: flex;
-        flex-wrap: wrap;
-        column-gap: t.$md-sys-spacing-10;
-        row-gap: t.$md-sys-spacing-6;
+        display: grid;
+        column-gap: fs.fluid-scale(
+          t.$md-sys-spacing-4,
+          t.$md-sys-spacing-10,
+          t.$md-sys-viewport-medium,
+          t.$md-sys-viewport-expanded
+        );
+        grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+
+        width: 100%;
 
         .serviceCard {
           --line-width: 0;
 
           position: relative;
 
-          min-width: 200px;
           @include t.typescale("title-small");
           padding-block: t.$md-sys-spacing-8;
           padding-inline: t.$md-sys-spacing-4;
@@ -125,7 +161,7 @@
             background-color: var(--md-sys-color-outline);
 
             @include t.spatial("default");
-            transition-property: var(--line-width);
+            transition-property: width;
           }
 
           &::before {
