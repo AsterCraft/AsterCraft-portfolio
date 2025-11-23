@@ -13,6 +13,7 @@ $md-sys-typescale: (
     "font": $md-ref-typeface-brand,
     "size": 57px,
     "weight": 400,
+    // TODO: replace with dynamic ratio? (e.g. 1.12)
     "line-height": 64px,
     "tracking": -0.25px,
   ),
