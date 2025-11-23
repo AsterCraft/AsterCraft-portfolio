@@ -7,7 +7,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: t.$md-sys-spacing-16;
+  gap: fs.fluid-scale(t.$md-sys-spacing-8, t.$md-sys-spacing-16);
 
   height: calc(100vh - conf.$app-bar-height);
 
@@ -48,11 +48,11 @@
   }
 
   .cta {
-    scale: 1.5;
-    border-radius: t.$md-sys-shape-corner-value-extra-large;
+    font-size: fs.fluid-scale(12px, 28px);
 
-    @media (max-width: t.$md-ref-breakpoint-compact-max) {
-      scale: 1.3;
-    }
+    padding-inline: 1.5em; // move to start-project-btn?
+    padding-block: 1em;
+
+    border-radius: 2em;
   }
 }
