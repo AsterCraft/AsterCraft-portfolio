@@ -1,3 +1,6 @@
+@use "../../../shared/styles/tokens" as t;
+@use "../../../shared/styles/lib/responsive-design/_fluid-scale.scss" as fs;
+
 @use "../../../shared/styles/tokens/motion" as motion;
 @use "../../../shared/styles/tokens/spacing" as spacing;
 @use "../../../shared/styles/tokens/elevation" as elev;
@@ -30,7 +33,12 @@ $z-index: 1000;
   align-items: center;
 
   height: conf.$app-bar-height;
-  padding-inline: spacing.$md-sys-spacing-6;
+  padding-inline: fs.fluid-scale(
+    t.$md-sys-spacing-1,
+    t.$md-sys-spacing-6,
+    t.$md-sys-viewport-compact,
+    t.$md-sys-viewport-expanded
+  );
   padding-block: spacing.$md-sys-spacing-3;
 
   background-color: var(--md-sys-color-surface-container-high);
@@ -39,16 +47,44 @@ $z-index: 1000;
   .left {
     display: flex;
     align-items: center;
-    gap: spacing.$md-sys-spacing-2;
+    gap: spacing.$md-sys-spacing-1;
 
-    .menuIcon {
-      width: 32px;
-      height: 32px;
+    .menuButton {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .menuIcon {
+        width: 32px;
+        height: 32px;
+      }
     }
 
     .brandName {
       @include typo.typescale("title-large");
+      font-size: fs.fluid-scale(
+        16px,
+        t.get-typescale-value("title-large"),
+        t.$md-sys-viewport-compact,
+        t.$md-sys-viewport-medium
+      );
     }
+  }
+
+  .cta {
+    padding-inline: fs.fluid-scale(
+      t.$md-sys-spacing-2,
+      t.$md-sys-spacing-4,
+      t.$md-sys-viewport-compact,
+      t.$md-sys-viewport-medium
+    );
+
+    font-size: fs.fluid-scale(
+      14px,
+      t.get-typescale-value("title-medium"),
+      t.$md-sys-viewport-compact,
+      t.$md-sys-viewport-medium
+    );
   }
 }
 

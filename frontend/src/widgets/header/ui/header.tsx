@@ -36,8 +36,8 @@ export const Header = () => {
       <div className={s.appBar}>
         <div
           className={s.left}
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
+          // onMouseEnter={handleMouseEnter}
+          // onMouseLeave={handleMouseLeave}
         >
           <button
             className={cn(s.menuButton, { [s.active]: isPinned })}
@@ -50,7 +50,10 @@ export const Header = () => {
           <span className={s.brandName}>{t("brandName")}</span>
         </div>
 
-        <StartProjectBtn text={t("startProjectBtn")} />
+        <StartProjectBtn
+          text={t("startProjectBtn")}
+          className={s.cta}
+        />
       </div>
 
       <aside
