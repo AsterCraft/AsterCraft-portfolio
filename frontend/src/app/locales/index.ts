@@ -1,7 +1,8 @@
 import type { Resource } from "i18next";
 
-import { servicesSectionTranslations } from "@widgets/services-section";
 import { headerTranslations } from "@widgets/header";
+import { heroSectionTranslations } from "@widgets/hero-section";
+import { servicesSectionTranslations } from "@widgets/services-section";
 import { startProjectFormTranslations } from "@widgets/start-project-form";
 
 export default {
@@ -9,6 +10,7 @@ export default {
     shared: {},
 
     header: headerTranslations.en,
+    heroSection: heroSectionTranslations.en,
     servicesSection: servicesSectionTranslations.en,
     startProjectForm: startProjectFormTranslations.en,
   },
@@ -16,6 +18,7 @@ export default {
     shared: {},
 
     header: headerTranslations.uk,
+    heroSection: heroSectionTranslations.uk,
     servicesSection: servicesSectionTranslations.uk,
     startProjectForm: startProjectFormTranslations.uk,
   },
