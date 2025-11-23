@@ -19,13 +19,11 @@ export const PageHome = () => {
     <main>
       <HeroSection />
 
-      {/* <div className={cn("Container", s.servicesSection)}> */}
-      <ServicesSection />
-      {/* </div> */}
-
       <div className="app-container mt-20 mb-20">
         <SectionPromise />
       </div>
+
+      <ServicesSection />
 
       <DividerBetweenSections />
 
