@@ -13,6 +13,7 @@ import { FAQSection } from "@widgets/faq-section";
 import { ServicesSection } from "@widgets/services-section";
 
 import s from "./home.module.scss";
+import { SeoSection } from "@widgets/seo-section";
 
 export const PageHome = () => {
   return (
@@ -41,6 +42,7 @@ export const PageHome = () => {
       <SectionProjects />
 
       <ConsultationSection />
+      <SeoSection />
 
       <DividerBetweenSections />
       <TestimonialsSlider />
