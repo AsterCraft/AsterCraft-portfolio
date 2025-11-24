@@ -6,8 +6,9 @@
 /// @group typography
 ////
 
-@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Kode+Mono:wght@400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Tektur:wght@400..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 
 /// Used for display, headline, title type scales
 /// @type String
@@ -15,4 +16,4 @@ $md-ref-typeface-brand: "Kode Mono", "Tektur", monospace;
 
 /// Used for body and label type scales
 /// @type String
-$md-ref-typeface-plain: "JetBrains Mono", monospace;
+$md-ref-typeface-plain: "Noto Sans", sans-serif;
