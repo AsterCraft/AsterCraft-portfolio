@@ -4,6 +4,7 @@ import { headerTranslations } from "@widgets/header";
 import { heroSectionTranslations } from "@widgets/hero-section";
 import { servicesSectionTranslations } from "@widgets/services-section";
 import { startProjectFormTranslations } from "@widgets/start-project-form";
+import { homePageTranslations } from "@pages/home";
 
 export default {
   en: {
@@ -13,6 +14,7 @@ export default {
     heroSection: heroSectionTranslations.en,
     servicesSection: servicesSectionTranslations.en,
     startProjectForm: startProjectFormTranslations.en,
+    homePage: homePageTranslations.en,
   },
   uk: {
     shared: {},
@@ -21,5 +23,6 @@ export default {
     heroSection: heroSectionTranslations.uk,
     servicesSection: servicesSectionTranslations.uk,
     startProjectForm: startProjectFormTranslations.uk,
+    homePage: homePageTranslations.uk,
   },
 } as const satisfies Resource;
