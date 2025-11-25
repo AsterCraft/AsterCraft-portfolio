@@ -61,7 +61,7 @@
       .countryContacts {
         display: flex;
         flex-direction: column;
-        gap: t.$md-sys-spacing-3;
+        gap: t.$md-sys-spacing-2;
 
         .countrySelectors {
           display: flex;
@@ -72,9 +72,6 @@
           }
 
           .countryButton {
-            pointer-events: none; // TODO: remove
-            cursor: none;
-
             @include t.typescale("title-medium");
 
             span {
@@ -82,12 +79,13 @@
               padding-block: t.$md-sys-spacing-1;
               padding-inline: t.$md-sys-spacing-2;
 
-              @include t.spatial("slow");
-              transition-property: border, border-radius;
+              @include t.spatial("fast");
+              transition-property: box-shadow, border-radius;
             }
 
             &.active span {
-              border: 2px solid var(--md-sys-color-outline);
+              box-shadow: 0 0 0 1px var(--md-sys-color-outline);
+              border: 1px solid var(--md-sys-color-outline);
               border-radius: t.$md-sys-shape-corner-value-extra-extra-large;
             }
           }
