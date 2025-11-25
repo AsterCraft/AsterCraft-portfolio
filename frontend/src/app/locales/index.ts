@@ -1,28 +1,34 @@
 import type { Resource } from "i18next";
 
+import { homePageTranslations } from "@pages/home-page";
+
 import { headerTranslations } from "@widgets/header";
 import { heroSectionTranslations } from "@widgets/hero-section";
 import { servicesSectionTranslations } from "@widgets/services-section";
 import { startProjectFormTranslations } from "@widgets/start-project-form";
-import { homePageTranslations } from "@pages/home-page";
+import { seoSectionTranslations } from "@widgets/seo-section";
 
 export default {
   en: {
-    shared: {},
+    homePage: homePageTranslations.en,
 
     header: headerTranslations.en,
     heroSection: heroSectionTranslations.en,
     servicesSection: servicesSectionTranslations.en,
     startProjectForm: startProjectFormTranslations.en,
-    homePage: homePageTranslations.en,
+    seoSection: seoSectionTranslations.en,
+
+    shared: {},
   },
   uk: {
-    shared: {},
+    homePage: homePageTranslations.uk,
 
     header: headerTranslations.uk,
     heroSection: heroSectionTranslations.uk,
     servicesSection: servicesSectionTranslations.uk,
     startProjectForm: startProjectFormTranslations.uk,
-    homePage: homePageTranslations.uk,
+    seoSection: seoSectionTranslations.uk,
+
+    shared: {},
   },
 } as const satisfies Resource;
