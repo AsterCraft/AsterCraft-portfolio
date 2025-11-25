@@ -13,8 +13,8 @@ export const localeCookie = createCookie("lng", {
 export const [i18nextMiddleware, getLocale, getInstance] =
   createI18nextMiddleware({
     detection: {
-      supportedLanguages: ["en", "uk"],
-      fallbackLanguage: "uk",
+      supportedLanguages: ["uk", "en"],
+      fallbackLanguage: "en",
       cookie: localeCookie,
       async findLocale(request) {
         const supportedLanguages = Object.keys(resources);
