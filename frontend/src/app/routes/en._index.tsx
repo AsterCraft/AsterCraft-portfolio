@@ -1,7 +1,7 @@
 import { useSearchParams, type MetaFunction } from "react-router";
 import { useEffect } from "react";
 
-import { PageHome } from "@pages/home";
+import { HomePage } from "@pages/home-page";
 import {
   breadcrumbSchema,
   faqSchema,
@@ -132,7 +132,7 @@ const EnIndex = () => {
     }
   }, []);
 
-  return <PageHome />;
+  return <HomePage />;
 };
 
 export default EnIndex;

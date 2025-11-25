@@ -14,9 +14,9 @@ import { FAQSection } from "@widgets/faq-section";
 import { ServicesSection } from "@widgets/services-section";
 import { SeoSection } from "@widgets/seo-section";
 
-import s from "./home.module.scss";
+import s from "./home-page.module.scss";
 
-export const PageHome = () => {
+const HomePage = () => {
   const { t } = useTranslation("homePage");
 
   return (
@@ -108,3 +108,5 @@ export const PageHome = () => {
     </main>
   );
 };
+
+export default HomePage;

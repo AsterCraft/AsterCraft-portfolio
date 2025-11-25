@@ -4,7 +4,7 @@ import { headerTranslations } from "@widgets/header";
 import { heroSectionTranslations } from "@widgets/hero-section";
 import { servicesSectionTranslations } from "@widgets/services-section";
 import { startProjectFormTranslations } from "@widgets/start-project-form";
-import { homePageTranslations } from "@pages/home";
+import { homePageTranslations } from "@pages/home-page";
 
 export default {
   en: {
