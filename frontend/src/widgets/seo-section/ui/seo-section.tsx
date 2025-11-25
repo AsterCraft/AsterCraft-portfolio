@@ -8,13 +8,25 @@ import { MailIcon } from "@shared/ui";
 
 import s from "./seo-section.module.scss";
 import gs from "@shared/styles/global.module.scss";
+import { useTranslation } from "react-i18next";
 
 type SeoSectionProps = {
   children: React.ReactNode;
 };
 
+// document what is supposed to be passed to children?
 const SeoSection = ({ children }: SeoSectionProps) => {
-  const [selectedCountry, setSelectedCountry] = useState(false);
+  const { t } = useTranslation("seoSection");
+
+  const tabs = t("countries.tabs", { returnObjects: true });
+
+  const [selectedCountry, setSelectedCountry] = useState<
+    (typeof tabs)[number]["id"]
+  >(tabs[0].id);
+
+  const contacts = t(`countries.contacts.${selectedCountry}`, {
+    returnObjects: true,
+  });
 
   return (
     <section className={s.seoSection}>
@@ -27,37 +39,35 @@ const SeoSection = ({ children }: SeoSectionProps) => {
             className={s.heading}
             id="contact-heading"
           >
-            <span className={s.headingLine}>Drop us a request</span>
-            <span className={s.headingLine}>And we'll do the rest!</span>
+            {t("heading", { returnObjects: true }).map((line, i) => (
+              <span
+                className={s.headingLine}
+                key={i}
+              >
+                {line}
+              </span>
+            ))}
           </h2>
 
           <div className={s.countryContacts}>
             <menu
               className={s.countrySelectors}
               role="group"
-              aria-label="Select country"
+              aria-label={t("countries.ariaLabel")}
             >
-              <button
-                type="button"
-                className={cn(s.countryButton, s.active)}
-                aria-pressed="true"
-              >
-                <span>Ukraine</span>
-              </button>
-              <button
-                type="button"
-                className={s.countryButton}
-                aria-pressed="false"
-              >
-                <span>Bulgaria</span>
-              </button>
-              <button
-                type="button"
-                className={s.countryButton}
-                aria-pressed="false"
-              >
-                <span>Poland</span>
-              </button>
+              {tabs.map((country) => (
+                <button
+                  className={cn(s.countryButton, {
+                    [s.active]: selectedCountry === country.id,
+                  })}
+                  onClick={() => setSelectedCountry(country.id)}
+                  aria-pressed={selectedCountry === country.id}
+                  type="button"
+                  key={country.id}
+                >
+                  <span>{country.name}</span>
+                </button>
+              ))}
             </menu>
 
             <address className={s.contactList}>
@@ -68,10 +78,10 @@ const SeoSection = ({ children }: SeoSectionProps) => {
                     className={s.contactIcon}
                   />
                   <a
-                    href="tel:+48790839872"
+                    href={contacts.phoneHref}
                     className={s.contactLink}
                   >
-                    +48 (790) 8398 72
+                    {contacts.phone}
                   </a>
                 </li>
                 <li className={s.contactItem}>
@@ -81,9 +91,9 @@ const SeoSection = ({ children }: SeoSectionProps) => {
                   />
                   <a
                     className={s.contactLink}
-                    href="mailto:astercraft.dev@gmail.com"
+                    href={`mailto:${contacts.email}`}
                   >
-                    astercraft.dev@gmail.com
+                    {contacts.email}
                   </a>
                 </li>
                 <li className={s.contactItem}>
@@ -91,14 +101,14 @@ const SeoSection = ({ children }: SeoSectionProps) => {
                     aria-hidden="true"
                     className={s.contactIcon}
                   />
-                  <span className={s.contactText}>Lviv</span>
+                  <span className={s.contactText}>{contacts.location}</span>
                 </li>
               </ul>
             </address>
           </div>
 
           <StartProjectBtn
-            text="Leave a request"
+            text={t("ctaButton")}
             className={s.ctaButton}
           />
         </div>
