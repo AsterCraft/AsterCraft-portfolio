@@ -1,21 +1,48 @@
-import { Meta, Links, Outlet, Scripts, ScrollRestoration } from "react-router";
+import {
+  data,
+  Meta,
+  Links,
+  Outlet,
+  Scripts,
+  ScrollRestoration,
+} from "react-router";
 import { useTranslation } from "react-i18next";
+import type { Route } from "./+types/root";
 
 import { Header } from "@widgets/header";
 import { Footer } from "@widgets/footer";
-import { ModalStartProject } from "@widgets/start-project-form";
+import { StartProjectForm } from "@widgets/start-project-form";
 import { BurgerDropdownMenu } from "features/HeaderNavigation";
 
-import "@shared/lib/i18n";
+import {
+  getLocale,
+  i18nextMiddleware,
+  localeCookie,
+} from "./middleware/i18next";
 
 import "./main.css";
 import "@shared/styles/index.scss";
+import { useEffect } from "react";
+
+export const middleware = [i18nextMiddleware];
+
+export async function loader({ context }: Route.LoaderArgs) {
+  let locale = getLocale(context);
+  return data(
+    { locale },
+    { headers: { "Set-Cookie": await localeCookie.serialize(locale) } }
+  );
+}
 
 export function Layout({ children }: { children: React.ReactNode }) {
   const { i18n } = useTranslation();
 
   return (
-    <html lang={i18n.language}>
+    <html
+      lang={i18n.language}
+      dir={i18n.dir(i18n.language)}
+      data-theme="dark"
+    >
       <head>
         <meta charSet="UTF-8" />
         <meta
@@ -59,14 +86,20 @@ export function Layout({ children }: { children: React.ReactNode }) {
   );
 }
 
-export default function Root() {
+export default function Root({ loaderData: { locale } }: Route.ComponentProps) {
+  const { i18n } = useTranslation();
+
+  useEffect(() => {
+    if (i18n.language !== locale) i18n.changeLanguage(locale);
+  }, [locale, i18n]);
+
   return (
     <>
       <Header />
       <Outlet />
       <Footer />
 
-      <ModalStartProject />
+      <StartProjectForm />
       <BurgerDropdownMenu />
     </>
   );

@@ -1,0 +1,20 @@
+{
+  "dest": "docs/scss",
+  "verbose": true,
+  "theme": "default",
+  "groups": {
+    "responsive": "Responsive Design Utilities",
+    "spacing": "Spacing Tokens",
+    "typography": "Typography Tokens",
+    "elevation": "Elevation Tokens",
+    "motion": "Motion Tokens",
+    "colors": "Colors Tokens",
+    "breakpoints": "Breakpoints Tokens",
+    "shape": "Shape tokens"
+  },
+  "display": {
+    "access": ["public"],
+    "alias": false,
+    "watermark": true
+  }
+}

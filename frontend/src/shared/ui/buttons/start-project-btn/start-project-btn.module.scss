@@ -1,0 +1,59 @@
+@use "../../../styles/tokens/" as t;
+
+.startProjectBtn {
+  position: relative;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  @include t.typescale("title-medium");
+  font-weight: 500;
+
+  padding-inline: t.$md-sys-spacing-4;
+  border-radius: t.$md-sys-shape-corner-value-small;
+
+  background-color: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
+
+  @include t.effects("fast");
+  transition-property: box-shadow;
+
+  &::before {
+    content: "";
+    pointer-events: none;
+
+    position: absolute;
+    inset: 0;
+
+    opacity: 0;
+    background: var(--md-sys-color-on-primary);
+    border-radius: inherit;
+
+    @include t.effects("fast");
+    transition-property: opacity;
+  }
+
+  &:hover {
+    // @include t.elevation(1);
+
+    &::before {
+      opacity: t.$md-sys-state-hover-state-layer-opacity;
+    }
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--md-sys-color-primary-fixed);
+    outline-offset: 2px;
+
+    &::before {
+      opacity: t.$md-sys-state-focus-state-layer-opacity;
+    }
+  }
+
+  &:active {
+    &::before {
+      opacity: t.$md-sys-state-pressed-state-layer-opacity;
+    }
+  }
+}

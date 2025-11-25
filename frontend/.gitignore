@@ -1,5 +1,10 @@
 # Auto-generated files
 .react-router/
+docs/scss/
+
+# Builds
+build/
+.vercel/
 
 # Logs
 logs

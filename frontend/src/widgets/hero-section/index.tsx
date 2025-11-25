@@ -1,1 +1,3 @@
-export { HeroSection } from "./ui/hero-section/hero-section";
+export { HeroSection } from "./ui/hero-section";
+
+export { default as heroSectionTranslations } from "./config/translations";

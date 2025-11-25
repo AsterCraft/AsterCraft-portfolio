@@ -1,6 +1,7 @@
 import { useSearchParams, type MetaFunction } from "react-router";
+import { useEffect } from "react";
 
-import { PageHome } from "@pages/home";
+import { HomePage } from "@pages/home-page";
 import {
   breadcrumbSchema,
   faqSchema,
@@ -9,7 +10,6 @@ import {
   webSiteSchema,
 } from "app/seo/structured-data";
 import { useIsContactFormModalOpenStore } from "@shared/lib/store/isContactFormModalOpen";
-import { useEffect } from "react";
 
 export const meta: MetaFunction = () => {
   const siteUrl = "https://www.astercraft.com.ua";
@@ -97,7 +97,7 @@ const UkIndex = () => {
     }
   }, []);
 
-  return <PageHome />;
+  return <HomePage />;
 };
 
 export default UkIndex;
