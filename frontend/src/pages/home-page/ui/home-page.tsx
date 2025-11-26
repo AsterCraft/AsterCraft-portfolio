@@ -2,7 +2,7 @@ import cn from "classnames";
 import { useTranslation } from "react-i18next";
 
 import { SectionAboutUs } from "@widgets/section-about-us";
-import SectionPromise from "@widgets/sections/SectionPromise/ui/SectionPromise";
+import PromiseSection from "@widgets/promise-section";
 import { SectionDevelopmentProcess } from "@widgets/section-development-process";
 import { HeroSection } from "@widgets/hero-section";
 import DividerBetweenSections from "@shared/ui/lines/DividerBetweenSections/DividerBetweenSections";
@@ -23,9 +23,7 @@ const HomePage = () => {
     <main>
       <HeroSection />
 
-      <div className="app-container mt-20 mb-20">
-        <SectionPromise />
-      </div>
+      <PromiseSection />
 
       <ServicesSection />
 
