@@ -1,0 +1,119 @@
+@use "../../../shared/styles/tokens" as t;
+@use "../../../shared/styles/lib/responsive-design/_fluid-scale.scss" as fs;
+
+.promiseSection {
+  background-color: var(--md-sys-color-surface);
+  color: var(--md-sys-color-on-surface);
+
+  .wrapper {
+    display: flex;
+    gap: fs.fluid-scale(
+      t.$md-sys-spacing-3,
+      t.$md-sys-spacing-20,
+      t.$md-ref-breakpoint-expanded-min,
+      t.$md-sys-viewport-large
+    );
+
+    padding-block: fs.fluid-scale(
+      t.$md-sys-spacing-10,
+      t.$md-sys-spacing-20,
+      t.$md-ref-breakpoint-expanded-min,
+      t.$md-ref-breakpoint-expanded-max
+    );
+
+    & > * {
+      width: 100%;
+    }
+
+    @media (max-width: t.$md-ref-breakpoint-medium-max) {
+      flex-direction: column;
+      gap: 0;
+
+      padding-block: fs.fluid-scale(
+        t.$md-sys-spacing-12,
+        t.$md-sys-spacing-16,
+        t.$md-sys-viewport-compact,
+        t.$md-ref-breakpoint-medium-max
+      );
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      gap: fs.fluid-scale(
+        0px,
+        t.$md-sys-spacing-10,
+        t.$md-ref-breakpoint-expanded-min,
+        t.$md-ref-breakpoint-expanded-max
+      );
+
+      @media (max-width: t.$md-ref-breakpoint-medium-max) {
+        gap: fs.fluid-scale(
+          t.$md-sys-spacing-8,
+          t.$md-sys-spacing-10,
+          t.$md-sys-viewport-compact,
+          t.$md-ref-breakpoint-expanded-max
+        );
+      }
+
+      .heading {
+        @include t.typescale("display-medium");
+        /* prettier-ignore */
+        font-size: fs.fluid-scale(
+          34px,
+          t.get-typescale-value("display-medium"),
+          t.$md-ref-breakpoint-expanded-min,
+          t.$md-ref-breakpoint-expanded-max,
+        );
+
+        @media (max-width: t.$md-ref-breakpoint-medium-max) {
+          font-size: fs.fluid-scale(
+            24px,
+            t.get-typescale-value("display-medium"),
+            t.$md-sys-viewport-compact,
+            t.$md-ref-breakpoint-expanded-max
+          );
+        }
+      }
+
+      .list {
+        display: flex;
+        flex-direction: column;
+        gap: t.$md-sys-spacing-2;
+
+        @include t.typescale("body-large");
+
+        @media (max-width: t.$md-ref-breakpoint-medium-max) {
+          font-size: fs.fluid-scale(
+            t.get-typescale-value("body-medium"),
+            t.get-typescale-value("body-large"),
+            t.$md-sys-viewport-compact,
+            t.$md-ref-breakpoint-medium-max
+          );
+        }
+
+        .listItem {
+          display: flex;
+          align-items: baseline;
+          gap: t.$md-sys-spacing-2;
+
+          &::before {
+            content: "";
+            flex-shrink: 0;
+
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            line-height: 40px;
+
+            background-color: var(--md-sys-color-primary);
+          }
+        }
+      }
+    }
+
+    .devicesImg {
+    }
+  }
+}
