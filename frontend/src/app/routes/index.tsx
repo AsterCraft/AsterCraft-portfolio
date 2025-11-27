@@ -1,5 +1,5 @@
 import { redirect } from "react-router";
-import type { Route } from "./+types/_index";
+import type { Route } from "./+types/index";
 import { getLocale } from "app/middleware/i18next";
 
 export async function loader({ request, context }: Route.LoaderArgs) {

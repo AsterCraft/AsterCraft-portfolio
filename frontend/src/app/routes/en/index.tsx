@@ -2,13 +2,8 @@ import { useSearchParams, type MetaFunction } from "react-router";
 import { useEffect } from "react";
 
 import { HomePage } from "@pages/home-page";
-import {
-  breadcrumbSchema,
-  faqSchema,
-  organizationSchema,
-  webSiteSchema,
-} from "app/seo/structured-data";
 import { useIsContactFormModalOpenStore } from "@shared/lib/store/isContactFormModalOpen";
+import structuredData from "./structured-data";
 
 export const meta: MetaFunction = () => {
   const siteUrl = "https://www.astercraft.com.ua";
@@ -87,36 +82,9 @@ export const meta: MetaFunction = () => {
     },
 
     // Structured Data
-    // { "script:ld+json": organizationSchema },
-    // { "script:ld+json": webSiteSchema },
-    {
-      "script:ld+json": {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "@id": `${siteUrl}/en/#webpage`,
-
-        url: `${siteUrl}/en/`,
-        name: "AsterCraft - Web Development in Ukraine",
-        description:
-          "We create business websites with clean code, no page builders",
-        inLanguage: "en",
-
-        isPartOf: {
-          "@id": `${siteUrl}/#website`,
-        },
-
-        about: {
-          "@id": `${siteUrl}/#organization`,
-        },
-
-        primaryImageOfPage: {
-          "@type": "ImageObject",
-          url: `${siteUrl}/img/logo/logo.png`,
-        },
-      },
-    },
-    // { "script:ld+json": breadcrumbSchema },
-    // { "script:ld+json": faqSchema },
+    ...Object.values(structuredData).map((schema) => ({
+      "script:ld+json": schema,
+    })),
   ];
 };
 

@@ -1,8 +1,6 @@
-import { faqData } from "@widgets/faq-section";
+import { SITE_URL } from "@shared/config";
 
-const SITE_URL = "https://www.astercraft.com.ua";
-
-export const organizationSchema = {
+const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "@id": `${SITE_URL}/#organization`,
@@ -131,71 +129,4 @@ export const organizationSchema = {
   },
 } as const;
 
-export const webSiteSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "@id": `${SITE_URL}/#website`,
-
-  url: SITE_URL,
-  name: "AsterCraft",
-  description: "Професійна розробка веб-сайтів в Україні",
-  inLanguage: "uk",
-
-  publisher: {
-    "@id": `${SITE_URL}/#organization`,
-  },
-} as const;
-
-// probably need to move into page specific (lang specific?) file
-export const webPageSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  "@id": `${SITE_URL}/uk/#webpage`,
-
-  url: `${SITE_URL}/uk/`,
-  name: "AsterCraft - Розробка сайтів в Україні",
-  description:
-    "Створюємо веб-сайти для бізнесу на чистому коді без конструкторів",
-  inLanguage: "uk",
-
-  isPartOf: {
-    "@id": `${SITE_URL}/#website`,
-  },
-
-  about: {
-    "@id": `${SITE_URL}/#organization`,
-  },
-
-  primaryImageOfPage: {
-    "@type": "ImageObject",
-    url: `${SITE_URL}/img/logo/logo.png`,
-  },
-} as const;
-
-export const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-
-  itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Головна",
-      item: `${SITE_URL}/`,
-    },
-  ],
-} as const;
-
-export const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-
-  mainEntity: faqData.map((entry) => ({
-    "@type": "Question",
-    name: entry.question,
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: entry.answer.map((p) => `<p>${p}</p>`).join(""),
-    },
-  })),
-} as const;
+export default organizationSchema;
