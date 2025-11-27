@@ -2,67 +2,67 @@ import type { DeepString } from "@shared/lib/i18n/types";
 
 const en = {
   seo: {
-    heading: "Creating websites in Ukraine",
+    heading: "Website Development in Ukraine",
     intro: {
       paragraph1:
-        'Website development - a complex process, which involves many IT-specialists of different profiles. Today there is practically no company that has not "brought" its business online. The development and launch of a web resource is carried out in several stages. Only thorough preparation makes it possible to implement a project that will bring results to the business. Therefore, the choice of the contractor should be taken responsibly.',
+        'Developing your own website is a complex process that involves many IT specialists from different fields. Today, virtually all companies are moving their business online. The development and launch of a website is carried out in several stages. Only thorough preparation makes it possible to implement a project that will bring results to the business. Therefore, the choice of contractor should be approached responsibly.',
       paragraph2:
-        "Our web studio in Kiev MEGASITE develops web-sites, e-commerce platforms, turnkey corporate resources for different business niches and any level of complexity.",
+        "Our web studio in Lviv (Ukraine) and Lodz (Poland) develops websites, single-page sites, simple sites, e-commerce platforms, corporate sites and turnkey resources for various business niches and any level of complexity.",
     },
     typesOfSites: {
-      heading: "Types of sites",
+      heading: "Types of Websites",
       intro:
-        "Website development in Ukraine is a demanded type of IT-service. Virtually any line of business needs to create their own web resource, as customers are often much more convenient to interact with the company in online format. The cost of the project depends on the type of site, the complexity of the work, and the niche in which the client operates. The following varieties of WEB-resources are in demand:",
+        "Website development in Ukraine is a demanded type of IT service. Virtually any business sector needs to create its own web resource, as customers often find it much more convenient to interact with the company online. The cost of the project depends on the type of website, the complexity of the work, and the niche in which the client operates. The following types of web resources are in demand:",
       items: [
-        "Business card - the site is suitable for representatives of small businesses who want to introduce potential customers to their company. Typically, this resource contains 3-5 pages and gives a general idea of the services and products;",
-        "Corporate - multi-page website, which describes products/services of business in details, has extended functionality and features. It may also be intended for internal use by employees;",
-        "Internet-shop - the trading platform, which allows you to offer your goods or services to a greater number of customers. Payment tools may be connected, possibility to create personal accounts and other useful functions;",
-        "landing page - a single-page page created for advertising purposes. It allows you to increase conversion through a call to take a specific action, which is necessary for business;",
-        "Online services - platforms that provide services (registration, ticketing, online registration, and so on).",
+        "Landing page - a single-page site created for advertising purposes. It allows you to increase conversion through a call to a specific action that is necessary for business;",
+        "Business card - a website suitable for small business representatives who want to introduce potential customers to their company. Typically, such a web resource contains 3-5 pages and gives a general idea of services and products;",
+        "Corporate - a multi-page website that describes products/services of the business in detail, has extended functionality and capabilities. It can also be designed for internal use by employees;",
+        "Online store - a trading platform that allows you to offer your goods or services to a larger number of customers. Payment tools can be connected, the ability to create personal accounts and other useful functions;",
+        "Online services - platforms that provide services (registration, ticket sales, online booking, etc.).",
       ],
       conclusion:
-        "If you are interested in developing web sites in Ukraine, apply to our IT company. We will help to solve IT-tasks of any complexity.",
+        "If you are interested in developing websites in Ukraine and Europe, contact our IT company. We will help solve IT tasks of any complexity.",
     },
 
     turnkeyCreation: {
-      heading: "Turnkey website creation",
+      heading: "Turnkey Website Creation",
       intro:
-        "Website development is a service of a full cycle of site development, starting from market research and design of the resource to the launch of the project and its subsequent maintenance, advertising settings, SEO, etc. In this case, the promotion is not always included in the price of the order.",
+        "Website development is a full-cycle service for creating a website, starting from market research and resource design to project launch and its subsequent maintenance, advertising setup, SEO, etc. At the same time, promotion is not always included in the order cost.",
       activitiesIntro:
-        "WEB-site development includes the following activities:",
+        "Website development includes the following types of work:",
       activities: [
-        "Market analysis and analysis of competitors, the study of the client's business and research the target audience who will use the resource;",
-        "Planning and detailed design of the project structure based on these data;",
-        "creating a prototype of the project, its discussion and approval;",
-        "drawing design;",
-        "layout and programming;",
-        "testing;",
-        "optimization and filling with content;",
-        "Final adjustments and delivery.",
+        "Market and competitor analysis, studying the client's business and researching the target audience who will use the resource;",
+        "Planning and detailed design of the project structure based on this data;",
+        "Creating a project prototype, its discussion and approval;",
+        "Design development;",
+        "Layout and programming;",
+        "Testing;",
+        "Content filling and optimization;",
+        "Final refinements and project delivery.",
       ],
       conclusion:
-        "These are the main stages that performs our company in the creation of the site. But if you want the customer can order the setting of advertising, promotion and so on. Also, when the project is handed over, we teach our client's employees to use the interface and site administration.",
+        "These are the main stages that our company performs when creating a website. But if desired, the customer can order advertising setup, promotion, etc. Also, after project delivery, we train the client's employees to use the interface and site administration.",
     },
 
     costFactors: {
-      heading: "What affects the cost of website development",
+      heading: "What Affects the Cost of Website Development",
       intro:
-        "Most often, before order website development, customers are interested in how much it will cost this service. You can find out the price after a conversation with a manager. The budget of the project may vary due to many factors:",
+        "Most often, before ordering website development, clients are interested in how much this service will cost. You can find out the price after a conversation with a manager. The project budget may vary due to many factors:",
       factors: [
-        "The type of site that interests the customer;",
-        "the estimated number of pages;",
-        "the desired set of features;",
-        "time for the development of the project;",
-        "the number and qualifications of the specialists involved in the development.",
+        "The type of website that interests the customer;",
+        "The approximate number of pages;",
+        "The desired set of features;",
+        "Time for project development;",
+        "The number and qualifications of specialists involved in development.",
       ],
       conclusion:
-        "On average it takes 1-4 months to create a website. Depending on the objectives of the project, we apply both template and custom solutions. For example, the design can be standard, while the functionality is developed specially for the web resource.",
+        "On average, website creation takes from a week to 1-5 months. Depending on the project tasks, we use both template and custom solutions. For example, the design can be standard, while the functionality is developed specifically for your website.",
     },
 
     whyUs: {
-      heading: "Why website creation is better to trust MEGASITE agency",
+      heading: "Why Website Creation is Better to Trust AsterCraft Agency",
       content:
-        "Our IT company has extensive experience in creating and promoting web resources of various complexity. We take into consideration customer requirements and offer optimum solutions. Our projects are effective and allow businesses to achieve their goals. We have experienced specialists who can run even the most complex project. Your WEB-resource will become a powerful basis for the promotion and development of the company.",
+        "Our IT company specializes in the development and SEO promotion of websites of any complexity — from corporate portals to online stores and complex web applications. We create web solutions optimized for Google search engines that help businesses attract customers and increase sales. A team of experienced developers and SEO specialists implements projects taking into account the technical requirements of search optimization, using modern technologies and proven digital marketing methods. By ordering a website from us, you get an effective tool for promoting your business on the Internet, which will become a reliable foundation for the growth of your company and strengthening your brand's position in the market.",
     },
   },
 } as const;
