@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { HomePage } from "@pages/home-page";
 import { useIsContactFormModalOpenStore } from "@shared/lib/store/isContactFormModalOpen";
 import structuredData from "./structured-data";
+import { SITE_URL } from "@shared/config";
 
 export const meta: MetaFunction = () => {
   const siteUrl = "https://www.astercraft.com.ua";
@@ -68,6 +69,12 @@ export const meta: MetaFunction = () => {
 
     { tagName: "link", rel: "canonical", href: pageUrl },
     { tagName: "link", rel: "alternate", hrefLang: "uk", href: pageUrl },
+    {
+      tagName: "link",
+      rel: "alternate",
+      hrefLang: "en",
+      href: `${SITE_URL}/en/`,
+    },
     { tagName: "link", rel: "alternate", hrefLang: "x-default", href: pageUrl },
 
     ...Object.values(structuredData).map((schema) => ({
