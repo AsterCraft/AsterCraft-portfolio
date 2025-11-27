@@ -1,33 +1,36 @@
 import type { Translation } from "./en";
 
-/* @todo Translate this */
 const uk = {
-  heading: ["Drop us a request", "And we'll do the rest!"],
+  heading: ["Залиште заявку", "А ми зробимо решту!"],
 
   countries: {
-    ariaLabel: "Select country",
+    ariaLabel: "Виберіть країну",
     tabs: [
-      { id: "ukraine", name: "Ukraine" },
+      { id: "ukraine", name: "Uraine" },
       { id: "poland", name: "Poland" },
     ],
 
     contacts: {
       ukraine: {
-        phone: "+48 (790) 8398 72",
-        phoneHref: "tel:+48790839872",
+        phone: "+380 (98) 319 42 57",
+        phoneHref: "tel:+380983194257",
         email: "astercraft.dev@gmail.com",
-        location: "Lviv",
+        location: "Львів, вул. Жовківська 28",
+        /* @todo [27.11.2025]  all link to google maps*/
+        locationLink: "",
       },
       poland: {
-        phone: "+48 (790) 8398 72",
-        phoneHref: "tel:+48790839872",
+        phone: "+48 (790) 228 425",
+        phoneHref: "tel:+48790228425",
         email: "astercraft.dev@gmail.com",
-        location: "Lodz",
+        location: "Łódź, ul Piotrkowska",
+        /* @todo [27.11.2025]  all link to google maps*/
+        locationLink: "",
       },
     },
   },
 
-  ctaButton: "Leave a request",
+  ctaButton: "Залишити заявку",
 } as const satisfies Translation;
 
 export default uk;

@@ -1,69 +1,67 @@
 import type { Translation } from "./en";
 
-// TODO: translate this object
 const uk = {
   seo: {
-    heading: "Creating websites in Ukraine",
+    heading: "Створення веб-сайтів в Україні",
     intro: {
       paragraph1:
-        'Website development - a complex process, which involves many IT-specialists of different profiles. Today there is practically no company that has not "brought" its business online. The development and launch of a web resource is carried out in several stages. Only thorough preparation makes it possible to implement a project that will bring results to the business. Therefore, the choice of the contractor should be taken responsibly.',
+        'Розробка власного веб-сайту - це складний процес, який залучає багато ІТ-спеціалістів різних сфер діяльності. Сьогодні практично всі компанії "переводять" свій бізнес в онлайн. Розробка та запуск веб-сайту здійснюється в декілька етапів. Лише ретельна підготовка дає можливість реалізувати проєкт, який принесе результати бізнесу. Тому до вибору виконавця слід підходити відповідально.',
       paragraph2:
-        "Our web studio in Kiev MEGASITE develops web-sites, e-commerce platforms, turnkey corporate resources for different business niches and any level of complexity.",
+        "Наша веб-студія у Львові (Україна) та Лодзі (Польща) розробляє веб-сайти, односторінкові сайти, прості сайти, платформи електронної комерції, корпоративні сайти та ресурси під ключ для різних бізнес-ніш і будь-якого рівня складності.",
     },
     typesOfSites: {
-      heading: "Types of sites",
+      heading: "Типи сайтів",
       intro:
-        "Website development in Ukraine is a demanded type of IT-service. Virtually any line of business needs to create their own web resource, as customers are often much more convenient to interact with the company in online format. The cost of the project depends on the type of site, the complexity of the work, and the niche in which the client operates. The following varieties of WEB-resources are in demand:",
+        "Розробка веб-сайтів в Україні - це затребуваний вид ІТ-послуг. Практично будь-яка сфера бізнесу потребує створення власного веб-ресурсу, оскільки клієнтам часто набагато зручніше взаємодіяти з компанією в онлайн-форматі. Вартість проєкту залежить від типу сайту, складності роботи та ніші, в якій працює клієнт. Користуються попитом наступні різновиди веб-ресурсів:",
       items: [
-        "Business card - the site is suitable for representatives of small businesses who want to introduce potential customers to their company. Typically, this resource contains 3-5 pages and gives a general idea of the services and products;",
-        "Corporate - multi-page website, which describes products/services of business in details, has extended functionality and features. It may also be intended for internal use by employees;",
-        "Internet-shop - the trading platform, which allows you to offer your goods or services to a greater number of customers. Payment tools may be connected, possibility to create personal accounts and other useful functions;",
-        "landing page - a single-page page created for advertising purposes. It allows you to increase conversion through a call to take a specific action, which is necessary for business;",
-        "Online services - platforms that provide services (registration, ticketing, online registration, and so on).",
+        "Лендінг - одностороінкова сторінка, створена для рекламних цілей. Дозволяє підвищити конверсію через заклик до конкретної дії, яка необхідна для бізнесу;",
+        "Візитка - сайт підходить для представників малого бізнесу, які хочуть познайомити потенційних клієнтів зі своєю компанією. Зазвичай такий веб-ресурс містить 3-5 сторінок і дає загальне уявлення про послуги та продукцію;",
+        "Корпоративний - багатосторінковий сайт, який детально описує продукти/послуги бізнесу, має розширений функціонал та можливості. Також може бути призначений для внутрішнього використання співробітниками;",
+        "Інтернет-магазин - торгова платформа, яка дозволяє запропонувати свої товари чи послуги більшій кількості клієнтів. Можуть бути підключені платіжні інструменти, можливість створення особистих кабінетів та інші корисні функції;",
+        "Онлайн-сервіси - платформи, що надають послуги (реєстрація, продаж квитків, онлайн-запис тощо).",
       ],
       conclusion:
-        "If you are interested in developing web sites in Ukraine, apply to our IT company. We will help to solve IT-tasks of any complexity.",
+        "Якщо вас цікавить розробка веб-сайтів в Україні та Європі, звертайтесь до нашої ІТ-компанії. Ми допоможемо вирішити ІТ-завдання будь-якої складності.",
     },
 
     turnkeyCreation: {
-      heading: "Turnkey website creation",
+      heading: "Створення сайту під ключ",
       intro:
-        "Website development is a service of a full cycle of site development, starting from market research and design of the resource to the launch of the project and its subsequent maintenance, advertising settings, SEO, etc. In this case, the promotion is not always included in the price of the order.",
-      activitiesIntro:
-        "WEB-site development includes the following activities:",
+        "Розробка сайту - це послуга повного циклу створення сайту, починаючи від дослідження ринку та проєктування ресурсу до запуску проєкту та його подальшого обслуговування, налаштування реклами, SEO тощо. При цьому просування не завжди входить у вартість замовлення.",
+      activitiesIntro: "Розробка веб-сайту включає наступні види робіт:",
       activities: [
-        "Market analysis and analysis of competitors, the study of the client's business and research the target audience who will use the resource;",
-        "Planning and detailed design of the project structure based on these data;",
-        "creating a prototype of the project, its discussion and approval;",
-        "drawing design;",
-        "layout and programming;",
-        "testing;",
-        "optimization and filling with content;",
-        "Final adjustments and delivery.",
+        "Аналіз ринку та конкурентів, вивчення бізнесу клієнта та дослідження цільової аудиторії, яка користуватиметься ресурсом;",
+        "Планування та детальне проєктування структури проєкту на основі цих даних;",
+        "Створення прототипу проєкту, його обговорення та затвердження;",
+        "Розробка дизайну;",
+        "Верстка та програмування;",
+        "Тестування;",
+        "Наповнення контентом та оптимізація;",
+        "Фінальні доопрацювання та здача проєкту.",
       ],
       conclusion:
-        "These are the main stages that performs our company in the creation of the site. But if you want the customer can order the setting of advertising, promotion and so on. Also, when the project is handed over, we teach our client's employees to use the interface and site administration.",
+        "Це основні етапи, які виконує наша компанія при створенні сайту. Але за бажанням замовник може замовити налаштування реклами, просування тощо. Також після здачі проєкту ми навчаємо співробітників клієнта користуватися інтерфейсом та адмініструванням сайту.",
     },
 
     costFactors: {
-      heading: "What affects the cost of website development",
+      heading: "Що впливає на вартість розробки веб-сайту",
       intro:
-        "Most often, before order website development, customers are interested in how much it will cost this service. You can find out the price after a conversation with a manager. The budget of the project may vary due to many factors:",
+        "Найчастіше перед замовленням розробки веб-сайту клієнтів цікавить, скільки коштуватиме ця послуга. Дізнатися ціну можна після розмови з менеджером. Бюджет проєкту може варіюватися через багато факторів:",
       factors: [
-        "The type of site that interests the customer;",
-        "the estimated number of pages;",
-        "the desired set of features;",
-        "time for the development of the project;",
-        "the number and qualifications of the specialists involved in the development.",
+        "Тип сайту, який цікавить замовника;",
+        "Приблизна кількість сторінок;",
+        "Бажаний набір функцій;",
+        "Час на розробку проєкту;",
+        "Кількість та кваліфікація спеціалістів, залучених до розробки.",
       ],
       conclusion:
-        "On average it takes 1-4 months to create a website. Depending on the objectives of the project, we apply both template and custom solutions. For example, the design can be standard, while the functionality is developed specially for the web resource.",
+        "В середньому створення веб-сайту займає від тижня до 1-5 місяців. Залежно від завдань проєкту ми застосовуємо як шаблонні, так і кастомні рішення. Наприклад, дизайн може бути стандартним, а функціонал розроблений спеціально для вашого веб-сайту.",
     },
 
     whyUs: {
-      heading: "Why website creation is better to trust MEGASITE agency",
+      heading: "Чому створення сайту краще довірити агенції AsterCtaft",
       content:
-        "Our IT company has extensive experience in creating and promoting web resources of various complexity. We take into consideration customer requirements and offer optimum solutions. Our projects are effective and allow businesses to achieve their goals. We have experienced specialists who can run even the most complex project. Your WEB-resource will become a powerful basis for the promotion and development of the company.",
+        "Наша ІТ-компанія спеціалізується на розробці та SEO-просуванні сайтів будь-якої складності — від корпоративних порталів до інтернет-магазинів та складних веб-додатків. Ми створюємо веб-рішення, оптимізовані для пошукових систем Google, які допомагають бізнесу залучати клієнтів та збільшувати продажі. Команда досвідчених розробників та SEO-спеціалістів реалізує проєкти з урахуванням технічних вимог пошукової оптимізації, використовуючи сучасні технології та перевірені методики digital-маркетингу. Замовляючи створення сайту у нас, ви отримуєте ефективний інструмент для просування бізнесу в інтернеті, який стане надійною основою для зростання вашої компанії та зміцнення позицій бренду на ринку.",
     },
   },
 } as const satisfies Translation;
