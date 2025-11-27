@@ -1,6 +1,5 @@
 import { SITE_URL } from "@shared/config";
 
-/* @todo Translate this to english */
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -17,7 +16,7 @@ const organizationSchema = {
   image: `${SITE_URL}/img/logo/logo.png`,
 
   description:
-    "Створюємо веб-сайти для бізнесу на чистому коді без конструкторів. Швидкі, надійні, SEO-оптимізовані, продаючі. 50+ успішних проектів. Landing Page, корпоративні сайти, інтернет-магазини.",
+    "We create business websites with clean code, no page builders. Fast, reliable, SEO-optimized, conversion-focused. 50+ successful projects. Landing pages, corporate websites, e-commerce.",
 
   sameAs: [
     "https://github.com/AsterCraft/",
@@ -60,20 +59,20 @@ const organizationSchema = {
 
   hasOfferCatalog: {
     "@type": "OfferCatalog",
-    name: "Послуги веб-розробки",
+    name: "Web Development Services",
     itemListElement: [
       {
         "@type": "Offer",
         itemOffered: {
           "@type": "Service",
-          name: "Розробка Landing Page",
-          serviceType: "Створення посадкових сторінок",
-          description: "Продаючі Landing Page на чистому коді",
+          name: "Landing Page Development",
+          serviceType: "Landing Page Creation",
+          description: "Conversion-focused landing pages with clean code",
         },
         priceSpecification: {
           "@type": "PriceSpecification",
-          minPrice: "15000",
-          priceCurrency: "UAH",
+          minPrice: "350",
+          priceCurrency: "USD",
         },
       },
 
@@ -81,14 +80,14 @@ const organizationSchema = {
         "@type": "Offer",
         itemOffered: {
           "@type": "Service",
-          name: "Створення корпоративних сайтів",
-          serviceType: "Розробка сайтів для бізнесу",
-          description: "Професійні веб-сайти для бізнесу",
+          name: "Corporate Website Development",
+          serviceType: "Business Website Development",
+          description: "Professional websites for business",
         },
         priceSpecification: {
           "@type": "PriceSpecification",
-          minPrice: "20000",
-          priceCurrency: "UAH",
+          minPrice: "500",
+          priceCurrency: "USD",
         },
       },
 
@@ -96,14 +95,14 @@ const organizationSchema = {
         "@type": "Offer",
         itemOffered: {
           "@type": "Service",
-          name: "Розробка інтернет-магазину",
-          serviceType: "E-commerce розробка",
-          description: "E-commerce рішення на чистому коді",
+          name: "E-commerce Development",
+          serviceType: "E-commerce Development",
+          description: "E-commerce solutions with clean code",
         },
         priceSpecification: {
           "@type": "PriceSpecification",
-          minPrice: "150000",
-          priceCurrency: "UAH",
+          minPrice: "3500",
+          priceCurrency: "USD",
         },
       },
 
@@ -111,9 +110,9 @@ const organizationSchema = {
         "@type": "Offer",
         itemOffered: {
           "@type": "Service",
-          name: "SEO-оптимізація",
-          serviceType: "Пошукова оптимізація",
-          description: "Підвищення видимості в пошукових системах",
+          name: "SEO Optimization",
+          serviceType: "Search Engine Optimization",
+          description: "Improve visibility in search engines",
         },
       },
 
@@ -121,9 +120,9 @@ const organizationSchema = {
         "@type": "Offer",
         itemOffered: {
           "@type": "Service",
-          name: "Веб-дизайн",
-          serviceType: "Веб-дизайн",
-          description: "Сучасний UX/UI дизайн",
+          name: "Web Design",
+          serviceType: "Web Design",
+          description: "Modern UX/UI design",
         },
       },
     ],

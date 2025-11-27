@@ -1,6 +1,5 @@
 import { SITE_URL } from "@shared/config";
 
-/* @todo Translate this to english */
 const webSiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
@@ -8,8 +7,8 @@ const webSiteSchema = {
 
   url: SITE_URL,
   name: "AsterCraft",
-  description: "Професійна розробка веб-сайтів в Україні",
-  inLanguage: "uk",
+  description: "Professional web development in Ukraine",
+  inLanguage: "en",
 
   publisher: {
     "@id": `${SITE_URL}/#organization`,
