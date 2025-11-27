@@ -8,10 +8,13 @@ import tsconfigPaths from "vite-tsconfig-paths";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-export default defineConfig({
+export default defineConfig(({ isSsrBuild }) => ({
   server: {
     port: 9999,
     strictPort: true,
+  },
+  build: {
+    rollupOptions: isSsrBuild ? { input: "./server/app.ts" } : undefined,
   },
   resolve: {
     alias: {
@@ -19,4 +22,4 @@ export default defineConfig({
     },
   },
   plugins: [tailwindcss(), reactRouter(), tsconfigPaths()],
-});
+}));

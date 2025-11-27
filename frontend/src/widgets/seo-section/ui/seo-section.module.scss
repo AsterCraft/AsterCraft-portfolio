@@ -1,0 +1,170 @@
+@use "../../../shared/styles/tokens" as t;
+@use "../../../shared/styles/lib/responsive-design/_fluid-scale.scss" as fs;
+
+.seoSection {
+  background-color: var(--md-sys-color-surface);
+  color: var(--md-sys-color-on-surface);
+
+  .wrapper {
+    display: flex;
+    gap: t.$md-sys-spacing-20;
+
+    padding-block: fs.fluid-scale(
+      t.$md-sys-spacing-12,
+      t.$md-sys-spacing-20,
+      t.$md-sys-viewport-compact,
+      t.$md-ref-breakpoint-medium-max
+    );
+
+    @media (max-width: t.$md-ref-breakpoint-medium-max) {
+      flex-direction: column;
+    }
+
+    .column {
+      width: 100%;
+    }
+
+    .contactsColumn {
+      display: flex;
+      flex-direction: column;
+      gap: t.$md-sys-spacing-8;
+
+      .heading {
+        display: flex;
+        flex-direction: column;
+
+        @include t.typescale("display-small");
+        /* prettier-ignore */
+        font-size: fs.fluid-scale(
+          32px,
+          t.get-typescale-value("display-small"),
+          t.$md-ref-breakpoint-expanded-min,
+          t.$md-ref-breakpoint-expanded-max,
+        );
+
+        @media (max-width: t.$md-ref-breakpoint-medium-max) {
+          align-items: center;
+
+          font-size: fs.fluid-scale(
+            24px,
+            t.get-typescale-value("display-small"),
+            t.$md-sys-viewport-compact,
+            t.$md-ref-breakpoint-medium-max
+          );
+        }
+
+        .headingLine:first-child {
+          color: var(--md-sys-color-primary);
+        }
+      }
+
+      .countryContacts {
+        display: flex;
+        flex-direction: column;
+        gap: t.$md-sys-spacing-2;
+
+        .countrySelectors {
+          display: flex;
+          gap: t.$md-sys-spacing-2;
+
+          @media (max-width: t.$md-ref-breakpoint-medium-max) {
+            justify-content: center;
+          }
+
+          .countryButton {
+            @include t.typescale("title-medium");
+
+            span {
+              border: 1px solid var(--md-sys-color-outline-variant);
+              padding-block: t.$md-sys-spacing-1;
+              padding-inline: t.$md-sys-spacing-2;
+
+              @include t.spatial("fast");
+              transition-property: box-shadow, border-radius;
+            }
+
+            &.active span {
+              box-shadow: 0 0 0 1px var(--md-sys-color-outline);
+              border: 1px solid var(--md-sys-color-outline);
+              border-radius: t.$md-sys-shape-corner-value-extra-extra-large;
+            }
+          }
+        }
+
+        .contactList {
+          .contactItems {
+            display: flex;
+            flex-direction: column;
+
+            .contactItem {
+              display: flex;
+              align-items: center;
+              gap: t.$md-sys-spacing-3;
+
+              .contactLink,
+              .contactText {
+                display: flex;
+                align-items: center;
+
+                @include t.typescale("body-medium");
+                min-height: 48px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .textColumn {
+      height: 350px;
+      overflow-y: auto;
+
+      padding-inline: fs.fluid-scale(
+        t.$md-sys-spacing-2,
+        t.$md-sys-spacing-6,
+        t.$md-sys-viewport-compact,
+        t.$md-ref-breakpoint-medium-max
+      );
+
+      h1 {
+        @include t.typescale("headline-medium");
+        margin-bottom: t.$md-sys-spacing-4;
+      }
+
+      h2 {
+        @include t.typescale("headline-small");
+        margin-bottom: t.$md-sys-spacing-3;
+      }
+
+      p {
+        @include t.typescale("body-medium");
+        margin-bottom: t.$md-sys-spacing-6;
+      }
+
+      ul {
+        margin-bottom: t.$md-sys-spacing-6;
+
+        li {
+          display: flex;
+          align-items: baseline;
+          gap: t.$md-sys-spacing-2;
+
+          @include t.typescale("body-medium");
+          margin-bottom: t.$md-sys-spacing-3;
+
+          &::before {
+            content: "";
+            flex-shrink: 0;
+
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            line-height: 40px;
+
+            background-color: var(--md-sys-color-primary);
+          }
+        }
+      }
+    }
+  }
+}

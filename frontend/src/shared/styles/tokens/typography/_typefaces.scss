@@ -1,0 +1,19 @@
+////
+/// defines reference typeface tokens
+/// currently imports typefaces from google fonts
+/// needs to be change to downloaded fonts in the future
+///
+/// @group typography
+////
+
+@import url("https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Tektur:wght@400..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+/// Used for display, headline, title type scales
+/// @type String
+$md-ref-typeface-brand: "Kode Mono", "Tektur", monospace;
+
+/// Used for body and label type scales
+/// @type String
+$md-ref-typeface-plain: "Noto Sans", sans-serif;

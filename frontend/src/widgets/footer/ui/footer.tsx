@@ -1,4 +1,4 @@
-import ButtonStartProject from "../../../shared/ui/buttons/ButtonStartProject/ButtonStartProject";
+import { StartProjectBtn } from "../../../shared/ui/";
 import DividerBetweenSections from "../../../shared/ui/lines/DividerBetweenSections/DividerBetweenSections";
 import AnimatedBrandName from "./animated-brand-name/animated-brand-name";
 import { SectionContact } from "./section-contact/section-contact";
@@ -12,7 +12,7 @@ export const Footer = () => {
         <h2 className={s.heading}>
           Давайте обговоримо і створимо крутий сайт для Вас
         </h2>
-        <ButtonStartProject
+        <StartProjectBtn
           className={s.buttonStartProject}
           text="Обговорити проект"
         />

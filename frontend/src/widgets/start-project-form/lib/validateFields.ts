@@ -1,41 +1,15 @@
 import { useModalStartProjectStore } from "../model/store";
-import {
-  emailSchema,
-  firstNameSchema,
-  messageSchema,
-  phoneSchema,
-  telegramSchema,
-  type FieldName,
-} from "../model/validation";
+import { createContactFormSchema, type FieldName } from "../model/validation";
 
 export const validateField = (
   fieldName: FieldName,
   value: string
 ): string | undefined => {
-  switch (fieldName) {
-    case "firstName": {
-      const result = firstNameSchema.safeParse(value);
-      return result.success ? undefined : result.error.issues[0].message;
-    }
-    case "email": {
-      const result = emailSchema.safeParse(value);
-      return result.success ? undefined : result.error.issues[0].message;
-    }
-    case "phone": {
-      const result = phoneSchema.safeParse(value);
-      return result.success ? undefined : result.error.issues[0].message;
-    }
-    case "telegram": {
-      const result = telegramSchema.safeParse(value);
-      return result.success ? undefined : result.error.issues[0].message;
-    }
-    case "message": {
-      const result = messageSchema.safeParse(value);
-      return result.success ? undefined : result.error.issues[0].message;
-    }
-    default:
-      return undefined;
-  }
+  const partialData = { [fieldName]: value };
+  const schema = createContactFormSchema().pick({ [fieldName]: true });
+
+  const result = schema.safeParse(partialData);
+  return result.success ? undefined : result.error.issues[0]?.message;
 };
 
 export const validateFieldOnBlur = (fieldName: FieldName, value: string) => {

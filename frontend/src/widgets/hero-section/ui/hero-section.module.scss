@@ -1,0 +1,58 @@
+@use "../../../shared/styles/tokens" as t;
+@use "../../../shared/styles/config" as conf;
+@use "../../../shared/styles/lib/responsive-design/_fluid-scale.scss" as fs;
+
+.heroSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: fs.fluid-scale(t.$md-sys-spacing-8, t.$md-sys-spacing-16);
+
+  height: calc(100vh - conf.$app-bar-height);
+
+  background-color: var(--md-sys-color-surface-container-low);
+  color: var(--md-sys-color-on-surface);
+
+  .heroTitle {
+    @include t.typescale("display-large");
+    font-size: fs.fluid-scale(
+      22px,
+      120px,
+      t.$md-sys-viewport-compact,
+      t.$md-ref-breakpoint-large-max //change to viewport tokens?
+    );
+    line-height: fs.fluid-scale(
+      36px,
+      140px,
+      t.$md-sys-viewport-compact,
+      t.$md-ref-breakpoint-large-max
+    );
+
+    .firstRow {
+      padding-left: fs.fluid-scale(t.$md-sys-spacing-12, t.$md-sys-spacing-16);
+    }
+
+    .secondRow {
+      padding-left: fs.fluid-scale(
+        t.$md-sys-spacing-16,
+        t.$md-sys-spacing-70,
+        t.$md-sys-viewport-compact,
+        t.$md-ref-breakpoint-large-max
+      );
+    }
+
+    .thirdRow {
+      color: var(--md-sys-color-tertiary);
+    }
+  }
+
+  .cta {
+    font-size: fs.fluid-scale(12px, 28px);
+
+    padding-inline: 1.5em; // move to start-project-btn?
+    padding-block: 1em;
+
+    border-radius: 2em;
+  }
+}

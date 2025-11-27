@@ -1,45 +1,47 @@
 import { z } from "zod";
-import i18n from "@shared/lib/i18n";
+import i18n from "i18next";
 
-const t = (key: string) => i18n.t(key, { ns: "startProjcetForm" });
+export const createContactFormSchema = () => {
+  return z.object({
+    firstName: z
+      .string()
+      .min(1, i18n.t("startProjectForm:validation.firstName.required"))
+      .min(2, i18n.t("startProjectForm:validation.firstName.tooShort"))
+      .max(50, i18n.t("startProjectForm:validation.firstName.tooLong")),
 
-export const firstNameSchema = z
-  .string()
-  .min(1, t("validation.firstName.required"))
-  .min(2, t("validation.firstName.tooShort"))
-  .max(50, t("validation.firstName.tooLong"));
+    email: z
+      .email(i18n.t("startProjectForm:validation.email.invalid"))
+      .min(1, i18n.t("startProjectForm:validation.email.required")),
 
-export const emailSchema = z
-  .email(t("validation.email.invalid"))
-  .min(1, t("validation.email.required"));
+    // doesnt allow whitespaces - change it?
+    phone: z
+      .string()
+      .regex(
+        /^\+?[1-9]\d{1,14}$/,
+        i18n.t("startProjectForm:validation.phone.invalid")
+      )
+      .optional()
+      .or(z.literal("")),
 
-// doesnt allow whitespaces - change it?
-export const phoneSchema = z
-  .string()
-  .regex(/^\+?[1-9]\d{1,14}$/, t("validation.phone.invalid"))
-  .optional()
-  .or(z.literal(""));
+    telegram: z
+      .string()
+      .regex(
+        /^@?[a-zA-Z][a-zA-Z0-9_.]{4,31}$/,
+        i18n.t("startProjectForm:validation.telegram.invalid")
+      )
+      .optional()
+      .or(z.literal("")),
 
-export const telegramSchema = z
-  .string()
-  .regex(/^@?[a-zA-Z][a-zA-Z0-9_.]{4,31}$/, t("validation.telegram.invalid"))
-  .optional()
-  .or(z.literal(""));
+    message: z
+      .string()
+      .max(5000, i18n.t("startProjectForm:validation.message.tooLong"))
+      .optional()
+      .or(z.literal("")),
+  });
+};
 
-export const messageSchema = z
-  .string()
-  .max(5000, t("validation.message.tooLong"))
-  .optional()
-  .or(z.literal(""));
-
-export const contactFormSchema = z.object({
-  firstName: firstNameSchema,
-  email: emailSchema,
-  phone: phoneSchema,
-  telegram: telegramSchema,
-  message: messageSchema,
-});
-
-export type ContactFormData = z.infer<typeof contactFormSchema>;
+export type ContactFormData = z.infer<
+  ReturnType<typeof createContactFormSchema>
+>;
 
 export type FieldName = keyof ContactFormData;
