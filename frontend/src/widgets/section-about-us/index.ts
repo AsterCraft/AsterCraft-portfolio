@@ -1,1 +1,3 @@
-export { SectionAboutUs } from "./section-about-us";
+import AboutUsSection from "./ui/about-us-section";
+
+export default AboutUsSection;

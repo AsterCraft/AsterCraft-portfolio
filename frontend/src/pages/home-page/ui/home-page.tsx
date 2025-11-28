@@ -1,7 +1,8 @@
 import cn from "classnames";
 import { useTranslation } from "react-i18next";
 
-import { SectionAboutUs } from "@widgets/section-about-us";
+import AboutUsSection, { SectionAboutUs } from "@widgets/section-about-us";
+
 import PromiseSection from "@widgets/promise-section";
 import { SectionDevelopmentProcess } from "@widgets/section-development-process";
 import { HeroSection } from "@widgets/hero-section";
@@ -29,9 +30,10 @@ const HomePage = () => {
 
       <DividerBetweenSections />
 
-      <div className="pt-20 pb-20">
+      {/* <div className="pt-20 pb-20">
         <SectionAboutUs />
-      </div>
+      </div> */}
+      <AboutUsSection />
 
       <SectionDevelopmentProcess />
 
