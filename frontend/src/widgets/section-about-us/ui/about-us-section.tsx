@@ -22,9 +22,9 @@ export default function AboutUsSection() {
 
         <div className={s.content}>
           <div className={s.textContent}>
-            <span className={s.subtitle}>
+            <h3 className={s.subtitle}>
               Ми пропонуємо професійне створення та просування сайтів
-            </span>
+            </h3>
             <p className={s.paragraph}>
               Наші спеціалісти зі створення веб-сайтів можуть розробити
               практичне онлайн-рішення для вашої організації відповідно до
