@@ -47,7 +47,7 @@
         font-size: fs.fluid-scale(
           24px,
           t.get-typescale-value("display-medium"),
-          t.$md-sys-viewport-compact,
+          t.$md-ref-breakpoint-medium-max,
           
         );
       }
