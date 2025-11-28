@@ -45,15 +45,14 @@
 
       h2 {
         font-size: fs.fluid-scale(
-          24px,
+          32px,
           t.get-typescale-value("display-medium"),
-          t.$md-ref-breakpoint-medium-max,
-          
+          t.$md-sys-viewport-compact,
+          t.$md-ref-breakpoint-medium-max
         );
       }
     }
   }
-
 
   .animateUnderline {
     h2::after {
@@ -62,7 +61,6 @@
       transition-property: width;
     }
   }
-
 
   .content {
     display: flex;
