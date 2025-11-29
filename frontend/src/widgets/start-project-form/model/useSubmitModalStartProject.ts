@@ -4,6 +4,7 @@ import { useRef, useState } from "react";
 import { useModalStartProjectStore } from "./store";
 import { createContactFormSchema, type FieldName } from "./validation";
 import { API_ENDPOINTS } from "@shared/config/api";
+import { trackFormSubmitConversion } from "@shared/lib/analytics/gtag";
 
 export const useSubmitModalStartProject = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -84,6 +85,8 @@ export const useSubmitModalStartProject = () => {
       if (response.status !== 200) {
         throw new Error("Failed to send data");
       }
+
+      trackFormSubmitConversion();
 
       hasAttemptedSubmitRef.current = false;
       setIsSentSuccessfully(() => {
