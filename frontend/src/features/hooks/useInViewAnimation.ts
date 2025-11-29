@@ -25,7 +25,7 @@ import { useState, useEffect, type RefObject } from "react";
  * const ref = useRef(null);
  * useInViewAnimation(ref, "bounce 2s ease-in-out infinite", 0.3);
  */
-export default function useInViewAction(
+export default function useInViewAnimation(
     ref: RefObject<HTMLElement>, 
     animation: string,
     threshold: number = 0.4
