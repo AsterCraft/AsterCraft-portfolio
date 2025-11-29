@@ -8,11 +8,13 @@ import {
 } from "react-router";
 import { useTranslation } from "react-i18next";
 import type { Route } from "./+types/root";
+import { useEffect } from "react";
 
 import { Header } from "@widgets/header";
 import { Footer } from "@widgets/footer";
 import { StartProjectForm } from "@widgets/start-project-form";
 import { BurgerDropdownMenu } from "features/HeaderNavigation";
+import { GTAG_ID } from "@shared/config";
 
 import {
   getLocale,
@@ -22,7 +24,6 @@ import {
 
 import "./main.css";
 import "@shared/styles/index.scss";
-import { useEffect } from "react";
 
 export const middleware = [i18nextMiddleware];
 
@@ -48,6 +49,22 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1.0"
+        />
+
+        {/* Google tag(gtag.js) */}
+        <script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${GTAG_ID}`}
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag("js", new Date());
+              gtag("config", "${GTAG_ID}");
+            `,
+          }}
         />
 
         <link
