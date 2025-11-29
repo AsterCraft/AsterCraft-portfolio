@@ -17,8 +17,8 @@ export const TestimonialsSlider = () => {
   const nextRef = useRef<HTMLButtonElement>(null);
 
   return (
-    <div className="Container my-10">
-      <LabelToSection text="відгуки" />
+    <div className="Container my-10 main">
+      <h3 id="feedback-text">Відгуки</h3>
 
       {/* Swiper and navigation buttons */}
       <div
