@@ -1,3 +1,5 @@
-export { FAQSection } from "./ui";
+import FAQSection from "./ui/faq-section.tsx";
 
-export { faqData } from "./config/FAQData.ts";
+export { default as faqSectionTranslations } from "./config/translations/index.ts";
+
+export default FAQSection;

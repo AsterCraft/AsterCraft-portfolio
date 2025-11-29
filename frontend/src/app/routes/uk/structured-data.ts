@@ -1,7 +1,7 @@
 import globalSchemas from "app/config/seo";
 import { SITE_URL } from "@shared/config";
 /* @todo requires translation */
-import { faqData } from "@widgets/faq-section";
+import { faqSectionTranslations } from "@widgets/faq-section";
 
 const structuredData = {
   ...globalSchemas.uk,
@@ -49,12 +49,12 @@ const structuredData = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
 
-    mainEntity: faqData.map((entry) => ({
+    mainEntity: faqSectionTranslations.uk.items.map((entry) => ({
       "@type": "Question",
       name: entry.question,
       acceptedAnswer: {
         "@type": "Answer",
-        text: entry.answer.map((p) => `<p>${p}</p>`).join(""),
+        text: `<p>${entry.answer}</p>`,
       },
     })),
   },

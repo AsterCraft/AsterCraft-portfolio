@@ -1,7 +1,7 @@
-import cn from "classnames";
 import { useTranslation } from "react-i18next";
 
-import { SectionAboutUs } from "@widgets/section-about-us";
+import AboutUsSection from "@widgets/about-us-section";
+
 import PromiseSection from "@widgets/promise-section";
 import { SectionDevelopmentProcess } from "@widgets/section-development-process";
 import { HeroSection } from "@widgets/hero-section";
@@ -10,11 +10,9 @@ import SectionProjects from "@widgets/sections/SectionProjects/SectionProjects";
 import { TestimonialsSlider } from "@widgets/testimonials-slider";
 import SectionTelegramContact from "@widgets/sections/SectionTelegramContact/ui/SectionTelegramContact";
 import { ConsultationSection } from "@widgets/consultation-section";
-import { FAQSection } from "@widgets/faq-section";
+import FAQSection from "@widgets/faq-section";
 import { ServicesSection } from "@widgets/services-section";
 import { SeoSection } from "@widgets/seo-section";
-
-import s from "./home-page.module.scss";
 
 const HomePage = () => {
   const { t } = useTranslation("homePage");
@@ -29,9 +27,10 @@ const HomePage = () => {
 
       <DividerBetweenSections />
 
-      <div className="pt-20 pb-20">
+      {/* <div className="pt-20 pb-20">
         <SectionAboutUs />
-      </div>
+      </div> */}
+      <AboutUsSection />
 
       <SectionDevelopmentProcess />
 

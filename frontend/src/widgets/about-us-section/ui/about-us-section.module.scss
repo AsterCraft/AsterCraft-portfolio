@@ -1,0 +1,122 @@
+// TODO use @shared for @use
+
+@use "../../../shared/styles/tokens" as t;
+@use "../../../shared/styles/lib/responsive-design/_fluid-scale.scss" as fs;
+
+.aboutSection {
+  display: flex;
+  background-color: var(--md-sys-color-surface);
+  color: var(--md-sys-color-on-surface);
+  padding: 80px 0;
+
+  .heading {
+    @include t.typescale("display-medium");
+    color: var(--md-sys-color-primary);
+    text-align: center;
+    margin-bottom: 60px;
+
+    h2 {
+      font-size: fs.fluid-scale(
+        34px,
+        t.get-typescale-value("display-medium"),
+        t.$md-ref-breakpoint-expanded-min,
+        t.$md-ref-breakpoint-expanded-max
+      );
+      font-weight: 700;
+      position: relative;
+      display: inline-block;
+
+      // Decorative underline
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -12px;
+        left: 50%;
+        width: 0; // Start at 0 for animation
+        transform: translateX(-50%);
+        height: 4px;
+        background: var(--md-sys-color-primary);
+        border-radius: 2px;
+      }
+    }
+
+    @media (max-width: t.$md-ref-breakpoint-medium-max) {
+      margin-bottom: 40px;
+
+      h2 {
+        font-size: fs.fluid-scale(
+          32px,
+          t.get-typescale-value("display-medium"),
+          t.$md-sys-viewport-compact,
+          t.$md-ref-breakpoint-medium-max
+        );
+      }
+    }
+  }
+
+  .animateUnderline {
+    h2::after {
+      width: 30%;
+      @include t.spatial("fast");
+      transition-property: width;
+    }
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .textContent {
+    max-width: 800px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 0 20px;
+  }
+
+  .subtitle {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--md-sys-color-on-surface);
+
+    @media (max-width: t.$md-ref-breakpoint-medium-max) {
+      font-size: 22px;
+    }
+
+    @media (max-width: t.$md-sys-viewport-compact) {
+      font-size: 20px;
+    }
+  }
+
+  .paragraph {
+    font-size: 18px;
+    line-height: 1.8;
+    color: var(--md-sys-color-on-surface-variant);
+
+    @media (max-width: t.$md-ref-breakpoint-medium-max) {
+      font-size: 16px;
+    }
+  }
+
+  .buttonWrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  @keyframes underlineOpen {
+    0% {
+      width: 0;
+    }
+    40% {
+      width: 0;
+    }
+    100% {
+      width: 30%;
+    }
+  }
+}
