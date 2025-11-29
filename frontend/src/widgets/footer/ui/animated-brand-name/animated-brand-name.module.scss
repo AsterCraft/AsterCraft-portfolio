@@ -1,7 +1,31 @@
+@use "../../../../shared/styles/tokens/" as t;
+
 .brandName {
   text-align: center;
   font-size: clamp(2.5rem, -1rem + 16vw, 14rem);
   letter-spacing: -0.025em;
   color: #d4d4d8;
   overflow: hidden;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+@media  (min-width: t.$md-ref-breakpoint-large-min) {
+ .brandName:hover {
+  background: linear-gradient(90deg, #667eea 0%, #77C6D2 50%,#764ba2 100%);
+  background-size: 200% 200%;
+  background-position: 0% 50%;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: gradientAnimation 1s ease-in-out infinite alternate;
+}
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
 }
