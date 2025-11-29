@@ -1,7 +1,6 @@
-import cn from "classnames";
 import { useTranslation } from "react-i18next";
 
-import AboutUsSection, { SectionAboutUs } from "@widgets/section-about-us";
+import AboutUsSection from "@widgets/section-about-us";
 
 import PromiseSection from "@widgets/promise-section";
 import { SectionDevelopmentProcess } from "@widgets/section-development-process";
@@ -15,7 +14,6 @@ import { FAQSection } from "@widgets/faq-section";
 import { ServicesSection } from "@widgets/services-section";
 import { SeoSection } from "@widgets/seo-section";
 
-import s from "./home-page.module.scss";
 
 const HomePage = () => {
   const { t } = useTranslation("homePage");
