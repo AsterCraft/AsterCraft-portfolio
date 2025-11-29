@@ -8,6 +8,7 @@ import { servicesSectionTranslations } from "@widgets/services-section";
 import { startProjectFormTranslations } from "@widgets/start-project-form";
 import { seoSectionTranslations } from "@widgets/seo-section";
 import { promiseSectionTranslations } from "@widgets/promise-section";
+import { faqSectionTranslations } from "@widgets/faq-section";
 
 export default {
   en: {
@@ -19,6 +20,7 @@ export default {
     startProjectForm: startProjectFormTranslations.en,
     seoSection: seoSectionTranslations.en,
     promiseSection: promiseSectionTranslations.en,
+    faqSection: faqSectionTranslations.en,
 
     shared: {},
   },
@@ -31,6 +33,7 @@ export default {
     startProjectForm: startProjectFormTranslations.uk,
     seoSection: seoSectionTranslations.uk,
     promiseSection: promiseSectionTranslations.uk,
+    faqSection: faqSectionTranslations.uk,
 
     shared: {},
   },

@@ -10,7 +10,7 @@ import SectionProjects from "@widgets/sections/SectionProjects/SectionProjects";
 import { TestimonialsSlider } from "@widgets/testimonials-slider";
 import SectionTelegramContact from "@widgets/sections/SectionTelegramContact/ui/SectionTelegramContact";
 import { ConsultationSection } from "@widgets/consultation-section";
-import { FAQSection } from "@widgets/faq-section";
+import FAQSection from "@widgets/faq-section";
 import { ServicesSection } from "@widgets/services-section";
 import { SeoSection } from "@widgets/seo-section";
 
