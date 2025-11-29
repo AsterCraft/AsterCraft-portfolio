@@ -1,0 +1,2 @@
+export const GTAG_ID = "AW-17681259170";
+export const GADS_CONVERSION_ID = "AW-17681259170/c3GCCPK8_7obEKK1iu9B";
