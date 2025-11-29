@@ -1,6 +1,15 @@
+@use "../../shared/styles/tokens" as t;
 .swiperSlide {
   display: flex;
   justify-content: space-between;
   height: auto;
   flex-direction: column;
 }
+main{
+
+  #feedback-text{
+  @include t.typescale("display-medium");
+  color: var(--md-sys-color-primary);
+}
+}
+
