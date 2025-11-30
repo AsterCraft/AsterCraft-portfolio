@@ -23,7 +23,7 @@ export default function useInView(
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setSeen(true);
-          } else if (once) {
+          } else if (!once) {
             setSeen(false);
           }
         });
