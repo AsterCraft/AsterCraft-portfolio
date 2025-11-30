@@ -1,14 +1,18 @@
 import { useEffect, useState, type RefObject } from "react";
-interface InViewArgsProps {
-  once?: boolean;
+interface UseInViewOptions {
+    once?: boolean
+    amount?: number
+    initial?: boolean
 }
-
-export default function useInViewState<T extends HTMLElement>(
-  ref: RefObject<T>,
-  threshold: number = 0.4,
-  args?: InViewArgsProps
+export default function useInView(
+   ref: RefObject<Element | null>,
+    {
+        amount = 0.25,
+        once = false,
+        initial = false,
+    }: UseInViewOptions = {}
 ) {
-  const [seen, setSeen] = useState(false);
+  const [seen, setSeen] = useState(initial);
 
   useEffect(() => {
     const element = ref.current;
@@ -19,14 +23,14 @@ export default function useInViewState<T extends HTMLElement>(
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setSeen(true);
-          } else if (!args?.once) {
+          } else if (once) {
             setSeen(false);
           }
         });
       },
       {
         root: null,
-        threshold: threshold,
+        threshold: amount,
       }
     );
 
@@ -35,7 +39,7 @@ export default function useInViewState<T extends HTMLElement>(
     return () => {
       observer.disconnect();
     };
-  }, [ref, args?.once, threshold]);
+  }, [ref, once, amount]);
 
   return seen;
 }
