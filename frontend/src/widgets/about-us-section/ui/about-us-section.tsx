@@ -3,12 +3,11 @@ import s from "./about-us-section.module.scss";
 import gs from "@shared/styles/global.module.scss";
 import cn from "classnames";
 import { useRef } from "react";
-import useInViewState from "@shared/viewport/useInViewState";
-
+import { useInView } from "motion/react";
 
 export default function AboutUsSection() {
-  const ref = useRef<HTMLElement>(null!);
-  const viewState = useInViewState(ref, {once: true, amount: 0.6});
+  const ref = useRef(null);
+  const viewState = useInView(ref, { once: true });
 
   return (
     <section
