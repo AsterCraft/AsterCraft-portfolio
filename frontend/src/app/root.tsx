@@ -51,22 +51,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
           content="width=device-width, initial-scale=1.0"
         />
 
-        {/* Google tag(gtag.js) */}
-        <script
-          async
-          src={`https://www.googletagmanager.com/gtag/js?id=${GTAG_ID}`}
-        />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag("js", new Date());
-              gtag("config", "${GTAG_ID}");
-            `,
-          }}
-        />
-
         <link
           rel="apple-touch-icon"
           sizes="180x180"
@@ -109,6 +93,22 @@ export default function Root({ loaderData: { locale } }: Route.ComponentProps) {
   useEffect(() => {
     if (i18n.language !== locale) i18n.changeLanguage(locale);
   }, [locale, i18n]);
+
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${GTAG_ID}`;
+    script.async = true;
+    document.head.appendChild(script);
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag(...args: any[]) {
+      window.dataLayer.push(args);
+    }
+    gtag("js", new Date());
+    gtag("config", GTAG_ID);
+
+    window.gtag = gtag;
+  }, []);
 
   return (
     <>
