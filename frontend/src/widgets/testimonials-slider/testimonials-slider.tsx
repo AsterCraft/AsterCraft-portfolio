@@ -18,7 +18,7 @@ export const TestimonialsSlider = () => {
 
   return (
     <div className="Container my-10">
-      <LabelToSection text="відгуки" />
+     <LabelToSection text="відгуки" />
 
       {/* Swiper and navigation buttons */}
       <div
