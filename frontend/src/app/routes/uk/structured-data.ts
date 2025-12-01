@@ -1,6 +1,5 @@
 import globalSchemas from "app/config/seo";
 import { SITE_URL } from "@shared/config";
-/* @todo requires translation */
 import { faqSectionTranslations } from "@widgets/faq-section";
 
 const structuredData = {
@@ -9,6 +8,7 @@ const structuredData = {
   breadcrumbSchema: {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
+    "@id": `${SITE_URL}/uk/#breadcrumb`,
 
     itemListElement: [
       {
@@ -48,6 +48,7 @@ const structuredData = {
   faqSchema: {
     "@context": "https://schema.org",
     "@type": "FAQPage",
+    "@id": `${SITE_URL}/uk/#faqpage`,
 
     mainEntity: faqSectionTranslations.uk.items.map((entry) => ({
       "@type": "Question",
