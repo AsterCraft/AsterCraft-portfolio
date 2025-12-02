@@ -14,6 +14,7 @@ import FAQSection from "@widgets/faq-section";
 import { ServicesSection } from "@widgets/services-section";
 import { SeoSection } from "@widgets/seo-section";
 
+
 const HomePage = () => {
   const { t } = useTranslation("homePage");
 
