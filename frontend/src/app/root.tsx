@@ -14,7 +14,7 @@ import { Header } from "@widgets/header";
 import { Footer } from "@widgets/footer";
 import { StartProjectForm } from "@widgets/start-project-form";
 import { BurgerDropdownMenu } from "features/HeaderNavigation";
-import { GTAG_ID } from "@shared/config";
+import { GADS_CONVERSION_ID, GTAG_ID } from "@shared/config";
 
 import {
   getLocale,
@@ -73,6 +73,42 @@ export function Layout({ children }: { children: React.ReactNode }) {
           href="/site.webmanifest"
         />
 
+        {/* Google tag (gtag.js) */}
+        <script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${GTAG_ID}`}
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag("js", new Date());
+          gtag("config", "${GTAG_ID}");
+`,
+          }}
+        />
+
+        {/* Event snippet for Submit lead form conversion page */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+          function gtag_report_conversion(url) {
+            var callback = function() {
+              if (typeof(url) != "undefined") {
+                window.location = url;
+              }
+            };
+            gtag("event", "conversion", {
+              "send_to": "${GADS_CONVERSION_ID}",
+              "event_callback": callback
+            });
+            return false;
+          }
+`,
+          }}
+        />
+
         <Meta />
         <Links />
       </head>
@@ -93,22 +129,6 @@ export default function Root({ loaderData: { locale } }: Route.ComponentProps) {
   useEffect(() => {
     if (i18n.language !== locale) i18n.changeLanguage(locale);
   }, [locale, i18n]);
-
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = `https://www.googletagmanager.com/gtag/js?id=${GTAG_ID}`;
-    script.async = true;
-    document.head.appendChild(script);
-
-    window.dataLayer = window.dataLayer || [];
-    function gtag(...args: any[]) {
-      window.dataLayer.push(args);
-    }
-    gtag("js", new Date());
-    gtag("config", GTAG_ID);
-
-    window.gtag = gtag;
-  }, []);
 
   return (
     <>
