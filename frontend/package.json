@@ -9,7 +9,6 @@
     "start": "react-router-serve ./build/serve/index.js",
     "typecheck": "react-router typegen && tsc",
     "lint": "eslint .",
-    "docs:scss": "sassdoc src/shared/styles --dest docs/scss",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
@@ -57,7 +56,6 @@
     "prettier": "^3.6.2",
     "prettier-plugin-tailwindcss": "^0.6.14",
     "sass": "^1.93.2",
-    "sassdoc": "^2.7.4",
     "typescript": "~5.9.2",
     "typescript-eslint": "^8.39.0",
     "typescript-plugin-css-modules": "^5.2.0",
