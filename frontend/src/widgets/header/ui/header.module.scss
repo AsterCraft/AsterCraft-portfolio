@@ -92,25 +92,20 @@ $z-index: 1000;
   z-index: $z-index;
   visibility: hidden;
   pointer-events: none;
-
   position: fixed;
   left: 0;
   top: conf.$app-bar-height;
   bottom: 0;
-
   width: $nav-rail-width;
   transform: translateX(-100%);
   opacity: 0;
-
   background-color: var(--md-sys-color-surface-container);
 
-  transition-property: transform;
+  transition-property: transform, opacity, visibility;
   @include motion.effects("slow");
 
   &.expanded {
     transform: translateX(0);
-    // min-width: 220px;
-    // max-width: 360px;
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
@@ -123,15 +118,11 @@ $z-index: 1000;
 
   .routingNav {
     flex-shrink: 0;
-
     display: flex;
     justify-content: center;
-
     @include typo.typescale("label-medium");
-
     width: 96px;
     padding: spacing.$md-sys-spacing-4;
-
     color: var(--md-sys-color-on-surface-variant);
 
     .navItem {
@@ -150,14 +141,10 @@ $z-index: 1000;
 
   .pageIndex {
     flex-shrink: 0;
-
     @include typo.typescale-emphasized("title-small");
     font-weight: 500;
-
     padding: spacing.$md-sys-spacing-4;
-
     border-left: 1px solid var(--md-sys-color-outline-variant);
-
     color: var(--md-sys-color-on-surface-variant);
 
     ul {
@@ -165,5 +152,24 @@ $z-index: 1000;
       flex-direction: column;
       gap: spacing.$md-sys-spacing-3;
     }
+  }
+}
+
+.pageIndex {
+  flex-shrink: 0;
+
+  @include typo.typescale-emphasized("title-small");
+  font-weight: 500;
+
+  padding: spacing.$md-sys-spacing-4;
+
+  border-left: 1px solid var(--md-sys-color-outline-variant);
+
+  color: var(--md-sys-color-on-surface-variant);
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: spacing.$md-sys-spacing-3;
   }
 }

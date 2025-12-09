@@ -19,9 +19,10 @@ export default function handleRequest(
   loadContext?: RouterContextProvider
 ) {
   // Ensure we have a RouterContextProvider instance
-  const context = loadContext instanceof RouterContextProvider
-    ? loadContext
-    : new RouterContextProvider();
+  const context =
+    loadContext instanceof RouterContextProvider
+      ? loadContext
+      : new RouterContextProvider();
   return new Promise((resolve, reject) => {
     let shellRendered = false;
     let userAgent = request.headers.get("user-agent");
