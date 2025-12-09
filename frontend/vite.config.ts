@@ -1,4 +1,4 @@
-import { defineConfig } from "vite";
+import { defineConfig, type PluginOption } from "vite";
 import tailwindcss from "@tailwindcss/vite";
 import path, { dirname } from "path";
 import { fileURLToPath } from "url";
@@ -8,18 +8,26 @@ import tsconfigPaths from "vite-tsconfig-paths";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-export default defineConfig(({ isSsrBuild }) => ({
-  server: {
-    port: 9999,
-    strictPort: true,
-  },
-  build: {
-    rollupOptions: isSsrBuild ? { input: "./server/app.ts" } : undefined,
-  },
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "src"),
+export default defineConfig(({ isSsrBuild }) => {
+  const plugins: PluginOption[] = [tailwindcss(), tsconfigPaths()];
+
+  if (!process.env.STORYBOOK) {
+    plugins.push(reactRouter());
+  }
+
+  return {
+    server: {
+      port: 9999,
+      strictPort: true,
     },
-  },
-  plugins: [tailwindcss(), reactRouter(), tsconfigPaths()],
-}));
+    build: {
+      rollupOptions: isSsrBuild ? { input: "./server/app.ts" } : undefined,
+    },
+    resolve: {
+      alias: {
+        "@": path.resolve(__dirname, "src"),
+      },
+    },
+    plugins: plugins,
+  };
+});
