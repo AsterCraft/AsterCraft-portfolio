@@ -8,6 +8,7 @@
     "build": "react-router build",
     "start": "react-router-serve ./build/serve/index.js",
     "typecheck": "react-router typegen && tsc",
+    "format": "prettier . --write",
     "lint": "eslint .",
     "docs:scss": "sassdoc src/shared/styles --dest docs/scss"
   },

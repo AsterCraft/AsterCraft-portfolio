@@ -23,7 +23,7 @@
   user-select: none;
   outline: none;
   width: 100%;
-  margin-top: 0.20rem;
+  margin-top: 0.2rem;
   margin-bottom: 1rem;
   // State layer container
   &::before {
@@ -46,7 +46,7 @@
     &::before {
       opacity: 0.12;
     }
-    
+
     outline: 2px solid var(--md-sys-color-primary);
     outline-offset: 2px;
   }
@@ -67,7 +67,7 @@
     height: 40px;
     background: transparent;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    
+
     svg {
       width: 24px;
       height: 24px;
@@ -94,7 +94,7 @@
     .icon {
       border-color: var(--md-sys-color-on-surface);
       background: rgba(var(--md-sys-color-on-surface-rgb), 0.05);
-      
+
       svg {
         transform: scale(1.08);
       }
@@ -124,7 +124,7 @@
     .icon {
       border-color: var(--md-sys-color-primary);
       background: transparent;
-      
+
       svg {
         transform: scale(1.05);
         color: var(--md-sys-color-primary);
@@ -139,11 +139,11 @@
     // Hover on active state
     &:hover {
       background: var(--md-sys-color-surface-container-high);
-      
+
       &::after {
         opacity: 1;
       }
-      
+
       .icon {
         border-color: var(--md-sys-color-primary);
       }
@@ -158,19 +158,17 @@
   }
 }
 
-
-
 // Compact variant
 .rail--compact {
   min-height: 56px;
   padding: spacing.$md-sys-spacing-2 spacing.$md-sys-spacing-4;
   gap: spacing.$md-sys-spacing-3;
-  
+
   .icon {
     width: 56px;
     height: 36px;
   }
-  
+
   .label {
     @include typo.typescale("body-large");
   }
@@ -181,17 +179,17 @@
   min-height: 72px;
   padding: spacing.$md-sys-spacing-4 spacing.$md-sys-spacing-8;
   gap: spacing.$md-sys-spacing-5;
-  
+
   .icon {
     width: 72px;
     height: 48px;
-    
+
     svg {
       width: 28px;
       height: 28px;
     }
   }
-  
+
   .label {
     @include typo.typescale("title-large");
   }

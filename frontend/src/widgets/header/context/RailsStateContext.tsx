@@ -1,5 +1,5 @@
 // RailsStateContext.tsx
-import { createContext, useState, type ReactNode } from 'react';
+import { createContext, useState, type ReactNode } from "react";
 
 interface RailStateContextType {
   activeRailId: number;
@@ -8,10 +8,14 @@ interface RailStateContextType {
 
 export const RailStateContext = createContext<RailStateContextType>({
   activeRailId: 0,
-  setActiveRailId: () => {}
+  setActiveRailId: () => {},
 });
 
-export default function RailStateProvider({ children }: { children: ReactNode }) {
+export default function RailStateProvider({
+  children,
+}: {
+  children: ReactNode;
+}) {
   const [activeRailId, setActiveRailId] = useState(0);
 
   return (

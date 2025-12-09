@@ -10,20 +10,20 @@ interface RailProps {
   onClick?: () => void;
 }
 
-export default function Rail({ name, icon, onClick, id,  }: RailProps) {
+export default function Rail({ name, icon, onClick, id }: RailProps) {
   const { activeRailId, setActiveRailId } = useContext(RailStateContext);
-  
+
   const isActive = activeRailId === id;
-  
+
   const handleClick = () => {
     setActiveRailId(isActive ? 0 : id);
     onClick?.();
   };
-  
+
   return (
     <button
       className={cn(s.rail, {
-        [s.active]: isActive
+        [s.active]: isActive,
       })}
       onClick={handleClick}
       aria-pressed={isActive}

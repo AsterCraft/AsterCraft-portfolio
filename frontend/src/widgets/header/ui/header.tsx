@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router";
 import { useTranslation } from "react-i18next";
 import cn from "classnames";
-import { Hexagon, FolderCode, User } from 'lucide-react';
+import { Hexagon, FolderCode, User } from "lucide-react";
 import { StartProjectBtn } from "@shared/ui";
 import { MenuIcon } from "@shared/ui/icons/menu";
 import { RailStateContext } from "../context/RailsStateContext";
@@ -59,54 +59,49 @@ export const Header = () => {
           onMouseLeave={handleMouseLeave}
           aria-hidden={!isExpanded}
         >
-            <nav  className={s.pageIndexNav} aria-label="Page sections">
-              <ul>
-                <li>
-                  <Link to={"/"}>
-                  <Rail 
+          <nav
+            className={s.pageIndexNav}
+            aria-label="Page sections"
+          >
+            <ul>
+              <li>
+                <Link to={"/"}>
+                  <Rail
                     id={1}
                     icon={<HomeIcon />}
                     name={"home"}
-                    />
-                    </Link>
-                </li>
-                <li>
-                  <a
-                    href="#SectionDevelopmentProcess"
-                  >
-                  <Rail 
-                    id={2} 
-                    icon={<Hexagon />} 
-                    name={t("nav.development")} 
                   />
-                  </a>
-                </li>
-                <li>
-                  <a
-                                       href="#SectionProjects" 
-                  >
-                  <Rail 
-                    id={3} 
-                    icon={<FolderCode />} 
-                    name={t("nav.portfolio")} 
-
+                </Link>
+              </li>
+              <li>
+                <a href="#SectionDevelopmentProcess">
+                  <Rail
+                    id={2}
+                    icon={<Hexagon />}
+                    name={t("nav.development")}
                   />
-                  </a>
-                </li>
-                <li>
-                  <a
-                  href="#SectionContact"
-                  >
-                  <Rail 
-                    id={4} 
-                    icon={<User />} 
-                    name={t("nav.contacts")} 
-                   
+                </a>
+              </li>
+              <li>
+                <a href="#SectionProjects">
+                  <Rail
+                    id={3}
+                    icon={<FolderCode />}
+                    name={t("nav.portfolio")}
                   />
-                   </a>
-                </li>
-              </ul>
-            </nav>
+                </a>
+              </li>
+              <li>
+                <a href="#SectionContact">
+                  <Rail
+                    id={4}
+                    icon={<User />}
+                    name={t("nav.contacts")}
+                  />
+                </a>
+              </li>
+            </ul>
+          </nav>
         </aside>
       </header>
     </RailStateContext.Provider>
