@@ -13,6 +13,7 @@ import { ConsultationSection } from "@widgets/consultation-section";
 import FAQSection from "@widgets/faq-section";
 import { ServicesSection } from "@widgets/services-section";
 import { SeoSection } from "@widgets/seo-section";
+import ProjectsSection from "@widgets/projects-section";
 
 const HomePage = () => {
   const { t } = useTranslation("homePage");
@@ -39,6 +40,7 @@ const HomePage = () => {
       <SectionTelegramContact />
 
       <DividerBetweenSections />
+      <ProjectsSection />
       <SectionProjects />
 
       <ConsultationSection />
