@@ -12,7 +12,7 @@ const ProjectsSection = () => {
   return (
     <section className={s.projectsSection}>
       <div className={cn(s.wrapper, gs.container)}>
-        <h2>{t("title")}</h2>
+        {/* <h2>{t("title")}</h2> */}
 
         <ul className={s.projectList}>
           {t("projects", { returnObjects: true }).map((project, i) => (
