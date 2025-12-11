@@ -5,6 +5,7 @@ import { DevicesSvgImage } from "@shared/ui";
 
 import s from "./promise-section.module.scss";
 import gs from "@shared/styles/global.module.scss";
+import { ProjectCard } from "@shared/ui/cards";
 
 const PromiseSection = () => {
   const { t } = useTranslation("promiseSection");
@@ -35,7 +36,17 @@ const PromiseSection = () => {
           </ul>
         </div>
 
-        <DevicesSvgImage className={s.devicesImg} />
+        <ProjectCard
+          content={{
+            url: "https://www.uniprint.lviv.ua/",
+            imgPath: "/img/projects/uni-print.png",
+            name: "Uni Print",
+            description:
+              "Багатосторінковий сайт-галерея з конструктором товарів для візуальної зовнішньої реклами",
+          }}
+          direction="title-right"
+        />
+        {/* <DevicesSvgImage className={s.devicesImg} /> */}
       </div>
     </section>
   );
