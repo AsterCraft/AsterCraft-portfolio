@@ -6,13 +6,14 @@ import PromiseSection from "@widgets/promise-section";
 import { SectionDevelopmentProcess } from "@widgets/section-development-process";
 import { HeroSection } from "@widgets/hero-section";
 import DividerBetweenSections from "@shared/ui/lines/DividerBetweenSections/DividerBetweenSections";
-import SectionProjects from "@widgets/sections/SectionProjects/SectionProjects";
-import { TestimonialsSlider } from "@widgets/testimonials-slider";
 import SectionTelegramContact from "@widgets/sections/SectionTelegramContact/ui/SectionTelegramContact";
 import { ConsultationSection } from "@widgets/consultation-section";
 import FAQSection from "@widgets/faq-section";
 import { ServicesSection } from "@widgets/services-section";
 import { SeoSection } from "@widgets/seo-section";
+import ProjectsSection from "@widgets/projects-section";
+
+import s from "./home-page.module.scss";
 
 
 const HomePage = () => {
@@ -22,16 +23,13 @@ const HomePage = () => {
     <main>
       <HeroSection />
 
-      <PromiseSection />
-
       <ServicesSection />
 
-      <DividerBetweenSections />
-
-      {/* <div className="pt-20 pb-20">
-        <SectionAboutUs />
-      </div> */}
-      <AboutUsSection />
+      <div className={s.projects}>
+        <PromiseSection />
+        <ProjectsSection />
+        <AboutUsSection />
+      </div>
 
       <SectionDevelopmentProcess />
 
@@ -40,7 +38,6 @@ const HomePage = () => {
       <SectionTelegramContact />
 
       <DividerBetweenSections />
-      <SectionProjects />
 
       <ConsultationSection />
       <SeoSection>
@@ -96,10 +93,6 @@ const HomePage = () => {
         <h2>{t("seo.whyUs.heading")}</h2>
         <p>{t("seo.whyUs.content")}</p>
       </SeoSection>
-
-      <DividerBetweenSections />
-      <TestimonialsSlider />
-      <DividerBetweenSections />
 
       <FAQSection />
       <DividerBetweenSections />

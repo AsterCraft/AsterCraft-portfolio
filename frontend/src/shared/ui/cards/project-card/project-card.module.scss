@@ -1,0 +1,80 @@
+@use "../../../styles/tokens/" as t;
+@use "../../../styles/lib/responsive-design/_fluid-scale.scss/" as fs;
+
+.projectCard {
+  display: flex;
+  gap: t.$md-sys-spacing-2;
+
+  .projectName {
+    order: 0;
+    flex-shrink: 0;
+
+    @include t.typescale("headline-medium");
+    writing-mode: vertical-lr;
+    rotate: 180deg;
+    text-align: center;
+    // padding-inline: t.$md-sys-spacing-10;
+  }
+
+  .projectFigure {
+    order: 1;
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: t.$md-sys-spacing-3;
+
+    padding-bottom: t.$md-sys-spacing-5;
+    border-bottom: 2px solid var(--md-sys-color-outline);
+
+    .projectImg {
+      object-fit: cover;
+      object-position: 50%;
+      aspect-ratio: 16/9;
+
+      display: block;
+
+      width: 100%;
+      height: fs.fluid-scale(
+        204px,
+        304px,
+        t.$md-ref-breakpoint-expanded-min,
+        t.$md-ref-breakpoint-expanded-max
+      );
+
+      @media (max-width: t.$md-ref-breakpoint-medium-max) {
+        height: fs.fluid-scale(
+          160px,
+          304px,
+          t.$md-sys-viewport-compact,
+          t.$md-ref-breakpoint-compact-max
+        );
+      }
+    }
+
+    .projectDescription {
+      @include t.typescale("body-large");
+      font-size: fs.fluid-scale(
+        t.get-typescale-value("body-medium"),
+        t.get-typescale-value("body-large"),
+        t.$md-sys-viewport-compact,
+        t.$md-ref-breakpoint-medium-max
+      );
+    }
+  }
+
+  &.titleRight {
+    margin-top: t.$md-sys-spacing-6;
+
+    .projectName {
+      order: 2;
+      rotate: 0deg;
+      // text-align: start;
+    }
+
+    .projectFigure {
+      padding-bottom: t.$md-sys-spacing-6;
+    }
+  }
+}
