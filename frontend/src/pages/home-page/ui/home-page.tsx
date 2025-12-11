@@ -6,7 +6,6 @@ import PromiseSection from "@widgets/promise-section";
 import { SectionDevelopmentProcess } from "@widgets/section-development-process";
 import { HeroSection } from "@widgets/hero-section";
 import DividerBetweenSections from "@shared/ui/lines/DividerBetweenSections/DividerBetweenSections";
-import { TestimonialsSlider } from "@widgets/testimonials-slider";
 import SectionTelegramContact from "@widgets/sections/SectionTelegramContact/ui/SectionTelegramContact";
 import { ConsultationSection } from "@widgets/consultation-section";
 import FAQSection from "@widgets/faq-section";
@@ -93,10 +92,6 @@ const HomePage = () => {
         <h2>{t("seo.whyUs.heading")}</h2>
         <p>{t("seo.whyUs.content")}</p>
       </SeoSection>
-
-      <DividerBetweenSections />
-      <TestimonialsSlider />
-      <DividerBetweenSections />
 
       <FAQSection />
       <DividerBetweenSections />
