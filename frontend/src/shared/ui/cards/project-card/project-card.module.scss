@@ -31,15 +31,36 @@
     .projectImg {
       object-fit: cover;
       object-position: 50%;
+      aspect-ratio: 16/9;
 
       display: block;
 
       width: 100%;
-      height: 304px;
+      height: fs.fluid-scale(
+        204px,
+        304px,
+        t.$md-ref-breakpoint-expanded-min,
+        t.$md-ref-breakpoint-expanded-max
+      );
+
+      @media (max-width: t.$md-ref-breakpoint-medium-max) {
+        height: fs.fluid-scale(
+          160px,
+          304px,
+          t.$md-sys-viewport-compact,
+          t.$md-ref-breakpoint-compact-max
+        );
+      }
     }
 
     .projectDescription {
       @include t.typescale("body-large");
+      font-size: fs.fluid-scale(
+        t.get-typescale-value("body-medium"),
+        t.get-typescale-value("body-large"),
+        t.$md-sys-viewport-compact,
+        t.$md-ref-breakpoint-medium-max
+      );
     }
   }
 
