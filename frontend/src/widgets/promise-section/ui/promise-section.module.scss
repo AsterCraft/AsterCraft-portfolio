@@ -1,41 +1,30 @@
 @use "../../../shared/styles/tokens" as t;
 @use "../../../shared/styles/lib/responsive-design/_fluid-scale.scss" as fs;
+@use "../../../shared/styles/lib/layout/_projects-layout.scss" as pl;
 
 .promiseSection {
   background-color: var(--md-sys-color-surface);
   color: var(--md-sys-color-on-surface);
 
-  .wrapper {
-    display: flex;
-    gap: fs.fluid-scale(
-      t.$md-sys-spacing-3,
-      t.$md-sys-spacing-20,
-      t.$md-ref-breakpoint-expanded-min,
-      t.$md-sys-viewport-large
-    );
+  padding-block: fs.fluid-scale(
+    t.$md-sys-spacing-10,
+    t.$md-sys-spacing-20,
+    t.$md-ref-breakpoint-expanded-min,
+    t.$md-ref-breakpoint-expanded-max
+  );
 
+  @media (max-width: t.$md-ref-breakpoint-medium-max) {
     padding-block: fs.fluid-scale(
-      t.$md-sys-spacing-10,
-      t.$md-sys-spacing-20,
-      t.$md-ref-breakpoint-expanded-min,
-      t.$md-ref-breakpoint-expanded-max
+      t.$md-sys-spacing-12,
+      t.$md-sys-spacing-16,
+      t.$md-sys-viewport-compact,
+      t.$md-ref-breakpoint-medium-max
     );
+  }
 
-    & > * {
-      width: 100%;
-    }
-
-    @media (max-width: t.$md-ref-breakpoint-medium-max) {
-      flex-direction: column;
-      gap: 0;
-
-      padding-block: fs.fluid-scale(
-        t.$md-sys-spacing-12,
-        t.$md-sys-spacing-16,
-        t.$md-sys-viewport-compact,
-        t.$md-ref-breakpoint-medium-max
-      );
-    }
+  .wrapper {
+    @include pl.projects-layout();
+    align-items: stretch;
 
     .content {
       display: flex;
@@ -48,6 +37,8 @@
         t.$md-ref-breakpoint-expanded-max
       );
 
+      padding-left: t.$md-sys-spacing-12;
+
       @media (max-width: t.$md-ref-breakpoint-medium-max) {
         gap: fs.fluid-scale(
           t.$md-sys-spacing-8,
@@ -55,13 +46,15 @@
           t.$md-sys-viewport-compact,
           t.$md-ref-breakpoint-expanded-max
         );
+
+        padding-left: 0;
       }
 
       .heading {
         @include t.typescale("display-medium");
         /* prettier-ignore */
         font-size: fs.fluid-scale(
-          34px,
+          30px,
           t.get-typescale-value("display-medium"),
           t.$md-ref-breakpoint-expanded-min,
           t.$md-ref-breakpoint-expanded-max,
@@ -111,9 +104,6 @@
           }
         }
       }
-    }
-
-    .devicesImg {
     }
   }
 }
