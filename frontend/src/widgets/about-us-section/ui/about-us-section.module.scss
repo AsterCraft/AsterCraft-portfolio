@@ -1,64 +1,32 @@
-// TODO use @shared for @use
-
 @use "../../../shared/styles/tokens" as t;
 @use "../../../shared/styles/lib/responsive-design/_fluid-scale.scss" as fs;
+@use "../../../shared/styles/lib/layout/_projects-layout.scss" as pl;
 
 .aboutSection {
-  display: flex;
   background-color: var(--md-sys-color-surface);
   color: var(--md-sys-color-on-surface);
-  padding: 80px 0;
 
-  .heading {
-    @include t.typescale("display-medium");
-    color: var(--md-sys-color-primary);
-    text-align: center;
-    margin-bottom: 60px;
+  padding-block: fs.fluid-scale(
+    t.$md-sys-spacing-10,
+    t.$md-sys-spacing-20,
+    t.$md-ref-breakpoint-expanded-min,
+    t.$md-ref-breakpoint-expanded-max
+  );
 
-    h2 {
-      font-size: fs.fluid-scale(
-        34px,
-        t.get-typescale-value("display-medium"),
-        t.$md-ref-breakpoint-expanded-min,
-        t.$md-ref-breakpoint-expanded-max
-      );
-      font-weight: 700;
-      position: relative;
-      display: inline-block;
-
-      // Decorative underline
-      &::after {
-        content: "";
-        position: absolute;
-        bottom: -12px;
-        left: 50%;
-        width: 0; // Start at 0 for animation
-        transform: translateX(-50%);
-        height: 4px;
-        background: var(--md-sys-color-primary);
-        border-radius: 2px;
-      }
-    }
-
-    @media (max-width: t.$md-ref-breakpoint-medium-max) {
-      margin-bottom: 40px;
-
-      h2 {
-        font-size: fs.fluid-scale(
-          32px,
-          t.get-typescale-value("display-medium"),
-          t.$md-sys-viewport-compact,
-          t.$md-ref-breakpoint-medium-max
-        );
-      }
-    }
+  @media (max-width: t.$md-ref-breakpoint-medium-max) {
+    padding-block: fs.fluid-scale(
+      t.$md-sys-spacing-12,
+      t.$md-sys-spacing-16,
+      t.$md-sys-viewport-compact,
+      t.$md-ref-breakpoint-medium-max
+    );
   }
 
-  .animateUnderline {
-    h2::after {
-      width: 30%;
-      @include t.spatial("fast");
-      transition-property: width;
+  .wrapper {
+    @include pl.projects-layout();
+
+    @media (max-width: t.$md-ref-breakpoint-medium-max) {
+      gap: t.$md-sys-spacing-10;
     }
   }
 
@@ -66,57 +34,94 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 40px;
+    gap: fs.fluid-scale(
+      t.$md-sys-spacing-10,
+      t.$md-sys-spacing-16,
+      t.$md-sys-viewport-compact,
+      t.$md-ref-breakpoint-medium-max
+    );
+  }
+
+  h2 {
+    position: relative;
+
+    @include t.typescale-emphasized("display-medium");
+    font-size: fs.fluid-scale(
+      34px,
+      t.get-typescale-value("display-medium"),
+      t.$md-ref-breakpoint-expanded-min,
+      t.$md-ref-breakpoint-expanded-max
+    );
+
+    color: var(--md-sys-color-primary);
+
+    // Decorative underline
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -12px;
+      left: 50%;
+      width: 0; // Start at 0 for animation
+      transform: translateX(-50%);
+      height: 4px;
+      background: var(--md-sys-color-primary);
+      border-radius: 2px;
+
+      @include t.spatial("fast");
+      transition-property: width;
+    }
+
+    &.animateUnderline::after {
+      width: 30%;
+    }
+
+    @media (max-width: t.$md-ref-breakpoint-medium-max) {
+      font-size: fs.fluid-scale(
+        32px,
+        t.get-typescale-value("display-medium"),
+        t.$md-sys-viewport-compact,
+        t.$md-ref-breakpoint-medium-max
+      );
+    }
   }
 
   .textContent {
-    max-width: 800px;
-    text-align: center;
     display: flex;
     flex-direction: column;
-    gap: 24px;
-    padding: 0 20px;
-  }
+    text-align: center;
+    gap: t.$md-sys-spacing-6;
 
-  .subtitle {
-    font-size: 28px;
-    font-weight: 600;
-    line-height: 1.4;
-    color: var(--md-sys-color-on-surface);
+    .subtitle {
+      @include t.typescale("headline-medium");
+      font-size: fs.fluid-scale(
+        22px,
+        t.get-typescale-value("headline-medium"),
+        t.$md-ref-breakpoint-expanded-min,
+        t.$md-ref-breakpoint-expanded-max
+      );
 
-    @media (max-width: t.$md-ref-breakpoint-medium-max) {
-      font-size: 22px;
+      color: var(--md-sys-color-on-surface);
+
+      @media (max-width: t.$md-ref-breakpoint-medium-max) {
+        font-size: fs.fluid-scale(
+          16px,
+          t.get-typescale-value("headline-medium"),
+          t.$md-sys-viewport-compact,
+          t.$md-ref-breakpoint-compact-max
+        );
+      }
     }
 
-    @media (max-width: t.$md-sys-viewport-compact) {
-      font-size: 20px;
-    }
-  }
+    .paragraph {
+      @include t.typescale("body-large");
+      font-size: fs.fluid-scale(
+        t.get-typescale-value("body-medium"),
+        t.get-typescale-value("body-large"),
+        t.$md-sys-viewport-compact,
+        t.$md-ref-breakpoint-compact-max
+      );
 
-  .paragraph {
-    font-size: 18px;
-    line-height: 1.8;
-    color: var(--md-sys-color-on-surface-variant);
-
-    @media (max-width: t.$md-ref-breakpoint-medium-max) {
-      font-size: 16px;
-    }
-  }
-
-  .buttonWrapper {
-    display: flex;
-    justify-content: center;
-  }
-
-  @keyframes underlineOpen {
-    0% {
-      width: 0;
-    }
-    40% {
-      width: 0;
-    }
-    100% {
-      width: 30%;
+      color: var(--md-sys-color-on-surface-variant);
     }
   }
 }
