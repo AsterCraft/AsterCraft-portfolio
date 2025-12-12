@@ -12,7 +12,7 @@
   flex-direction: row;
   align-items: center;
   gap: spacing.$md-sys-spacing-4;
-  min-height: 64px;
+
   padding: spacing.$md-sys-spacing-3 spacing.$md-sys-spacing-6;
   border: none;
   background: transparent;
@@ -22,6 +22,7 @@
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   user-select: none;
   outline: none;
+  height: clamp(48px, 64px, 80px);
   width: 100%;
   margin-top: 0.2rem;
   margin-bottom: 1rem;
