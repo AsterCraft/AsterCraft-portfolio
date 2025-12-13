@@ -4,14 +4,20 @@ import IconDot from "./IconDot";
 import LineConnecting from "./LineConnecting";
 
 type IconStageProps = {
-  className: string;
+  className?: string;
   dots: number;
   showLine?: boolean;
   lineVisible?: boolean;
   stageIndex?: number;
 };
 
-const IconStage = ({ className, dots, showLine = false, lineVisible = false, stageIndex = 0 }: IconStageProps) => {
+const IconStage = ({
+  className,
+  dots,
+  showLine = false,
+  lineVisible = false,
+  stageIndex = 0,
+}: IconStageProps) => {
   return (
     // circle
     <div
@@ -41,7 +47,12 @@ const IconStage = ({ className, dots, showLine = false, lineVisible = false, sta
         ))}
       </div>
 
-      {showLine && <LineConnecting isVisible={lineVisible} stageIndex={stageIndex} />}
+      {showLine && (
+        <LineConnecting
+          isVisible={lineVisible}
+          stageIndex={stageIndex}
+        />
+      )}
     </div>
   );
 };

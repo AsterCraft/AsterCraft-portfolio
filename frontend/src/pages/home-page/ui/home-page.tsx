@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import AboutUsSection from "@widgets/about-us-section";
 
 import PromiseSection from "@widgets/promise-section";
-import { SectionDevelopmentProcess } from "@widgets/section-development-process";
+import { DevelopmentProcessSection } from "@widgets/development-process-section";
 import { HeroSection } from "@widgets/hero-section";
 import DividerBetweenSections from "@shared/ui/lines/DividerBetweenSections/DividerBetweenSections";
 import SectionTelegramContact from "@widgets/sections/SectionTelegramContact/ui/SectionTelegramContact";
@@ -30,7 +30,7 @@ const HomePage = () => {
         <AboutUsSection />
       </div>
 
-      <SectionDevelopmentProcess />
+      <DevelopmentProcessSection />
 
       <DividerBetweenSections />
 
