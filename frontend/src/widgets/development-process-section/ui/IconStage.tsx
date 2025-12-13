@@ -4,7 +4,7 @@ import IconDot from "./IconDot";
 import LineConnecting from "./LineConnecting";
 
 type IconStageProps = {
-  className: string;
+  className?: string;
   dots: number;
   showLine?: boolean;
   lineVisible?: boolean;

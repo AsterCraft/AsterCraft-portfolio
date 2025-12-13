@@ -1,0 +1,17 @@
+.section {
+  background-color: var(--color-ac-eerie-black) /* #1a1a1a */;
+  color: var(--color-white);
+  padding: 80px 0;
+}
+
+.titleToSection {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.stagesList {
+  width: 1000px;
+
+  display: grid;
+  font-size: 18px;
+}

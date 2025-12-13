@@ -1,0 +1,10 @@
+.stageList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.stageList__item {
+  display: flex;
+  gap: 40px;
+}
