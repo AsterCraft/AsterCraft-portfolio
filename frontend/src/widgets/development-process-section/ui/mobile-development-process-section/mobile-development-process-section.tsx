@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 
-import IconStage from "../IconStage";
+import { IconStage } from "../icon-stage/icon-stage";
 
 import s from "./mobile-development-process-section.module.scss";
 
