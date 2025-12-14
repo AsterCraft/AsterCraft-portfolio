@@ -2,7 +2,7 @@ import cn from "classnames";
 
 import { DEVELOPMENT_STAGES } from "../../model/constants";
 import { StageDescription } from "../stage-description/stage-description";
-import IconStage from "../IconStage";
+import { IconStage } from "../icon-stage/icon-stage";
 import TitleSection from "@shared/ui/typography/TitleSection";
 
 import s from "./desktop-section-development-process.module.scss";
