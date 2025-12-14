@@ -1,6 +1,6 @@
 import cn from "classnames";
 
-import IconDot from "../IconDot";
+import { DotIcon } from "../dot-icon/dot-icon";
 
 import s from "./icon-stage.module.scss";
 
@@ -29,7 +29,7 @@ export const IconStage = ({ className, dots }: IconStageProps) => {
         )}
       >
         {Array.from({ length: dots }, (_, index) => (
-          <IconDot key={index} />
+          <DotIcon key={index} />
         ))}
       </div>
     </div>
