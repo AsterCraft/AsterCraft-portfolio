@@ -2,16 +2,17 @@ import { useState } from "react";
 import { Link } from "react-router";
 import { useTranslation } from "react-i18next";
 import cn from "classnames";
-
+import { Hexagon, FolderCode, User } from "lucide-react";
 import { StartProjectBtn } from "@shared/ui";
 import { MenuIcon } from "@shared/ui/icons/menu";
-
+import { RailStateContext } from "../RailsStateContext";
 import s from "./header.module.scss";
 import { HomeIcon } from "@shared/ui/icons/home";
+import Rail from "./Rail/rail";
 
 export const Header = () => {
   const { t } = useTranslation("header");
-
+  const [activeRailId, setActiveRailId] = useState(0);
   const [isExpanded, setIsExpanded] = useState(false);
   const [isPinned, setIsPinned] = useState(false);
 
@@ -32,88 +33,77 @@ export const Header = () => {
   };
 
   return (
-    <header className={s.header}>
-      <div className={s.appBar}>
-        <div
-          className={s.left}
-          // onMouseEnter={handleMouseEnter}
-          // onMouseLeave={handleMouseLeave}
-        >
-          <button
-            className={cn(s.menuButton, { [s.active]: isPinned })}
-            aria-label="Toggle navigation"
-            aria-pressed={isPinned}
-            onClick={handleMenuClick}
-          >
-            <MenuIcon className={s.menuIcon} />
-          </button>
-          <span className={s.brandName}>{t("brandName")}</span>
+    <RailStateContext.Provider value={{ activeRailId, setActiveRailId }}>
+      <header className={s.header}>
+        <div className={s.appBar}>
+          <div className={s.left}>
+            <button
+              className={cn(s.menuButton, { [s.active]: isPinned })}
+              aria-label="Toggle navigation"
+              aria-pressed={isPinned}
+              onClick={handleMenuClick}
+            >
+              <MenuIcon className={s.menuIcon} />
+            </button>
+            <span className={s.brandName}>{t("brandName")}</span>
+          </div>
+          <StartProjectBtn
+            text={t("startProjectBtn")}
+            className={s.cta}
+          />
         </div>
 
-        <StartProjectBtn
-          text={t("startProjectBtn")}
-          className={s.cta}
-        />
-      </div>
-
-      <aside
-        className={cn(s.navRail, { [s.expanded]: isExpanded })}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-        aria-hidden={!isExpanded}
-        inert={!isExpanded}
-      >
-        <div className={s.navRailInner}>
+        <aside
+          className={cn(s.navRail, { [s.expanded]: isExpanded })}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          aria-hidden={!isExpanded}
+        >
           <nav
-            className={s.routingNav}
-            aria-label="Main navigation"
+            className={s.pageIndexNav}
+            aria-label="Page sections"
           >
             <ul>
               <li>
-                <Link
-                  to="/"
-                  className={s.navItem}
-                >
-                  <HomeIcon className={s.navIcon} />
-                  <span className={s.navLabel}>Home</span>
+                <Link to={"/"}>
+                  <Rail
+                    id={1}
+                    icon={<HomeIcon />}
+                    name={"home"}
+                  />
                 </Link>
               </li>
-            </ul>
-          </nav>
-
-          <nav
-            className={s.pageIndex}
-            aria-label="Page sections"
-          >
-            <ul className={s.pageIndexList}>
               <li>
-                <a
-                  href="#SectionDevelopmentProcess"
-                  className={s.pageIndexLink}
-                >
-                  {t("nav.development")}
+                <a href="#SectionDevelopmentProcess">
+                  <Rail
+                    id={2}
+                    icon={<Hexagon />}
+                    name={t("nav.development")}
+                  />
                 </a>
               </li>
               <li>
-                <a
-                  href="#SectionProjects"
-                  className={s.pageIndexLink}
-                >
-                  {t("nav.portfolio")}
+                <a href="#SectionProjects">
+                  <Rail
+                    id={3}
+                    icon={<FolderCode />}
+                    name={t("nav.portfolio")}
+                  />
                 </a>
               </li>
               <li>
-                <a
-                  href="#SectionContact"
-                  className={s.pageIndexLink}
-                >
-                  {t("nav.contacts")}
+                <a href="#SectionContact">
+                  <Rail
+                    id={4}
+                    icon={<User />}
+                    name={t("nav.contacts")}
+                  />
                 </a>
               </li>
             </ul>
           </nav>
-        </div>
-      </aside>
-    </header>
+        </aside>
+      </header>
+    </RailStateContext.Provider>
   );
 };
