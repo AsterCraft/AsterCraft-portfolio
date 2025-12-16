@@ -1,0 +1,197 @@
+@use "../../../../shared/styles/tokens" as t;
+@use "../../../../shared/styles/lib/responsive-design/_fluid-scale.scss" as fs;
+@use "../../../../shared/styles/tokens/motion" as motion;
+@use "../../../../shared/styles/tokens/spacing" as spacing;
+@use "../../../../shared/styles/tokens/elevation" as elev;
+@use "../../../../shared/styles/tokens/typography" as typo;
+@use "../../../../shared/styles/tokens/shape" as shape;
+
+.rail {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: spacing.$md-sys-spacing-4;
+
+  padding: spacing.$md-sys-spacing-3 spacing.$md-sys-spacing-6;
+  border: none;
+  background: transparent;
+  color: var(--md-sys-color-on-surface-variant);
+  cursor: pointer;
+  border-radius: shape.$md-sys-shape-corner-value-extra-large;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+  outline: none;
+  height: clamp(48px, 64px, 80px);
+  width: 100%;
+  margin-top: 0.2rem;
+  margin-bottom: 1rem;
+  // State layer container
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: var(--md-sys-color-on-surface);
+    opacity: 0;
+    transition: opacity 0.2s cubic-bezier(0.2, 0, 0, 1);
+  }
+
+  // Hover state
+  &:hover::before {
+    opacity: 0.08;
+  }
+
+  // Focus state
+  &:focus-visible {
+    &::before {
+      opacity: 0.12;
+    }
+
+    outline: 2px solid var(--md-sys-color-primary);
+    outline-offset: 2px;
+  }
+
+  // Active/pressed state
+  &:active::before {
+    opacity: 0.12;
+  }
+
+  .icon {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 64px;
+    height: 40px;
+    background: transparent;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+    svg {
+      width: 24px;
+      height: 24px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  }
+
+  .label {
+    position: relative;
+    z-index: 1;
+    flex: 1;
+    @include typo.typescale("title-medium");
+    font-weight: 500;
+    text-align: left;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .indicator {
+    display: none;
+  }
+
+  // Hover effect on icon
+  &:hover {
+    .icon {
+      border-color: var(--md-sys-color-on-surface);
+      background: rgba(var(--md-sys-color-on-surface-rgb), 0.05);
+
+      svg {
+        transform: scale(1.08);
+      }
+    }
+  }
+
+  // Active state - full container style
+  &.active {
+    color: var(--md-sys-color-on-surface);
+    background: var(--md-sys-color-surface-container-highest);
+
+    &::before {
+      display: none;
+    }
+
+    // Active container glow
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      border: 2px solid var(--md-sys-color-primary);
+      opacity: 0.6;
+      transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .icon {
+      border-color: var(--md-sys-color-primary);
+      background: transparent;
+
+      svg {
+        transform: scale(1.05);
+        color: var(--md-sys-color-primary);
+      }
+    }
+
+    .label {
+      font-weight: 700;
+      color: var(--md-sys-color-on-surface);
+    }
+
+    // Hover on active state
+    &:hover {
+      background: var(--md-sys-color-surface-container-high);
+
+      &::after {
+        opacity: 1;
+      }
+
+      .icon {
+        border-color: var(--md-sys-color-primary);
+      }
+    }
+  }
+
+  // Disabled state
+  &:disabled {
+    opacity: 0.38;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
+
+// Compact variant
+.rail--compact {
+  min-height: 56px;
+  padding: spacing.$md-sys-spacing-2 spacing.$md-sys-spacing-4;
+  gap: spacing.$md-sys-spacing-3;
+
+  .icon {
+    width: 56px;
+    height: 36px;
+  }
+
+  .label {
+    @include typo.typescale("body-large");
+  }
+}
+
+// Large variant
+.rail--large {
+  min-height: 72px;
+  padding: spacing.$md-sys-spacing-4 spacing.$md-sys-spacing-8;
+  gap: spacing.$md-sys-spacing-5;
+
+  .icon {
+    width: 72px;
+    height: 48px;
+
+    svg {
+      width: 28px;
+      height: 28px;
+    }
+  }
+
+  .label {
+    @include typo.typescale("title-large");
+  }
+}

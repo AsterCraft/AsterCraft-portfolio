@@ -15,7 +15,6 @@ import ProjectsSection from "@widgets/projects-section";
 
 import s from "./home-page.module.scss";
 
-
 const HomePage = () => {
   const { t } = useTranslation("homePage");
 
