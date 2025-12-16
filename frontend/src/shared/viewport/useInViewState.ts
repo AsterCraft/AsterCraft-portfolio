@@ -1,16 +1,12 @@
 import { useEffect, useState, type RefObject } from "react";
 interface UseInViewOptions {
-    once?: boolean
-    amount?: number
-    initial?: boolean
+  once?: boolean;
+  amount?: number;
+  initial?: boolean;
 }
 export default function useInView(
-   ref: RefObject<Element | null>,
-    {
-        amount = 0.25,
-        once = false,
-        initial = false,
-    }: UseInViewOptions = {}
+  ref: RefObject<Element | null>,
+  { amount = 0.25, once = false, initial = false }: UseInViewOptions = {}
 ) {
   const [seen, setSeen] = useState(initial);
 

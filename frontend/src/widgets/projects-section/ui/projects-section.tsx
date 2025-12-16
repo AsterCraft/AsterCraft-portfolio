@@ -10,7 +10,10 @@ const ProjectsSection = () => {
   const { t } = useTranslation("projectsSection");
 
   return (
-    <section className={s.projectsSection}>
+    <section
+      className={s.projectsSection}
+      id="SectionProjects"
+    >
       <div className={cn(s.wrapper, gs.container)}>
         {/* <h2>{t("title")}</h2> */}
 
