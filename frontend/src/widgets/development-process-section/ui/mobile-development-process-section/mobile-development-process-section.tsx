@@ -18,7 +18,7 @@ export const MobileDevelopmentProcessSection = () => {
             <ul>
               {stage.description.map((stageDesc) => (
                 <li>
-                  <p>{stageDesc}</p>
+                  <p className={s.stageDescription}>{stageDesc}</p>
                 </li>
               ))}
             </ul>
