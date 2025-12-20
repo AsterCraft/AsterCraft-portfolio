@@ -14,7 +14,7 @@ export const MobileDevelopmentProcessSection = () => {
           <IconStage dots={stage.id} />
 
           <div>
-            <h3>{stage.title}</h3>
+            <h3 className={s.stageTitle}>{stage.title}</h3>
             <ul>
               {stage.description.map((stageDesc) => (
                 <li>

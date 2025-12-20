@@ -6,8 +6,14 @@
 
 .stageList__item {
   display: flex;
-  gap: 40px;
+  gap: 20px;
   justify-content: center;
+}
+
+.stageTitle {
+  color: var(--md-sys-color-tertiary);
+  font-size: 18px;
+  font-weight: 600;
 }
 
 .stageDescription {
