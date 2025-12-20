@@ -1,28 +1,80 @@
-import { StartProjectBtn } from "../../../shared/ui/";
+import cn from "classnames";
+import { useTranslation } from "react-i18next";
+
+import { FacebookIcon, InstagramIcon, TelegramIcon } from "@shared/ui/";
 import DividerBetweenSections from "../../../shared/ui/lines/DividerBetweenSections/DividerBetweenSections";
-import AnimatedBrandName from "./animated-brand-name/animated-brand-name";
-import { SectionContact } from "./section-contact/section-contact";
 
 import s from "./footer.module.scss";
+import gs from "@shared/styles/global.module.scss";
 
-export const Footer = () => {
+const Footer = () => {
+  const { t } = useTranslation("footer");
+
   return (
     <footer className={s.footer}>
-      <section className={s.topSection}>
-        <h2 className={s.heading}>
-          Давайте обговоримо і створимо крутий сайт для Вас
-        </h2>
-        <StartProjectBtn
-          className={s.buttonStartProject}
-          text="Обговорити проект"
-        />
-      </section>
+      <div className={s.wrapper}>
+        <div className={cn(gs.container, s.content)}>
+          <a
+            className={s.textBtn}
+            href="https://www.astercraft.com.ua/sitemap.xml"
+            rel="sitemap"
+            aria-label={t("sitemap.ariaLabel")}
+          >
+            {t("sitemap.text")}
+          </a>
+          <small className={s.copyrightNote}>{t("copyright")}</small>
 
-      <DividerBetweenSections className={s.divider} />
+          <ul
+            className={s.socialMedias}
+            aria-label={t("socialMedia.ariaLabel")}
+          >
+            <li className={s.IconLink}>
+              <a
+                href="https://t.me/AsterCraft"
+                className={s.socialMediaLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={t("socialMedia.telegram")}
+              >
+                <TelegramIcon className={s.icon} />
+              </a>
+            </li>
+            <li className={s.IconLink}>
+              <a
+                href="https://www.instagram.com/astercraft.web/"
+                className={s.socialMediaLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={t("socialMedia.instagram")}
+              >
+                <InstagramIcon className={s.icon} />
+              </a>
+            </li>
+            <li className={s.IconLink}>
+              <a
+                href="#"
+                className={s.socialMediaLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={t("socialMedia.facebook")}
+              >
+                <FacebookIcon className={s.icon} />
+              </a>
+            </li>
+          </ul>
+        </div>
 
-      <SectionContact />
+        <DividerBetweenSections />
+      </div>
 
-      <AnimatedBrandName />
+      <div
+        className={s.brandName}
+        aria-hidden="true"
+      >
+        ASTERCRAFT
+      </div>
     </footer>
   );
 };
+
+export default Footer;

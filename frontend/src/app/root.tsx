@@ -11,7 +11,7 @@ import type { Route } from "./+types/root";
 import { useEffect } from "react";
 
 import { Header } from "@widgets/header";
-import { Footer } from "@widgets/footer";
+import Footer from "@widgets/footer";
 import { StartProjectForm } from "@widgets/start-project-form";
 import { BurgerDropdownMenu } from "features/HeaderNavigation";
 import { GADS_CONVERSION_ID, GTAG_ID } from "@shared/config";

@@ -10,6 +10,7 @@ import { seoSectionTranslations } from "@widgets/seo-section";
 import { promiseSectionTranslations } from "@widgets/promise-section";
 import { faqSectionTranslations } from "@widgets/faq-section";
 import { projectsSectionTranslations } from "@widgets/projects-section";
+import { footerTranslations } from "@widgets/footer";
 
 export default {
   en: {
@@ -23,6 +24,7 @@ export default {
     promiseSection: promiseSectionTranslations.en,
     faqSection: faqSectionTranslations.en,
     projectsSection: projectsSectionTranslations.en,
+    footer: footerTranslations.en,
 
     shared: {},
   },
@@ -37,6 +39,7 @@ export default {
     promiseSection: promiseSectionTranslations.uk,
     faqSection: faqSectionTranslations.uk,
     projectsSection: projectsSectionTranslations.uk,
+    footer: footerTranslations.uk,
 
     shared: {},
   },
