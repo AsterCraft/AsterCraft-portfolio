@@ -15,7 +15,6 @@ import ProjectsSection from "@widgets/projects-section";
 
 import s from "./home-page.module.scss";
 
-
 const HomePage = () => {
   const { t } = useTranslation("homePage");
 
@@ -39,7 +38,10 @@ const HomePage = () => {
 
       <DividerBetweenSections />
 
+      <FAQSection />
+
       <ConsultationSection />
+
       <SeoSection>
         <h1>{t("seo.heading")}</h1>
 
@@ -93,9 +95,6 @@ const HomePage = () => {
         <h2>{t("seo.whyUs.heading")}</h2>
         <p>{t("seo.whyUs.content")}</p>
       </SeoSection>
-
-      <FAQSection />
-      <DividerBetweenSections />
     </main>
   );
 };
