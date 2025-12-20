@@ -1,72 +1,46 @@
 import cn from "classnames";
 
-import { DEVELOPMENT_STAGES } from "../../model/constants";
-import { StageDescription } from "../stage-description/stage-description";
 import { IconStage } from "../icon-stage/icon-stage";
-import TitleSection from "@shared/ui/typography/TitleSection";
-
 import s from "./desktop-section-development-process.module.scss";
-import { ConnectorLine } from "../connector-line/connector-line";
+
+import { useTranslation } from "react-i18next";
 
 export const DesktopSectionDevelopmentProcess = () => {
+  const { t } = useTranslation("developmentProcessSection");
+
   return (
-    <div>bob</div>
-    // <section
-    //   className={cn(s.section)}
-    //   // className={"bg-ac-eerie-black py-15 text-white"}
-    // >
-    //   {/* <div className="app-container max-w-[1000px]"> */}
-    //   <TitleSection
-    //     className={s.titleToSection}
-    //     title="Процес створення сайту"
-    //   />
+    <ul className={s.stageList}>
+      {t("stages", { returnObjects: true }).map((stage) => {
+        const isOdd = stage.id % 2 === 0; // непарне число
 
-    //   <ul
-    //     className={cn(s.stagesList, "app-container")}
-    //     // className="grid text-lg"
-    //   >
-    //     <li>
-    //       <div></div>
-    //       <IconStage dots={1} />
-    //       {/* <StageDescription  /> */}
-    //       <div></div>
-    //     </li>
-    //     {/* {DEVELOPMENT_STAGES.map(({ stage, aligment }, index) => {
-    //       return (
-    //         <li
-    //           key={stage}
-    //           data-stage={stage}
-    //           className={cn(
-    //             "grid grid-cols-[auto_1fr] gap-7",
-    //             "md:grid-cols-[1fr_auto_1fr] md:gap-14"
-    //           )}
-    //         >
-    //           <div className="order-1 md:order-2">
-    //             <IconStage
-    //               dots={stage}
-    //               stageIndex={index}
-    //             />
-    //           </div>
+        return (
+          <li
+            className={s.stageList__item}
+            key={stage.id}
+          >
+            <div
+              className={s.stageDescription}
+              style={{ order: isOdd ? 1 : 3 }}
+            >
+              <h3 className={s.stageTitle}>{stage.title}</h3>
+              <ul>
+                {stage.description.map((stageDesc) => (
+                  <li>
+                    <p>{stageDesc}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-    //           <StageDescription
-    //             stage={stage}
-    //             className={cn(
-    //               "order-2",
-    //               aligment === "right" ? "md:order-3" : "md:order-1"
-    //             )}
-    //           />
-    //           <div
-    //             className={cn(
-    //               "hidden",
-    //               "md:block",
-    //               aligment === "right" ? "md:order-1" : "md:order-3"
-    //             )}
-    //           ></div>
-    //         </li>
-    //       );
-    //     })} */}
-    //   </ul>
-    //   {/* </div> */}
-    // </section>
+            <IconStage
+              className={s.iconStage}
+              dots={stage.id}
+            />
+
+            <div style={{ order: isOdd ? 3 : 1 }}></div>
+          </li>
+        );
+      })}
+    </ul>
   );
 };

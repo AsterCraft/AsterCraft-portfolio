@@ -1,7 +1,17 @@
 .sectionDevelopmentProcess {
   background-color: var(--md-sys-color-surface-container-low);
   color: var(--md-sys-color-on-surface);
-  padding: 0 12px;
+  font-family:
+    Noto Sans,
+    sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 70px 12px;
 }
 
 .title {
@@ -9,4 +19,5 @@
   font-size: clamp(34px, 8.2618384401px + 3.0640668524vw, 45px);
   font-weight: 700;
   text-align: center;
+  margin-bottom: 30px;
 }
