@@ -1,1 +1,22 @@
+.stageList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 
+.stageList__item {
+  display: grid;
+  grid-template-columns: 1fr 150px 1fr;
+  gap: 20px;
+}
+
+.stageTitle {
+  color: var(--md-sys-color-tertiary);
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.iconStage {
+  order: 2;
+  justify-self: center;
+}

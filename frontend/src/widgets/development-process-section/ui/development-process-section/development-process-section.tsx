@@ -10,7 +10,7 @@ export const DevelopmentProcessSection = () => {
 
   return (
     <section className={s.sectionDevelopmentProcess}>
-      <div className="container">
+      <div className={s.container}>
         <h2 className={s.title}>Процес створення сайту</h2>
 
         {isDesktop ? (
