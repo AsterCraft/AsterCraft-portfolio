@@ -2,3 +2,6 @@ export { default as MailIcon } from "./mail-icon.tsx";
 export { default as PhoneEnabledIcon } from "./phone-enabled-icon.tsx";
 export { default as LocationOnIcon } from "./location-on-icon.tsx";
 export { default as KeyboardArrowDownIcon } from "./keyboard-arrow-down-icon.tsx";
+export { default as InstagramIcon } from "./instagram-icon.tsx";
+export { default as TelegramIcon } from "./telegram-icon.tsx";
+export { default as FacebookIcon } from "./facebook-icon.tsx";
