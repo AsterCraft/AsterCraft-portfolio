@@ -23,10 +23,11 @@ export const DesktopSectionDevelopmentProcess = () => {
               style={{ order: isOdd ? 1 : 3 }}
             >
               <h3 className={s.stageTitle}>{stage.title}</h3>
-              <ul>
+              <ul className={s.stageDescriptionlist}>
                 {stage.description.map((stageDesc) => (
-                  <li>
-                    <p>{stageDesc}</p>
+                  <li className={s.listItem}>
+                    <div className={s.bullet}>●</div>
+                    <p className={s.text}>{stageDesc}</p>
                   </li>
                 ))}
               </ul>
