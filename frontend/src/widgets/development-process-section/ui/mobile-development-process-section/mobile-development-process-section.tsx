@@ -15,9 +15,10 @@ export const MobileDevelopmentProcessSection = () => {
 
           <div>
             <h3 className={s.stageTitle}>{stage.title}</h3>
-            <ul>
+            <ul className={s.stageDescriptionlist}>
               {stage.description.map((stageDesc) => (
-                <li>
+                <li className={s.listItem}>
+                  <div className={s.bullet}>●</div>
                   <p className={s.stageDescription}>{stageDesc}</p>
                 </li>
               ))}
