@@ -1,0 +1,36 @@
+.stageList {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.stageList__item {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.stageTitle {
+  color: var(--md-sys-color-tertiary);
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.stageDescriptionlist {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  .listItem {
+    display: flex;
+    gap: 3px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+  }
+
+  .stageDescription {
+    max-width: 434px;
+  }
+}
