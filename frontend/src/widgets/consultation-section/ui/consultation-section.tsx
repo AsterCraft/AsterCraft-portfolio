@@ -1,39 +1,22 @@
-import cn from "classnames";
+import { useTranslation } from "react-i18next";
+import s from "./consultation-section.module.scss";
+import ListText from "@shared/ui/typography/listtext/ListText";
 
-import TitleSection from "@shared/ui/typography/TitleSection";
-import CheckListItems from "@shared/ui/lists/CheckListItems";
-import SecondaryText from "@shared/ui/typography/SecondaryText";
-
-import { dataConsultationList } from "../model/dataConsultationList";
-
-export const ConsultationSection = () => {
+const ConsultationSection = () => {
+  const { t } = useTranslation("consultationSection");
   return (
-    <section className="bg-ac-bg-dark py-20">
-      <div className={cn("app-container")}>
-        <TitleSection
-          title="Почніть з консультації — заповніть форму"
-          className={cn(
-            "text-center text-white",
-            "mb:text-3xl md:mb-10",
-            "lg:text-5xl"
-          )}
-        />
-
-        <h3 className={cn("mb-5 text-2xl text-white")}>
-          Запишіться на безкоштовну консультацію, на якій ви одразу отримаєте:
-        </h3>
-
-        <CheckListItems
-          data={dataConsultationList}
-          className="mb-5 text-white"
-        />
-
-        <SecondaryText
-          text="Після того як ви на 100% відчуєте, що вас зрозуміли, — ми перетворимо ваші бізнес-задачі в реалізовані
-        рішення."
-          className="text-ac-text-muted"
-        />
+    <section className={s.main}>
+      <span className={s.title}>{t("heading")}</span>
+      <div className={s.downTitleBlock}>
+        <span className={s.subtitile}>{t("infoForm.heading")}</span>
+        <div className={s.textList}>
+          <ListText text={t("infoForm.first")} />
+          <ListText text={t("infoForm.dobule")} />
+          <ListText text={t("infoForm.third")} />
+        </div>
+        <div className={s.downText}>{t("comment")}</div>
       </div>
     </section>
   );
 };
+export default ConsultationSection;

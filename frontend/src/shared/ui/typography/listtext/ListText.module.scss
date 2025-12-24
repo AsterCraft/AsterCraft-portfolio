@@ -1,0 +1,18 @@
+@use "../../../../shared/styles/tokens/" as t;
+@use "../../../../shared/styles/lib/responsive-design/fluid-scale" as fs;
+.main {
+  display: flex;
+  @include t.typescale("body-large");
+  font-size: fs.fluid-scale(
+    t.get-typescale-value("body-medium"),
+    t.get-typescale-value("body-large"),
+    t.$md-sys-viewport-compact,
+    t.$md-ref-breakpoint-compact-max
+  );
+
+  color: var(--md-sys-color-on-surface-variant);
+  .dot {
+    padding-top: 10px;
+    margin-right: 5px;
+  }
+}
