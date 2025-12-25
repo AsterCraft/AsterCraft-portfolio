@@ -1,0 +1,48 @@
+@use "../../../shared/styles/tokens" as t;
+@use "../../../shared/styles/lib/responsive-design/_fluid-scale.scss" as fs;
+@use "../../../shared/styles/lib/layout/_projects-layout.scss" as pl;
+
+.main {
+  background-color: var(--md-sys-color-surface);
+  color: var(--md-sys-color-on-surface);
+  padding: clamp(32px, 5vw, 64px) clamp(16px, 3vw, 40px);
+
+  .title {
+    @include t.typescale-emphasized("display-medium");
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: clamp(24px, 4vw, 48px);
+    font-size: clamp(32px, 4vw, 57px);
+  }
+
+  .downTitleBlock {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: clamp(16px, 3vw, 48px);
+
+    .subtitile {
+      @include t.typescale-emphasized("headline-medium");
+      display: block;
+      text-align: left;
+      margin-bottom: clamp(24px, 3vw, 40px);
+      font-size: clamp(20px, 2.5vw, 28px);
+    }
+
+    .textList {
+      display: flex;
+      flex-direction: column;
+      gap: clamp(12px, 1.5vw, 20px);
+      margin-bottom: clamp(24px, 3vw, 40px);
+      padding-left: clamp(16px, 2vw, 32px);
+    }
+
+    .downText {
+      @include t.typescale("body-medium");
+      text-align: left;
+      line-height: 1.6;
+      opacity: 0.87;
+      font-size: clamp(14px, 1.5vw, 16px);
+    }
+  }
+}

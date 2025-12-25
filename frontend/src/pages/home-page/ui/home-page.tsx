@@ -7,14 +7,13 @@ import { SectionDevelopmentProcess } from "@widgets/section-development-process"
 import { HeroSection } from "@widgets/hero-section";
 import DividerBetweenSections from "@shared/ui/lines/DividerBetweenSections/DividerBetweenSections";
 import SectionTelegramContact from "@widgets/sections/SectionTelegramContact/ui/SectionTelegramContact";
-import { ConsultationSection } from "@widgets/consultation-section";
+import ConsultationSection from "@widgets/consultation-section";
 import FAQSection from "@widgets/faq-section";
 import { ServicesSection } from "@widgets/services-section";
 import { SeoSection } from "@widgets/seo-section";
 import ProjectsSection from "@widgets/projects-section";
 
 import s from "./home-page.module.scss";
-
 
 const HomePage = () => {
   const { t } = useTranslation("homePage");

@@ -10,7 +10,7 @@ import { seoSectionTranslations } from "@widgets/seo-section";
 import { promiseSectionTranslations } from "@widgets/promise-section";
 import { faqSectionTranslations } from "@widgets/faq-section";
 import { projectsSectionTranslations } from "@widgets/projects-section";
-
+import { consultationSectionTranslations } from "@widgets/consultation-section";
 export default {
   en: {
     homePage: homePageTranslations.en,
@@ -23,7 +23,7 @@ export default {
     promiseSection: promiseSectionTranslations.en,
     faqSection: faqSectionTranslations.en,
     projectsSection: projectsSectionTranslations.en,
-
+    consultationSection: consultationSectionTranslations.en,
     shared: {},
   },
   uk: {
@@ -37,7 +37,7 @@ export default {
     promiseSection: promiseSectionTranslations.uk,
     faqSection: faqSectionTranslations.uk,
     projectsSection: projectsSectionTranslations.uk,
-
+    consultationSection: consultationSectionTranslations.uk,
     shared: {},
   },
 } as const satisfies Resource;
