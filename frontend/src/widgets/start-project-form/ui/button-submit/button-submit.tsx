@@ -17,10 +17,9 @@ export const ButtonSubmit = () => {
       disabled={isSubmitting || !validated}
       onClick={handleSubmit}
       className={cn(
+        s.btn,
         { [s.success]: isSentSuccessfully },
-        { [s.validationFailed]: !validated },
-        "bg-ac-eerie-black rounded-md p-5 text-white",
-        "disabled:bg-ac-btn-slider-navigation disabled:text-ac-eerie-black disabled:cursor-not-allowed"
+        { [s.validationFailed]: !validated }
       )}
     >
       {!validated && t("contactForm.submitButton.validationFailed")}

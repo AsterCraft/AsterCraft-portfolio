@@ -3,9 +3,11 @@ import { useTranslation } from "react-i18next";
 import { validateFieldOnBlur } from "../../lib/validateFields";
 import { useModalStartProjectStore } from "../../model/store";
 
-import s from "../styles.module.scss";
+import s from "./styles.module.scss";
 
-const EmailField = () => {
+interface Props extends React.ComponentPropsWithRef<"input"> {}
+
+const EmailField = ({ className, ...props }: Props) => {
   const { email, setEmail, errors, touchedFields } =
     useModalStartProjectStore();
 
@@ -26,7 +28,8 @@ const EmailField = () => {
         type="email"
         id="e-mail"
         placeholder="me@gmail.com"
-        className="h-9 outline-none"
+        className={className}
+        {...props}
       />
 
       {touchedFields.has("email") && errors.email && (
