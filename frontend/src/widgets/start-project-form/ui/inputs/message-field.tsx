@@ -1,12 +1,13 @@
 import { useTranslation } from "react-i18next";
 
-import { textAreaStyles } from "../../lib/styles";
 import { useModalStartProjectStore } from "../../model/store";
 import { validateFieldOnBlur } from "../../lib/validateFields";
 
-import s from "../styles.module.scss";
+import s from "./styles.module.scss";
 
-const MessageField = () => {
+interface Props extends React.ComponentPropsWithRef<"textarea"> {}
+
+const MessageField = ({ className, ...props }: Props) => {
   const { message, setMessage, errors, touchedFields } =
     useModalStartProjectStore();
 
@@ -27,7 +28,8 @@ const MessageField = () => {
         name="Project_Details"
         id="Project-Details"
         placeholder={t("contactForm.fields.projectDetails.placeholder")}
-        className={textAreaStyles}
+        className={className}
+        {...props}
       ></textarea>
 
       {touchedFields.has("message") && errors.message && (

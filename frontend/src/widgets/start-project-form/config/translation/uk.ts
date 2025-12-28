@@ -1,4 +1,6 @@
-export const uk = {
+import type { Translation } from "./en";
+
+const uk = {
   validation: {
     firstName: {
       required: "Ім'я обов'язкове",
@@ -50,4 +52,6 @@ export const uk = {
       validationFailed: "Будь ласка, заповніть форму правильно",
     },
   },
-} as const;
+} as const satisfies Translation;
+
+export default uk;

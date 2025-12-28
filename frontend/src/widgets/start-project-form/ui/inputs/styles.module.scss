@@ -1,0 +1,7 @@
+@use "../../../../shared/styles/tokens/" as t;
+
+.error {
+  @include t.typescale("title-small");
+
+  color: var(--md-sys-color-error);
+}

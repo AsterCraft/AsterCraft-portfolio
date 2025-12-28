@@ -1,4 +1,6 @@
-export const en = {
+import type { DeepString } from "@shared/lib/i18n/types";
+
+const en = {
   validation: {
     firstName: {
       required: "Name is required",
@@ -49,3 +51,7 @@ export const en = {
     },
   },
 } as const;
+
+export type Translation = DeepString<typeof en>;
+
+export default en;

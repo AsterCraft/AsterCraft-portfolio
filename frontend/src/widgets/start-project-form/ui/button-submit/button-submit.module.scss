@@ -1,9 +1,36 @@
-.success {
-  background-color: #00b6278a;
-  color: black;
-}
+@use "../../../../shared/styles/tokens/" as t;
+@use "../../../../shared/styles/lib/responsive-design/_fluid-scale.scss" as fs;
 
-.validationFailed {
-  background-color: #52525b;
-  color: white;
+.btn {
+  height: fs.fluid-scale(
+    48px,
+    64px,
+    t.$md-sys-viewport-compact,
+    t.$md-ref-breakpoint-compact-max
+  );
+
+  @include t.typescale("title-large");
+  border-radius: t.$md-sys-shape-corner-value-extra-small;
+
+  background-color: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
+
+  @include t.effects("fast");
+  transition-property: background-color, color;
+
+  &.success {
+    // todo: change color to container-lowest
+    // and use notification (snackbar?) to convey success
+    background-color: #16a34a;
+    color: black;
+  }
+
+  &.validationFailed {
+    background-color: var(--md-sys-color-surface-container-lowest);
+    color: var(--md-sys-color-on-surface-variant);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
 }
