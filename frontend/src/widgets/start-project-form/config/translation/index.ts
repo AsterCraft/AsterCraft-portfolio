@@ -1,7 +1,9 @@
-import { en } from "./en";
-import { uk } from "./uk";
+import en from "./en";
+import uk from "./uk";
 
-export default {
+const startProjectFormTranslations = {
   en,
   uk,
 } as const;
+
+export default startProjectFormTranslations;

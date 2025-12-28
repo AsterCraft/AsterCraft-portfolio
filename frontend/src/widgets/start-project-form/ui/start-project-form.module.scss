@@ -1,0 +1,206 @@
+@use "../../../shared/styles/tokens/" as t;
+@use "../../../shared/styles/lib/responsive-design/_fluid-scale.scss" as fs;
+
+.startProjectModal {
+  position: fixed;
+  inset: 0;
+
+  z-index: 1000;
+
+  .modalBlur {
+    position: fixed;
+    inset: 0;
+    z-index: -1000;
+
+    background-color: rgb(0 0 0 / 50%);
+    backdrop-filter: blur(8px);
+
+    @include t.effects("slow");
+    transition-property: backdrop-filter;
+
+    @media (max-width: t.$md-ref-breakpoint-expanded-max) {
+      backdrop-filter: none;
+    }
+  }
+}
+
+.startProjectForm {
+  position: fixed;
+  inset-block: 0;
+  right: 0;
+  overflow-y: auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: fs.fluid-scale(
+    t.$md-sys-spacing-5,
+    t.$md-sys-spacing-10,
+    t.$md-sys-viewport-compact,
+    t.$md-ref-breakpoint-compact-max
+  );
+
+  width: 50%;
+  padding: t.$md-sys-spacing-6;
+
+  background-color: var(--md-sys-color-surface-container);
+
+  @include t.spatial("slow");
+  transition-property: width;
+
+  @media (max-width: t.$md-ref-breakpoint-expanded-max) {
+    width: 100%;
+  }
+
+  @media (max-width: t.$md-ref-breakpoint-compact-max) {
+    padding-inline: fs.fluid-scale(
+      t.$md-sys-spacing-2,
+      t.$md-sys-spacing-6,
+      t.$md-sys-viewport-compact,
+      t.$md-ref-breakpoint-compact-max
+    );
+  }
+
+  .closeBtnContainer {
+    display: flex;
+    justify-content: end;
+
+    .closeBtn {
+      @include t.typescale("title-medium");
+
+      color: var(--md-sys-color-secondary);
+    }
+  }
+
+  .header {
+    display: flex;
+    flex-direction: column;
+    gap: t.$md-sys-spacing-4;
+
+    .heading {
+      @include t.typescale("headline-large");
+      font-size: fs.fluid-scale(
+        t.get-typescale-value("headline-medium"),
+        t.get-typescale-value("headline-large"),
+        t.$md-sys-viewport-compact,
+        t.$md-ref-breakpoint-compact-max
+      );
+    }
+
+    .subtitle {
+      @include t.typescale("body-large");
+
+      @media (max-width: t.$md-ref-breakpoint-compact-max) {
+        font-size: fs.fluid-scale(
+          t.get-typescale-value("body-medium"),
+          t.get-typescale-value("body-large"),
+          t.$md-sys-viewport-compact,
+          t.$md-ref-breakpoint-compact-max
+        );
+      }
+
+      .subtitleLink {
+        text-decoration: underline;
+
+        color: var(--md-sys-color-tertiary);
+      }
+    }
+  }
+
+  .form {
+    $form-gap: fs.fluid-scale(
+      t.$md-sys-spacing-2,
+      t.$md-sys-spacing-4,
+      t.$md-sys-viewport-compact,
+      t.$md-ref-breakpoint-compact-max
+    );
+
+    display: flex;
+    flex-direction: column;
+    gap: $form-gap;
+
+    .credentials {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: $form-gap;
+
+      @media (max-width: t.$md-ref-breakpoint-compact-max) {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+      }
+    }
+
+    .fieldWrapper {
+      display: flex;
+      flex-direction: column;
+
+      padding-inline: fs.fluid-scale(
+        t.$md-sys-spacing-3,
+        t.$md-sys-spacing-5,
+        t.$md-sys-viewport-compact,
+        t.$md-ref-breakpoint-compact-max
+      );
+      padding-top: fs.fluid-scale(
+        t.$md-sys-spacing-2,
+        t.$md-sys-spacing-4,
+        t.$md-sys-viewport-compact,
+        t.$md-ref-breakpoint-compact-max
+      );
+      padding-bottom: fs.fluid-scale(
+        t.$md-sys-spacing-1,
+        t.$md-sys-spacing-3,
+        t.$md-sys-viewport-compact,
+        t.$md-ref-breakpoint-compact-max
+      );
+      border-radius: t.$md-sys-shape-corner-value-extra-small;
+
+      background-color: var(--md-sys-color-surface-container-highest);
+
+      .fieldLabel {
+        @include t.typescale("title-medium");
+        font-size: fs.fluid-scale(
+          t.get-typescale-value("title-small"),
+          t.get-typescale-value("title-medium"),
+          t.$md-sys-viewport-compact,
+          t.$md-ref-breakpoint-compact-max
+        );
+      }
+
+      .fieldInput {
+        min-height: 48px;
+        @include t.typescale("title-medium");
+        outline: none;
+
+        color: var(--md-sys-color-tertiary);
+
+        &::placeholder {
+          @include t.typescale("label-large");
+          font-size: fs.fluid-scale(
+            t.get-typescale-value("label-medium"),
+            t.get-typescale-value("label-large"),
+            t.$md-sys-viewport-compact,
+            t.$md-ref-breakpoint-compact-max
+          );
+
+          color: var(--md-sys-color-on-surface-variant);
+        }
+      }
+
+      .messageInput {
+        height: fs.fluid-scale(
+          162px,
+          200px,
+          t.$md-ref-breakpoint-large-min,
+          t.$md-sys-viewport-extra-large
+        );
+
+        @media (max-width: t.$md-ref-breakpoint-expanded-max) {
+          height: fs.fluid-scale(
+            156px,
+            200px,
+            t.$md-sys-viewport-compact,
+            t.$md-ref-breakpoint-large-min
+          );
+        }
+      }
+    }
+  }
+}

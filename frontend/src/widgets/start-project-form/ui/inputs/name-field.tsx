@@ -3,9 +3,11 @@ import { useTranslation } from "react-i18next";
 import { useModalStartProjectStore } from "../../model/store";
 import { validateFieldOnBlur } from "../../lib/validateFields";
 
-import s from "../styles.module.scss";
+import s from "./styles.module.scss";
 
-const NameField = () => {
+interface Props extends React.ComponentPropsWithRef<"input"> {}
+
+const NameField = ({ className, ...props }: Props) => {
   const { firstName, setFirstName, errors, touchedFields } =
     useModalStartProjectStore();
 
@@ -26,7 +28,8 @@ const NameField = () => {
         type="text"
         id="first-name"
         placeholder={t("contactForm.fields.firstName.placeholder")}
-        className="h-9 outline-none"
+        className={className}
+        {...props}
       />
 
       {touchedFields.has("firstName") && errors.firstName && (
