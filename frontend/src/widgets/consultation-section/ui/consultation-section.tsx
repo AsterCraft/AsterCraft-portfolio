@@ -1,18 +1,18 @@
 import { useTranslation } from "react-i18next";
 import s from "./consultation-section.module.scss";
-import ListText from "@shared/ui/typography/listtext/ListText";
+import DottedListItem from "@shared/ui/typography/DottedListItem/DottedListItem.tsx";
 
 const ConsultationSection = () => {
   const { t } = useTranslation("consultationSection");
   return (
     <section className={s.main}>
-      <span className={s.title}>{t("heading")}</span>
+      <h2 className={s.title}>{t("heading")}</h2>
       <div className={s.downTitleBlock}>
         <span className={s.subtitile}>{t("infoForm.heading")}</span>
         <div className={s.textList}>
-          <ListText text={t("infoForm.first")} />
-          <ListText text={t("infoForm.dobule")} />
-          <ListText text={t("infoForm.third")} />
+          <DottedListItem text={t("infoForm.first")} />
+          <DottedListItem text={t("infoForm.dobule")} />
+          <DottedListItem text={t("infoForm.third")} />
         </div>
         <div className={s.downText}>{t("comment")}</div>
       </div>

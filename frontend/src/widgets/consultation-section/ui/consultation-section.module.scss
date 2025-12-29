@@ -12,8 +12,7 @@
     display: flex;
     flex-direction: column;
     text-align: center;
-    margin-bottom: clamp(24px, 4vw, 48px);
-    font-size: clamp(32px, 4vw, 57px);
+    margin-bottom: clamp(24px, 40px, 48px);
   }
 
   .downTitleBlock {
@@ -22,27 +21,25 @@
     padding: clamp(16px, 3vw, 48px);
 
     .subtitile {
-      @include t.typescale-emphasized("headline-medium");
+      @include t.typescale("headline-small");
       display: block;
       text-align: left;
-      margin-bottom: clamp(24px, 3vw, 40px);
-      font-size: clamp(20px, 2.5vw, 28px);
+      margin-bottom: clamp(8px, 16px, 20px);
     }
 
     .textList {
-      display: flex;
-      flex-direction: column;
-      gap: clamp(12px, 1.5vw, 20px);
-      margin-bottom: clamp(24px, 3vw, 40px);
-      padding-left: clamp(16px, 2vw, 32px);
-    }
+    @include t.typescale("body-large");
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+    padding-left: clamp(16px, 2vw, 32px);
+  }
 
     .downText {
-      @include t.typescale("body-medium");
+      @include t.typescale("title-small");
+      display: flex;
       text-align: left;
-      line-height: 1.6;
-      opacity: 0.87;
-      font-size: clamp(14px, 1.5vw, 16px);
+      margin-top: clamp(24px, 40px, 48px);
     }
   }
 }

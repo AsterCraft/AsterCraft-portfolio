@@ -1,0 +1,21 @@
+@use "../../../../shared/styles/tokens/" as t;
+@use "../../../../shared/styles/lib/responsive-design/fluid-scale" as fs;
+.main {
+  display: flex;
+  align-items: baseline;
+  gap: t.$md-sys-spacing-2;
+
+  @include t.typescale("body-medium");
+  margin-bottom: t.$md-sys-spacing-3;
+
+  &::before {
+    content: "";
+    flex-shrink: 0;
+
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    line-height: 40px;
+    background-color: var(--md-sys-color-primary);
+  }
+}
