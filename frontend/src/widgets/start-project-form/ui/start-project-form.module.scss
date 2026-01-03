@@ -12,14 +12,44 @@
     inset: 0;
     z-index: -1000;
 
-    background-color: rgb(0 0 0 / 50%);
-    backdrop-filter: blur(8px);
+    background-color: rgb(0 0 0 / 0%);
+    backdrop-filter: blur(0px);
 
     @include t.effects("slow");
     transition-property: backdrop-filter;
 
     @media (max-width: t.$md-ref-breakpoint-expanded-max) {
       backdrop-filter: none;
+    }
+  }
+
+  .startProjectForm {
+    translate: 100%;
+
+    @include t.effects("slow");
+    transition-property: translate;
+  }
+
+  &.open {
+    .modalBlur {
+      background-color: rgb(0 0 0 / 50%);
+      backdrop-filter: blur(8px);
+    }
+
+    .startProjectForm {
+      translate: 0%;
+    }
+  }
+
+  &.closing,
+  &.closed {
+    .modalBlur {
+      background-color: rgb(0 0 0 / 0%);
+      backdrop-filter: blur(0px);
+    }
+
+    .startProjectForm {
+      translate: 100%;
     }
   }
 }

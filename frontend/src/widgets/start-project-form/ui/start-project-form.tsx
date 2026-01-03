@@ -9,6 +9,7 @@ import EmailField from "./inputs/email-field";
 import PhoneField from "./inputs/phone-field";
 import MessageField from "./inputs/message-field";
 import { ButtonSubmit } from "./button-submit/button-submit";
+import { useUnmountAnimation } from "@shared/lib/motion";
 
 import { useIsContactFormModalOpenStore } from "../../../shared/lib/store/isContactFormModalOpen";
 
@@ -16,7 +17,15 @@ import s from "./start-project-form.module.scss";
 
 const StartProjectForm = () => {
   const { isOpen, close } = useIsContactFormModalOpenStore();
+
   const navigate = useNavigate();
+
+  const { animationState, handleClose, elementRef } =
+    useUnmountAnimation<HTMLDivElement>(isOpen, close, () =>
+      //   // TODO: write better logic
+      //   // this most likely cause bugs in the future
+      navigate("/", { preventScrollReset: true })
+    );
 
   const { t } = useTranslation("startProjectForm");
 
@@ -28,27 +37,21 @@ const StartProjectForm = () => {
     }
   }, [isOpen]);
 
-  const onHandleCloseModal = () => {
-    close();
-    // TODO: write better logic
-    // this most likely cause bugs in the future
-    navigate("/", { preventScrollReset: true });
-  };
-
   const cn = classNames;
 
   return (
     <>
-      {isOpen && (
+      {(animationState !== "closed" || isOpen) && (
         <div
           role="dialog"
           aria-labelledby="modal-start-project__title"
           aria-modal={true}
-          className={cn(s.startProjectModal)}
+          className={cn(s.startProjectModal, s[animationState])}
+          ref={elementRef}
         >
           <div
             className={s.modalBlur}
-            onClick={onHandleCloseModal}
+            onClick={handleClose}
           ></div>
 
           <div className={s.startProjectForm}>
@@ -56,7 +59,7 @@ const StartProjectForm = () => {
             {/* <div> */}
             <div className={s.closeBtnContainer}>
               <button
-                onClick={onHandleCloseModal}
+                onClick={handleClose}
                 className={s.closeBtn}
               >
                 {t("contactForm.close")}
