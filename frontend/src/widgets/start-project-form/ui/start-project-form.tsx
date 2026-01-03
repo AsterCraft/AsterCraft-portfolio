@@ -56,107 +56,107 @@ const StartProjectForm = () => {
 
           <div className={s.startProjectForm}>
             {/* div for animating the fading* in/out of the modal window content */}
-            {/* <div> */}
-            <div className={s.closeBtnContainer}>
-              <button
-                onClick={handleClose}
-                className={s.closeBtn}
-              >
-                {t("contactForm.close")}
-              </button>
-            </div>
-
-            <header className={s.header}>
-              <h2
-                id="modal-start-project__title"
-                className={s.heading}
-              >
-                {t("contactForm.title")}
-              </h2>
-
-              <p className={s.subtitle}>
-                <Trans
-                  i18nKey="contactForm.subtitleFull"
-                  ns="startProjectForm"
-                  components={{
-                    email: (
-                      <a
-                        href="mailto:astercraft.dev@gmail.com"
-                        className={s.subtitleLink}
-                        target="_blank"
-                      />
-                    ),
-                    telegram: (
-                      <a
-                        href="https://t.me/AsterCraft"
-                        className={s.subtitleLink}
-                        target="_blank"
-                      />
-                    ),
-                  }}
-                />
-              </p>
-            </header>
-
-            <form className={s.form}>
-              <div className={s.credentials}>
-                {/* each div inside <form> row is a wrapper for <label> + <input> */}
-                <div className={s.fieldWrapper}>
-                  <label
-                    htmlFor="first-name"
-                    className={s.fieldLabel}
-                  >
-                    {t("contactForm.fields.firstName.label")}
-                  </label>
-                  <NameField className={s.fieldInput} />
-                </div>
-
-                <div className={s.fieldWrapper}>
-                  <label
-                    htmlFor="telegram"
-                    className={s.fieldLabel}
-                  >
-                    {t("contactForm.fields.telegram.label")}
-                  </label>
-
-                  <TelegramField className={s.fieldInput} />
-                </div>
-
-                <div className={s.fieldWrapper}>
-                  <label
-                    htmlFor="e-mail"
-                    className={s.fieldLabel}
-                  >
-                    E-Mail
-                  </label>
-                  <EmailField className={s.fieldInput} />
-                </div>
-
-                <div className={s.fieldWrapper}>
-                  <label
-                    htmlFor="Phone"
-                    className={s.fieldLabel}
-                  >
-                    {t("contactForm.fields.phone.label")}
-                  </label>
-                  <PhoneField className={s.fieldInput} />
-                </div>
-              </div>
-
-              <div className={cn(s.projectDetailsField, s.fieldWrapper)}>
-                <label
-                  htmlFor="Project-Details"
-                  className={s.fieldLabel}
+            <div className={s.formContent}>
+              <div className={s.closeBtnContainer}>
+                <button
+                  onClick={handleClose}
+                  className={s.closeBtn}
                 >
-                  {t("contactForm.fields.projectDetails.label")}
-                </label>
-                <MessageField className={cn(s.messageInput, s.fieldInput)} />
+                  {t("contactForm.close")}
+                </button>
               </div>
 
-              <ButtonSubmit />
-            </form>
+              <header className={s.header}>
+                <h2
+                  id="modal-start-project__title"
+                  className={s.heading}
+                >
+                  {t("contactForm.title")}
+                </h2>
+
+                <p className={s.subtitle}>
+                  <Trans
+                    i18nKey="contactForm.subtitleFull"
+                    ns="startProjectForm"
+                    components={{
+                      email: (
+                        <a
+                          href="mailto:astercraft.dev@gmail.com"
+                          className={s.subtitleLink}
+                          target="_blank"
+                        />
+                      ),
+                      telegram: (
+                        <a
+                          href="https://t.me/AsterCraft"
+                          className={s.subtitleLink}
+                          target="_blank"
+                        />
+                      ),
+                    }}
+                  />
+                </p>
+              </header>
+
+              <form className={s.form}>
+                <div className={s.credentials}>
+                  {/* each div inside <form> row is a wrapper for <label> + <input> */}
+                  <div className={s.fieldWrapper}>
+                    <label
+                      htmlFor="first-name"
+                      className={s.fieldLabel}
+                    >
+                      {t("contactForm.fields.firstName.label")}
+                    </label>
+                    <NameField className={s.fieldInput} />
+                  </div>
+
+                  <div className={s.fieldWrapper}>
+                    <label
+                      htmlFor="telegram"
+                      className={s.fieldLabel}
+                    >
+                      {t("contactForm.fields.telegram.label")}
+                    </label>
+
+                    <TelegramField className={s.fieldInput} />
+                  </div>
+
+                  <div className={s.fieldWrapper}>
+                    <label
+                      htmlFor="e-mail"
+                      className={s.fieldLabel}
+                    >
+                      E-Mail
+                    </label>
+                    <EmailField className={s.fieldInput} />
+                  </div>
+
+                  <div className={s.fieldWrapper}>
+                    <label
+                      htmlFor="Phone"
+                      className={s.fieldLabel}
+                    >
+                      {t("contactForm.fields.phone.label")}
+                    </label>
+                    <PhoneField className={s.fieldInput} />
+                  </div>
+                </div>
+
+                <div className={cn(s.projectDetailsField, s.fieldWrapper)}>
+                  <label
+                    htmlFor="Project-Details"
+                    className={s.fieldLabel}
+                  >
+                    {t("contactForm.fields.projectDetails.label")}
+                  </label>
+                  <MessageField className={cn(s.messageInput, s.fieldInput)} />
+                </div>
+
+                <ButtonSubmit />
+              </form>
+            </div>
           </div>
-          {/* </div> */}
         </div>
       )}
     </>

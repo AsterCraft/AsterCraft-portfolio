@@ -26,8 +26,19 @@
   .startProjectForm {
     translate: 100%;
 
-    @include t.effects("slow");
+    transition-duration: 1.2s;
+    transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
     transition-property: translate;
+  }
+
+  .formContent {
+    opacity: 0;
+    transform: translateY(10px);
+
+    transition-property: opacity, transform;
+    transition-duration: 0.3s, 0.3s;
+    transition-delay: 0.2s, 0.2s; // Both delayed on open
+    transition-timing-function: ease;
   }
 
   &.open {
@@ -38,6 +49,11 @@
 
     .startProjectForm {
       translate: 0%;
+    }
+
+    .formContent {
+      opacity: 1;
+      transform: translateY(0);
     }
   }
 
@@ -50,6 +66,18 @@
 
     .startProjectForm {
       translate: 100%;
+
+      transition-duration: 0.9s;
+      transition-timing-function: cubic-bezier(0.16, 1, 0.5, 1);
+    }
+
+    .formContent {
+      opacity: 0;
+      transform: translateY(15px);
+
+      // Different timings for close
+      transition-delay: 0.1s, 0s;
+      transition-duration: 0.2s, 0.2s;
     }
   }
 }
@@ -59,15 +87,6 @@
   inset-block: 0;
   right: 0;
   overflow-y: auto;
-
-  display: flex;
-  flex-direction: column;
-  gap: fs.fluid-scale(
-    t.$md-sys-spacing-5,
-    t.$md-sys-spacing-10,
-    t.$md-sys-viewport-compact,
-    t.$md-ref-breakpoint-compact-max
-  );
 
   width: 50%;
   padding: t.$md-sys-spacing-6;
@@ -85,6 +104,17 @@
     padding-inline: fs.fluid-scale(
       t.$md-sys-spacing-2,
       t.$md-sys-spacing-6,
+      t.$md-sys-viewport-compact,
+      t.$md-ref-breakpoint-compact-max
+    );
+  }
+
+  .formContent {
+    display: flex;
+    flex-direction: column;
+    gap: fs.fluid-scale(
+      t.$md-sys-spacing-5,
+      t.$md-sys-spacing-10,
       t.$md-sys-viewport-compact,
       t.$md-ref-breakpoint-compact-max
     );
