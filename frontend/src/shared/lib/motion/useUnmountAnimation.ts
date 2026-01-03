@@ -89,19 +89,12 @@ const useUnmountAnimation = <T extends HTMLElement = HTMLElement>(
       if (!el.contains(e.target as Node)) return;
 
       pendingTransitionsRef.current.add(e.propertyName);
-      console.log("Transition started:", e.propertyName);
     };
 
     const onTransitionEnd = (e: TransitionEvent) => {
       if (!el.contains(e.target as Node)) return;
 
       pendingTransitionsRef.current.delete(e.propertyName);
-      console.log(
-        "Transition ended:",
-        e.propertyName,
-        "Remaining:",
-        pendingTransitionsRef.current.size
-      );
 
       // Wait until all transitions finish before calling onClose
       if (
