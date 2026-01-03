@@ -93,9 +93,6 @@
 
   background-color: var(--md-sys-color-surface-container);
 
-  @include t.spatial("slow");
-  transition-property: width;
-
   @media (max-width: t.$md-ref-breakpoint-expanded-max) {
     width: 100%;
   }

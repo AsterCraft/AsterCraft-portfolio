@@ -22,8 +22,8 @@ const StartProjectForm = () => {
 
   const { animationState, handleClose, elementRef } =
     useUnmountAnimation<HTMLDivElement>(isOpen, close, () =>
-      //   // TODO: write better logic
-      //   // this most likely cause bugs in the future
+      // TODO: write better logic
+      // this most likely cause bugs in the future
       navigate("/", { preventScrollReset: true })
     );
 
