@@ -1,1 +1,1 @@
-export { default as useUnmountAnimation } from "./useModalAnimation";
+export { default as useUnmountAnimation } from "./useUnmountAnimation";
