@@ -5,15 +5,22 @@ import cn from "classnames";
 
 import { StartProjectBtn } from "@shared/ui";
 import { MenuIcon } from "@shared/ui/icons/menu";
+import { HomeIcon } from "@shared/ui/icons/home";
+import { useUnmountAnimation } from "@shared/lib/motion";
 
 import s from "./header.module.scss";
-import { HomeIcon } from "@shared/ui/icons/home";
 
 export const Header = () => {
-  const { t } = useTranslation("header");
-
   const [isExpanded, setIsExpanded] = useState(false);
   const [isPinned, setIsPinned] = useState(false);
+
+  const { t } = useTranslation("header");
+
+  const { animationState, elementRef, handleClose } =
+    useUnmountAnimation<HTMLDivElement>(isExpanded, () => {
+      setIsExpanded(false);
+      setIsPinned(false);
+    });
 
   const handleMenuClick = () => {
     setIsPinned((prev) => {
@@ -57,11 +64,12 @@ export const Header = () => {
       </div>
 
       <aside
-        className={cn(s.navRail, { [s.expanded]: isExpanded })}
+        className={cn(s.navRail, s[animationState])}
+        ref={elementRef}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
-        aria-hidden={!isExpanded}
-        inert={!isExpanded}
+        aria-hidden={animationState === "closed"}
+        inert={animationState === "closed"}
       >
         <div className={s.navRailInner}>
           <nav

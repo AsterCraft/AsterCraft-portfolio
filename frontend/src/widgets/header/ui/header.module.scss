@@ -20,6 +20,33 @@ $z-index: 1000;
   }
 }
 
+.navRail {
+  transition-property: translate;
+  @include motion.effects("slow");
+
+  &.open {
+    translate: 0%;
+    // min-width: 220px;
+    // max-width: 360px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  &.closing {
+    translate: -100%;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &.closed {
+    translate: -100%;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
 .appBar {
   z-index: $z-index;
 
@@ -90,8 +117,6 @@ $z-index: 1000;
 
 .navRail {
   z-index: $z-index;
-  visibility: hidden;
-  pointer-events: none;
 
   position: fixed;
   left: 0;
@@ -99,22 +124,8 @@ $z-index: 1000;
   bottom: 0;
 
   width: $nav-rail-width;
-  transform: translateX(-100%);
-  opacity: 0;
 
   background-color: var(--md-sys-color-surface-container);
-
-  transition-property: transform;
-  @include motion.effects("slow");
-
-  &.expanded {
-    transform: translateX(0);
-    // min-width: 220px;
-    // max-width: 360px;
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-  }
 
   &Inner {
     display: flex;
