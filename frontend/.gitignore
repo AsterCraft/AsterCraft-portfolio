@@ -33,3 +33,7 @@ dist-ssr
 
 *storybook.log
 storybook-static
+
+/src/widgets/development-process-section/mobile.png
+/src/widgets/development-process-section/desktop.png
+

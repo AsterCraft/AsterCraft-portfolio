@@ -12,6 +12,8 @@ export const meta: MetaFunction = () => {
   const description =
     "We create business websites with clean code, no page builders. Fast, reliable, SEO-optimized, conversion-focused. 50+ successful projects. Landing pages, corporate websites, e-commerce.";
 
+  console.log("test log");
+
   return [
     {
       title: "AsterCraft - Web Development in Ukraine | From 4 days, from $350",
@@ -81,10 +83,19 @@ export const meta: MetaFunction = () => {
       href: `${siteUrl}/uk/`,
     },
 
-    // Structured Data
-    ...Object.values(structuredData).map((schema) => ({
-      "script:ld+json": schema,
-    })),
+    // Structured Data - explicitly list each one
+    { "script:ld+json": structuredData.organizationSchema },
+    { "script:ld+json": structuredData.webSiteSchema },
+    { "script:ld+json": structuredData.breadcrumbSchema },
+    { "script:ld+json": structuredData.webPageSchema },
+    // { "script:ld+json": structuredData.faqSchema },
+
+    // ...Object.values(structuredData).map((schema) => {
+    //   console.log(`schema: ${schema["@type"]}`);
+    //   return {
+    //     "script:ld+json": schema,
+    //   };
+    // }),
   ];
 };
 
