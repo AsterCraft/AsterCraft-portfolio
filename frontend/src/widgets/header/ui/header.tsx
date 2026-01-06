@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router";
 import { useTranslation } from "react-i18next";
 import cn from "classnames";
@@ -13,14 +13,30 @@ import s from "./header.module.scss";
 export const Header = () => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isPinned, setIsPinned] = useState(false);
+  const [isLeftHovered, setIsLeftHovered] = useState(false);
+  const [isNavRailHovered, setIsNavRailHovered] = useState(false);
 
   const { t } = useTranslation("header");
 
-  const { animationState, elementRef, handleClose } =
-    useUnmountAnimation<HTMLDivElement>(isExpanded, () => {
+  const { animationState, elementRef } = useUnmountAnimation<HTMLDivElement>(
+    isExpanded,
+    () => {
       setIsExpanded(false);
       setIsPinned(false);
-    });
+    }
+  );
+
+  useEffect(() => {
+    let timer: number;
+
+    if (!isLeftHovered && !isNavRailHovered && !isPinned) {
+      timer = window.setTimeout(() => {
+        setIsExpanded(false);
+      }, 250);
+    }
+
+    return () => clearTimeout(timer);
+  }, [isLeftHovered, isNavRailHovered, isPinned]);
 
   const handleMenuClick = () => {
     setIsPinned((prev) => {
@@ -30,12 +46,21 @@ export const Header = () => {
     });
   };
 
-  const handleMouseEnter = () => {
+  const handleLeftEnter = () => {
+    setIsLeftHovered(true);
     if (!isPinned) setIsExpanded(true);
   };
 
-  const handleMouseLeave = () => {
-    if (!isPinned) setIsExpanded(false);
+  const handleLeftLeave = () => {
+    setIsLeftHovered(false);
+  };
+
+  const handleNavRailEnter = () => {
+    setIsNavRailHovered(true);
+    if (!isPinned) setIsExpanded(true);
+  };
+  const handleNavRailLeave = () => {
+    setIsNavRailHovered(false);
   };
 
   return (
@@ -43,8 +68,8 @@ export const Header = () => {
       <div className={s.appBar}>
         <div
           className={s.left}
-          // onMouseEnter={handleMouseEnter}
-          // onMouseLeave={handleMouseLeave}
+          onMouseEnter={handleLeftEnter}
+          onMouseLeave={handleLeftLeave}
         >
           <button
             className={cn(s.menuButton, { [s.active]: isPinned })}
@@ -66,8 +91,8 @@ export const Header = () => {
       <aside
         className={cn(s.navRail, s[animationState])}
         ref={elementRef}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
+        onMouseEnter={handleNavRailEnter}
+        onMouseLeave={handleNavRailLeave}
         aria-hidden={animationState === "closed"}
         inert={animationState === "closed"}
       >
