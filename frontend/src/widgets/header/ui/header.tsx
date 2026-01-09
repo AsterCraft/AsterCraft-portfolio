@@ -3,7 +3,7 @@ import { Link } from "react-router";
 import { useTranslation } from "react-i18next";
 import cn from "classnames";
 
-import { StartProjectBtn } from "@shared/ui";
+import { StartProjectBtn, TextLink } from "@shared/ui";
 import { MenuIcon } from "@shared/ui/icons/menu";
 import { HomeIcon } from "@shared/ui/icons/home";
 import { useUnmountAnimation } from "@shared/lib/motion";
@@ -120,28 +120,28 @@ export const Header = () => {
           >
             <ul className={s.pageIndexList}>
               <li>
-                <a
-                  href="#SectionDevelopmentProcess"
+                <TextLink
+                  to="#SectionDevelopmentProcess"
                   className={s.pageIndexLink}
                 >
                   {t("nav.development")}
-                </a>
+                </TextLink>
               </li>
               <li>
-                <a
-                  href="#SectionProjects"
+                <TextLink
+                  to="#SectionProjects"
                   className={s.pageIndexLink}
                 >
                   {t("nav.portfolio")}
-                </a>
+                </TextLink>
               </li>
               <li>
-                <a
-                  href="#SectionContact"
+                <TextLink
+                  to="#SectionContact"
                   className={s.pageIndexLink}
                 >
                   {t("nav.contacts")}
-                </a>
+                </TextLink>
               </li>
             </ul>
           </nav>

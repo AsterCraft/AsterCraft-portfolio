@@ -13,6 +13,8 @@ $horizontal-header-height: spacing.$md-sys-spacing-16;
 $nav-rail-width: 360px;
 $z-index: 1000;
 
+$md-comp-nav-rail-nav-padding: t.$md-sys-spacing-4;
+
 .header {
   &::after {
     content: "";
@@ -141,7 +143,7 @@ $z-index: 1000;
     @include typo.typescale("label-medium");
 
     width: 96px;
-    padding: spacing.$md-sys-spacing-4;
+    padding: $md-comp-nav-rail-nav-padding;
 
     color: var(--md-sys-color-on-surface-variant);
 
@@ -160,21 +162,25 @@ $z-index: 1000;
   }
 
   .pageIndex {
-    flex-shrink: 0;
+    flex: 1 0 0%;
 
-    @include typo.typescale-emphasized("title-small");
-    font-weight: 500;
-
-    padding: spacing.$md-sys-spacing-4;
-
+    padding: $md-comp-nav-rail-nav-padding;
+    padding-top: t.$md-sys-spacing-2;
     border-left: 1px solid var(--md-sys-color-outline-variant);
-
-    color: var(--md-sys-color-on-surface-variant);
 
     ul {
       display: flex;
       flex-direction: column;
-      gap: spacing.$md-sys-spacing-3;
+      // gap: spacing.$md-sys-spacing-3;
+
+      .pageIndexLink {
+        --md-comp-text-link-color: var(--md-sys-color-on-surface-variant);
+
+        justify-content: start;
+
+        @include typo.typescale-emphasized("title-small");
+        font-weight: 500;
+      }
     }
   }
 }
