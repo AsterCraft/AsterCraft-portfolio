@@ -137,13 +137,13 @@ export const Header = () => {
           >
             <ul>
               <li>
-                <Link
+                <TextLink
                   to="/"
                   className={s.navItem}
                 >
                   <HomeIcon className={s.navIcon} />
                   <span className={s.navLabel}>Home</span>
-                </Link>
+                </TextLink>
               </li>
             </ul>
           </nav>
