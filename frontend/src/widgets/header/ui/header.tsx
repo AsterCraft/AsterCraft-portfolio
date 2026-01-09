@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router";
 import { useTranslation } from "react-i18next";
 import cn from "classnames";
@@ -17,6 +17,8 @@ export const Header = () => {
   const [isNavRailHovered, setIsNavRailHovered] = useState(false);
 
   const { t } = useTranslation("header");
+
+  const menuRef = useRef<HTMLButtonElement>(null);
 
   const { animationState, elementRef } = useUnmountAnimation<HTMLDivElement>(
     isExpanded,
@@ -37,6 +39,37 @@ export const Header = () => {
 
     return () => clearTimeout(timer);
   }, [isLeftHovered, isNavRailHovered, isPinned]);
+
+  useEffect(() => {
+    if (!isPinned) return;
+
+    const handleCLickOutside = (event: MouseEvent) => {
+      if (
+        elementRef.current &&
+        !elementRef.current.contains(event.target as Node) &&
+        menuRef.current &&
+        !menuRef.current.contains(event.target as Node)
+      ) {
+        setIsPinned(false);
+        setIsExpanded(false);
+      }
+    };
+
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setIsPinned(false);
+        setIsExpanded(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleCLickOutside);
+    document.addEventListener("keydown", handleEscape);
+
+    return () => {
+      document.removeEventListener("mousedown", handleCLickOutside);
+      document.removeEventListener("keydown", handleEscape);
+    };
+  }, [isPinned]);
 
   const handleMenuClick = () => {
     setIsPinned((prev) => {
@@ -76,6 +109,7 @@ export const Header = () => {
             aria-label="Toggle navigation"
             aria-pressed={isPinned}
             onClick={handleMenuClick}
+            ref={menuRef}
           >
             <MenuIcon className={s.menuIcon} />
           </button>
