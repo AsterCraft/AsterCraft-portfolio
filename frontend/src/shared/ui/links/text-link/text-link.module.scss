@@ -2,6 +2,8 @@
 @use "../../../styles/lib/responsive-design/_fluid-scale.scss" as fs;
 
 .textLink {
+  --md-comp-text-link-color: var(--md-sys-color-tertiary);
+
   position: relative;
   overflow: hidden;
 
@@ -9,14 +11,13 @@
   justify-content: center;
   align-items: center;
 
-  padding-block: t.$md-sys-spacing-4;
-  padding-inline: t.$md-sys-spacing-6;
+  padding-block: 0.571em;
+  padding-inline: 1.142em;
 
   @include t.typescale("title-large");
-  height: 56px;
   border-radius: t.$md-sys-shape-corner-value-extra-extra-large;
 
-  color: var(--md-sys-color-tertiary);
+  color: var(--md-comp-text-link-color);
 
   &::before {
     content: "";
@@ -25,7 +26,7 @@
     inset: 0;
 
     opacity: 0;
-    background: var(--md-sys-color-tertiary);
+    background: var(--md-comp-text-link-color);
 
     @include t.effects("fast");
     transition-property: opacity;
@@ -38,7 +39,7 @@
   }
 
   &:focus-visible {
-    outline: 2px solid var(--md-sys-color-tertiary);
+    outline: 2px solid var(--md-comp-text-link-color);
     outline-offset: 2px;
   }
 

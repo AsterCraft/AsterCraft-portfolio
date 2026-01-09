@@ -4,7 +4,7 @@ import { Link, type LinkProps } from "react-router";
 import s from "./text-link.module.scss";
 
 interface Props extends LinkProps {
-  children: string;
+  children: React.ReactNode;
 }
 
 const TextLink = ({ children, className, ...props }: Props) => {
