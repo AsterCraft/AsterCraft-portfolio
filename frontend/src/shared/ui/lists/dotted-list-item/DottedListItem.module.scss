@@ -6,7 +6,6 @@
   gap: t.$md-sys-spacing-2;
 
   @include t.typescale("body-medium");
-  margin-bottom: t.$md-sys-spacing-3;
 
   &::before {
     content: "";

@@ -3,43 +3,52 @@
 @use "../../../shared/styles/lib/layout/_projects-layout.scss" as pl;
 
 .main {
-  background-color: var(--md-sys-color-surface);
-  color: var(--md-sys-color-on-surface);
-  padding: clamp(32px, 5vw, 64px) clamp(16px, 3vw, 40px);
+	background-color: var(--md-sys-color-surface);
+	color: var(--md-sys-color-on-surface);
+	padding: fs.fluid-scale(32px, 64px);
 
-  .title {
-    @include t.typescale-emphasized("display-medium");
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    margin-bottom: clamp(24px, 40px, 48px);
-  }
+	.title {
+		@include t.typescale-emphasized("display-medium");
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		margin-bottom: fs.fluid-scale(24px, 48px);
+	}
 
-  .downTitleBlock {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: clamp(16px, 3vw, 48px);
+	.downTitleBlock {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: fs.fluid-scale(16px, 32px);
 
-    .subtitile {
-      @include t.typescale("headline-small");
-      display: block;
-      text-align: left;
-      margin-bottom: clamp(8px, 16px, 20px);
-    }
+		.subtitile {
+			@include t.typescale("headline-small");
+			display: block;
+			text-align: left;
+			margin-bottom: fs.fluid-scale(8px, 20px);
+		}
 
-    .textList {
-    @include t.typescale("body-large");
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 30px;
-    padding-left: clamp(16px, 2vw, 32px);
-  }
+		.listItem {
+			display: flex;
+			align-items: baseline;
+			gap: t.$md-sys-spacing-2;
+      flex-direction: column;
+			@include t.typescale("body-large");
 
-    .downText {
-      @include t.typescale("title-small");
-      display: flex;
-      text-align: left;
-      margin-top: clamp(24px, 40px, 48px);
-    }
-  }
+			@media (max-width: t.$md-ref-breakpoint-medium-max) {
+				font-size: fs.fluid-scale(
+					t.get-typescale-value("body-medium"),
+					t.get-typescale-value("body-large"),
+					t.$md-sys-viewport-compact,
+					t.$md-ref-breakpoint-medium-max
+				);
+      }
+		}
+
+		.downText {
+			@include t.typescale("title-medium");
+			display: flex;
+			text-align: left;
+			margin-top: fs.fluid-scale(24px, 48px);
+		}
+	}
 }
