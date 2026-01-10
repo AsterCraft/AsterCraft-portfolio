@@ -1,4 +1,6 @@
-export const uk = {
+import type { Translation } from "./en";
+
+const uk = {
   brandName: "AsterCraft",
   startProjectBtn: "Замовити сайт",
   nav: {
@@ -6,4 +8,6 @@ export const uk = {
     portfolio: "Портфоліо",
     contacts: "Контакти",
   },
-} as const;
+} as const satisfies Translation;
+
+export default uk;

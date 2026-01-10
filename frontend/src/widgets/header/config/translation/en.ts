@@ -1,4 +1,6 @@
-export const en = {
+import type { DeepString } from "@shared/lib/i18n/types";
+
+const en = {
   brandName: "AsterCraft",
   startProjectBtn: "Leave a request",
   nav: {
@@ -7,3 +9,7 @@ export const en = {
     contacts: "Contacts",
   },
 } as const;
+
+export type Translation = DeepString<typeof en>;
+
+export default en;
