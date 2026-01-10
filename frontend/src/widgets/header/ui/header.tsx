@@ -106,18 +106,18 @@ export const Header = () => {
         >
           <button
             className={cn(s.menuButton, { [s.active]: isPinned })}
-            aria-label="Toggle navigation"
+            aria-label={t("appBar.menuButton.ariaLabel")}
             aria-pressed={isPinned}
             onClick={handleMenuClick}
             ref={menuRef}
           >
             <MenuIcon className={s.menuIcon} />
           </button>
-          <span className={s.brandName}>{t("brandName")}</span>
+          <span className={s.brandName}>{t("appBar.brandName")}</span>
         </div>
 
         <StartProjectBtn
-          text={t("startProjectBtn")}
+          text={t("appBar.startProjectBtn")}
           className={s.cta}
         />
       </div>
@@ -133,7 +133,7 @@ export const Header = () => {
         <div className={s.navRailInner}>
           <nav
             className={s.routingNav}
-            aria-label="Main navigation"
+            aria-label={t("navRail.routingNav.ariaLabel")}
           >
             <ul>
               <li>
@@ -142,7 +142,7 @@ export const Header = () => {
                   className={s.navItem}
                 >
                   <HomeIcon className={s.navIcon} />
-                  <span className={s.navLabel}>Home</span>
+                  <span className={s.navLabel}>{t("navRail.routingNav.home")}</span>
                 </TextLink>
               </li>
             </ul>
@@ -150,7 +150,7 @@ export const Header = () => {
 
           <nav
             className={s.pageIndex}
-            aria-label="Page sections"
+            aria-label={t("navRail.pageIndex.ariaLabel")}
           >
             <ul className={s.pageIndexList}>
               <li>
@@ -158,7 +158,7 @@ export const Header = () => {
                   to="#SectionDevelopmentProcess"
                   className={s.pageIndexLink}
                 >
-                  {t("nav.development")}
+                  {t("navRail.pageIndex.development")}
                 </TextLink>
               </li>
               <li>
@@ -166,7 +166,7 @@ export const Header = () => {
                   to="#SectionProjects"
                   className={s.pageIndexLink}
                 >
-                  {t("nav.portfolio")}
+                  {t("navRail.pageIndex.portfolio")}
                 </TextLink>
               </li>
               <li>
@@ -174,7 +174,7 @@ export const Header = () => {
                   to="#SectionContact"
                   className={s.pageIndexLink}
                 >
-                  {t("nav.contacts")}
+                  {t("navRail.pageIndex.contacts")}
                 </TextLink>
               </li>
             </ul>
