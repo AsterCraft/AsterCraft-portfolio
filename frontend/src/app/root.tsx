@@ -5,6 +5,7 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useLoaderData,
 } from "react-router";
 import { useTranslation } from "react-i18next";
 import type { Route } from "./+types/root";
@@ -15,6 +16,7 @@ import Footer from "@widgets/footer";
 import { StartProjectForm } from "@widgets/start-project-form";
 import { BurgerDropdownMenu } from "features/HeaderNavigation";
 import { GADS_CONVERSION_ID, GTAG_ID } from "@shared/config";
+import { getThemeFromRequest, type Theme } from "@shared/lib/theme/cookie";
 
 import {
   getLocale,
@@ -24,13 +26,16 @@ import {
 
 import "./main.css";
 import "@shared/styles/index.scss";
+import { useThemeStore } from "@shared/lib/theme/theme-store";
 
 export const middleware = [i18nextMiddleware];
 
-export async function loader({ context }: Route.LoaderArgs) {
-  let locale = getLocale(context);
+export async function loader({ context, request }: Route.LoaderArgs) {
+  const locale = getLocale(context);
+  const theme = await getThemeFromRequest(request);
+
   return data(
-    { locale },
+    { locale, theme },
     { headers: { "Set-Cookie": await localeCookie.serialize(locale) } }
   );
 }
@@ -38,11 +43,26 @@ export async function loader({ context }: Route.LoaderArgs) {
 export function Layout({ children }: { children: React.ReactNode }) {
   const { i18n } = useTranslation();
 
+  const loaderData = useLoaderData<typeof loader>();
+
+  const theme = useThemeStore((state) => state.theme);
+  const initializeTheme = useThemeStore((state) => state.initializeTheme);
+
+  useEffect(() => {
+    initializeTheme(loaderData.theme);
+  }, [loaderData.theme, initializeTheme]);
+
+  console.log("loaderData", loaderData);
+
+  const currentTheme = loaderData.theme || theme;
+
+  console.log("currentTheme", currentTheme);
+
   return (
     <html
       lang={i18n.language}
       dir={i18n.dir(i18n.language)}
-      data-theme="dark"
+      data-theme={currentTheme}
     >
       <head>
         <meta charSet="UTF-8" />
