@@ -7,6 +7,7 @@ import { StartProjectBtn, TextLink } from "@shared/ui";
 import { MenuIcon } from "@shared/ui/icons/menu";
 import { HomeIcon } from "@shared/ui/icons/home";
 import { useUnmountAnimation } from "@shared/lib/motion";
+import { useThemeStore } from "@shared/lib/theme/theme-store";
 
 import s from "./header.module.scss";
 
@@ -15,6 +16,9 @@ export const Header = () => {
   const [isPinned, setIsPinned] = useState(false);
   const [isLeftHovered, setIsLeftHovered] = useState(false);
   const [isNavRailHovered, setIsNavRailHovered] = useState(false);
+
+  const theme = useThemeStore((state) => state.theme);
+  const toggleTheme = useThemeStore((state) => state.toggleTheme);
 
   const { t, i18n } = useTranslation("header");
 
@@ -153,6 +157,13 @@ export const Header = () => {
                 </TextLink>
               </li>
             </ul>
+
+            <button
+              onClick={toggleTheme}
+              aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}
+            >
+              {theme === "dark" ? "☀️" : "🌙"}
+            </button>
           </nav>
 
           <nav
