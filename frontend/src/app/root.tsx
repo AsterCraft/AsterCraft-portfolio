@@ -16,7 +16,7 @@ import Footer from "@widgets/footer";
 import { StartProjectForm } from "@widgets/start-project-form";
 import { BurgerDropdownMenu } from "features/HeaderNavigation";
 import { GADS_CONVERSION_ID, GTAG_ID } from "@shared/config";
-import { getThemeFromRequest, type Theme } from "@shared/lib/theme/cookie";
+import { getThemeFromRequest } from "@shared/lib/theme/cookie";
 
 import {
   getLocale,
@@ -44,19 +44,13 @@ export function Layout({ children }: { children: React.ReactNode }) {
   const { i18n } = useTranslation();
 
   const loaderData = useLoaderData<typeof loader>();
-
-  const theme = useThemeStore((state) => state.theme);
   const initializeTheme = useThemeStore((state) => state.initializeTheme);
 
   useEffect(() => {
-    initializeTheme(loaderData.theme);
-  }, [loaderData.theme, initializeTheme]);
+    initializeTheme();
+  }, [initializeTheme]);
 
-  console.log("loaderData", loaderData);
-
-  const currentTheme = loaderData.theme || theme;
-
-  console.log("currentTheme", currentTheme);
+  const currentTheme = loaderData.theme;
 
   return (
     <html
