@@ -16,7 +16,7 @@ export const Header = () => {
   const [isLeftHovered, setIsLeftHovered] = useState(false);
   const [isNavRailHovered, setIsNavRailHovered] = useState(false);
 
-  const { t } = useTranslation("header");
+  const { t, i18n } = useTranslation("header");
 
   const menuRef = useRef<HTMLButtonElement>(null);
 
@@ -113,7 +113,12 @@ export const Header = () => {
           >
             <MenuIcon className={s.menuIcon} />
           </button>
-          <span className={s.brandName}>{t("appBar.brandName")}</span>
+          <Link
+            to={`/${i18n.language}/`}
+            className={s.brandName}
+          >
+            {t("appBar.brandName")}
+          </Link>
         </div>
 
         <StartProjectBtn
@@ -138,11 +143,13 @@ export const Header = () => {
             <ul>
               <li>
                 <TextLink
-                  to="/"
+                  to={`/${i18n.language}/`}
                   className={s.navItem}
                 >
                   <HomeIcon className={s.navIcon} />
-                  <span className={s.navLabel}>{t("navRail.routingNav.home")}</span>
+                  <span className={s.navLabel}>
+                    {t("navRail.routingNav.home")}
+                  </span>
                 </TextLink>
               </li>
             </ul>

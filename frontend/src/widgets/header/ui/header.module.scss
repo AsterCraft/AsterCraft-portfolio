@@ -90,6 +90,9 @@ $md-comp-nav-rail-nav-padding: t.$md-sys-spacing-4;
     }
 
     .brandName {
+      display: flex;
+      align-items: center;
+
       @include typo.typescale("title-large");
       font-size: fs.fluid-scale(
         16px,
