@@ -1,4 +1,10 @@
 @use "config.scss" as conf;
+@use "./tokens/" as t;
+
+* {
+  transition-property: background-color, color;
+  @include t.effects("slow");
+}
 
 body.modalOpen {
   overflow: hidden;
