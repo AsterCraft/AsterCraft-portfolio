@@ -157,10 +157,10 @@ $md-comp-nav-rail-nav-padding: t.$md-sys-spacing-4;
 
       @include typo.typescale("label-medium");
 
-      --md-comp-text-link-color: var(--md-sys-color-on-surface-variant);
+      --md-comp-text-action-color: var(--md-sys-color-on-surface-variant);
 
       &:hover {
-        --md-comp-text-link-color: var(--md-sys-color-on-surface);
+        --md-comp-text-action-color: var(--md-sys-color-on-surface);
       }
 
       .navIcon {
@@ -183,7 +183,7 @@ $md-comp-nav-rail-nav-padding: t.$md-sys-spacing-4;
       // gap: spacing.$md-sys-spacing-3;
 
       .pageIndexLink {
-        --md-comp-text-link-color: var(--md-sys-color-on-surface-variant);
+        --md-comp-text-action-color: var(--md-sys-color-on-surface-variant);
 
         justify-content: start;
 

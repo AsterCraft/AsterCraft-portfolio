@@ -15,7 +15,7 @@ const meta = {
     docs: {
       description: {
         component:
-          "Button-like text link styled according to Material Design 3. Customize the color by overriding the CSS variable `--md-comp-text-link-color`.",
+          "Button-like text link styled according to Material Design 3. Customize the color by overriding the CSS variable `--md-comp-text-action-color`.",
       },
     },
   },
@@ -42,14 +42,14 @@ export const CustomColor: Story = {
     to: "/contact",
     children: "Custom color",
     style: {
-      "--md-comp-text-link-color": "#ff6b6b",
+      "--md-comp-text-action-color": "#ff6b6b",
     } as React.CSSProperties,
   },
   parameters: {
     docs: {
       description: {
         story:
-          "Override `--md-comp-text-link-color` to change the link color and state layer color.",
+          "Override `--md-comp-text-action-color` to change the link color and state layer color.",
       },
     },
   },

@@ -1,7 +1,7 @@
 import cn from "classnames";
 import { Link, type LinkProps } from "react-router";
 
-import s from "./text-link.module.scss";
+import s from "../text-action.module.scss";
 
 interface Props extends LinkProps {
   children: React.ReactNode;
@@ -10,7 +10,7 @@ interface Props extends LinkProps {
 const TextLink = ({ children, className, ...props }: Props) => {
   return (
     <Link
-      className={cn(s.textLink, className)}
+      className={cn(s.textAction, className)}
       {...props}
     >
       {children}
