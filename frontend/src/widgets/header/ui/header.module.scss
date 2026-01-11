@@ -172,12 +172,34 @@ $md-comp-nav-rail-nav-padding: t.$md-sys-spacing-4;
     .textThemeToggle {
       --md-comp-text-action-color: var(--md-sys-color-on-surface-variant);
 
+      overflow: hidden;
+
       border: 1px solid var(--md-sys-color-outline-variant);
       padding: t.$md-sys-spacing-4;
 
-      .themeIcon {
+      .themeIconContainer {
+        position: relative;
+
         height: 24px;
         width: 24px;
+      }
+
+      .themeIcon {
+        position: absolute;
+        left: 0;
+        top: 0;
+
+        height: 24px;
+        width: 24px;
+
+        translate: -50% 200%;
+
+        transition-property: translate;
+        @include t.spatial("default");
+
+        &.active {
+          translate: 0 0;
+        }
       }
     }
   }

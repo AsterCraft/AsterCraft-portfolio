@@ -169,11 +169,16 @@ export const Header = () => {
               onClick={toggleTheme}
               aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}
             >
-              {theme === "dark" ? (
-                <SunnyIcon className={s.themeIcon} />
-              ) : (
-                <BedtimeIcon className={s.themeIcon} />
-              )}
+              <div className={s.themeIconContainer}>
+                <SunnyIcon
+                  className={cn(s.themeIcon, { [s.active]: theme === "dark" })}
+                  aria-hiddden={theme !== "dark"}
+                />
+                <BedtimeIcon
+                  className={cn(s.themeIcon, { [s.active]: theme === "light" })}
+                  aria-hidden={theme !== "light"}
+                />
+              </div>
             </TextButton>
           </nav>
 
