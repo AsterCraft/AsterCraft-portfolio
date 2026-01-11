@@ -32,4 +32,9 @@ a {
   // minimum btns size for accessibility
   min-width: 48px;
   min-height: 48px;
+
+  &:focus-visible {
+    outline: 2px solid var(--md-sys-color-outline);
+    outline-offset: 2px;
+  }
 }
