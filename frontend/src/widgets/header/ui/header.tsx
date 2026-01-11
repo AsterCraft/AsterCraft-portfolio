@@ -3,7 +3,13 @@ import { Link } from "react-router";
 import { useTranslation } from "react-i18next";
 import cn from "classnames";
 
-import { StartProjectBtn, TextLink } from "@shared/ui";
+import {
+  StartProjectBtn,
+  TextLink,
+  TextButton,
+  SunnyIcon,
+  BedtimeIcon,
+} from "@shared/ui";
 import { MenuIcon } from "@shared/ui/icons/menu";
 import { HomeIcon } from "@shared/ui/icons/home";
 import { useUnmountAnimation } from "@shared/lib/motion";
@@ -158,12 +164,17 @@ export const Header = () => {
               </li>
             </ul>
 
-            <button
+            <TextButton
+              className={s.textThemeToggle}
               onClick={toggleTheme}
               aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}
             >
-              {theme === "dark" ? "☀️" : "🌙"}
-            </button>
+              {theme === "dark" ? (
+                <SunnyIcon className={s.themeIcon} />
+              ) : (
+                <BedtimeIcon className={s.themeIcon} />
+              )}
+            </TextButton>
           </nav>
 
           <nav
