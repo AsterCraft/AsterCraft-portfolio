@@ -122,9 +122,9 @@
     justify-content: end;
 
     .closeBtn {
-      @include t.typescale("title-medium");
+      --md-comp-text-action-color: var(--md-sys-color-secondary);
 
-      color: var(--md-sys-color-secondary);
+      @include t.typescale("title-medium");
     }
   }
 

@@ -10,6 +10,7 @@ import PhoneField from "./inputs/phone-field";
 import MessageField from "./inputs/message-field";
 import { ButtonSubmit } from "./button-submit/button-submit";
 import { useUnmountAnimation } from "@shared/lib/motion";
+import { TextButton } from "@shared/ui";
 
 import { useIsContactFormModalOpenStore } from "../../../shared/lib/store/isContactFormModalOpen";
 
@@ -56,12 +57,12 @@ const StartProjectForm = () => {
             {/* div for animating the fading* in/out of the modal window content */}
             <div className={s.formContent}>
               <div className={s.closeBtnContainer}>
-                <button
+                <TextButton
                   onClick={handleClose}
                   className={s.closeBtn}
                 >
                   {t("contactForm.close")}
-                </button>
+                </TextButton>
               </div>
 
               <header className={s.header}>
