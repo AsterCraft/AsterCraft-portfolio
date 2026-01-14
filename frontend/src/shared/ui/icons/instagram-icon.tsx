@@ -6,8 +6,8 @@ const InstagramIcon = ({ className, ...props }: Props) => {
   return (
     <svg
       className={className}
-      width="32"
-      height="32"
+      width="32px"
+      height="32px"
       viewBox="0 0 48 48"
       fill="currentColor"
       xmlns="http://www.w3.org/2000/svg"

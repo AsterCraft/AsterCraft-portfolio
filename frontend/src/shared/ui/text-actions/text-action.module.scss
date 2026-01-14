@@ -1,0 +1,49 @@
+@use "../../styles/tokens/" as t;
+@use "../../styles/lib/responsive-design/_fluid-scale.scss" as fs;
+
+.textAction {
+  --md-comp-text-action-color: var(--md-sys-color-tertiary);
+
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding-block: 0.571em;
+  padding-inline: 1.142em;
+
+  @include t.typescale("title-large");
+  border-radius: t.$md-sys-shape-corner-value-extra-extra-large;
+
+  color: var(--md-comp-text-action-color);
+
+  &::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    opacity: 0;
+    background: var(--md-comp-text-action-color);
+
+    @include t.effects("fast");
+    transition-property: opacity;
+  }
+
+  &:hover {
+    &::before {
+      opacity: t.$md-sys-state-hover-state-layer-opacity;
+    }
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--md-comp-text-action-color);
+    outline-offset: 2px;
+  }
+
+  &:active::before {
+    opacity: t.$md-sys-state-pressed-state-layer-opacity;
+  }
+}
