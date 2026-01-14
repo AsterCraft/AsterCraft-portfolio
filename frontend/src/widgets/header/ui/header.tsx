@@ -172,7 +172,7 @@ export const Header = () => {
               <div className={s.themeIconContainer}>
                 <SunnyIcon
                   className={cn(s.themeIcon, { [s.active]: theme === "dark" })}
-                  aria-hiddden={theme !== "dark"}
+                  aria-hidden={theme !== "dark"}
                 />
                 <BedtimeIcon
                   className={cn(s.themeIcon, { [s.active]: theme === "light" })}
