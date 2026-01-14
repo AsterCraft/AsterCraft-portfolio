@@ -22,12 +22,10 @@ const StartProjectForm = () => {
 
   const { animationState, handleClose, elementRef } =
     useUnmountAnimation<HTMLDivElement>(isOpen, close, () =>
-      // TODO: write better logic
-      // this most likely cause bugs in the future
-      navigate("/", { preventScrollReset: true })
+      navigate(`/${i18n.language}/`, { preventScrollReset: true })
     );
 
-  const { t } = useTranslation("startProjectForm");
+  const { t, i18n } = useTranslation("startProjectForm");
 
   useEffect(() => {
     if (isOpen) {
