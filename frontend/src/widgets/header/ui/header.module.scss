@@ -128,9 +128,14 @@ $md-comp-nav-rail-nav-padding: t.$md-sys-spacing-4;
   top: conf.$app-bar-height;
   bottom: 0;
 
-  width: $nav-rail-width;
+  min-width: $nav-rail-width;
+  max-width: $nav-rail-width;
 
   background-color: var(--md-sys-color-surface-container);
+
+  @media (max-width: t.$md-ref-breakpoint-compact-max) {
+    min-width: 0;
+  }
 
   &Inner {
     display: flex;
