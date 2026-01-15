@@ -2,10 +2,11 @@
 
 ## header
 
-- [ ] add closing animation
-- [ ] change transform animation to spatial and fix bounce ?
-- [ ] add scrim for navRail
 - [ ] improve adaptive design
+- [ ] crete 3 states for theme switching:
+  - system default
+  - dark
+  - light
 
 ## SEO section
 

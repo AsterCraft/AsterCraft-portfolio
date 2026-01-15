@@ -10,6 +10,7 @@ import PhoneField from "./inputs/phone-field";
 import MessageField from "./inputs/message-field";
 import { ButtonSubmit } from "./button-submit/button-submit";
 import { useUnmountAnimation } from "@shared/lib/motion";
+import { TextButton } from "@shared/ui";
 
 import { useIsContactFormModalOpenStore } from "../../../shared/lib/store/isContactFormModalOpen";
 
@@ -22,12 +23,10 @@ const StartProjectForm = () => {
 
   const { animationState, handleClose, elementRef } =
     useUnmountAnimation<HTMLDivElement>(isOpen, close, () =>
-      // TODO: write better logic
-      // this most likely cause bugs in the future
-      navigate("/", { preventScrollReset: true })
+      navigate(`/${i18n.language}/`, { preventScrollReset: true })
     );
 
-  const { t } = useTranslation("startProjectForm");
+  const { t, i18n } = useTranslation("startProjectForm");
 
   useEffect(() => {
     if (isOpen) {
@@ -58,12 +57,12 @@ const StartProjectForm = () => {
             {/* div for animating the fading* in/out of the modal window content */}
             <div className={s.formContent}>
               <div className={s.closeBtnContainer}>
-                <button
+                <TextButton
                   onClick={handleClose}
                   className={s.closeBtn}
                 >
                   {t("contactForm.close")}
-                </button>
+                </TextButton>
               </div>
 
               <header className={s.header}>

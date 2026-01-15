@@ -1,4 +1,10 @@
 @use "config.scss" as conf;
+@use "./tokens/" as t;
+
+* {
+  transition-property: background-color, color;
+  @include t.effects("slow");
+}
 
 body.modalOpen {
   overflow: hidden;
@@ -26,4 +32,9 @@ a {
   // minimum btns size for accessibility
   min-width: 48px;
   min-height: 48px;
+
+  &:focus-visible {
+    outline: 2px solid var(--md-sys-color-outline);
+    outline-offset: 2px;
+  }
 }
