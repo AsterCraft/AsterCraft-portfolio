@@ -1,14 +1,46 @@
 ////
 /// defines reference typeface tokens
-/// currently imports typefaces from google fonts
-/// needs to be change to downloaded fonts in the future
 ///
 /// @group typography
 ////
 
-@import url("https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Tektur:wght@400..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@font-face {
+  font-family: "Kode Mono";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("/fonts/KodeMono-VariableFont_wght.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Tektur";
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+  src: url("/fonts/Tektur-VariableFont_wdth,wght.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Noto Sans";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src:
+    local("Noto Sans"),
+    local("NotoSans"),
+    url("/fonts/NotoSans-VariableFont_wdth,wght.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Noto Sans";
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+  src:
+    local("Noto Sans Italic"),
+    local("NotoSans-Italic"),
+    url("/fonts/NotoSans-Italic-VariableFont_wdth,wght.woff2") format("woff2");
+}
 
 /// Used for display, headline, title type scales
 /// @type String
