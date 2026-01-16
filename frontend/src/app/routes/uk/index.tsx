@@ -9,7 +9,7 @@ import { SITE_URL } from "@shared/config";
 export const meta: MetaFunction = () => {
   const siteUrl = "https://www.astercraft.com.ua";
   const pageUrl = `${siteUrl}/uk/`;
-  const imageUrl = `${siteUrl}/img/logo/logo.png`;
+  const imageUrl = `${siteUrl}/img/logo/logo.webp`;
   const description =
     "Створюємо веб-сайти для бізнесу на чистому коді без конструкторів. Швидкі, надійні, SEO-оптимізовані, продаючі. 50+ успішних проектів. Landing Page, корпоративні сайти, інтернет-магазини.";
 
@@ -37,8 +37,8 @@ export const meta: MetaFunction = () => {
     },
     { property: "og:description", content: description },
     { property: "og:image", content: imageUrl },
-    { property: "og:image:width", content: "1000" },
-    { property: "og:image:height", content: "1000" },
+    { property: "og:image:width", content: "1200" },
+    { property: "og:image:height", content: "630" },
     { property: "og:locale", content: "uk_UA" },
     { property: "og:site_name", content: "AsterCraft" },
 

@@ -8,7 +8,7 @@ import structuredData from "./structured-data";
 export const meta: MetaFunction = () => {
   const siteUrl = "https://www.astercraft.com.ua";
   const pageUrl = `${siteUrl}/en/`;
-  const imageUrl = `${siteUrl}/img/logo/logo.png`;
+  const imageUrl = `${siteUrl}/img/logo/logo.webp`;
   const description =
     "We create business websites with clean code, no page builders. Fast, reliable, SEO-optimized, conversion-focused. 50+ successful projects. Landing pages, corporate websites, e-commerce.";
 
@@ -35,8 +35,8 @@ export const meta: MetaFunction = () => {
     },
     { property: "og:description", content: description },
     { property: "og:image", content: imageUrl },
-    { property: "og:image:width", content: "1000" },
-    { property: "og:image:height", content: "1000" },
+    { property: "og:image:width", content: "1200" },
+    { property: "og:image:height", content: "630" },
     { property: "og:locale", content: "en_US" },
     { property: "og:locale:alternate", content: "uk_UA" },
     { property: "og:site_name", content: "AsterCraft" },

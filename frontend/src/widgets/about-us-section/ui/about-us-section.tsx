@@ -20,7 +20,7 @@ export default function AboutUsSection() {
         <ProjectCard
           content={{
             url: "https://www.laura-lewandowski.com/",
-            imgPath: "/img/projects/smart-chiefs.png",
+            imgPath: "/img/projects/smart-chiefs.webp",
             name: "Smart Chiefs",
             description:
               "Сайт для Smart Chiefs яка інтегрує штучний інтелект в рекламу в Німеччині",
