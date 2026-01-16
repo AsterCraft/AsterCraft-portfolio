@@ -41,7 +41,7 @@ const structuredData = {
 
     primaryImageOfPage: {
       "@type": "ImageObject",
-      url: `${SITE_URL}/img/logo/logo.png`,
+      url: `${SITE_URL}/img/logo/logo.webp`,
     },
   },
 

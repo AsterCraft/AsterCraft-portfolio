@@ -11,9 +11,9 @@ const organizationSchema = {
 
   logo: {
     "@type": "ImageObject",
-    url: `${SITE_URL}/img/logo/image.png`,
+    url: `${SITE_URL}/img/logo/image.webp`,
   },
-  image: `${SITE_URL}/img/logo/logo.png`,
+  image: `${SITE_URL}/img/logo/logo.webp`,
 
   description:
     "Створюємо веб-сайти для бізнесу на чистому коді без конструкторів. Швидкі, надійні, SEO-оптимізовані, продаючі. 50+ успішних проектів. Landing Page, корпоративні сайти, інтернет-магазини.",
