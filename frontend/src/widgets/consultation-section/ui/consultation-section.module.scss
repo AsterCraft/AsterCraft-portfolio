@@ -1,6 +1,6 @@
 @use "../../../shared/styles/tokens" as t;
 @use "../../../shared/styles/lib/responsive-design/_fluid-scale.scss" as fs;
-@use "../../../shared/styles/lib/layout/_projects-layout.scss" as pl;
+
 
 .main {
 	background-color: var(--md-sys-color-surface);
@@ -20,7 +20,7 @@
 		margin: 0 auto;
 		padding: fs.fluid-scale(16px, 32px);
 
-		.subtitile {
+		.subtitle  {
 			@include t.typescale("headline-small");
 			display: block;
 			text-align: left;
@@ -31,7 +31,7 @@
 			display: flex;
 			align-items: baseline;
 			gap: t.$md-sys-spacing-2;
-      flex-direction: column;
+      		flex-direction: column;
 			@include t.typescale("body-large");
 
 			@media (max-width: t.$md-ref-breakpoint-medium-max) {
@@ -41,7 +41,7 @@
 					t.$md-sys-viewport-compact,
 					t.$md-ref-breakpoint-medium-max
 				);
-      }
+      		}
 		}
 
 		.downText {

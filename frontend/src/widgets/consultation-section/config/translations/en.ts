@@ -5,7 +5,7 @@ const en = {
   infoForm: {
     heading: "Sign up for a free consultation, in which you’ll get:",
     first: "Answers for all of your questions",
-    dobule: "List of your requirements from the website",
+    double: "List of your requirements from the website",
     third: "Unique proposition adjusted for your budget",
   },
   comment:

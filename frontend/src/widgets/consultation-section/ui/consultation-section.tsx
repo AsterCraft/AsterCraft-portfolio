@@ -12,12 +12,12 @@ const ConsultationSection = () => {
     aria-labelledby="promise-heading"
     >
       <div className={cn(s.wrapper, gs.container)}>
-      <h2 className={s.title}>{t("heading")}</h2>
+      <h2 id="promise-heading" className={s.title}>{t("heading")}</h2>
       <div className={s.downTitleBlock}>
-        <span className={s.subtitile}>{t("infoForm.heading")}</span>
+        <span className={s.subtitle}>{t("infoForm.heading")}</span>
         <ul className={s.listItem}>
           <DottedListItem children={t("infoForm.first")} />
-          <DottedListItem children={t("infoForm.dobule")} />
+          <DottedListItem children={t("infoForm.double")} />
           <DottedListItem children={t("infoForm.third")} />
         </ul>
         <div className={s.downText}>{t("comment")}</div>
