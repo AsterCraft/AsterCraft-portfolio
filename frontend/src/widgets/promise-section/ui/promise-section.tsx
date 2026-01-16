@@ -39,7 +39,7 @@ const PromiseSection = () => {
         <ProjectCard
           content={{
             url: "https://www.uniprint.lviv.ua/",
-            imgPath: "/img/projects/uni-print.png",
+            imgPath: "/img/projects/uni-print.webp",
             name: "Uni Print",
             description:
               "Багатосторінковий сайт-галерея з конструктором товарів для візуальної зовнішньої реклами",

@@ -11,7 +11,7 @@ export const TitleLeft: Story = {
   args: {
     content: {
       url: "https://www.roxy.com/",
-      imgPath: "/img/projects/roxy.png",
+      imgPath: "/img/projects/roxy.webp",
       name: "Roxy",
       description: "Величезний магазин для спортивних товарів",
     },

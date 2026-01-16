@@ -11,9 +11,9 @@ const organizationSchema = {
 
   logo: {
     "@type": "ImageObject",
-    url: `${SITE_URL}/img/logo/image.png`,
+    url: `${SITE_URL}/img/logo/image.webp`,
   },
-  image: `${SITE_URL}/img/logo/logo.png`,
+  image: `${SITE_URL}/img/logo/logo.webp`,
 
   description:
     "We create business websites with clean code, no page builders. Fast, reliable, SEO-optimized, conversion-focused. 50+ successful projects. Landing pages, corporate websites, e-commerce.",
