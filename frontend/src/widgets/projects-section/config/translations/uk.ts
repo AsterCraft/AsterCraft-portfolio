@@ -6,7 +6,7 @@ const uk = {
   projects: [
     {
       url: "https://www.roxy.com/",
-      img: "/img/projects/roxy.png",
+      img: "/img/projects/roxy.webp",
       name: "Roxy",
       description: "Величезний магазин для спортивних товарів",
     },
@@ -26,7 +26,7 @@ const uk = {
     // },
     {
       url: "https://www.odtahvozidel-24.cz/",
-      img: "/img/projects/odtahvozidel-24.png",
+      img: "/img/projects/odtahvozidel-24.webp",
       name: "Odtahvozidel-24",
       description: "Односторіноковий сайт для послуг евакуатора в Чехії",
     },
