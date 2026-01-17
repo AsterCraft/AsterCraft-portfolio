@@ -5,6 +5,7 @@ import { StartProjectBtn } from "@shared/ui";
 import { PhoneEnabledIcon } from "@shared/ui";
 import { LocationOnIcon } from "@shared/ui";
 import { MailIcon } from "@shared/ui";
+import {TextLink} from "@shared/ui";
 
 import s from "./seo-section.module.scss";
 import gs from "@shared/styles/global.module.scss";
@@ -77,24 +78,24 @@ const SeoSection = ({ children }: SeoSectionProps) => {
                     aria-hidden="true"
                     className={s.contactIcon}
                   />
-                  <a
-                    href={contacts.phoneHref}
+                  <TextLink
+                    to={contacts.phoneHref}
                     className={s.contactLink}
                   >
                     {contacts.phone}
-                  </a>
+                  </TextLink>
                 </li>
                 <li className={s.contactItem}>
                   <MailIcon
                     aria-hidden="true"
                     className={s.contactIcon}
                   />
-                  <a
+                  <TextLink
                     className={s.contactLink}
-                    href={`mailto:${contacts.email}`}
+                    to={`mailto:${contacts.email}`}
                   >
                     {contacts.email}
-                  </a>
+                  </TextLink>
                 </li>
                 <li className={s.contactItem}>
                   <LocationOnIcon
