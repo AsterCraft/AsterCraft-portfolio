@@ -5,9 +5,5 @@ interface DottedListItemProps {
   children: React.ReactNode;
 }
 export default function DottedListItem({ children }: DottedListItemProps) {
-  return (
-    <li className={s.main}>
-      {children}
-    </li>
-  );
+  return <li className={s.dottedListItem}>{children}</li>;
 }
