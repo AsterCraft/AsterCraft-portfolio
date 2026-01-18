@@ -1,0 +1,82 @@
+@use "../../../shared/styles/tokens" as t;
+@use "../../../shared/styles/lib/responsive-design/_fluid-scale.scss" as fs;
+
+.consultationSection {
+  padding-block: fs.fluid-scale(
+    t.$md-sys-spacing-8,
+    t.$md-sys-spacing-16,
+    t.$md-sys-viewport-compact,
+    t.$md-sys-viewport-expanded
+  );
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: fs.fluid-scale(
+      t.$md-sys-spacing-8,
+      t.$md-sys-spacing-10,
+      t.$md-sys-viewport-compact,
+      t.$md-sys-viewport-expanded
+    );
+  }
+
+  .title {
+    text-align: center;
+
+    @include t.typescale("display-medium");
+    font-size: fs.fluid-scale(
+      20px,
+      t.get-typescale-value("display-medium"),
+      t.$md-sys-viewport-compact,
+      t.$md-sys-viewport-large
+    );
+  }
+
+  .description {
+    display: flex;
+    flex-direction: column;
+    gap: t.$md-sys-spacing-4;
+
+    .subtitle {
+      display: block;
+
+      @include t.typescale("headline-small");
+      font-size: fs.fluid-scale(
+        16px,
+        t.get-typescale-value("headline-small"),
+        t.$md-sys-viewport-compact,
+        t.$md-ref-breakpoint-expanded-max
+      );
+    }
+
+    .list {
+      display: flex;
+      flex-direction: column;
+      gap: fs.fluid-scale(
+        t.$md-sys-spacing-1,
+        t.$md-sys-spacing-3,
+        t.$md-sys-viewport-compact,
+        t.$md-sys-viewport-expanded
+      );
+
+      padding-inline: fs.fluid-scale(
+        t.$md-sys-spacing-3,
+        t.$md-sys-spacing-5,
+        t.$md-sys-viewport-compact,
+        t.$md-sys-viewport-expanded
+      );
+    }
+  }
+
+  .downText {
+    @include t.typescale("title-medium");
+    font-size: fs.fluid-scale(
+      t.get-typescale-value("title-small"),
+      t.get-typescale-value("title-medium"),
+      t.$md-sys-viewport-compact,
+      t.$md-ref-breakpoint-expanded-max
+    );
+
+    color: var(--md-sys-color-on-surface-variant);
+  }
+}

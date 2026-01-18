@@ -5,7 +5,7 @@ const en = {
     heading: "Website Development in Ukraine",
     intro: {
       paragraph1:
-        'Developing your own website is a complex process that involves many IT specialists from different fields. Today, virtually all companies are moving their business online. The development and launch of a website is carried out in several stages. Only thorough preparation makes it possible to implement a project that will bring results to the business. Therefore, the choice of contractor should be approached responsibly.',
+        "Developing your own website is a complex process that involves many IT specialists from different fields. Today, virtually all companies are moving their business online. The development and launch of a website is carried out in several stages. Only thorough preparation makes it possible to implement a project that will bring results to the business. Therefore, the choice of contractor should be approached responsibly.",
       paragraph2:
         "Our web studio in Lviv (Ukraine) and Lodz (Poland) develops websites, single-page sites, simple sites, e-commerce platforms, corporate sites and turnkey resources for various business niches and any level of complexity.",
     },
