@@ -1,39 +1,29 @@
+import { useTranslation } from "react-i18next";
+import s from "./consultation-section.module.scss";
+import DottedListItem from "@shared/ui/lists/dotted-list-item/DottedListItem";
+import gs from "@shared/styles/global.module.scss";
 import cn from "classnames";
+const ConsultationSection = () => {
+  const { t } = useTranslation("consultationSection");
 
-import TitleSection from "@shared/ui/typography/TitleSection";
-import CheckListItems from "@shared/ui/lists/CheckListItems";
-import SecondaryText from "@shared/ui/typography/SecondaryText";
-
-import { dataConsultationList } from "../model/dataConsultationList";
-
-export const ConsultationSection = () => {
   return (
-    <section className="bg-ac-bg-dark py-20">
-      <div className={cn("app-container")}>
-        <TitleSection
-          title="Почніть з консультації — заповніть форму"
-          className={cn(
-            "text-center text-white",
-            "mb:text-3xl md:mb-10",
-            "lg:text-5xl"
-          )}
-        />
-
-        <h3 className={cn("mb-5 text-2xl text-white")}>
-          Запишіться на безкоштовну консультацію, на якій ви одразу отримаєте:
-        </h3>
-
-        <CheckListItems
-          data={dataConsultationList}
-          className="mb-5 text-white"
-        />
-
-        <SecondaryText
-          text="Після того як ви на 100% відчуєте, що вас зрозуміли, — ми перетворимо ваші бізнес-задачі в реалізовані
-        рішення."
-          className="text-ac-text-muted"
-        />
+    <section 
+     className={s.main}
+    aria-labelledby="promise-heading"
+    >
+      <div className={cn(s.wrapper, gs.container)}>
+      <h2 id="promise-heading" className={s.title}>{t("heading")}</h2>
+      <div className={s.downTitleBlock}>
+        <span className={s.subtitle}>{t("infoForm.heading")}</span>
+        <ul className={s.listItem}>
+          <DottedListItem children={t("infoForm.first")} />
+          <DottedListItem children={t("infoForm.double")} />
+          <DottedListItem children={t("infoForm.third")} />
+        </ul>
+        <div className={s.downText}>{t("comment")}</div>
+      </div>
       </div>
     </section>
   );
 };
+export default ConsultationSection;

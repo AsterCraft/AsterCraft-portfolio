@@ -6,7 +6,7 @@
 ///
 /// @example scss
 ///   @use '@shared/styles/tokens' as t;
-///   
+///
 ///   .button {
 ///     @include t.typescale('label-large');
 ///     padding: t.$md-sys-spacing-4;
