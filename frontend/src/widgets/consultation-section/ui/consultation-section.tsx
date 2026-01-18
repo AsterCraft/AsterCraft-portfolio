@@ -1,39 +1,48 @@
 import cn from "classnames";
+import { useTranslation } from "react-i18next";
 
-import TitleSection from "@shared/ui/typography/TitleSection";
-import CheckListItems from "@shared/ui/lists/CheckListItems";
-import SecondaryText from "@shared/ui/typography/SecondaryText";
+import DottedListItem from "@shared/ui/lists/dotted-list-item/DottedListItem";
 
-import { dataConsultationList } from "../model/dataConsultationList";
+import s from "./consultation-section.module.scss";
+import gs from "@shared/styles/global.module.scss";
 
-export const ConsultationSection = () => {
+const ConsultationSection = () => {
+  const { t } = useTranslation("consultationSection");
+
   return (
-    <section className="bg-ac-bg-dark py-20">
-      <div className={cn("app-container")}>
-        <TitleSection
-          title="Почніть з консультації — заповніть форму"
-          className={cn(
-            "text-center text-white",
-            "mb:text-3xl md:mb-10",
-            "lg:text-5xl"
-          )}
-        />
+    <section
+      className={s.consultationSection}
+      aria-labelledby="consultationSection__heading"
+    >
+      <div className={cn(s.wrapper, gs.container)}>
+        <h2
+          id="consultationSection__heading"
+          className={s.title}
+        >
+          {t("heading")}
+        </h2>
 
-        <h3 className={cn("mb-5 text-2xl text-white")}>
-          Запишіться на безкоштовну консультацію, на якій ви одразу отримаєте:
-        </h3>
+        <div className={s.description}>
+          <h3
+            className={s.subtitle}
+            id="consultationSection__subheading"
+          >
+            {t("infoForm.heading")}
+          </h3>
 
-        <CheckListItems
-          data={dataConsultationList}
-          className="mb-5 text-white"
-        />
+          <ul
+            className={s.list}
+            aria-labelledby="consultationSection__subheading"
+          >
+            <DottedListItem>{t("infoForm.first")}</DottedListItem>
+            <DottedListItem>{t("infoForm.double")}</DottedListItem>
+            <DottedListItem>{t("infoForm.third")}</DottedListItem>
+          </ul>
+        </div>
 
-        <SecondaryText
-          text="Після того як ви на 100% відчуєте, що вас зрозуміли, — ми перетворимо ваші бізнес-задачі в реалізовані
-        рішення."
-          className="text-ac-text-muted"
-        />
+        <p className={s.downText}>{t("comment")}</p>
       </div>
     </section>
   );
 };
+export default ConsultationSection;

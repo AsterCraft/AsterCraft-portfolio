@@ -11,11 +11,11 @@ import { promiseSectionTranslations } from "@widgets/promise-section";
 import { faqSectionTranslations } from "@widgets/faq-section";
 import { projectsSectionTranslations } from "@widgets/projects-section";
 import { footerTranslations } from "@widgets/footer";
+import { consultationSectionTranslations } from "@widgets/consultation-section";
 
 export default {
   en: {
     homePage: homePageTranslations.en,
-
     header: headerTranslations.en,
     heroSection: heroSectionTranslations.en,
     servicesSection: servicesSectionTranslations.en,
@@ -25,12 +25,11 @@ export default {
     faqSection: faqSectionTranslations.en,
     projectsSection: projectsSectionTranslations.en,
     footer: footerTranslations.en,
-
+    consultationSection: consultationSectionTranslations.en,
     shared: {},
   },
   uk: {
     homePage: homePageTranslations.uk,
-
     header: headerTranslations.uk,
     heroSection: heroSectionTranslations.uk,
     servicesSection: servicesSectionTranslations.uk,
@@ -40,7 +39,7 @@ export default {
     faqSection: faqSectionTranslations.uk,
     projectsSection: projectsSectionTranslations.uk,
     footer: footerTranslations.uk,
-
+    consultationSection: consultationSectionTranslations.uk,
     shared: {},
   },
 } as const satisfies Resource;

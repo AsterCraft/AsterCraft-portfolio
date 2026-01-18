@@ -1,0 +1,29 @@
+@use "../../../../shared/styles/tokens/" as t;
+@use "../../../../shared/styles/lib/responsive-design/fluid-scale" as fs;
+.dottedListItem {
+  display: flex;
+  align-items: baseline;
+  gap: t.$md-sys-spacing-2;
+
+  @include t.typescale("body-large");
+
+  @media (max-width: t.$md-ref-breakpoint-medium-max) {
+    font-size: fs.fluid-scale(
+      t.get-typescale-value("body-medium"),
+      t.get-typescale-value("body-large"),
+      t.$md-sys-viewport-compact,
+      t.$md-ref-breakpoint-medium-max
+    );
+  }
+
+  &::before {
+    content: "";
+    flex-shrink: 0;
+
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    line-height: 40px;
+    background-color: var(--md-sys-color-primary);
+  }
+}
