@@ -26,8 +26,14 @@ const TelegramContactSection = ({
       <Link
         to="https://t.me/AsterCraft"
         className={s.telegramLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Contact us on Telegram (opens in new tab)"
       >
-        <TelegramLogo className={s.telegramLogo} />
+        <TelegramLogo
+          className={s.telegramLogo}
+          aria-hidden="true"
+        />
         <span className={s.at}>@AsterCraft</span>
       </Link>
     </section>

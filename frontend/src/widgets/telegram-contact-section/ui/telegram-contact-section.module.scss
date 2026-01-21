@@ -66,6 +66,10 @@
     @mixin md-comp-telegram-link-size-transition {
       transition-property: width, height;
       @include t.spatial("default");
+
+      @media (prefers-reduced-motion: reduce) {
+        transition: none;
+      }
     }
 
     display: flex;
