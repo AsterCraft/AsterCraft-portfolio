@@ -33,11 +33,11 @@ const HomePage = () => {
 
       <SectionDevelopmentProcess />
 
+      <FAQSection />
+
       <TelegramContactSection
         className={cn(gs.container, s.tgContactSection)}
       />
-
-      <FAQSection />
 
       <ConsultationSection />
 
