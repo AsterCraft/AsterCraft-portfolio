@@ -1,4 +1,5 @@
 import cn from "classnames";
+import { useTranslation } from "react-i18next";
 
 import { Link } from "react-router";
 import { TelegramLogo } from "@shared/ui";
@@ -9,6 +10,8 @@ const TelegramContactSection = ({
   className,
   ...props
 }: React.ComponentPropsWithRef<"section">) => {
+  const { t } = useTranslation("telegramContactSection");
+
   return (
     <section
       className={cn(s.telegramContactSection, className)}
@@ -19,8 +22,8 @@ const TelegramContactSection = ({
         className={s.heading}
         id="telegramContactSection__heading"
       >
-        <span>Have a question?</span>
-        <span>Ask us in Telegram:</span>
+        <span>{t("heading.question")}</span>
+        <span>{t("heading.cta")}</span>
       </h2>
 
       <Link
@@ -28,13 +31,13 @@ const TelegramContactSection = ({
         className={s.telegramLink}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Contact us on Telegram (opens in new tab)"
+        aria-label={t("link.ariaLabel")}
       >
         <TelegramLogo
           className={s.telegramLogo}
           aria-hidden="true"
         />
-        <span className={s.at}>@AsterCraft</span>
+        <span className={s.at}>{t("link.handle")}</span>
       </Link>
     </section>
   );
