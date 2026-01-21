@@ -23,3 +23,12 @@
     padding-block: 0;
   }
 }
+
+.tgContactSection {
+  padding-block: fs.fluid-scale(
+    t.$md-sys-spacing-6,
+    t.$md-sys-spacing-10,
+    t.$md-sys-viewport-compact,
+    t.$md-sys-viewport-medium
+  );
+}
