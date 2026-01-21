@@ -1,0 +1,103 @@
+@use "../../../shared/styles/tokens/" as t;
+@use "../../../shared/styles/lib/responsive-design/_fluid-scale.scss" as fs;
+@use "../../../shared/styles/lib/state/" as st;
+
+.telegramContactSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: t.$md-sys-spacing-10;
+
+  @media (max-width: t.$md-ref-breakpoint-expanded-max) {
+    justify-content: space-between;
+  }
+
+  @media (max-width: t.$md-sys-viewport-medium) {
+    flex-direction: column;
+    gap: fs.fluid-scale(
+      t.$md-sys-spacing-4,
+      t.$md-sys-spacing-8,
+      t.$md-sys-viewport-compact,
+      t.$md-sys-viewport-medium
+    );
+  }
+
+  .heading {
+    display: flex;
+    gap: t.$md-sys-spacing-3;
+
+    @include t.typescale("display-small");
+
+    @media (max-width: t.$md-ref-breakpoint-expanded-max) {
+      flex-direction: column;
+      gap: 0;
+
+      :nth-child(2) {
+        @include t.typescale("headline-medium");
+      }
+    }
+
+    @media (max-width: t.$md-sys-viewport-medium) {
+      align-items: center;
+
+      :nth-child(1) {
+        font-size: fs.fluid-scale(
+          t.get-typescale-value("headline-medium"),
+          t.get-typescale-value("display-small"),
+          t.$md-sys-viewport-compact,
+          t.$md-sys-viewport-medium
+        );
+      }
+
+      :nth-child(2) {
+        font-size: fs.fluid-scale(
+          t.get-typescale-value("title-large"),
+          t.get-typescale-value("headline-medium"),
+          t.$md-sys-viewport-compact,
+          t.$md-sys-viewport-medium
+        );
+      }
+    }
+  }
+
+  .telegramLink {
+    --md-comp-telegram-link-color: white;
+
+    display: flex;
+    align-items: center;
+
+    border-radius: t.$md-sys-shape-corner-value-extra-extra-large;
+
+    background-color: #2ca3d6;
+
+    @include st.state-layers(
+      var(--md-comp-telegram-link-color),
+      t.$md-sys-shape-corner-value-extra-extra-large
+    );
+
+    .telegramLogo {
+      --md-comp-telegram-logo-size: 64px;
+
+      flex-shrink: 0;
+
+      width: var(--md-comp-telegram-logo-size);
+      height: var(--md-comp-telegram-logo-size);
+
+      @media (max-width: t.$md-sys-viewport-medium) {
+        --md-comp-telegram-logo-size: 48px;
+      }
+    }
+
+    .at {
+      @include t.typescale("headline-small");
+
+      padding-inline: t.$md-sys-spacing-4;
+
+      color: var(--md-comp-telegram-link-color);
+
+      @media (max-width: t.$md-sys-viewport-medium) {
+        @include t.typescale("title-large");
+      }
+    }
+  }
+}
