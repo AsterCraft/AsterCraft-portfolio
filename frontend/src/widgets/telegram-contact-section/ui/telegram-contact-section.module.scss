@@ -26,7 +26,13 @@
     display: flex;
     gap: t.$md-sys-spacing-3;
 
-    @include t.typescale("display-small");
+    :nth-child(1) {
+      @include t.typescale-emphasized("display-small");
+    }
+
+    :nth-child(2) {
+      @include t.typescale("display-small");
+    }
 
     @media (max-width: t.$md-ref-breakpoint-expanded-max) {
       flex-direction: column;
@@ -42,7 +48,7 @@
 
       :nth-child(1) {
         font-size: fs.fluid-scale(
-          t.get-typescale-value("headline-medium"),
+          t.get-typescale-value("headline-small"),
           t.get-typescale-value("display-small"),
           t.$md-sys-viewport-compact,
           t.$md-sys-viewport-medium
@@ -51,7 +57,7 @@
 
       :nth-child(2) {
         font-size: fs.fluid-scale(
-          t.get-typescale-value("title-large"),
+          t.get-typescale-value("title-medium"),
           t.get-typescale-value("headline-medium"),
           t.$md-sys-viewport-compact,
           t.$md-sys-viewport-medium
