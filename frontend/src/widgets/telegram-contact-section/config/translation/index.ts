@@ -1,9 +1,9 @@
 import en from "./en";
 import uk from "./uk";
 
-const TelegramContactSectionTranslations = {
+const telegramContactSectionTranslations = {
   en,
   uk,
 } as const;
 
-export default TelegramContactSectionTranslations;
+export default telegramContactSectionTranslations;
