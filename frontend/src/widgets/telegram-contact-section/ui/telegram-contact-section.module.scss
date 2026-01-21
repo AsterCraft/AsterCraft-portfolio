@@ -63,6 +63,11 @@
   .telegramLink {
     --md-comp-telegram-link-color: white;
 
+    @mixin md-comp-telegram-link-size-transition {
+      transition-property: width, height;
+      @include t.spatial("default");
+    }
+
     display: flex;
     align-items: center;
 
@@ -83,6 +88,8 @@
       width: var(--md-comp-telegram-logo-size);
       height: var(--md-comp-telegram-logo-size);
 
+      @include md-comp-telegram-link-size-transition();
+
       @media (max-width: t.$md-sys-viewport-medium) {
         --md-comp-telegram-logo-size: 48px;
       }
@@ -94,6 +101,8 @@
       padding-inline: t.$md-sys-spacing-4;
 
       color: var(--md-comp-telegram-link-color);
+
+      @include md-comp-telegram-link-size-transition();
 
       @media (max-width: t.$md-sys-viewport-medium) {
         @include t.typescale("title-large");
