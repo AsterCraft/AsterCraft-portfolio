@@ -1,19 +1,20 @@
 import { useTranslation } from "react-i18next";
+import cn from "classnames";
 
 import AboutUsSection from "@widgets/about-us-section";
 
 import PromiseSection from "@widgets/promise-section";
 import { SectionDevelopmentProcess } from "@widgets/section-development-process";
 import { HeroSection } from "@widgets/hero-section";
-import DividerBetweenSections from "@shared/ui/lines/DividerBetweenSections/DividerBetweenSections";
-import SectionTelegramContact from "@widgets/sections/SectionTelegramContact/ui/SectionTelegramContact";
 import ConsultationSection from "@widgets/consultation-section";
 import FAQSection from "@widgets/faq-section";
 import { ServicesSection } from "@widgets/services-section";
 import { SeoSection } from "@widgets/seo-section";
 import ProjectsSection from "@widgets/projects-section";
+import TelegramContactSection from "@widgets/telegram-contact-section";
 
 import s from "./home-page.module.scss";
+import gs from "@shared/styles/global.module.scss";
 
 const HomePage = () => {
   const { t } = useTranslation("homePage");
@@ -32,13 +33,11 @@ const HomePage = () => {
 
       <SectionDevelopmentProcess />
 
-      <DividerBetweenSections />
-
-      <SectionTelegramContact />
-
-      <DividerBetweenSections />
-
       <FAQSection />
+
+      <TelegramContactSection
+        className={cn(gs.container, s.tgContactSection)}
+      />
 
       <ConsultationSection />
 

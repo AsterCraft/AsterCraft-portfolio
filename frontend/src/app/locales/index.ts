@@ -12,6 +12,7 @@ import { faqSectionTranslations } from "@widgets/faq-section";
 import { projectsSectionTranslations } from "@widgets/projects-section";
 import { footerTranslations } from "@widgets/footer";
 import { consultationSectionTranslations } from "@widgets/consultation-section";
+import { telegramContactSectionTranslations } from "@widgets/telegram-contact-section";
 
 export default {
   en: {
@@ -26,6 +27,8 @@ export default {
     projectsSection: projectsSectionTranslations.en,
     footer: footerTranslations.en,
     consultationSection: consultationSectionTranslations.en,
+    telegramContactSection: telegramContactSectionTranslations.en,
+
     shared: {},
   },
   uk: {
@@ -40,6 +43,8 @@ export default {
     projectsSection: projectsSectionTranslations.uk,
     footer: footerTranslations.uk,
     consultationSection: consultationSectionTranslations.uk,
+    telegramContactSection: telegramContactSectionTranslations.uk,
+
     shared: {},
   },
 } as const satisfies Resource;
