@@ -1,0 +1,38 @@
+@use "../../../../shared/styles/tokens/" as t;
+@use "../../../../shared/styles/lib/responsive-design/fluid-scale" as fs;
+
+.stageList {
+  display: flex;
+  flex-direction: column;
+  gap: t.$md-sys-spacing-10;
+}
+
+.stageList__item {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.stageTitle {
+  @include t.typescale-emphasized("headline-small");
+
+  font-size: fs.fluid-scale(
+    t.get-typescale-value("title-medium"),
+    t.get-typescale-value("headline-small"),
+    t.$md-sys-viewport-compact,
+    t.$md-ref-breakpoint-large-min
+  );
+
+  color: var(--md-sys-color-tertiary);
+  margin-bottom: 8px;
+}
+
+.stageDescriptionlist {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  .stageDescription {
+    max-width: 434px;
+  }
+}

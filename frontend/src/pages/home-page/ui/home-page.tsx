@@ -4,7 +4,7 @@ import cn from "classnames";
 import AboutUsSection from "@widgets/about-us-section";
 
 import PromiseSection from "@widgets/promise-section";
-import { SectionDevelopmentProcess } from "@widgets/section-development-process";
+import { DevelopmentProcessSection } from "@widgets/development-process-section";
 import { HeroSection } from "@widgets/hero-section";
 import ConsultationSection from "@widgets/consultation-section";
 import FAQSection from "@widgets/faq-section";
@@ -31,7 +31,7 @@ const HomePage = () => {
         <AboutUsSection />
       </div>
 
-      <SectionDevelopmentProcess />
+      <DevelopmentProcessSection className={cn(gs.container)} />
 
       <FAQSection />
 

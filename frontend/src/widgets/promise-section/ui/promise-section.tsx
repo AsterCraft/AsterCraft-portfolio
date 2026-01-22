@@ -1,8 +1,6 @@
 import cn from "classnames";
 import { useTranslation } from "react-i18next";
 
-import { DevicesSvgImage } from "@shared/ui";
-
 import s from "./promise-section.module.scss";
 import gs from "@shared/styles/global.module.scss";
 import { ProjectCard } from "@shared/ui/cards";
@@ -14,6 +12,7 @@ const PromiseSection = () => {
     <section
       className={s.promiseSection}
       aria-labelledby="promise-heading"
+      id="promise-section"
     >
       <div className={cn(s.wrapper, gs.container)}>
         <div className={s.content}>
