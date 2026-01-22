@@ -15,7 +15,10 @@ export const DevelopmentProcessSection = ({ className }: Props) => {
   const { isDesktop } = useWindowWidth();
 
   return (
-    <section className={cn(s.sectionDevelopmentProcess, className)}>
+    <section
+      className={cn(s.sectionDevelopmentProcess, className)}
+      id="development-process-section"
+    >
       <h2 className={s.title}>Процес створення сайту</h2>
 
       {isDesktop ? (

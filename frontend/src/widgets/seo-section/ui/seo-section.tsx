@@ -5,7 +5,7 @@ import { StartProjectBtn } from "@shared/ui";
 import { PhoneEnabledIcon } from "@shared/ui";
 import { LocationOnIcon } from "@shared/ui";
 import { MailIcon } from "@shared/ui";
-import {TextLink} from "@shared/ui";
+import { TextLink } from "@shared/ui";
 
 import s from "./seo-section.module.scss";
 import gs from "@shared/styles/global.module.scss";
@@ -30,7 +30,10 @@ const SeoSection = ({ children }: SeoSectionProps) => {
   });
 
   return (
-    <section className={s.seoSection}>
+    <section
+      className={s.seoSection}
+      id="seo-section"
+    >
       <div className={cn(s.wrapper, gs.container)}>
         <div
           className={cn(s.contactsColumn, s.column)}
