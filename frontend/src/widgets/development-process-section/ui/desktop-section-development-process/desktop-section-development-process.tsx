@@ -1,9 +1,10 @@
-import cn from "classnames";
+import { useTranslation } from "react-i18next";
+
+import { DottedListItem } from "@shared/ui/lists";
 
 import { IconStage } from "../icon-stage/icon-stage";
-import s from "./desktop-section-development-process.module.scss";
 
-import { useTranslation } from "react-i18next";
+import s from "./desktop-section-development-process.module.scss";
 
 export const DesktopSectionDevelopmentProcess = () => {
   const { t } = useTranslation("developmentProcessSection");
@@ -25,10 +26,9 @@ export const DesktopSectionDevelopmentProcess = () => {
               <h3 className={s.stageTitle}>{stage.title}</h3>
               <ul className={s.stageDescriptionlist}>
                 {stage.description.map((stageDesc) => (
-                  <li className={s.listItem}>
-                    <div className={s.bullet}>●</div>
+                  <DottedListItem>
                     <p className={s.text}>{stageDesc}</p>
-                  </li>
+                  </DottedListItem>
                 ))}
               </ul>
             </div>

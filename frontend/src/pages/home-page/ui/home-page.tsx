@@ -31,7 +31,7 @@ const HomePage = () => {
         <AboutUsSection />
       </div>
 
-      <DevelopmentProcessSection />
+      <DevelopmentProcessSection className={cn(gs.container)} />
 
       <FAQSection />
 

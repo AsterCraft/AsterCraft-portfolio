@@ -1,7 +1,10 @@
+@use "../../../../shared/styles/tokens/" as t;
+@use "../../../../shared/styles/lib/responsive-design/fluid-scale" as fs;
+
 .stageList {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: t.$md-sys-spacing-10;
 }
 
 .stageList__item {
@@ -11,9 +14,16 @@
 }
 
 .stageTitle {
+  @include t.typescale-emphasized("headline-small");
+
+  font-size: fs.fluid-scale(
+    t.get-typescale-value("title-medium"),
+    t.get-typescale-value("headline-small"),
+    t.$md-sys-viewport-compact,
+    t.$md-ref-breakpoint-large-min
+  );
+
   color: var(--md-sys-color-tertiary);
-  font-size: 18px;
-  font-weight: 600;
   margin-bottom: 8px;
 }
 
@@ -21,14 +31,6 @@
   display: flex;
   flex-direction: column;
   gap: 6px;
-
-  .listItem {
-    display: flex;
-    gap: 3px;
-    font-weight: 400;
-    line-height: 1.5;
-    letter-spacing: 0.5px;
-  }
 
   .stageDescription {
     max-width: 434px;

@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { IconStage } from "../icon-stage/icon-stage";
 
 import s from "./mobile-development-process-section.module.scss";
+import { DottedListItem } from "@shared/ui/lists";
 
 export const MobileDevelopmentProcessSection = () => {
   const { t } = useTranslation("developmentProcessSection");
@@ -17,10 +18,9 @@ export const MobileDevelopmentProcessSection = () => {
             <h3 className={s.stageTitle}>{stage.title}</h3>
             <ul className={s.stageDescriptionlist}>
               {stage.description.map((stageDesc) => (
-                <li className={s.listItem}>
-                  <div className={s.bullet}>●</div>
+                <DottedListItem>
                   <p className={s.stageDescription}>{stageDesc}</p>
-                </li>
+                </DottedListItem>
               ))}
             </ul>
           </div>

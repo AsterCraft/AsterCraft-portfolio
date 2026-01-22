@@ -1,3 +1,5 @@
+import cn from "classnames";
+
 import { useWindowWidth } from "../../lib/hooks/useWindowWidth";
 
 import { DesktopSectionDevelopmentProcess } from "../desktop-section-development-process/desktop-section-development-process";
@@ -5,20 +7,22 @@ import { MobileDevelopmentProcessSection } from "../mobile-development-process-s
 
 import s from "./development-process-section.module.scss";
 
-export const DevelopmentProcessSection = () => {
+type Props = {
+  className: string;
+};
+
+export const DevelopmentProcessSection = ({ className }: Props) => {
   const { isDesktop } = useWindowWidth();
 
   return (
-    <section className={s.sectionDevelopmentProcess}>
-      <div className={s.container}>
-        <h2 className={s.title}>Процес створення сайту</h2>
+    <section className={cn(s.sectionDevelopmentProcess, className)}>
+      <h2 className={s.title}>Процес створення сайту</h2>
 
-        {isDesktop ? (
-          <DesktopSectionDevelopmentProcess />
-        ) : (
-          <MobileDevelopmentProcessSection />
-        )}
-      </div>
+      {isDesktop ? (
+        <DesktopSectionDevelopmentProcess />
+      ) : (
+        <MobileDevelopmentProcessSection />
+      )}
     </section>
   );
 };

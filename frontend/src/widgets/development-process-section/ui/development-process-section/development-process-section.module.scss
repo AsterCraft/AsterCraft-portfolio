@@ -1,3 +1,6 @@
+@use "../../../../shared/styles/tokens/" as t;
+@use "../../../../shared/styles/lib/responsive-design/fluid-scale" as fs;
+
 .sectionDevelopmentProcess {
   background-color: var(--md-sys-color-surface);
   color: var(--md-sys-color-on-surface);
@@ -15,9 +18,15 @@
 }
 
 .title {
-  color: var(--md-sys-color-primary);
-  font-size: clamp(34px, 8.2618384401px + 3.0640668524vw, 45px);
-  font-weight: 700;
+  @include t.typescale("display-medium");
+
+  font-size: fs.fluid-scale(
+    t.get-typescale-value("headline-small"),
+    t.get-typescale-value("display-medium"),
+    t.$md-sys-viewport-compact,
+    t.$md-sys-viewport-expanded
+  );
+
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: t.$md-sys-spacing-10;
 }
