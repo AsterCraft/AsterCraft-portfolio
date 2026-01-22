@@ -189,7 +189,7 @@ export const Header = () => {
             <ul className={s.pageIndexList}>
               <li>
                 <TextLink
-                  to="#SectionDevelopmentProcess"
+                  to="#development-process-section"
                   className={s.pageIndexLink}
                 >
                   {t("navRail.pageIndex.development")}
@@ -197,7 +197,7 @@ export const Header = () => {
               </li>
               <li>
                 <TextLink
-                  to="#SectionProjects"
+                  to="#promise-section"
                   className={s.pageIndexLink}
                 >
                   {t("navRail.pageIndex.portfolio")}
@@ -205,7 +205,7 @@ export const Header = () => {
               </li>
               <li>
                 <TextLink
-                  to="#SectionContact"
+                  to="#seo-section"
                   className={s.pageIndexLink}
                 >
                   {t("navRail.pageIndex.contacts")}

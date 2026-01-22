@@ -1,5 +1,6 @@
 @use "../../../../shared/styles/tokens/" as t;
 @use "../../../../shared/styles/lib/responsive-design/fluid-scale" as fs;
+
 .dottedListItem {
   display: flex;
   align-items: baseline;
@@ -19,6 +20,8 @@
   &::before {
     content: "";
     flex-shrink: 0;
+
+    transform: translateY(-50%);
 
     width: 6px;
     height: 6px;
