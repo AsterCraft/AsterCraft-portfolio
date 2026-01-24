@@ -21,7 +21,7 @@ const StartProjectForm = () => {
 
   const navigate = useNavigate();
 
-  const { animationState, handleClose, elementRef } =
+  const [animationState, handleClose, elementRef] =
     useUnmountAnimation<HTMLDivElement>(isOpen, close, () =>
       navigate(`/${i18n.language}/`, { preventScrollReset: true })
     );

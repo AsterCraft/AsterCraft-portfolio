@@ -7,19 +7,18 @@ import { useState, useRef, useEffect, type RefObject } from "react";
  * - closed: element getting unmounted
  */
 type AnimationState = "open" | "closing" | "closed";
-
 /**
  * Return value from useUnmountAnimation hook.
  * @template T - The HTML element type being animated
  */
-interface UseUnmountAnimationReturn<T extends HTMLElement = HTMLElement> {
+type UseUnmountAnimationReturn<T extends HTMLElement = HTMLElement> = [
   /** Current animation state. Use this to apply CSS classes for transitions. */
-  animationState: AnimationState;
+  AnimationState, 
   /** Manually trigger the close animation. */
-  handleClose: () => void;
+  () => void,
   /** Ref to attach to the animated element. Required for transition tracking. */
-  elementRef: RefObject<T | null>;
-}
+  RefObject<T | null>
+];
 
 /**
  * Manages unmount animations by keeping elements mounted until CSS transitions finish.
@@ -116,11 +115,11 @@ const useUnmountAnimation = <T extends HTMLElement = HTMLElement>(
     };
   }, [animationState, onClose, onAfterClose]);
 
-  return {
+  return [
     animationState,
     handleClose,
     elementRef,
-  };
+  ];
 };
 
 export default useUnmountAnimation;
