@@ -30,7 +30,7 @@ export const Header = () => {
 
   const menuRef = useRef<HTMLButtonElement>(null);
 
-  const { animationState, elementRef } = useUnmountAnimation<HTMLDivElement>(
+  const [ animationState, _, elementRef ] = useUnmountAnimation<HTMLDivElement>(
     isExpanded,
     () => {
       setIsExpanded(false);
