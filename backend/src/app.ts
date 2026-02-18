@@ -1,4 +1,8 @@
 import express from "express";
+import swaggerUi from "swagger-ui-express";
+
+import { openApiSpecification } from "@lib/swagger";
+import { sendSuccess } from "@lib/api-response";
 
 import validateRequest from "@middleware/validate-request";
 import errorHandler from "@middleware/error-handler";
@@ -19,8 +23,10 @@ const createApp = () => {
   app.use(express.json());
 
   app.get("/health", (_, res) => {
-    res.status(200).json({ message: "Server online" });
+    return sendSuccess(res, 200, { message: "Server online" });
   });
+
+  app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(openApiSpecification));
 
   app.use(apiRateLimitMiddleware);
 
