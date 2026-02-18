@@ -1,6 +1,7 @@
 import type { NextFunction, Request, Response } from "express";
 
 import { apiRateLimiter } from "@lib/rate-limits";
+import { sendRateLimitError, sendError } from "@lib/api-response";
 
 const apiRateLimitMiddleware = async (
   req: Request,
@@ -9,19 +10,18 @@ const apiRateLimitMiddleware = async (
 ) => {
   const identifierIp = req.ip;
   if (!identifierIp) {
-    return res
-      .status(418)
-      .json("Client disconnected (req.socket was destroyed)");
+    return sendError(res, 500, "Unable to identify client IP address");
   }
 
   const result = await apiRateLimiter.limit(identifierIp);
   if (!result.success) {
-    console.log("apiRateLimitMiddleware triggered");
-    return res.status(429).json({
-      message: "This api received too many requests at the same time",
-      reason: result.reason,
-      reset: result.reset,
-    });
+    return sendRateLimitError(
+      res,
+      "Too many API requests",
+      result.limit,
+      result.remaining,
+      result.reset,
+    );
   }
 
   next();
