@@ -1,5 +1,7 @@
 import type { NextFunction, Request, Response } from "express";
 
+import env from "@lib/env";
+
 import { getRecipientEmail } from "./config";
 import type { SendEmailRequest, SendEmailResponse } from "./types";
 import sendEmail from "./gmail-sender";
@@ -26,7 +28,8 @@ ${emailBody}
 `;
 
   try {
-    await sendEmail(recipientEmail, data.subject, fullBody);
+    if (env.NODE_ENV === "production")
+      await sendEmail(recipientEmail, data.subject, fullBody);
     res.json({
       success: true,
       message: "Email sent successfully",
