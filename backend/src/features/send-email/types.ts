@@ -15,4 +15,3 @@ export const sendEmailRequestSchema = z.object({
 });
 
 export type SendEmailRequest = z.infer<typeof sendEmailRequestSchema>;
-export type SendEmailResponse = { success: boolean; message: string };

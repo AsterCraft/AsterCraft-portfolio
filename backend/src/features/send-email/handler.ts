@@ -1,9 +1,10 @@
 import type { NextFunction, Request, Response } from "express";
 
 import env from "@lib/env";
+import { sendSuccess } from "@lib/api-response";
 
 import { getRecipientEmail } from "./config";
-import type { SendEmailRequest, SendEmailResponse } from "./types";
+import type { SendEmailRequest } from "./types";
 import sendEmail from "./gmail-sender";
 
 const sendEmailHandler = async (
@@ -30,10 +31,7 @@ ${emailBody}
   try {
     if (env.NODE_ENV === "production")
       await sendEmail(recipientEmail, data.subject, fullBody);
-    res.json({
-      success: true,
-      message: "Email sent successfully",
-    } as SendEmailResponse);
+    return sendSuccess(res, 200, { message: "Email sent successfully" });
   } catch (err) {
     next(err);
   }

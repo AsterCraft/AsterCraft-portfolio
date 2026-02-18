@@ -2,6 +2,7 @@ import type { NextFunction, Request, Response } from "express";
 
 import { emailRateLimiter, projectRateLimiter } from "@lib/rate-limits";
 import type { SendEmailRequest } from "./types";
+import { sendRateLimitError, sendError } from "@lib/api-response";
 
 const emailRateLimiterMiddleware = async (
   req: Request,
@@ -10,28 +11,31 @@ const emailRateLimiterMiddleware = async (
 ) => {
   const identifierIp = req.ip;
   if (!identifierIp)
-    return res
-      .status(418)
-      .json("Client disconnected (req.socket was destroyed)");
+    return sendError(res, 500, "Unable to identify client IP address");
+
   const resultIp = await emailRateLimiter.limit(identifierIp);
 
   if (!resultIp.success) {
-    return res.status(429).json({
-      message: "That ip sent too much emails",
-      reason: resultIp.reason,
-      reset: resultIp.reset,
-    });
+    return sendRateLimitError(
+      res,
+      "Too many send-email requests from this IP",
+      resultIp.limit,
+      resultIp.remaining,
+      resultIp.reset,
+    );
   }
 
   const identifierProject = (req.body as SendEmailRequest).project;
   const resultProject = await projectRateLimiter.limit(identifierProject);
 
   if (!resultProject.success) {
-    return res.status(429).json({
-      message: "That project sent too much emails",
-      reason: resultProject.reason,
-      reset: resultProject.reset,
-    });
+    return sendRateLimitError(
+      res,
+      "Too many send-email requests for this project",
+      resultProject.limit,
+      resultProject.remaining,
+      resultProject.reset,
+    );
   }
 
   next();
