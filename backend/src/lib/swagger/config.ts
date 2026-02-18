@@ -1,3 +1,4 @@
+import env from "@lib/env";
 import swaggerJsdoc from "swagger-jsdoc";
 
 const options = {
@@ -6,7 +7,8 @@ const options = {
     info: {
       title: "AsterCraft API",
       version: "1.0.0",
-      description: "Backend API for AsterCraft projects - handles contact form submissions",
+      description:
+        "Backend API for AsterCraft projects - handles contact form submissions",
       contact: {
         name: "AsterCraft",
       },
@@ -17,7 +19,11 @@ const options = {
         description: "Production server",
       },
       {
-        url: "http://localhost:3000",
+        url: "https://backend-dev-6575778207.europe-central2.run.app",
+        description: "Development server",
+      },
+      {
+        url: `http://localhost:${env.PORT}`,
         description: "Local development",
       },
     ],
@@ -35,10 +41,7 @@ const options = {
 
   explorer: true,
 
-  apis: [
-    "./src/app.ts",
-    "./src/lib/swagger/schemas.ts",
-  ],
+  apis: ["./src/app.ts", "./src/lib/swagger/schemas.ts"],
 } satisfies swaggerJsdoc.Options;
 
 const openApiSpecification = swaggerJsdoc(options);
