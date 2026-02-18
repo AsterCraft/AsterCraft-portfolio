@@ -22,6 +22,31 @@ const createApp = () => {
   app.use(corsMiddleware);
   app.use(express.json());
 
+  /**
+   * @openapi
+   * /health:
+   *   get:
+   *     summary: Health check
+   *     description: Returns server status
+   *     tags:
+   *       - Health
+   *     responses:
+   *       200:
+   *         description: Server is online
+   *         content:
+   *           application/json:
+   *             schema:
+   *               allOf:
+   *                 - $ref: '#/components/schemas/SuccessResponse'
+   *                 - type: object
+   *                   properties:
+   *                     data:
+   *                       type: object
+   *                       properties:
+   *                         message:
+   *                           type: string
+   *                           example: "Server online"
+   */
   app.get("/health", (_, res) => {
     return sendSuccess(res, 200, { message: "Server online" });
   });
@@ -30,6 +55,64 @@ const createApp = () => {
 
   app.use(apiRateLimitMiddleware);
 
+  /**
+   * @openapi
+   * /api/send-email:
+   *   post:
+   *     summary: Send email from contact form
+   *     description: Sends an email to the project owner from a contact form submission
+   *     tags:
+   *       - Email
+   *     requestBody:
+   *       required: true
+   *       content:
+   *         application/json:
+   *           schema:
+   *             $ref: '#/components/schemas/SendEmailRequest'
+   *           example:
+   *             project: "astercraft-portfolio"
+   *             sender:
+   *               name: "John Doe"
+   *               email: "john@example.com"
+   *             subject: "Contact Form Submission"
+   *             body:
+   *               message: "Hello, I'd like to work with you!"
+   *               phone: "+1234567890"
+   *     responses:
+   *       200:
+   *         description: Email sent successfully
+   *         content:
+   *           application/json:
+   *             schema:
+   *               allOf:
+   *                 - $ref: '#/components/schemas/SuccessResponse'
+   *                 - type: object
+   *                   properties:
+   *                     data:
+   *                       type: object
+   *                       properties:
+   *                         message:
+   *                           type: string
+   *                           example: "Email sent successfully"
+   *       400:
+   *         description: Validation error
+   *         content:
+   *           application/json:
+   *             schema:
+   *               $ref: '#/components/schemas/ValidationErrorResponse'
+   *       429:
+   *         description: Rate limit exceeded
+   *         content:
+   *           application/json:
+   *             schema:
+   *               $ref: '#/components/schemas/RateLimitErrorResponse'
+   *       500:
+   *         description: Internal server error
+   *         content:
+   *           application/json:
+   *             schema:
+   *               $ref: '#/components/schemas/ErrorResponse'
+   */
   app.post(
     "/api/send-email",
     emailRateLimiterMiddleware,
