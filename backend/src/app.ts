@@ -48,10 +48,47 @@ const createApp = () => {
    *                           example: "Server online"
    */
   app.get("/health", (_, res) => {
-    return sendSuccess(res, 200, { message: "Server online" });
+    return sendSuccess(res, 200, { message: "Server is online" });
   });
 
-  app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(openApiSpecification));
+  /**
+   * @openapi
+   * /api-docs/json:
+   *   get:
+   *     summary: Get OpenAPI specification in JSON format
+   *     description: Returns the complete OpenAPI 3.0 specification for this API
+   *     tags:
+   *       - Documentation
+   *
+   *     responses:
+   *       200:
+   *         description: OpenApi specification json
+   *         content:
+   *           application/json:
+   *             schema:
+   *               type: object
+   *               properties:
+   *                 openapi:
+   *                   type: string
+   *                   example: "3.0.0"
+   *                 info:
+   *                   type: object
+   *                 paths:
+   *                   type: object
+   *                 components:
+   *                   type: object
+   */
+  app.get("/api-docs/json", (_, res) => {
+    return res.status(200).json(openApiSpecification);
+  });
+
+  app.use(
+    "/api-docs",
+    swaggerUi.serve,
+    swaggerUi.setup(openApiSpecification, {
+      // explorer: true,
+    }),
+  );
 
   app.use(apiRateLimitMiddleware);
 
