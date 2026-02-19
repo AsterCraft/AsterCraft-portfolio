@@ -13,24 +13,14 @@ const options = {
         name: "AsterCraft",
       },
     },
-    servers: [
-      {
-        url: "https://backend-prod-6575778207.europe-central2.run.app",
-        description: "Production server",
-      },
-      {
-        url: "https://backend-dev-6575778207.europe-central2.run.app",
-        description: "Development server",
-      },
-      {
-        url: `http://localhost:${env.PORT}`,
-        description: "Local development",
-      },
-    ],
     tags: [
       {
         name: "Health",
         description: "Health check endpoints",
+      },
+      {
+        name: "Documentation",
+        description: "Documentation endpoints",
       },
       {
         name: "Email",
@@ -38,8 +28,6 @@ const options = {
       },
     ],
   },
-
-  explorer: true,
 
   apis: ["./src/app.ts", "./src/lib/swagger/schemas.ts"],
 } satisfies swaggerJsdoc.Options;
