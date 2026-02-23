@@ -1,6 +1,5 @@
 import type { NextFunction, Request, Response } from "express";
 
-import env from "@lib/env";
 import { sendSuccess } from "@lib/api-response";
 
 import { getRecipientEmail } from "./config";
@@ -29,8 +28,7 @@ ${emailBody}
 `;
 
   try {
-    if (env.NODE_ENV === "production")
-      await sendEmail(recipientEmail, data.subject, fullBody);
+    await sendEmail(recipientEmail, data.subject, fullBody);
     return sendSuccess(res, 200, { message: "Email sent successfully" });
   } catch (err) {
     next(err);
