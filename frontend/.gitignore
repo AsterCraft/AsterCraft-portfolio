@@ -2,6 +2,8 @@
 .react-router/
 docs/scss/
 pnpm-lock.yaml
+src/shared/lib/api/schema.d.ts
+
 # Builds
 build/
 .vercel/

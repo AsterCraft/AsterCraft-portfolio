@@ -1,7 +1,7 @@
 import cn from "classnames";
 import { useTranslation } from "react-i18next";
 
-import { useSubmitModalStartProject } from "../../model/useSubmitModalStartProject";
+import { useSubmitModalStartProject } from "../../model/use-submit-modal-start-project";
 
 import s from "./button-submit.module.scss";
 
