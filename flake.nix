@@ -24,11 +24,11 @@
         };
 
         devShells.backend = pkgs.mkShell {
-          buildInputs = with pkgs; [go];
+          buildInputs = with pkgs; [bun];
 
           shellHook = ''
             cd backend/
-            echo "Go dev environment loaded"
+            echo "Bun dev environment loaded"
           '';
         };
 

@@ -1,14 +1,13 @@
-import axios from "axios";
 import { useRef, useState } from "react";
 
+import useSendEmail from "../lib/use-send-email";
 import { useModalStartProjectStore } from "./store";
 import { createContactFormSchema, type FieldName } from "./validation";
-import { API_ENDPOINTS } from "@shared/config/api";
 import { trackFormSubmitConversion } from "@shared/lib/analytics/gtag";
 
 export const useSubmitModalStartProject = () => {
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSentSuccessfully, setIsSentSuccessfully] = useState(false);
+  const { sendEmail, isLoading: isSubmitting } = useSendEmail();
 
   const hasAttemptedSubmitRef = useRef(false);
 
@@ -64,46 +63,31 @@ export const useSubmitModalStartProject = () => {
     }
 
     clearErrors();
-    setIsSubmitting(true);
-    try {
-      const response = await axios.post(
-        API_ENDPOINTS.sendEmail,
-        {
-          name: firstName,
-          telegram,
-          email,
-          phone,
-          message,
-        },
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
+    const result = await sendEmail({
+      firstName,
+      email,
+      phone,
+      telegram,
+      message,
+    });
 
-      if (response.status !== 200) {
-        throw new Error("Failed to send data");
-      }
-
-      trackFormSubmitConversion();
-
-      hasAttemptedSubmitRef.current = false;
-      setIsSentSuccessfully(() => {
-        console.log(`isSentSuccessfully: true`);
-        return true;
-      });
-
-      setTimeout(() => {
-        setIsSentSuccessfully(false);
-      }, 3000);
-
-      resetModalStartProject();
-    } catch (error) {
-      console.log("Failed to send data: ", error);
-    } finally {
-      setIsSubmitting(false);
+    if (!result.success) {
+      console.error("Failed to send email:", result.error);
+      return;
     }
+
+    trackFormSubmitConversion();
+    hasAttemptedSubmitRef.current = false;
+    setIsSentSuccessfully(() => {
+      console.log(`isSentSuccessfully: true`);
+      return true;
+    });
+
+    setTimeout(() => {
+      setIsSentSuccessfully(false);
+    }, 3000);
+
+    resetModalStartProject();
   };
 
   return { handleSubmit, isSubmitting, isSentSuccessfully, validated };

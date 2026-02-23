@@ -1,24 +1,17 @@
-FROM golang:1.24-alpine AS builder
+FROM oven/bun:latest AS base
+WORKDIR /usr/src/app
 
-WORKDIR /app
+FROM base AS install
+COPY package.json bun.lock ./
+RUN bun install --frozen-lockfile --production
 
-COPY go.mod go.sum ./
-RUN go mod download
-
+FROM base AS release
+COPY --from=install /usr/src/app/node_modules ./node_modules
 COPY . .
-RUN CGO_ENABLED=0 GOOS=linux go build -o server .
 
-FROM alpine:latest
+ENV NODE_ENV=production
+ENV PORT=7979
 
-WORKDIR /app
-COPY --from=builder /app/server .
-
-EXPOSE 8080
-
-RUN addgroup -g 1001 -S appuser && \
-    adduser -u 1001 -S appuser -G appuser && \
-    chown -R appuser:appuser /app
-
-USER appuser
-
-CMD ["./server"]
+USER bun
+EXPOSE 7979/tcp
+ENTRYPOINT ["bun", "start"]
