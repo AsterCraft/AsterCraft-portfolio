@@ -4,6 +4,8 @@
  *   schemas:
  *     SuccessResponse:
  *       type: object
+ *       required:
+ *         - success
  *       properties:
  *         success:
  *           type: boolean
@@ -15,6 +17,9 @@
  *
  *     ErrorResponse:
  *       type: object
+ *       required:
+ *         - success
+ *         - error
  *       properties:
  *         success:
  *           type: boolean
@@ -27,6 +32,10 @@
  *
  *     ValidationErrorResponse:
  *       type: object
+ *       required:
+ *         - success
+ *         - error
+ *         - details
  *       properties:
  *         success:
  *           type: boolean
@@ -36,6 +45,9 @@
  *           example: "Validation failed"
  *         details:
  *           type: object
+ *           required:
+ *             - formErrors
+ *             - fieldErrors
  *           properties:
  *             formErrors:
  *               type: array
@@ -53,6 +65,10 @@
  *
  *     RateLimitErrorResponse:
  *       type: object
+ *       required:
+ *         - success
+ *         - error
+ *         - details
  *       properties:
  *         success:
  *           type: boolean
@@ -62,6 +78,11 @@
  *           example: "Too many API requests"
  *         details:
  *           type: object
+ *           required:
+ *             - limit
+ *             - remaining
+ *             - reset
+ *             - retryAfter
  *           properties:
  *             limit:
  *               type: number
