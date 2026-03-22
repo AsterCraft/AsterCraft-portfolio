@@ -1,5 +1,5 @@
-@use "../../../shared/styles/tokens" as t;
-@use "../../../shared/styles/lib/responsive-design/_fluid-scale.scss" as fs;
+@use "@shared/styles/tokens" as t;
+@use "@shared/styles/lib/responsive-design/fluid-scale" as fs;
 
 .consultationSection {
   padding-block: fs.fluid-scale(
