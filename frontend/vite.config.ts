@@ -28,6 +28,60 @@ export default defineConfig(({ isSsrBuild }) => {
         "@": path.resolve(__dirname, "src"),
       },
     },
+    css: {
+      preprocessorOptions: {
+        scss: {
+          api: "modern-compiler",
+          importers: [
+            {
+              findFileUrl(url) {
+                if (url.startsWith("@shared/")) {
+                  const filePath = path.resolve(
+                    __dirname,
+                    "src",
+                    url.replace("@shared/", "shared/"),
+                  );
+                  return new URL(`file://${filePath}`);
+                }
+                if (url.startsWith("@widgets/")) {
+                  const filePath = path.resolve(
+                    __dirname,
+                    "src",
+                    url.replace("@widgets/", "widgets/"),
+                  );
+                  return new URL(`file://${filePath}`);
+                }
+                if (url.startsWith("@pages/")) {
+                  const filePath = path.resolve(
+                    __dirname,
+                    "src",
+                    url.replace("@pages/", "pages/"),
+                  );
+                  return new URL(`file://${filePath}`);
+                }
+                if (url.startsWith("@features/")) {
+                  const filePath = path.resolve(
+                    __dirname,
+                    "src",
+                    url.replace("@features/", "features/"),
+                  );
+                  return new URL(`file://${filePath}`);
+                }
+                if (url.startsWith("@entities/")) {
+                  const filePath = path.resolve(
+                    __dirname,
+                    "src",
+                    url.replace("@entities/", "entities/"),
+                  );
+                  return new URL(`file://${filePath}`);
+                }
+                return null;
+              },
+            },
+          ],
+        },
+      },
+    },
     plugins: plugins,
   };
 });
